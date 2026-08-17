@@ -1,6 +1,8 @@
-# Datos regenerables (correr scripts/run_fetch.py + los demás para recrearlos)
+# Datos crudos: se regeneran en cada corrida (local o en GitHub Actions),
+# nadie los necesita versionados. Los CSVs procesados SÍ se versionan
+# a propósito (data/processed/) — GitHub Actions los actualiza todos los
+# días para que Tableau siempre tenga la versión más fresca.
 data/raw/
-data/processed/
 
 # Python
 __pycache__/

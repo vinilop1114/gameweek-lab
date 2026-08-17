@@ -1,0 +1,38 @@
+name: Daily Data Refresh
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # todos los días a las 06:00 UTC (07:00 UK en horario de invierno)
+  workflow_dispatch: # permite dispararlo a mano desde la pestaña Actions de GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Descargar datos frescos de la API de FPL
+        run: python scripts/run_fetch.py
+
+      - name: Calcular xP y exportar CSVs para Tableau
+        run: python scripts/export_for_tableau.py
+
+      - name: Commitear y subir los CSVs actualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/processed
+          git diff --cached --quiet || git commit -m "Actualización automática de datos - $(date -u +'%Y-%m-%d')"
+          git push
