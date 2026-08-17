@@ -19,3 +19,7 @@ Thumbs.db
 # Contenido de publicación y workbooks de Tableau (se mantienen locales, no en el repo)
 Posts/
 data/Tableau Workbooks/
+
+# Material de referencia inicial y documentación técnica (se mantienen locales, no en el repo)
+initial setup/
+DOCUMENTACION_TECNICA.md
