@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gameweek Lab — GW1 Base vs Wildcard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E14;
+    --panel:#11151F;
+    --grid:#1E2430;
+    --lime:#7CFF6B;
+    --purple:#6C4FE0;
+    --text:#F5F5F5;
+    --muted:#8A93A6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:#05070B;
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:48px;
+    padding:48px 0;
+  }
+  .slide-wrap{width:1080px;height:1080px;flex:none;}
+  .slide{
+    width:1080px;height:1080px;
+    background:var(--bg);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:26px 26px;
+    background-position:center center;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    padding:64px 72px 56px;
+  }
+  /* subtle vignette so grid fades at edges */
+  .slide::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at center, transparent 55%, rgba(11,14,20,0.85) 100%);
+  }
+  .slide > *{position:relative;z-index:1;}
+
+  /* ---- Brand row ---- */
+  .brand-row{display:flex;justify-content:space-between;align-items:baseline;}
+  .wordmark{
+    font-family:'Archivo Black',sans-serif;
+    font-size:26px;letter-spacing:0.14em;
+  }
+  .wordmark span{color:var(--lime);}
+  .gwtag{
+    font-family:'Inter',sans-serif;font-weight:700;font-size:20px;
+    letter-spacing:0.18em;color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---- Category badge ---- */
+  .badge{
+    align-self:flex-start;
+    margin-top:34px;
+    background:var(--lime);
+    color:#0B0E14;
+    font-weight:700;font-size:19px;letter-spacing:0.12em;
+    padding:9px 22px;border-radius:999px;
+  }
+
+  /* ---- Headline block ---- */
+  .headline{
+    font-family:'Archivo Black',sans-serif;
+    margin-top:36px;
+    line-height:1.04;
+    letter-spacing:-0.005em;
+  }
+  .headline .accent{color:var(--lime);}
+  .support{
+    margin-top:26px;
+    font-size:25px;line-height:1.5;color:var(--muted);
+    max-width:850px;
+  }
+  .support strong{color:var(--text);font-weight:600;}
+
+  /* ---- Footer ---- */
+  .footer{
+    margin-top:auto;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:17px;color:var(--muted);letter-spacing:0.04em;
+  }
+  .footer .pagenum{font-variant-numeric:tabular-nums;font-weight:600;}
+
+  /* =========== SLIDE 1 =========== */
+  .s1 .headline{font-size:88px;}
+  .statgrid{
+    margin-top:52px;
+    display:grid;grid-template-columns:1fr 1fr;gap:22px;
+  }
+  .stat{
+    background:var(--panel);
+    border:1px solid var(--grid);
+    border-radius:14px;
+    padding:32px 34px 28px;
+  }
+  .stat .num{
+    font-family:'Archivo Black',sans-serif;
+    font-size:64px;line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .num.lime{color:var(--lime);}
+  .stat .lbl{
+    margin-top:14px;font-size:19px;color:var(--muted);line-height:1.4;
+  }
+
+  /* =========== SLIDES 2 & 3 : squads =========== */
+  .s2 .headline,.s3 .headline{font-size:66px;}
+  .s2 .support,.s3 .support{margin-top:18px;font-size:22px;}
+
+  .pitch{margin-top:34px;display:flex;flex-direction:column;gap:16px;}
+  .line{display:flex;justify-content:center;gap:14px;}
+  .chip{
+    background:var(--panel);
+    border:1px solid var(--grid);
+    border-radius:12px;
+    width:172px;
+    padding:13px 12px 11px;
+    text-align:center;
+    position:relative;
+  }
+  .chip .nm{font-weight:600;font-size:18px;letter-spacing:0.01em;white-space:nowrap;}
+  .chip .meta{
+    margin-top:5px;font-size:15px;color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .chip .meta b{color:var(--text);font-weight:600;}
+  .chip.cap{border-color:var(--lime);}
+  .chip.cap::before{
+    content:"C";
+    position:absolute;top:-11px;right:-9px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--lime);color:#0B0E14;
+    font-weight:700;font-size:15px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chip.newin{border-color:var(--purple);}
+  .chip.newin .nm{color:#B7A6F5;}
+
+  .benchbar{
+    margin-top:22px;
+    background:var(--panel);
+    border:1px solid var(--grid);
+    border-radius:14px;
+    padding:18px 26px 16px;
+  }
+  .benchbar .bt{
+    font-size:14px;font-weight:700;letter-spacing:0.16em;color:var(--muted);
+    margin-bottom:12px;
+  }
+  .benchbar .bt em{font-style:normal;color:var(--lime);}
+  .benchrow{display:flex;justify-content:space-between;gap:12px;}
+  .bplayer{font-size:17px;color:var(--text);font-weight:500;}
+  .bplayer span{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px;margin-left:6px;}
+
+  .totals{
+    margin-top:22px;
+    display:flex;gap:22px;
+  }
+  .tot{
+    flex:1;background:var(--panel);border:1px solid var(--grid);border-radius:12px;
+    padding:16px 22px 14px;
+  }
+  .tot .tn{
+    font-family:'Archivo Black',sans-serif;font-size:34px;
+    font-variant-numeric:tabular-nums;
+  }
+  .tot .tn.lime{color:var(--lime);}
+  .tot .tl{font-size:15px;color:var(--muted);margin-top:4px;}
+
+  /* ---- Slide 3 bars ---- */
+  .bars{
+    margin-top:24px;
+    background:var(--panel);border:1px solid var(--grid);border-radius:14px;
+    padding:22px 28px 20px;
+  }
+  .bars .bh{
+    font-size:14px;font-weight:700;letter-spacing:0.16em;color:var(--muted);
+    margin-bottom:16px;
+  }
+  .bargroup{margin-bottom:14px;}
+  .bargroup:last-child{margin-bottom:0;}
+  .bglabel{font-size:16px;color:var(--text);font-weight:600;margin-bottom:8px;}
+  .barrow{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .barrow:last-child{margin-bottom:0;}
+  .who{width:96px;font-size:14px;color:var(--muted);letter-spacing:0.06em;font-weight:600;}
+  .track{flex:1;height:22px;background:#0B0E14;border-radius:5px;overflow:hidden;}
+  .fill{height:100%;border-radius:5px;}
+  .fill.lime{background:var(--lime);}
+  .fill.purple{background:var(--purple);}
+  .val{width:58px;text-align:right;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;}
+</style>
+</head>
+<body>
+
+<!-- ================= SLIDE 1 ================= -->
+<div class="slide-wrap"><div class="slide s1">
+  <div class="brand-row">
+    <div class="wordmark">THE GAMEWEEK <span>LAB</span></div>
+    <div class="gwtag">GW1 · PRE</div>
+  </div>
+  <div class="badge">SQUAD PICKS</div>
+  <div class="headline">Same core.<br>Two <span class="accent">philosophies.</span></div>
+  <div class="support">Our Base and Wildcard builds share <strong>9 of 11 starters</strong>. The difference is where the budget lives — and what it actually buys you in GW1.</div>
+  <div class="statgrid">
+    <div class="stat"><div class="num lime">9/11</div><div class="lbl">starters shared between both builds</div></div>
+    <div class="stat"><div class="num">+0.7</div><div class="lbl">xP gained by the Wildcard XI in GW1 (70.2 vs 69.5)</div></div>
+    <div class="stat"><div class="num">£5.0m</div><div class="lbl">gap in bench spend (£24.5m vs £19.5m)</div></div>
+    <div class="stat"><div class="num lime">8.93</div><div class="lbl">xP for captain B.Fernandes — the armband in both builds</div></div>
+  </div>
+  <div class="footer">
+    <div>Model: The Gameweek Lab xP · GW1 projections</div>
+    <div class="pagenum">1 / 3</div>
+  </div>
+</div></div>
+
+<!-- ================= SLIDE 2 ================= -->
+<div class="slide-wrap"><div class="slide s2">
+  <div class="brand-row">
+    <div class="wordmark">THE GAMEWEEK <span>LAB</span></div>
+    <div class="gwtag">GW1 · PRE</div>
+  </div>
+  <div class="badge">SQUAD PICKS</div>
+  <div class="headline">The <span class="accent">Base</span> build.</div>
+  <div class="support">A foundation squad — <strong>£24.5m on a bench you'll actually use</strong>, built to stay strong week after week.</div>
+
+  <div class="pitch">
+    <div class="line">
+      <div class="chip"><div class="nm">Roefs</div><div class="meta">£5.0 · <b>5.20</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip"><div class="nm">Gabriel</div><div class="meta">£8.0 · <b>8.67</b> xP</div></div>
+      <div class="chip"><div class="nm">Ballard</div><div class="meta">£5.0 · <b>5.33</b> xP</div></div>
+      <div class="chip"><div class="nm">Maguire</div><div class="meta">£5.0 · <b>5.20</b> xP</div></div>
+      <div class="chip"><div class="nm">Aina</div><div class="meta">£4.5 · <b>4.93</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip cap"><div class="nm">B.Fernandes</div><div class="meta">£12.0 · <b>8.93</b> xP</div></div>
+      <div class="chip"><div class="nm">Bruno G.</div><div class="meta">£7.0 · <b>7.07</b> xP</div></div>
+      <div class="chip"><div class="nm">Rice</div><div class="meta">£7.5 · <b>6.80</b> xP</div></div>
+      <div class="chip"><div class="nm">Gibbs-White</div><div class="meta">£8.0 · <b>6.80</b> xP</div></div>
+      <div class="chip"><div class="nm">E.Le Fée</div><div class="meta">£6.0 · <b>5.47</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip"><div class="nm">João Pedro</div><div class="meta">£7.5 · <b>5.10</b> xP</div></div>
+    </div>
+  </div>
+
+  <div class="benchbar">
+    <div class="bt">BENCH · <em>18.2 xP OF REAL COVER</em></div>
+    <div class="benchrow">
+      <div class="bplayer">Lammens<span>£5.0 · 4.53</span></div>
+      <div class="bplayer">Thiago<span>£8.0 · 4.80</span></div>
+      <div class="bplayer">Muñoz<span>£5.5 · 4.70</span></div>
+      <div class="bplayer">Igor Jesus<span>£6.0 · 4.13</span></div>
+    </div>
+  </div>
+
+  <div class="totals">
+    <div class="tot"><div class="tn lime">69.5</div><div class="tl">XI xP · GW1</div></div>
+    <div class="tot"><div class="tn">£100.0m</div><div class="tl">full squad spend</div></div>
+    <div class="tot"><div class="tn">£24.5m</div><div class="tl">invested in the bench</div></div>
+  </div>
+
+  <div class="footer">
+    <div>Model: The Gameweek Lab xP · GW1 projections</div>
+    <div class="pagenum">2 / 3</div>
+  </div>
+</div></div>
+
+<!-- ================= SLIDE 3 ================= -->
+<div class="slide-wrap"><div class="slide s3">
+  <div class="brand-row">
+    <div class="wordmark">THE GAMEWEEK <span>LAB</span></div>
+    <div class="gwtag">GW1 · PRE</div>
+  </div>
+  <div class="badge">SQUAD PICKS</div>
+  <div class="headline">The <span class="accent">Wildcard</span> build.</div>
+  <div class="support"><strong>£79.0m in the XI, bench gutted.</strong> Mbeumo and Guéhi come in — and all that front-loading buys +0.7 xP.</div>
+
+  <div class="pitch">
+    <div class="line">
+      <div class="chip"><div class="nm">Roefs</div><div class="meta">£5.0 · <b>5.20</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip"><div class="nm">Gabriel</div><div class="meta">£8.0 · <b>8.67</b> xP</div></div>
+      <div class="chip"><div class="nm">Ballard</div><div class="meta">£5.0 · <b>5.33</b> xP</div></div>
+      <div class="chip"><div class="nm">Maguire</div><div class="meta">£5.0 · <b>5.20</b> xP</div></div>
+      <div class="chip newin"><div class="nm">Guéhi</div><div class="meta">£6.0 · <b>5.10</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip cap"><div class="nm">B.Fernandes</div><div class="meta">£12.0 · <b>8.93</b> xP</div></div>
+      <div class="chip"><div class="nm">Bruno G.</div><div class="meta">£7.0 · <b>7.07</b> xP</div></div>
+      <div class="chip"><div class="nm">Rice</div><div class="meta">£7.5 · <b>6.80</b> xP</div></div>
+      <div class="chip"><div class="nm">Gibbs-White</div><div class="meta">£8.0 · <b>6.80</b> xP</div></div>
+      <div class="chip newin"><div class="nm">Mbeumo</div><div class="meta">£8.0 · <b>6.00</b> xP</div></div>
+    </div>
+    <div class="line">
+      <div class="chip"><div class="nm">João Pedro</div><div class="meta">£7.5 · <b>5.10</b> xP</div></div>
+    </div>
+  </div>
+
+  <div class="benchbar">
+    <div class="bt">BENCH · 12.5 xP — FILLER TERRITORY</div>
+    <div class="benchrow">
+      <div class="bplayer">Dubravka<span>£4.0 · 2.70</span></div>
+      <div class="bplayer">Aina<span>£4.5 · 4.93</span></div>
+      <div class="bplayer">Barry<span>£5.5 · 2.50</span></div>
+      <div class="bplayer">Nmecha<span>£5.5 · 2.40</span></div>
+    </div>
+  </div>
+
+  <div class="bars">
+    <div class="bh">BASE vs WILDCARD · GW1 xP</div>
+    <div class="bargroup">
+      <div class="barrow">
+        <div class="who">XI · BASE</div>
+        <div class="track"><div class="fill lime" style="width:99%"></div></div>
+        <div class="val">69.5</div>
+      </div>
+      <div class="barrow">
+        <div class="who">XI · WC</div>
+        <div class="track"><div class="fill purple" style="width:100%"></div></div>
+        <div class="val">70.2</div>
+      </div>
+    </div>
+    <div class="bargroup">
+      <div class="barrow">
+        <div class="who">BENCH · BASE</div>
+        <div class="track"><div class="fill lime" style="width:25.9%"></div></div>
+        <div class="val">18.2</div>
+      </div>
+      <div class="barrow">
+        <div class="who">BENCH · WC</div>
+        <div class="track"><div class="fill purple" style="width:17.8%"></div></div>
+        <div class="val">12.5</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Model: The Gameweek Lab xP · GW1 projections</div>
+    <div class="pagenum">3 / 3</div>
+  </div>
+</div></div>
+
+<script>
+  // Scale 1080px slides to fit the viewport width (display only; export at full size)
+  function fit(){
+    const w = Math.min(window.innerWidth - 32, 1080);
+    const s = w / 1080;
+    document.querySelectorAll('.slide-wrap').forEach(el=>{
+      el.style.height = (1080*s) + 'px';
+      el.style.width = w + 'px';
+      const slide = el.firstElementChild;
+      slide.style.transform = 'scale(' + s + ')';
+      slide.style.transformOrigin = 'top left';
+    });
+  }
+  window.addEventListener('resize', fit); fit();
+</script>
+</body>
+</html>

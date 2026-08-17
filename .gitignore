@@ -1,0 +1,15 @@
+# Datos regenerables (correr scripts/run_fetch.py + los demás para recrearlos)
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archivos de lock/temporales que crea Tableau mientras un workbook está abierto
+~*.twbr
+~*.twb
