@@ -13,3 +13,7 @@ Thumbs.db
 # Archivos de lock/temporales que crea Tableau mientras un workbook está abierto
 ~*.twbr
 ~*.twb
+
+# Contenido de publicación y workbooks de Tableau (se mantienen locales, no en el repo)
+Posts/
+data/Tableau Workbooks/
