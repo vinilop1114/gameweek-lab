@@ -1,14 +1,14 @@
 id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,points_per_game,form,selected_by_percent,minutes,chance_of_playing_next_round,ep_next,next_gameweek,next_opponent,next_is_home,next_fixture_difficulty
 411,Haaland,Erling Haaland,Man City,FWD,15.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p223094.png,239,6.8,0.0,70.3,2953,,4.0,1,Bournemouth,True,3
-426,B.Fernandes,Bruno Borges Fernandes,Man Utd,MID,12.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p141746.png,235,6.7,0.0,49.0,3065,,4.0,1,Hull City,False,2
-4,Gabriel,Gabriel dos Santos Magalhães,Arsenal,DEF,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p226597.png,209,6.5,0.0,28.7,2750,,4.0,1,Coventry City,True,2
+426,B.Fernandes,Bruno Borges Fernandes,Man Utd,MID,12.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p141746.png,235,6.7,0.0,49.1,3065,,4.0,1,Hull City,False,2
+4,Gabriel,Gabriel dos Santos Magalhães,Arsenal,DEF,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p226597.png,209,6.5,0.0,28.8,2750,,4.0,1,Coventry City,True,2
 397,Semenyo,Antoine Semenyo,Man City,MID,8.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p437730.png,202,5.5,0.0,26.4,3200,,2.9,1,Bournemouth,True,3
 480,Gibbs-White,Morgan Gibbs-White,Nott'm Forest,MID,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p222531.png,188,5.1,0.0,11.9,3101,,2.8,1,Leeds,True,2
-13,Rice,Declan Rice,Arsenal,MID,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p204480.png,184,5.1,0.0,19.9,3093,,2.6,1,Coventry City,True,2
+13,Rice,Declan Rice,Arsenal,MID,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p204480.png,184,5.1,0.0,19.8,3093,,2.6,1,Coventry City,True,2
 106,Thiago,Igor Thiago Nascimento Rodrigues,Brentford,FWD,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p502500.png,181,4.8,0.0,17.7,3282,,2.5,1,Spurs,True,3
-481,Anderson,Elliot Anderson,Man City,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p215379.png,180,4.7,0.0,9.5,3332,,2.3,1,Bournemouth,True,3
-388,Guéhi,Marc Guéhi,Man City,DEF,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p209036.png,179,5.1,0.0,20.1,3150,,2.8,1,Bournemouth,True,3
-165,João Pedro,João Pedro Junqueira de Jesus,Chelsea,FWD,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p475168.png,177,5.1,0.0,60.2,2658,,2.3,1,Fulham,False,3
+481,Anderson,Elliot Anderson,Man City,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p215379.png,180,4.7,0.0,9.4,3332,,2.3,1,Bournemouth,True,3
+388,Guéhi,Marc Guéhi,Man City,DEF,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p209036.png,179,5.1,0.0,20.0,3150,,2.8,1,Bournemouth,True,3
+165,João Pedro,João Pedro Junqueira de Jesus,Chelsea,FWD,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p475168.png,177,5.1,0.0,60.3,2658,,2.3,1,Fulham,False,3
 356,Virgil,Virgil van Dijk,Liverpool,DEF,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p97032.png,175,4.6,0.0,18.0,3420,,3.1,1,Newcastle,False,3
 498,Senesi,Marcos Senesi Barón,Spurs,DEF,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p221466.png,175,4.7,0.0,9.5,3288,,2.8,1,Brentford,False,3
 229,Tarkowski,James Tarkowski,Everton,DEF,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p17761.png,170,4.6,0.0,9.5,3330,,2.8,1,Crystal Palace,True,3
@@ -24,21 +24,21 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 12,Saka,Bukayo Saka,Arsenal,MID,9.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p223340.png,157,5.1,0.0,9.6,2218,,3.2,1,Coventry City,True,2
 452,Bruno G.,Bruno Guimarães Rodriguez Moura,Arsenal,MID,7.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p208706.png,154,5.3,0.0,8.9,2456,,2.5,1,Coventry City,True,2
 200,Lacroix,Maxence Lacroix,Chelsea,DEF,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p437499.png,154,4.4,0.0,10.5,3085,,2.8,1,Fulham,False,3
-389,Matheus N.,Matheus Nunes,Man City,DEF,6.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p465351.png,154,4.5,0.0,3.0,2861,75.0,2.1,1,Bournemouth,True,3
-533,Mukiele,Nordi Mukiele,Sunderland,DEF,5.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p200834.png,151,4.7,0.0,2.7,2784,75.0,1.9,1,Ipswich Town,False,2
+389,Matheus N.,Matheus Nunes,Man City,DEF,6.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p465351.png,154,4.5,0.0,2.9,2861,75.0,2.1,1,Bournemouth,True,3
+533,Mukiele,Nordi Mukiele,Sunderland,DEF,5.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p200834.png,151,4.7,0.0,2.6,2784,75.0,1.9,1,Ipswich Town,False,2
 236,Dewsbury-Hall,Kiernan Dewsbury-Hall,Everton,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p215413.png,151,4.9,0.0,3.5,2629,,2.3,1,Crystal Palace,True,3
 5,J.Timber,Jurriën Timber,Arsenal,DEF,6.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p445122.png,149,5.0,0.0,0.2,2452,0.0,0.0,1,Coventry City,True,2
 112,Van Hecke,Jan Paul van Hecke,Spurs,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p469142.png,148,4.1,0.0,8.9,3210,,2.2,1,Brentford,False,3
-427,Mbeumo,Bryan Mbeumo,Man Utd,MID,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p446008.png,148,4.5,0.0,31.2,2611,,2.8,1,Hull City,False,2
+427,Mbeumo,Bryan Mbeumo,Man Utd,MID,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p446008.png,148,4.5,0.0,31.3,2611,,2.8,1,Hull City,False,2
 542,E.Le Fée,Enzo Le Fée,Sunderland,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p484420.png,147,4.1,0.0,11.8,2930,,2.1,1,Ipswich Town,False,2
 371,Gravenberch,Ryan Gravenberch,Liverpool,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p441266.png,144,4.0,0.0,1.9,2991,,2.1,1,Newcastle,False,3
 428,Cunha,Matheus Santos Carneiro da Cunha,Man Utd,MID,8.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p430871.png,143,4.3,0.0,11.2,2493,,2.8,1,Hull City,False,2
 82,Kelleher,Caoimhín Kelleher,Brentford,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p200720.png,143,3.9,0.0,5.9,3330,,2.6,1,Spurs,True,3
-346,Calvert-Lewin,Dominic Calvert-Lewin,Leeds,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p177815.png,142,4.1,0.0,27.5,2721,,2.0,1,Nott'm Forest,False,3
+346,Calvert-Lewin,Dominic Calvert-Lewin,Leeds,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p177815.png,142,4.1,0.0,27.6,2721,,2.0,1,Nott'm Forest,False,3
 6,Saliba,William Saliba,Arsenal,DEF,6.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p462424.png,137,4.4,0.0,0.4,2614,0.0,0.0,1,Coventry City,True,2
-68,Tavernier,Marcus Tavernier,Bournemouth,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p201658.png,137,4.0,0.0,1.8,2732,,2.1,1,Man City,False,5
+68,Tavernier,Marcus Tavernier,Bournemouth,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p201658.png,137,4.0,0.0,1.7,2732,,2.1,1,Man City,False,5
 335,Stach,Anton Stach,Leeds,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p466525.png,137,4.7,0.0,1.1,2369,,2.1,1,Nott'm Forest,False,3
-143,Chalobah,Trevoh Chalobah,Chelsea,DEF,5.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p180736.png,136,4.0,0.0,0.7,2780,0.0,0.0,1,Fulham,False,3
+143,Chalobah,Trevoh Chalobah,Chelsea,DEF,5.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p180736.png,136,4.0,0.0,0.6,2780,0.0,0.0,1,Fulham,False,3
 69,Scott,Alex Scott,Bournemouth,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p503139.png,136,3.7,0.0,1.5,2848,,2.1,1,Man City,False,5
 95,O.Dango,Dango Ouattara,Brentford,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p533463.png,136,4.2,0.0,1.4,2271,,2.3,1,Spurs,True,3
 529,Roefs,Robin Roefs,Sunderland,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p498016.png,136,3.9,0.0,4.8,3150,,2.6,1,Ipswich Town,False,2
@@ -54,7 +54,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 367,Gakpo,Cody Gakpo,Liverpool,MID,7.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p243298.png,131,3.6,0.0,3.7,2736,,2.5,1,Newcastle,False,3
 231,Keane,Michael Keane,Everton,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p106611.png,131,4.0,0.0,1.7,2588,,2.2,1,Crystal Palace,True,3
 398,Foden,Phil Foden,Man City,MID,7.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p209244.png,131,4.0,0.0,4.8,2078,,2.5,1,Bournemouth,True,3
-109,Verbruggen,Bart Verbruggen,Brighton,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p489639.png,130,3.4,0.0,19.1,3420,,1.9,1,Aston Villa,True,3
+109,Verbruggen,Bart Verbruggen,Brighton,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p489639.png,130,3.4,0.0,19.2,3420,,1.9,1,Aston Villa,True,3
 84,Collins,Nathan Collins,Brentford,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p432830.png,129,3.7,0.0,2.0,2971,,2.5,1,Spurs,True,3
 469,N.Williams,Neco Williams,Nott'm Forest,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p215136.png,128,3.5,0.0,11.1,3203,,2.2,1,Leeds,True,2
 25,Gyökeres,Viktor Gyökeres,Arsenal,FWD,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p224117.png,128,3.6,0.0,10.8,2217,,2.3,1,Coventry City,True,2
@@ -65,7 +65,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 445,Thiaw,Malick Thiaw,Newcastle,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p465642.png,126,3.6,0.0,1.9,2963,,2.2,1,Liverpool,True,4
 380,Ekitiké,Hugo Ekitiké,Liverpool,FWD,7.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p510663.png,125,4.5,0.0,0.2,1797,0.0,0.0,1,Newcastle,False,3
 535,Alderete,Omar Alderete,Sunderland,DEF,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p201895.png,125,3.8,0.0,0.4,2797,75.0,1.6,1,Ipswich Town,False,2
-366,Wirtz,Florian Wirtz,Liverpool,MID,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p494595.png,125,3.8,0.0,14.7,2374,,2.6,1,Newcastle,False,3
+366,Wirtz,Florian Wirtz,Liverpool,MID,7.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p494595.png,125,3.8,0.0,14.6,2374,,2.6,1,Newcastle,False,3
 94,Schade,Kevin Schade,Brentford,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p513418.png,125,3.6,0.0,3.2,2744,,2.1,1,Spurs,True,3
 156,Neto,Pedro Lomba Neto,Chelsea,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p247632.png,125,3.7,0.0,1.3,2629,,2.3,1,Fulham,False,3
 57,Petrović,Đorđe Petrović,Bournemouth,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p457569.png,124,3.3,0.0,3.5,3420,,1.9,1,Man City,False,5
@@ -73,7 +73,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 253,Andersen,Joachim Andersen,Fulham,DEF,5.0,s,https://resources.premierleague.com/premierleague/photos/players/40x40/p174874.png,123,3.7,0.0,0.0,2882,0.0,0.0,1,Chelsea,True,4
 250,Leno,Bernd Leno,Fulham,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p80201.png,122,3.2,0.0,3.2,3420,,1.9,1,Chelsea,True,4
 28,Martinez,Emiliano Martínez Romero,Aston Villa,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p98980.png,120,3.8,0.0,4.8,2835,,2.6,1,Brighton,False,3
-400,Doku,Jérémy Doku,Man City,MID,7.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p248875.png,120,4.0,0.0,6.4,1773,75.0,2.0,1,Bournemouth,True,3
+400,Doku,Jérémy Doku,Man City,MID,7.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p248875.png,120,4.0,0.0,6.2,1773,75.0,2.0,1,Bournemouth,True,3
 471,Milenković,Nikola Milenković,Nott'm Forest,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p227444.png,119,3.1,0.0,2.2,3375,,2.5,1,Leeds,True,2
 527,Richarlison,Richarlison de Andrade,Spurs,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p212319.png,119,3.7,0.0,2.6,1954,,2.0,1,Brentford,False,3
 113,F.Kadıoğlu,Ferdi Kadıoğlu,Brighton,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p231416.png,118,3.2,0.0,3.1,3130,,1.7,1,Aston Villa,True,3
@@ -85,7 +85,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 232,O'Brien,Jake O'Brien,Everton,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p512462.png,116,3.1,0.0,0.5,3118,,2.2,1,Crystal Palace,True,3
 503,Van de Ven,Micky van de Ven,Spurs,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p491279.png,116,3.3,0.0,7.3,3041,,2.2,1,Brentford,False,3
 79,Evanilson,Francisco Evanilson de Lima Barbosa,Bournemouth,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p444102.png,115,3.2,0.0,2.2,2741,,2.0,1,Man City,False,5
-142,James,Reece James,Chelsea,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p225796.png,115,4.0,0.0,8.9,1957,,2.5,1,Fulham,False,3
+142,James,Reece James,Chelsea,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p225796.png,115,4.0,0.0,9.0,1957,,2.5,1,Fulham,False,3
 86,Lewis-Potter,Keane Lewis-Potter,Brentford,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p249231.png,115,3.2,0.0,0.5,1960,,2.0,1,Spurs,True,3
 154,Palmer,Cole Palmer,Chelsea,MID,9.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p244851.png,114,4.4,0.0,10.6,1954,,3.2,1,Fulham,False,3
 223,Mateta,Jean-Philippe Mateta,Crystal Palace,FWD,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p231747.png,114,3.6,0.0,6.1,2210,,2.1,1,Everton,False,3
@@ -93,7 +93,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 88,Kayode,Michael Kayode,Brentford,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p607464.png,113,3.1,0.0,3.5,3258,,1.7,1,Spurs,True,3
 96,Damsgaard,Mikkel Damsgaard,Brentford,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p440089.png,113,3.4,0.0,0.6,2046,,2.0,1,Spurs,True,3
 85,Van den Berg,Sepp van den Berg,Brentford,DEF,5.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p444765.png,113,3.5,0.0,0.4,2761,0.0,0.0,1,Spurs,True,3
-423,Shaw,Luke Shaw,Man Utd,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p106760.png,113,3.0,0.0,22.4,3220,,1.7,1,Hull City,False,2
+423,Shaw,Luke Shaw,Man Utd,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p106760.png,113,3.0,0.0,22.3,3220,,1.7,1,Hull City,False,2
 14,Eze,Eberechi Eze,Arsenal,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p232413.png,113,3.4,0.0,2.5,1885,,2.3,1,Coventry City,True,2
 390,Rúben,Rúben dos Santos Gato Alves Dias,Man City,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p171314.png,113,4.3,0.0,1.6,2139,,2.5,1,Bournemouth,True,3
 140,Sánchez,Robert Lynch Sánchez,Chelsea,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p215059.png,113,3.2,0.0,2.2,3040,,2.6,1,Fulham,False,3
@@ -105,13 +105,13 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 534,Hume,Trai Hume,Sunderland,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p487676.png,110,2.9,0.0,6.0,3032,,1.7,1,Ipswich Town,False,2
 159,Caicedo,Moisés Caicedo Corozo,Chelsea,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p486672.png,110,3.3,0.0,3.9,2796,,2.0,1,Fulham,False,3
 336,Okafor,Noah Okafor,Leeds,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p435997.png,109,3.9,0.0,0.6,1553,,2.1,1,Nott'm Forest,False,3
-8,Calafiori,Riccardo Calafiori,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p466075.png,109,4.2,0.0,27.5,1697,,2.5,1,Coventry City,True,2
+8,Calafiori,Riccardo Calafiori,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p466075.png,109,4.2,0.0,27.7,1697,,2.5,1,Coventry City,True,2
 412,Lammens,Senne Lammens,Man Utd,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p465247.png,109,3.4,0.0,18.4,2880,,2.6,1,Hull City,False,2
 329,Rodon,Joe Rodon,Leeds,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p214225.png,109,3.1,0.0,2.6,2952,,1.7,1,Nott'm Forest,False,3
 372,Mac Allister,Alexis Mac Allister,Liverpool,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p243016.png,108,2.9,0.0,1.8,2654,,2.0,1,Newcastle,False,3
 328,Struijk,Pascal Struijk,Brighton,DEF,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p222694.png,108,3.2,0.0,0.3,2935,75.0,1.6,1,Aston Villa,True,3
 463,Woltemade,Nick Woltemade,Newcastle,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p470313.png,108,3.3,0.0,1.7,1896,,2.0,1,Liverpool,True,4
-453,Barnes,Harvey Barnes,Newcastle,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p201666.png,106,2.9,0.0,1.2,1951,,2.1,1,Liverpool,True,4
+453,Barnes,Harvey Barnes,Newcastle,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p201666.png,106,2.9,0.0,1.1,1951,,2.1,1,Liverpool,True,4
 467,Sels,Matz Sels,Nott'm Forest,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p85633.png,105,3.4,0.0,1.6,2667,,2.6,1,Leeds,True,2
 102,Yarmoliuk,Yehor Yarmoliuk,Brentford,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p508395.png,104,2.8,0.0,1.4,2652,,1.5,1,Spurs,True,3
 248,Beto,Norberto Bercique Gomes Betuncal,Everton,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p486385.png,104,2.8,0.0,2.9,1551,,1.8,1,Crystal Palace,True,3
@@ -127,7 +127,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 30,Digne,Lucas Digne,Aston Villa,DEF,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p101188.png,97,3.1,0.0,0.4,1842,0.0,0.0,1,Brighton,False,3
 127,Gomez,Diego Gómez Amarilla,Brighton,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p514254.png,97,3.0,0.0,2.8,2117,,1.5,1,Aston Villa,True,3
 144,Gusto,Malo Gusto,Chelsea,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p482609.png,96,2.8,0.0,1.1,2255,,2.2,1,Fulham,False,3
-497,Dubravka,Martin Dubravka,Spurs,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p67089.png,96,2.7,0.0,21.7,3150,,1.0,1,Brentford,False,3
+497,Dubravka,Martin Dubravka,Spurs,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p67089.png,96,2.7,0.0,21.6,3150,,1.0,1,Brentford,False,3
 442,Pope,Nick Pope,Newcastle,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p98747.png,96,3.6,0.0,1.3,2416,,2.6,1,Liverpool,True,4
 330,Bogle,Jayden Bogle,Leeds,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p226182.png,96,2.8,0.0,0.5,2795,,1.7,1,Nott'm Forest,False,3
 249,Barry,Thierno Barry,Everton,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p586309.png,95,2.5,0.0,1.2,1898,,1.8,1,Crystal Palace,True,3
@@ -141,11 +141,11 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 552,Brobbey,Brian Brobbey,Sunderland,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p441264.png,92,3.0,0.0,15.3,1920,,2.0,1,Ipswich Town,False,2
 123,Hinshelwood,Jack Hinshelwood,Brighton,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p532529.png,91,3.4,0.0,0.4,1736,,2.1,1,Aston Villa,True,3
 350,A.Becker,Alisson Becker,Liverpool,GKP,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p116535.png,91,3.5,0.0,3.8,2340,,3.3,1,Newcastle,False,3
-500,Romero,Cristian Romero,Spurs,DEF,5.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p221632.png,91,4.0,0.0,0.8,1869,0.0,0.0,1,Brentford,False,3
+500,Romero,Cristian Romero,Spurs,DEF,5.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p221632.png,91,4.0,0.0,0.7,1869,0.0,0.0,1,Brentford,False,3
 431,Amad,Amad Diallo,Man Utd,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p493250.png,91,2.8,0.0,1.6,2339,,2.1,1,Hull City,False,2
 265,Berge,Sander Berge,Fulham,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p207189.png,91,2.6,0.0,0.4,2904,,1.5,1,Chelsea,True,4
 494,Vicario,Guglielmo Vicario,Spurs,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p184254.png,90,2.9,0.0,1.2,2790,,1.9,1,Brentford,False,3
-418,Maguire,Harry Maguire,Man Utd,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p95658.png,90,3.9,0.0,12.9,1649,,2.2,1,Hull City,False,2
+418,Maguire,Harry Maguire,Man Utd,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p95658.png,90,3.9,0.0,13.0,1649,,2.2,1,Hull City,False,2
 447,Botman,Sven Botman,Newcastle,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p220237.png,89,3.6,0.0,0.4,1834,,2.2,1,Liverpool,True,4
 488,Sangaré,Ibrahim Sangaré,Nott'm Forest,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p210462.png,89,3.2,0.0,0.9,2073,,1.5,1,Leeds,True,2
 482,Hudson-Odoi,Callum Hudson-Odoi,Nott'm Forest,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p209046.png,88,2.9,0.0,0.2,1838,100.0,2.1,1,Leeds,True,2
@@ -165,12 +165,12 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 545,Sadiki,Noah Sadiki,Sunderland,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p577669.png,80,2.4,0.0,0.4,2891,,1.5,1,Ipswich Town,False,2
 262,Smith Rowe,Emile Smith Rowe,Fulham,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p209289.png,80,2.2,0.0,0.4,1909,,2.0,1,Chelsea,True,4
 513,Xavi,Xavi Simons,Spurs,MID,6.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p493362.png,80,2.9,0.0,0.0,1747,0.0,0.0,1,Brentford,False,3
-391,Gvardiol,Joško Gvardiol,Man City,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p477424.png,79,4.4,0.0,11.9,1370,,2.5,1,Bournemouth,True,3
+391,Gvardiol,Joško Gvardiol,Man City,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p477424.png,79,4.4,0.0,11.8,1370,,2.5,1,Bournemouth,True,3
 238,Grealish,Jack Grealish,Man City,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p114283.png,79,4.0,0.0,0.1,1627,100.0,2.3,1,Bournemouth,True,3
 449,Hall,Lewis Hall,Newcastle,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p487838.png,79,2.6,0.0,3.7,2176,,2.2,1,Liverpool,True,4
 514,Tel,Mathys Tel,Spurs,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p511499.png,78,2.5,0.0,0.6,1334,,2.1,1,Brentford,False,3
 124,Groß,Pascal Groß,Brighton,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p60307.png,78,4.1,0.0,12.3,1636,,2.0,1,Aston Villa,True,3
-505,Spence,Djed Spence,Spurs,DEF,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p232859.png,78,2.6,0.0,3.9,2049,0.0,0.0,1,Brentford,False,3
+505,Spence,Djed Spence,Spurs,DEF,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p232859.png,78,2.6,0.0,3.8,2049,0.0,0.0,1,Brentford,False,3
 73,Adams,Tyler Adams,Bournemouth,MID,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p200785.png,77,3.1,0.0,0.4,1769,75.0,1.1,1,Man City,False,5
 211,Yeremy,Yéremy Pino Santos,Crystal Palace,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p488024.png,77,2.3,0.0,0.2,2074,,2.0,1,Everton,False,3
 101,Henderson,Jordan Henderson,Chelsea,MID,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p56979.png,76,2.4,0.0,0.0,1911,75.0,1.1,1,Fulham,False,3
@@ -208,11 +208,11 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 145,Fofana,Wesley Fofana,Chelsea,DEF,5.0,s,https://resources.premierleague.com/premierleague/photos/players/40x40/p444463.png,65,2.6,0.0,0.0,1718,0.0,0.0,1,Fulham,False,3
 254,Robinson,Antonee Robinson,Fulham,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p169528.png,65,3.0,0.0,2.1,1487,,1.7,1,Chelsea,True,4
 543,Diarra,Habib Diarra,Sunderland,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p547027.png,65,3.2,0.0,0.1,1403,,2.0,1,Ipswich Town,False,2
-34,Pau,Pau Torres,Aston Villa,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p244954.png,64,3.0,0.0,0.3,1673,,1.7,1,Brighton,False,3
+34,Pau,Pau Torres,Aston Villa,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p244954.png,64,3.0,0.0,0.4,1673,,1.7,1,Brighton,False,3
 268,King,Josh King,Fulham,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p577725.png,63,2.0,0.0,0.2,1290,,2.0,1,Chelsea,True,4
 405,N.Gonzalez,Nico González Iglesias,Man City,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p465694.png,63,2.5,0.0,0.1,1561,,2.0,1,Bournemouth,True,3
 501,Danso,Kevin Danso,Spurs,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p135720.png,63,2.6,0.0,0.2,1489,,2.2,1,Brentford,False,3
-357,Frimpong,Jeremie Frimpong,Liverpool,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p216094.png,63,3.0,0.0,3.2,1032,,2.5,1,Newcastle,False,3
+357,Frimpong,Jeremie Frimpong,Liverpool,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p216094.png,63,3.0,0.0,3.3,1032,,2.5,1,Newcastle,False,3
 121,Mitoma,Mitoma Kaoru,Brighton,MID,6.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p451340.png,62,2.5,0.0,0.1,1714,0.0,0.0,1,Aston Villa,True,3
 456,J.Ramsey,Jacob Ramsey,Newcastle,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p232653.png,62,2.2,0.0,0.4,1441,,1.5,1,Liverpool,True,4
 522,Gray,Archie Gray,Spurs,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p547701.png,61,2.5,0.0,0.2,1471,,1.5,1,Brentford,False,3
@@ -250,7 +250,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 75,Christie,Ryan Christie,Bournemouth,MID,5.0,s,https://resources.premierleague.com/premierleague/photos/players/40x40/p158499.png,47,1.8,0.0,0.0,978,0.0,0.0,1,Man City,False,5
 517,Odobert,Wilson Odobert,Spurs,MID,5.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p550839.png,46,1.9,0.0,0.0,972,0.0,0.0,1,Brentford,False,3
 62,Diakité,Bafodé Diakité,Bournemouth,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p242882.png,46,2.6,0.0,0.2,1275,,2.2,1,Man City,False,5
-10,White,Benjamin White,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p198869.png,45,3.8,0.0,3.1,699,100.0,2.5,1,Coventry City,True,2
+10,White,Benjamin White,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p198869.png,45,3.8,0.0,3.2,699,100.0,2.5,1,Coventry City,True,2
 212,Hughes,Will Hughes,Crystal Palace,MID,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p108413.png,45,1.5,0.0,11.1,1560,,1.0,1,Everton,False,3
 167,Delap,Liam Delap,Chelsea,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p463034.png,45,1.6,0.0,0.5,1092,,1.8,1,Fulham,False,3
 519,Gallagher,Conor Gallagher,Spurs,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p232787.png,44,2.8,0.0,0.3,1183,,2.0,1,Brentford,False,3
@@ -264,14 +264,14 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 264,Bobb,Oscar Bobb,Fulham,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p477555.png,42,1.8,0.0,0.3,1030,,2.0,1,Chelsea,True,4
 421,Heaven,Ayden Heaven,Man Utd,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p606745.png,42,2.5,0.0,0.4,920,,1.7,1,Hull City,False,2
 440,Zirkzee,Joshua Zirkzee,Man Utd,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p458249.png,42,1.8,0.0,0.7,607,,1.8,1,Hull City,False,2
-379,Isak,Alexander Isak,Liverpool,FWD,9.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p219168.png,41,2.9,0.0,15.4,694,,2.7,1,Newcastle,False,3
+379,Isak,Alexander Isak,Liverpool,FWD,9.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p219168.png,41,2.9,0.0,15.5,694,,2.7,1,Newcastle,False,3
 490,Wood,Chris Wood,Nott'm Forest,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p60689.png,41,2.7,0.0,1.7,896,,2.0,1,Leeds,True,2
 266,Cairney,Tom Cairney,Fulham,MID,5.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p76357.png,41,1.7,0.0,0.0,756,0.0,0.0,1,Chelsea,True,4
 70,Kluivert,Justin Kluivert,Bournemouth,MID,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p222683.png,41,2.0,0.0,1.1,945,,2.1,1,Man City,False,5
 71,Cook,Lewis Cook,Bournemouth,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p155408.png,40,2.2,0.0,0.1,872,,1.5,1,Man City,False,5
 35,Bogarde,Lamare Bogarde,Aston Villa,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p515597.png,40,1.4,0.0,0.1,1042,,1.5,1,Brighton,False,3
 526,Solanke,Dominic Solanke-Mitchell,Spurs,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p154566.png,40,2.7,0.0,1.7,997,,2.0,1,Brentford,False,3
-11,Mosquera,Cristhian Mosquera,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p500040.png,40,2.0,0.0,11.5,986,,2.5,1,Coventry City,True,2
+11,Mosquera,Cristhian Mosquera,Arsenal,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p500040.png,40,2.0,0.0,11.4,986,,2.5,1,Coventry City,True,2
 475,Savona,Nicolò Savona,Nott'm Forest,DEF,4.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p500151.png,39,2.8,0.0,0.0,1025,0.0,0.0,1,Leeds,True,2
 114,Boscagli,Olivier Boscagli,Brighton,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p204120.png,39,3.2,0.0,0.2,799,,1.7,1,Aston Villa,True,3
 151,Acheampong,Josh Acheampong,Chelsea,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p577016.png,39,2.3,0.0,0.3,657,,1.7,1,Fulham,False,3
@@ -293,7 +293,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 230,Branthwaite,Jarrad Branthwaite,Everton,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p480455.png,32,3.2,0.0,1.8,678,,2.5,1,Crystal Palace,True,3
 341,Gnonto,Wilfried Gnonto,Leeds,MID,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p492859.png,32,1.4,0.0,0.1,521,25.0,0.4,1,Nott'm Forest,False,3
 259,Diop,Issa Diop,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p219924.png,31,2.4,0.0,18.2,812,,1.0,1,Sunderland,True,2
-489,Yates,Ryan Yates,Nott'm Forest,MID,4.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p204968.png,30,1.4,0.0,5.5,602,75.0,0.8,1,Leeds,True,2
+489,Yates,Ryan Yates,Nott'm Forest,MID,4.5,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p204968.png,30,1.4,0.0,5.4,602,75.0,0.8,1,Leeds,True,2
 506,Udogie,Destiny Udogie,Spurs,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p487053.png,29,1.4,0.0,0.5,1335,,1.7,1,Brentford,False,3
 7,Lewis-Skelly,Myles Lewis-Skelly,Arsenal,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p499169.png,29,1.4,0.0,0.5,697,,2.0,1,Coventry City,True,2
 37,Lindelöf,Victor Lindelöf,Aston Villa,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p184667.png,29,1.7,0.0,0.2,942,,1.7,1,Brighton,False,3
@@ -334,7 +334,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 100,Carvalho,Fábio Freitas Gouveia Carvalho,Brentford,MID,5.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p244858.png,13,2.2,0.0,0.0,100,75.0,1.1,1,Spurs,True,3
 474,Jair Cunha,Jair Paula da Cunha Filho,Nott'm Forest,DEF,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p575458.png,13,1.4,0.0,0.3,514,,1.7,1,Leeds,True,2
 551,Angulo,Nilson Angulo,Sunderland,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p536661.png,13,1.6,0.0,0.1,401,,1.5,1,Ipswich Town,False,2
-385,Trafford,James Trafford,Leeds,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p432720.png,13,3.2,0.0,2.8,360,,2.6,1,Nott'm Forest,False,3
+385,Trafford,James Trafford,Leeds,GKP,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p432720.png,13,3.2,0.0,2.9,360,,2.6,1,Nott'm Forest,False,3
 168,Marc Guiu,Marc Guiu Paz,Chelsea,FWD,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p499309.png,13,1.3,0.0,0.4,265,,1.4,1,Fulham,False,3
 374,Endo,Endo Wataru,Liverpool,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p158983.png,12,1.5,0.0,0.0,170,100.0,1.5,1,Newcastle,False,3
 104,Onyeka,Frank Onyeka,Coventry City,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p428580.png,12,2.0,0.0,0.1,88,,1.5,1,Arsenal,False,5
@@ -404,7 +404,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 59,Dennis,Will Dennis,Bournemouth,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p444172.png,0,0.0,0.0,0.2,0,,1.0,1,Man City,False,5
 58,Forster,Fraser Forster,Bournemouth,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p40383.png,0,0.0,0.0,3.2,0,,1.0,1,Man City,False,5
 582,Madjo,Brian Madjo,Aston Villa,FWD,5.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p690838.png,0,0.0,0.0,0.9,0,0.0,0.0,1,Brighton,False,3
-53,Manzambi,Johan Manzambi,Aston Villa,MID,6.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p614071.png,0,0.0,0.0,0.9,0,0.0,0.0,1,Brighton,False,3
+53,Manzambi,Johan Manzambi,Aston Villa,MID,6.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p614071.png,0,0.0,0.0,0.8,0,0.0,0.0,1,Brighton,False,3
 307,Johnson,Ben Johnson,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p222018.png,0,0.0,0.0,0.1,0,,1.0,1,Sunderland,True,2
 306,Greaves,Jacob Greaves,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p449429.png,0,0.0,0.0,0.9,0,,1.0,1,Sunderland,True,2
 305,Davis,Leif Davis,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p455084.png,0,0.0,0.0,5.2,0,,1.0,1,Sunderland,True,2
@@ -434,7 +434,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 569,Gonzalo,Gonzalo García,Fulham,FWD,6.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p551466.png,0,0.0,0.0,1.9,0,,2.0,1,Chelsea,True,4
 218,Doucouré,Cheick Doucouré,Crystal Palace,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p438464.png,0,0.0,0.0,0.1,0,,1.5,1,Everton,False,3
 217,M.França,Matheus França de Oliveira,Crystal Palace,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p536694.png,0,0.0,0.0,0.0,0,,1.5,1,Everton,False,3
-579,Araujo,Ronald Araujo,Liverpool,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p445087.png,0,0.0,0.0,1.5,0,,2.5,1,Newcastle,False,3
+579,Araujo,Ronald Araujo,Liverpool,DEF,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p445087.png,0,0.0,0.0,1.6,0,,2.5,1,Newcastle,False,3
 382,Danns,Jayden Danns,Liverpool,FWD,4.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p500058.png,0,0.0,0.0,0.0,0,0.0,0.0,1,Newcastle,False,3
 381,Koumas,Lewis Koumas,Liverpool,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p514514.png,0,0.0,0.0,0.0,0,,1.5,1,Newcastle,False,3
 378,McConnell,James McConnell,Liverpool,MID,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p491501.png,0,0.0,0.0,0.2,0,,1.0,1,Newcastle,False,3
@@ -478,13 +478,13 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 410,Monga,Jeremy Monga,Man City,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p649208.png,0,0.0,0.0,0.0,0,,1.5,1,Bournemouth,True,3
 408,Phillips,Kalvin Phillips,Man City,MID,5.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p155405.png,0,0.0,0.0,0.0,0,0.0,0.0,1,Bournemouth,True,3
 176,Dasilva,Jay Dasilva,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p173878.png,0,0.0,0.0,0.8,0,,1.0,1,Arsenal,False,5
-175,van Ewijk,Milan van Ewijk,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p451284.png,0,0.0,0.0,14.6,0,,1.0,1,Arsenal,False,5
+175,van Ewijk,Milan van Ewijk,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p451284.png,0,0.0,0.0,14.5,0,,1.0,1,Arsenal,False,5
 174,Kitching,Liam Kitching,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p436761.png,0,0.0,0.0,0.7,0,,1.0,1,Arsenal,False,5
-173,Thomas,Bobby Thomas,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p461102.png,0,0.0,0.0,7.9,0,,1.0,1,Arsenal,False,5
+173,Thomas,Bobby Thomas,Coventry City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p461102.png,0,0.0,0.0,7.8,0,,1.0,1,Arsenal,False,5
 172,Wilson,Ben Wilson,Coventry City,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p110690.png,0,0.0,0.0,0.5,0,,1.9,1,Arsenal,False,5
-171,Dovin,Oliver Dovin,Coventry City,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p484389.png,0,0.0,0.0,2.1,0,,1.0,1,Arsenal,False,5
+171,Dovin,Oliver Dovin,Coventry City,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p484389.png,0,0.0,0.0,2.0,0,,1.0,1,Arsenal,False,5
 110,Rushworth,Carl Rushworth,Coventry City,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p472739.png,0,0.0,0.0,1.0,0,,1.9,1,Arsenal,False,5
-583,Chavarria,Pep Chavarría,Chelsea,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p498444.png,0,0.0,0.0,0.1,0,,2.2,1,Fulham,False,3
+583,Chavarria,Pep Chavarría,Chelsea,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p498444.png,0,0.0,0.0,0.2,0,,2.2,1,Fulham,False,3
 424,Amass,Harry Amass,Man Utd,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p577974.png,0,0.0,0.0,0.2,0,,1.0,1,Hull City,False,2
 414,Heaton,Tom Heaton,Man Utd,GKP,4.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p21205.png,0,0.0,0.0,0.2,0,0.0,0.0,1,Hull City,False,2
 575,Yirenkyi,Caleb Yirenkyi,Coventry City,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p661888.png,0,0.0,0.0,0.2,0,,1.5,1,Arsenal,False,5
@@ -509,8 +509,8 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 276,Lo-Tutala,Thimothée Lo-Tutala,Hull City,GKP,4.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p444307.png,0,0.0,0.0,0.1,0,0.0,0.0,1,Man Utd,True,4
 275,Cartwright,Harvey Cartwright,Hull City,GKP,4.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p494950.png,0,0.0,0.0,0.0,0,0.0,0.0,1,Man Utd,True,4
 274,Butland,Jack Butland,Hull City,GKP,4.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p105666.png,0,0.0,0.0,0.3,0,0.0,0.0,1,Man Utd,True,4
-334,Muharemović,Tarik Muharemović,Leeds,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p522047.png,0,0.0,0.0,2.5,0,,2.2,1,Nott'm Forest,False,3
-592,Ouattara,Abdoul Ouattara,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p572584.png,0,0.0,0.0,0.0,0,,1.0,1,Sunderland,True,2
+334,Muharemović,Tarik Muharemović,Leeds,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p522047.png,0,0.0,0.0,2.6,0,,2.2,1,Nott'm Forest,False,3
+592,Ouattara,Abdoul Ouattara,Ipswich Town,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p572584.png,0,0.0,0.0,0.1,0,,1.0,1,Sunderland,True,2
 591,Enciso,Julio Enciso,Ipswich Town,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p474120.png,0,0.0,0.0,0.0,0,,2.0,1,Sunderland,True,2
 571,Florentino,Florentino Ibrain Morris Luís,Ipswich Town,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p216055.png,0,0.0,0.0,0.1,0,,1.5,1,Sunderland,True,2
 564,Scherpen,Kjell Scherpen,Ipswich Town,GKP,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p240514.png,0,0.0,0.0,0.5,0,,1.9,1,Sunderland,True,2
@@ -538,7 +538,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 556,Targett,Matt Targett,Hull City,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p169359.png,0,0.0,0.0,2.8,0,,1.0,1,Man Utd,True,4
 340,Gelhardt,Joe Gelhardt,Hull City,MID,5.0,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p462635.png,0,0.0,0.0,0.0,0,0.0,0.0,1,Man Utd,True,4
 299,Burstow,Mason Burstow,Hull City,FWD,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p534392.png,0,0.0,0.0,0.2,0,0.0,0.0,1,Man Utd,True,4
-298,Destan,Enis Destan,Hull City,FWD,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p500957.png,0,0.0,0.0,1.6,0,0.0,0.0,1,Man Utd,True,4
+298,Destan,Enis Destan,Hull City,FWD,4.5,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p500957.png,0,0.0,0.0,1.5,0,0.0,0.0,1,Man Utd,True,4
 297,Gyabi,Darko Gyabi,Hull City,MID,4.5,i,https://resources.premierleague.com/premierleague/photos/players/40x40/p470294.png,0,0.0,0.0,0.1,0,0.0,0.0,1,Man Utd,True,4
 296,Akintola,David Akintola,Hull City,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p213292.png,0,0.0,0.0,0.0,0,,1.5,1,Man Utd,True,4
 295,McBurnie,Oli McBurnie,Hull City,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p169432.png,0,0.0,0.0,1.5,0,,1.8,1,Man Utd,True,4
@@ -566,7 +566,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 566,Silva,António João Pereira de Albuquerque Tavares da Silva,Bournemouth,DEF,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p483067.png,0,0.0,0.0,0.3,0,,2.2,1,Man City,False,5
 81,Rodríguez,Álvaro Rodríguez,Bournemouth,FWD,6.0,d,https://resources.premierleague.com/premierleague/photos/players/40x40/p561245.png,0,0.0,0.0,0.2,0,75.0,1.5,1,Man City,False,5
 111,Steele,Jason Steele,Brighton,GKP,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p49262.png,0,0.0,0.0,4.3,0,,1.0,1,Aston Villa,True,3
-565,Sangaré,Mamadou Sangaré,Brentford,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p513545.png,0,0.0,0.0,2.1,0,,2.0,1,Spurs,True,3
+565,Sangaré,Mamadou Sangaré,Brentford,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p513545.png,0,0.0,0.0,2.2,0,,2.0,1,Spurs,True,3
 108,Wilson,Callum Wilson,Brentford,FWD,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p75115.png,0,0.0,0.0,0.3,0,,1.8,1,Spurs,True,3
 323,McAteer,Kasey McAteer,Ipswich Town,MID,4.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p461587.png,0,0.0,0.0,1.4,0,,1.0,1,Sunderland,True,2
 322,Al-Hamadi,Ali Al-Hamadi,Ipswich Town,FWD,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p462387.png,0,0.0,0.0,0.1,0,,1.4,1,Sunderland,True,2
@@ -587,7 +587,7 @@ id,web_name,full_name,team_name,position,now_cost,status,photo_url,total_points,
 538,Hjelde,Leo Fuhr Hjelde,Sunderland,DEF,4.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p477547.png,0,0.0,0.0,0.2,0,0.0,0.0,1,Ipswich Town,False,2
 530,Patterson,Anthony Patterson,Sunderland,GKP,4.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p232571.png,0,0.0,0.0,0.5,0,0.0,0.0,1,Ipswich Town,False,2
 523,Moore,Mikey Moore,Spurs,MID,5.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p499721.png,0,0.0,0.0,0.2,0,,1.5,1,Brentford,False,3
-557,Tzolis,Christos Tzolis,Arsenal,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p439509.png,0,0.0,0.0,15.4,0,,2.3,1,Coventry City,True,2
+557,Tzolis,Christos Tzolis,Arsenal,MID,6.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p439509.png,0,0.0,0.0,15.7,0,,2.3,1,Coventry City,True,2
 23,Fábio Vieira,Fábio Ferreira Vieira,Arsenal,MID,5.5,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p438098.png,0,0.0,0.0,0.0,0,,2.0,1,Coventry City,True,2
 49,Iling Jr,Samuel Iling-Junior,Aston Villa,MID,5.0,u,https://resources.premierleague.com/premierleague/photos/players/40x40/p469247.png,0,0.0,0.0,0.0,0,0.0,0.0,1,Brighton,False,3
 39,Nedeljkovic,Kosta Nedeljkovic,Aston Villa,DEF,4.0,a,https://resources.premierleague.com/premierleague/photos/players/40x40/p578545.png,0,0.0,0.0,0.8,0,,1.0,1,Brighton,False,3

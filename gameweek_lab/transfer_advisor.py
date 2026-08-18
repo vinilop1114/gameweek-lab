@@ -1,4 +1,5 @@
 import difflib
+import json
 
 import pandas as pd
 
@@ -9,7 +10,13 @@ from gameweek_lab.analysis import (
     add_horizon_expected_points,
 )
 from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
-from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION
+from gameweek_lab.config import DATA_PROCESSED_DIR
+from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION, select_starting_xi
+
+# Estado persistente del equipo Base autogestionado (ver evolve_base_squad).
+# Vive en data/processed porque el workflow de GitHub Actions ya commitea
+# esa carpeta a diario — así el estado sobrevive entre corridas.
+BASE_STATE_PATH = DATA_PROCESSED_DIR / "base_squad_state.json"
 
 HIT_COST = 4.0
 # Un hit se recomienda solo si la ganancia proyectada lo supera por este
@@ -233,3 +240,102 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
               f"el vice hereda la cinta si el capitán no juega")
 
     print(f"\n-- Chips --\n{_double_gameweek_note(HORIZON_GAMEWEEKS)}")
+
+
+def _load_base_state() -> dict:
+    if BASE_STATE_PATH.exists():
+        return json.loads(BASE_STATE_PATH.read_text(encoding="utf-8"))
+    # Antes de la primera evaluación: 0 transferencias acumuladas, para que
+    # la primera fecha otorgue exactamente la 1 libre estándar de FPL.
+    return {"last_evaluated_gameweek": None, "banked_free_transfers": 0}
+
+
+def _save_base_state(state: dict) -> None:
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    BASE_STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+
+def _current_gameweek(players: pd.DataFrame) -> int:
+    return int(players["next_gameweek"].dropna().mode().iloc[0])
+
+
+def save_my_team(squad: pd.DataFrame, path: str) -> None:
+    squad[["web_name", "team_name"]].to_csv(path, index=False)
+
+
+def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
+    """Motor del equipo Base autogestionado: a diferencia de `advise` (que
+    solo imprime una recomendación para que la leas), esto la EJECUTA.
+
+    Se evalúa una sola vez por gameweek, no una vez por corrida diaria —
+    las transferencias de FPL son semanales, así que sin este freno el
+    equipo podría "gastar" una transferencia distinta cada día dentro de
+    la misma fecha, algo que en el juego real no existe. El freno es el
+    estado persistido en BASE_STATE_PATH (última fecha evaluada).
+
+    Usa exactamente los mismos umbrales que `advise` (BANK_THRESHOLD,
+    HIT_UNCERTAINTY_MARGIN) para decidir si mover, pero en vez de
+    imprimir la decisión la aplica sobre `team_path` y sobre el conteo de
+    transferencias acumuladas. Como se definió explícitamente: si el
+    modelo considera que vale un hit de -4, lo aplica solo.
+
+    Devuelve (starters, bench, log) — log es la lista de movimientos
+    hechos en esta corrida (o un aviso de que ya se evaluó esta fecha).
+    """
+    state = _load_base_state()
+    squad = load_my_team(team_path, players)
+    current_gw = _current_gameweek(players)
+    log = []
+
+    if state["last_evaluated_gameweek"] == current_gw:
+        log.append(f"GW{current_gw} ya evaluado — sin cambios nuevos hasta la próxima fecha.")
+        starters, bench = select_starting_xi(squad)
+        return starters, bench, log
+
+    # +1 transferencia libre al arrancar la fecha, tope de 5 acumuladas.
+    free_transfers = min(state["banked_free_transfers"] + 1, MAX_BANKED_TRANSFERS)
+    pool = _candidate_pool(players, squad)
+    flagged_ids = set(_flag_problem_players(squad)["id"])
+    transfers_used = 0
+
+    for _ in range(2):  # como mucho 2 movimientos por fecha, igual que advise()
+        swaps = find_best_swaps(squad, pool, 0.0)
+        if swaps.empty:
+            break
+        # Un jugador con bandera tiene prioridad de salida aunque no sea
+        # el de mayor ganancia — puede valer 0 si no juega.
+        flagged_swaps = swaps[swaps["out_id"].isin(flagged_ids)]
+        candidate = flagged_swaps.iloc[0] if not flagged_swaps.empty else swaps.iloc[0]
+
+        worth_free = candidate["gain"] >= BANK_THRESHOLD or candidate["out_id"] in flagged_ids
+        worth_hit = candidate["gain"] > HIT_COST + HIT_UNCERTAINTY_MARGIN
+
+        if free_transfers > 0 and worth_free:
+            squad = _apply_swap(squad, pool, candidate)
+            pool = _candidate_pool(players, squad)
+            flagged_ids.discard(candidate["out_id"])
+            free_transfers -= 1
+            transfers_used += 1
+            log.append(f"{candidate['out_name']} → {candidate['in_name']} "
+                       f"(+{candidate['gain']:.2f} xP, transferencia libre)")
+        elif free_transfers == 0 and worth_hit:
+            squad = _apply_swap(squad, pool, candidate)
+            pool = _candidate_pool(players, squad)
+            flagged_ids.discard(candidate["out_id"])
+            transfers_used += 1
+            log.append(f"{candidate['out_name']} → {candidate['in_name']} "
+                       f"(+{candidate['gain']:.2f} xP, HIT -4 aplicado)")
+        else:
+            break
+
+    if transfers_used == 0:
+        log.append(f"Sin cambios en GW{current_gw} — transferencia guardada "
+                   f"({free_transfers} acumuladas para la próxima fecha).")
+
+    save_my_team(squad, team_path)
+    state["last_evaluated_gameweek"] = current_gw
+    state["banked_free_transfers"] = free_transfers
+    _save_base_state(state)
+
+    starters, bench = select_starting_xi(squad)
+    return starters, bench, log

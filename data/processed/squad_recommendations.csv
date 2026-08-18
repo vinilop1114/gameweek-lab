@@ -2,8 +2,8 @@ squad_type,role,bench_order,is_captain,is_vice_captain,web_name,team_name,positi
 Base,Titular,0,True,False,B.Fernandes,Man Utd,MID,12.0,8.93,https://resources.premierleague.com/premierleague/photos/players/40x40/p141746.png,Hull City,False,2
 Base,Titular,0,False,True,Gabriel,Arsenal,DEF,8.0,8.67,https://resources.premierleague.com/premierleague/photos/players/40x40/p226597.png,Coventry City,True,2
 Base,Titular,0,False,False,Bruno G.,Arsenal,MID,7.0,7.07,https://resources.premierleague.com/premierleague/photos/players/40x40/p208706.png,Coventry City,True,2
-Base,Titular,0,False,False,Rice,Arsenal,MID,7.5,6.8,https://resources.premierleague.com/premierleague/photos/players/40x40/p204480.png,Coventry City,True,2
 Base,Titular,0,False,False,Gibbs-White,Nott'm Forest,MID,8.0,6.8,https://resources.premierleague.com/premierleague/photos/players/40x40/p222531.png,Leeds,True,2
+Base,Titular,0,False,False,Rice,Arsenal,MID,7.5,6.8,https://resources.premierleague.com/premierleague/photos/players/40x40/p204480.png,Coventry City,True,2
 Base,Titular,0,False,False,E.Le Fée,Sunderland,MID,6.0,5.47,https://resources.premierleague.com/premierleague/photos/players/40x40/Photo-Missing.png,Ipswich Town,False,2
 Base,Titular,0,False,False,Ballard,Sunderland,DEF,5.0,5.33,https://resources.premierleague.com/premierleague/photos/players/40x40/Photo-Missing.png,Ipswich Town,False,2
 Base,Titular,0,False,False,Roefs,Sunderland,GKP,5.0,5.2,https://resources.premierleague.com/premierleague/photos/players/40x40/Photo-Missing.png,Ipswich Town,False,2
@@ -13,7 +13,7 @@ Base,Titular,0,False,False,Aina,Nott'm Forest,DEF,4.5,4.93,https://resources.pre
 Base,Banco,1,False,False,Lammens,Man Utd,GKP,5.0,4.53,https://resources.premierleague.com/premierleague/photos/players/40x40/Photo-Missing.png,Hull City,False,2
 Base,Banco,2,False,False,Thiago,Brentford,FWD,8.0,4.8,https://resources.premierleague.com/premierleague/photos/players/40x40/p502500.png,Spurs,True,3
 Base,Banco,3,False,False,Muñoz,Crystal Palace,DEF,5.5,4.7,https://resources.premierleague.com/premierleague/photos/players/40x40/p247348.png,Everton,False,3
-Base,Banco,4,False,False,Igor Jesus,Nott'm Forest,FWD,6.0,4.13,https://resources.premierleague.com/premierleague/photos/players/40x40/Photo-Missing.png,Leeds,True,2
+Base,Banco,4,False,False,Calvert-Lewin,Leeds,FWD,6.0,4.1,https://resources.premierleague.com/premierleague/photos/players/40x40/p177815.png,Nott'm Forest,False,3
 Wildcard,Titular,0,True,False,B.Fernandes,Man Utd,MID,12.0,8.93,https://resources.premierleague.com/premierleague/photos/players/40x40/p141746.png,Hull City,False,2
 Wildcard,Titular,0,False,True,Gabriel,Arsenal,DEF,8.0,8.67,https://resources.premierleague.com/premierleague/photos/players/40x40/p226597.png,Coventry City,True,2
 Wildcard,Titular,0,False,False,Bruno G.,Arsenal,MID,7.0,7.07,https://resources.premierleague.com/premierleague/photos/players/40x40/p208706.png,Coventry City,True,2

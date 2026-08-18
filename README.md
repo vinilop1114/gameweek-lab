@@ -55,17 +55,19 @@ modelo predictivo serio. FPL ya expone su propia estimación en el campo
 
 ## Cómo funciona la recomendación de equipo
 
-Dos pasos, dos técnicas distintas:
+Armar los 15 titulares de un plantel (`select_squad`) es un problema de
+optimización con restricciones cruzadas (presupuesto, exactamente
+2 GKP/5 DEF/5 MID/3 FWD, máx. 3 por club, sin enfrentamientos internos —
+ver abajo). Se resuelve con programación lineal entera (`PuLP`), que
+garantiza el óptimo real — no una aproximación. El Wildcard usa esto
+directo (recalculado desde cero cada vez); el Base lo usa solo como punto
+de partida — ver la sección siguiente, es la pieza más importante del
+proyecto.
 
-1. **Plantel de 15** (`select_squad`): problema de optimización con
-   restricciones cruzadas (presupuesto, exactamente 2 GKP/5 DEF/5 MID/3 FWD,
-   máx. 3 por club, sin enfrentamientos internos — ver abajo). Se resuelve
-   con programación lineal entera (`PuLP`), que garantiza el óptimo real —
-   no una aproximación.
-2. **11 titulares** (`select_starting_xi`): de los 15 ya elegidos, se prueban
-   las ~13 formaciones válidas (3-5 DEF, 2-5 MID, 1-3 FWD) y se toma la de
-   mayor xP. Al ser un espacio de búsqueda chico, alcanza con fuerza bruta —
-   no hace falta un solver acá.
+**11 titulares** (`select_starting_xi`): de los 15 ya elegidos (Base o
+Wildcard), se prueban las ~13 formaciones válidas (3-5 DEF, 2-5 MID,
+1-3 FWD) y se toma la de mayor xP. Al ser un espacio de búsqueda chico,
+alcanza con fuerza bruta — no hace falta un solver acá.
 
 Solo se consideran jugadores con `status == "a"` (disponibles, sin lesión ni
 suspensión) y al menos `MIN_MINUTES_FOR_RANKING` minutos — mismo filtro que
@@ -84,37 +86,49 @@ permitido cuando los números lo justifican. En el Wildcard la penalización
 solo mira a los titulares — un suplente que no juega no le rompe el clean
 sheet a nadie.
 
-**Filosofía:** este plantel es la base de la temporada, no una apuesta a un
-solo gameweek — por eso importa que no se auto-sabotee. Los ajustes semana
-a semana (fixtures que cambian, forma que sube o baja) se resuelven con las
-transferencias normales de FPL, no recalculando todo el equipo de cero.
-
-**Simplificación conocida:** el equipo Base maximiza el xP total de los 15,
-no específicamente el de los 11 mejores. En la práctica esto tiende a
+**Simplificación conocida:** cuando se arma desde cero (Wildcard, o el
+Base la primera vez), el modelo maximiza el xP total de los 15, no
+específicamente el de los 11 mejores. En la práctica esto tiende a
 "gastar de más" en el 5to defensor o 2do arquero en vez de priorizar
 jugadores baratos y confiables para el banco.
 
 ## Equipo Base vs Equipo Wildcard
 
-Dos recomendaciones con objetivos distintos, para dos audiencias distintas:
+Dos filosofías completamente distintas, no solo dos parámetros distintos
+del mismo cálculo:
 
-- **Base** (`select_squad` + `select_starting_xi`, ya descrito arriba):
-  reparte el presupuesto entre los 15, pensado para sostenerse varias
-  fechas con las transferencias normales de FPL.
-- **Wildcard** (`select_wildcard_squad`): asume que se puede rearmar el
-  plantel entero cada fecha, así que el banco no necesita ser jugable —
-  gasta lo mínimo posible ahí y vuelca el resto del presupuesto a los 11
-  titulares. Un solo ILP decide plantel y titulares a la vez (variables
-  `in_squad` e `in_xi`, con `in_xi <= in_squad`): maximizar el xP del XI
-  es la prioridad absoluta (peso `WILDCARD_XI_WEIGHT`), y minimizar el
-  costo total del plantel es el criterio de desempate que empuja el gasto
-  del banco al mínimo. Los enfrentamientos internos solo se evalúan entre
-  titulares — un suplente que no juega no le puede romper el clean sheet
-  a nadie.
+- **Wildcard** (`select_wildcard_squad`): un ejercicio *sin memoria* —
+  "si pudiera rearmar todo desde cero hoy, con las reglas de FPL, ¿cuál es
+  el mejor equipo posible?". Se recalcula 100% desde cero cada vez, sin
+  importar qué recomendó ayer. Como el banco no necesita ser jugable
+  (nunca se sostiene más de una fecha), gasta lo mínimo posible ahí y
+  vuelca el resto del presupuesto a los 11 titulares. Un solo ILP decide
+  plantel y titulares a la vez (variables `in_squad` e `in_xi`, con
+  `in_xi <= in_squad`): maximizar el xP del XI es la prioridad absoluta
+  (peso `WILDCARD_XI_WEIGHT`), y minimizar el costo total del plantel es
+  el criterio de desempate. Los enfrentamientos internos solo se evalúan
+  entre titulares — un suplente que no juega no le puede romper el clean
+  sheet a nadie.
 
-En la práctica, el XI del Wildcard saca más xP que el del Base (mismo
-presupuesto, mejor aprovechado) a costa de un banco que, si tuvieras que
-usarlo, rendiría mucho peor.
+- **Base** (`evolve_base_squad` en `transfer_advisor.py`): el equipo que
+  **de verdad vas a usar en FPL**, con memoria real. No se recalcula desde
+  cero — parte del equipo de la fecha anterior (persistido en
+  `my_team.csv`) y el modelo decide, con la misma lógica del asesor de
+  transferencias (ver abajo), si vale la pena mover algo esta semana. Si
+  no hay una mejora que justifique gastar la transferencia, el Base se
+  queda exactamente igual. Si la hay, aplica el cambio — hits de -4
+  incluidos, si el modelo los considera rentables (ver "Asesor de
+  transferencias"). Corre una sola vez por gameweek (no una vez por
+  corrida diaria): un archivo de estado
+  (`data/processed/base_squad_state.json`) guarda la última fecha
+  evaluada y cuántas transferencias tiene acumuladas, para no "gastar"
+  cambios distintos cada día dentro de la misma semana — algo que en el
+  juego real no existe.
+
+En la práctica, el XI del Wildcard suele sacar más xP que el del Base
+(mismo presupuesto, banco mucho más barato) — es la comparación esperada:
+uno es el techo teórico sin restricciones reales, el otro es el equipo
+real, restringido por lo que ya comprás y cuántas transferencias tenés.
 
 **Capitán, vice y orden del banco:** cada equipo recomienda capitán (mayor
 xP del XI) y vice-capitán (segundo mayor — hereda la cinta si el capitán no
@@ -128,10 +142,19 @@ titular, quién entraría si no juega, ya validado contra esa regla.
 
 ## Asesor de transferencias
 
-`python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1`
+Dos formas de usar la misma lógica de decisión:
 
-Le das tu equipo actual (copiá `my_team.example.csv` a `my_team.csv` y poné
-tus 15 jugadores por `web_name`, con `team_name` para desambiguar), y responde:
+1. **Automática** (`evolve_base_squad`, corre dentro de `run_squad.py` y
+   `export_for_tableau.py`): aplica los cambios directo sobre
+   `my_team.csv`, sin pedir confirmación. Es lo que mantiene al equipo
+   Base al día — ver la sección anterior.
+2. **Manual/interactiva** (`python scripts/run_transfer_advisor.py --team
+   my_team.csv --bank 0.5 --free-transfers 1`): la misma lógica, pero solo
+   imprime la recomendación para que la leas — no toca `my_team.csv`. Útil
+   para simular "¿qué pasaría si tuviera este banco/estas transferencias?"
+   sin afectar el estado real del Base.
+
+Ambas responden las mismas preguntas:
 
 - **El mejor cambio disponible** esta fecha, rankeado por ganancia de xP en
   las próximas `HORIZON_GAMEWEEKS` fechas (4 por defecto) — no solo la
@@ -154,9 +177,10 @@ El timing de chips no se optimiza (requeriría proyectar la temporada
 completa): hay reglas guía en `docs/chips-strategy.md`, y el asesor avisa
 cuando detecta un double gameweek en el horizonte.
 
-Filosofía: **prepararse, no predecir** — el asesor se corre cada semana con
-datos frescos e itera; no arma un plan de 10 fechas que la realidad va a
-romper en la primera.
+Filosofía: **prepararse, no predecir** — el equipo Base itera fecha a fecha
+con datos frescos; no arma un plan de 10 fechas que la realidad va a romper
+en la primera. `my_team.csv` es público en el repo a propósito, junto con
+todos los demás CSVs — el Project de claude.ai también puede analizarlo.
 
 ## Exports para Tableau
 

@@ -293,10 +293,19 @@ def _print_team(title: str, starters: pd.DataFrame, bench: pd.DataFrame) -> None
 
 
 def recommend_squad() -> None:
-    players = add_expected_points(build_players_dataset())
-    squad = select_squad(players)
-    starters, bench = select_starting_xi(squad)
-    _print_team("Equipo Base (sostenible)", starters, bench)
+    """Equipo Base autogestionado: se importa evolve_base_squad acá adentro
+    (no arriba del archivo) porque transfer_advisor.py ya importa de este
+    módulo — un import circular a nivel de módulo rompería la carga. Al
+    diferirlo hasta que la función se llama, ambos módulos ya terminaron
+    de cargar y el ciclo no es un problema.
+    """
+    from gameweek_lab.analysis import add_horizon_expected_points
+    from gameweek_lab.transfer_advisor import evolve_base_squad
+
+    players = add_horizon_expected_points(add_expected_points(build_players_dataset()))
+    starters, bench, log = evolve_base_squad(players)
+    print("\n".join(f"  {line}" for line in log))
+    _print_team("Equipo Base (autogestionado)", starters, bench)
 
 
 def recommend_wildcard_squad() -> None:
@@ -325,7 +334,11 @@ def _team_to_rows(starters: pd.DataFrame, bench: pd.DataFrame, squad_type: str) 
     return team
 
 
-def export_squads_for_tableau(players: pd.DataFrame | None = None) -> pd.DataFrame:
+def export_squads_for_tableau(
+    players: pd.DataFrame | None = None,
+    base_starters: pd.DataFrame | None = None,
+    base_bench: pd.DataFrame | None = None,
+) -> pd.DataFrame:
     """Calcula ambos equipos (Base y Wildcard) y los guarda en un solo CSV
     tidy — una fuente de datos lista para conectar directo en Tableau,
     con columnas para distinguir equipo, titular/banco y capitanía.
@@ -333,12 +346,19 @@ def export_squads_for_tableau(players: pd.DataFrame | None = None) -> pd.DataFra
     Acepta un `players` ya calculado (por ejemplo, con las fotos ya
     resueltas por resolve_photo_urls) para no recalcular todo de nuevo;
     si no se pasa nada, lo arma desde cero.
+
+    El Base también se puede pasar ya calculado (`base_starters`/`base_bench`)
+    — es lo normal en producción, porque el Base real es el equipo
+    autogestionado y persistido (evolve_base_squad en transfer_advisor.py),
+    no uno recalculado desde cero cada vez. Sin esos parámetros, cae al
+    comportamiento anterior (from-scratch) como referencia/comparación.
     """
     if players is None:
         players = add_expected_points(build_players_dataset())
 
-    base_squad = select_squad(players)
-    base_starters, base_bench = select_starting_xi(base_squad)
+    if base_starters is None or base_bench is None:
+        base_squad = select_squad(players)
+        base_starters, base_bench = select_starting_xi(base_squad)
     wildcard_starters, wildcard_bench = select_wildcard_squad(players)
 
     combined = pd.concat([
