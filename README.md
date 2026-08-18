@@ -186,11 +186,17 @@ todos los demás CSVs — el Project de claude.ai también puede analizarlo.
 
 `python scripts/export_for_tableau.py` genera dos CSVs en `data/processed/`:
 
-- **`players_scored.csv`**: los 587 jugadores con xP, precio, ownership,
+- **`players_scored.csv`**: los ~590 jugadores con xP, precio, ownership,
   próximo rival, etc. — para dashboards sobre todo el pool.
 - **`squad_recommendations.csv`**: Base + Wildcard combinados en formato
   tidy (una fila por jugador, columnas `squad_type`/`role`/`is_captain`
   para filtrar) — una sola fuente de datos para comparar ambos equipos.
+
+Ambos incluyen `xp_horizon` y `fixtures_horizon` (el xP y el calendario
+resumido de las próximas 4 fechas, no solo la siguiente — pensado para que
+se pueda explicar el *por qué* de una elección, no solo el qué: por
+ejemplo, por qué el asesor prefirió a un jugador sobre otro que tenía mejor
+xP inmediato pero un calendario peor a mediano plazo).
 
 Ambos incluyen `photo_url` (foto del jugador desde el CDN oficial de
 Premier League, armada con el campo `code` de la API — ver

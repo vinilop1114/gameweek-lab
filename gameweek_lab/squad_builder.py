@@ -354,7 +354,8 @@ def export_squads_for_tableau(
     comportamiento anterior (from-scratch) como referencia/comparación.
     """
     if players is None:
-        players = add_expected_points(build_players_dataset())
+        from gameweek_lab.analysis import add_horizon_expected_points
+        players = add_horizon_expected_points(add_expected_points(build_players_dataset()))
 
     if base_starters is None or base_bench is None:
         base_squad = select_squad(players)
@@ -370,6 +371,7 @@ def export_squads_for_tableau(
         "squad_type", "role", "bench_order", "is_captain", "is_vice_captain",
         "web_name", "team_name", "position", "now_cost", "xp_next", "photo_url",
         "next_opponent", "next_is_home", "next_fixture_difficulty",
+        "xp_horizon", "fixtures_horizon",
     ]
     combined = combined[columns]
 
