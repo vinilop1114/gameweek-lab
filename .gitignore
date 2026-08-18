@@ -1,7 +1,11 @@
-# Datos crudos: se regeneran en cada corrida (local o en GitHub Actions),
-# nadie los necesita versionados. Los CSVs procesados SÍ se versionan
-# a propósito (data/processed/) — GitHub Actions los actualiza todos los
-# días para que Tableau siempre tenga la versión más fresca.
+# Todos los CSVs son públicos a propósito (data/processed y my_team.csv):
+# GitHub Actions actualiza los de data/processed a diario y el Project de
+# claude.ai los analiza por URL.
+#
+# Los JSON crudos (data/raw) NO se versionan: se regeneran en cada corrida
+# y, si estuvieran trackeados, cualquier run_fetch.py local dejaría el
+# árbol sucio y el pull automático de las 07:00 se saltearía hasta
+# commitear (auto_pull.ps1 no pisa cambios locales).
 data/raw/
 
 # Python
@@ -23,9 +27,6 @@ data/Tableau Workbooks/
 # Material de referencia inicial y documentación técnica (se mantienen locales, no en el repo)
 initial setup/
 DOCUMENTACION_TECNICA.md
-
-# Tu equipo real de FPL es personal — el ejemplo (my_team.example.csv) sí se versiona
-my_team.csv
 
 # Config local de herramientas (rutas específicas de esta máquina)
 .claude/
