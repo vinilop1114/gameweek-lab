@@ -25,6 +25,15 @@ STARTING_FORMATIONS = [
 # (el ahorro máximo posible es del orden del presupuesto total, £100m).
 WILDCARD_XI_WEIGHT = 100_000
 
+# Costo estimado de un "enfrentamiento interno": tener al DEF/GK de un
+# equipo y a un MID/FWD del rival que enfrenta esa misma fecha. Si el
+# atacante anota, mata el clean sheet (4 pts) del propio defensor.
+# Estimación gruesa: un buen atacante anota en ~35% de sus partidos, y el
+# clean sheet estaba vivo hasta ese gol en ~40% de los casos:
+# 0.35 × 4 × 0.40 ≈ 0.5 xP. No es una prohibición — una dupla que gane
+# más que esto sigue entrando al equipo, pagando su precio.
+CLASH_PENALTY_XP = 0.5
+
 
 def _eligible_players(players: pd.DataFrame) -> pd.DataFrame:
     """Jugadores disponibles y con muestra confiable (ver MIN_MINUTES_FOR_RANKING
@@ -47,19 +56,29 @@ def _add_club_limit_constraints(problem: pulp.LpProblem, pick: dict, available: 
         problem += pulp.lpSum(pick[i] for i in idx) <= MAX_PER_CLUB
 
 
-def _add_no_internal_clash_constraints(problem: pulp.LpProblem, pick: dict, available: pd.DataFrame) -> None:
-    """Evita elegir, a la vez, al defensor/arquero de un equipo y a un
-    mediocampista/delantero del rival que enfrenta ese mismo gameweek.
+def _internal_clash_penalty(problem: pulp.LpProblem, pick: dict, available: pd.DataFrame):
+    """Le pone precio (no prohibición) a los enfrentamientos internos:
+    tener al defensor/arquero de un equipo y a un mediocampista/delantero
+    del rival que enfrenta ese mismo gameweek.
 
-    Si ese rival anota, le rompe el clean sheet a nuestro propio
-    defensor — dos jugadores del mismo plantel "compitiendo" entre sí es
-    presupuesto desperdiciado, no cobertura real.
+    Antes esto era una restricción dura (pick_d + pick_a <= 1). Ahora es
+    una penalización de CLASH_PENALTY_XP en el objetivo: si una dupla que
+    se enfrenta entre sí proyecta ganar más que ese costo, el solver la
+    elige igual — el auto-sabotaje está permitido cuando los números lo
+    justifican.
+
+    Técnica: por cada par en conflicto se crea una variable binaria z con
+    la restricción z >= pick_d + pick_a - 1. Como z se resta del objetivo
+    (que se maximiza), el solver la deja en 0 salvo cuando ambos jugadores
+    están elegidos, donde la restricción la fuerza a 1 y el par paga su
+    penalización.
     """
     fixtures = get_next_gameweek_fixtures()
     defensive_positions = ["GKP", "DEF"]
     attacking_positions = ["MID", "FWD"]
 
-    for _, fixture in fixtures.iterrows():
+    clash_vars = []
+    for fixture_i, fixture in fixtures.iterrows():
         team_a, team_b = fixture["team_h_name"], fixture["team_a_name"]
         for defense_team, attack_team in ((team_a, team_b), (team_b, team_a)):
             defenders = available.index[
@@ -70,13 +89,17 @@ def _add_no_internal_clash_constraints(problem: pulp.LpProblem, pick: dict, avai
             ]
             for d in defenders:
                 for a in attackers:
-                    problem += pick[d] + pick[a] <= 1
+                    z = pulp.LpVariable(f"clash_{fixture_i}_{d}_{a}", cat="Binary")
+                    problem += z >= pick[d] + pick[a] - 1
+                    clash_vars.append(z)
+    return CLASH_PENALTY_XP * pulp.lpSum(clash_vars)
 
 
 def select_squad(players: pd.DataFrame) -> pd.DataFrame:
     """Elige los 15 jugadores que maximizan el xP total, respetando
-    presupuesto, composición de posiciones, máximo 3 por club, y sin
-    enfrentamientos internos.
+    presupuesto, composición de posiciones y máximo 3 por club. Los
+    enfrentamientos internos están permitidos pero pagan su costo
+    esperado (ver _internal_clash_penalty).
 
     Pensado como equipo base de la temporada: el presupuesto se reparte
     entre los 15, así que el banco también queda jugable (importa, porque
@@ -87,12 +110,14 @@ def select_squad(players: pd.DataFrame) -> pd.DataFrame:
     problem = pulp.LpProblem("squad_selection", pulp.LpMaximize)
     pick = {i: pulp.LpVariable(f"pick_{i}", cat="Binary") for i in available.index}
 
-    problem += pulp.lpSum(pick[i] * available.loc[i, "xp_next"] for i in available.index)
+    clash_penalty = _internal_clash_penalty(problem, pick, available)
+    problem += (
+        pulp.lpSum(pick[i] * available.loc[i, "xp_next"] for i in available.index) - clash_penalty
+    )
     problem += pulp.lpSum(pick[i] * available.loc[i, "now_cost"] for i in available.index) <= BUDGET
 
     _add_position_quota_constraints(problem, pick, available)
     _add_club_limit_constraints(problem, pick, available)
-    _add_no_internal_clash_constraints(problem, pick, available)
 
     problem.solve(pulp.PULP_CBC_CMD(msg=False))
 
@@ -139,15 +164,49 @@ def select_starting_xi(squad: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]
         by_position["FWD"].head(f),
     ])
 
+    bench = _order_bench(squad, starters)
+    return starters.sort_values("xp_next", ascending=False), bench
+
+
+def _order_bench(squad: pd.DataFrame, starters: pd.DataFrame) -> pd.DataFrame:
+    """Ordena el banco según la mecánica real de FPL:
+
+    - Slot 1: el arquero suplente, fijo — FPL solo intercambia arqueros
+      entre sí, así que su posición en el orden no compite con nadie.
+    - Slots 2-4: los de campo, por xP descendente. Poner al de mayor xP
+      primero no arriesga nada: cuando un titular no juega, FPL recorre el
+      banco en orden y saltea automáticamente a quien rompería la
+      formación mínima (>=3 DEF, >=2 MID, >=1 FWD) — así que priorizar al
+      mejor puntuador esperado es óptimo, la validez la garantiza la regla.
+    """
     bench = squad[~squad["id"].isin(starters["id"])]
-    # El banco arranca con el segundo arquero (única opción si el titular
-    # es sustituido), y el resto ordenado por xP por si aplica un suplente
-    # automático de campo.
     bench_gk = bench[bench["position"] == "GKP"]
     bench_outfield = bench[bench["position"] != "GKP"].sort_values("xp_next", ascending=False)
-    bench = pd.concat([bench_gk, bench_outfield])
+    bench = pd.concat([bench_gk, bench_outfield]).reset_index(drop=True)
+    bench["bench_order"] = range(1, len(bench) + 1)
+    return bench
 
-    return starters.sort_values("xp_next", ascending=False), bench
+
+def _first_valid_sub(missing, starters: pd.DataFrame, bench: pd.DataFrame) -> str | None:
+    """Simula la auto-suplencia de FPL: si `missing` no juega, devuelve el
+    nombre del primer suplente (en orden de banco) cuyo ingreso mantiene
+    una formación válida. Arquero solo por arquero; para los de campo se
+    verifica el mínimo por posición del XI resultante.
+    """
+    if missing.position == "GKP":
+        bench_gk = bench[bench["position"] == "GKP"]
+        return bench_gk.iloc[0]["web_name"] if len(bench_gk) else None
+
+    remaining_counts = starters[starters["id"] != missing.id]["position"].value_counts()
+    for sub in bench.itertuples():
+        if sub.position == "GKP":
+            continue
+        defenders = remaining_counts.get("DEF", 0) + (sub.position == "DEF")
+        midfielders = remaining_counts.get("MID", 0) + (sub.position == "MID")
+        forwards = remaining_counts.get("FWD", 0) + (sub.position == "FWD")
+        if defenders >= 3 and midfielders >= 2 and forwards >= 1:
+            return sub.web_name
+    return None
 
 
 def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -174,8 +233,15 @@ def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
     for i in available.index:
         problem += in_xi[i] <= in_squad[i]  # solo puede arrancar quien está en el plantel
 
+    # La penalización por enfrentamientos internos solo mira a los
+    # titulares: un suplente que no juega no le rompe el clean sheet a nadie.
+    xi_clash_penalty = _internal_clash_penalty(problem, in_xi, available)
     problem += (
-        WILDCARD_XI_WEIGHT * pulp.lpSum(in_xi[i] * available.loc[i, "xp_next"] for i in available.index)
+        WILDCARD_XI_WEIGHT
+        * (
+            pulp.lpSum(in_xi[i] * available.loc[i, "xp_next"] for i in available.index)
+            - xi_clash_penalty
+        )
         - pulp.lpSum(in_squad[i] * available.loc[i, "now_cost"] for i in available.index)
     )
 
@@ -189,10 +255,6 @@ def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
         problem += pulp.lpSum(in_xi[i] for i in idx) >= min_count
         problem += pulp.lpSum(in_xi[i] for i in idx) <= max_count
 
-    # Los enfrentamientos internos solo importan entre titulares: un
-    # suplente que no juega no le puede romper el clean sheet a nadie.
-    _add_no_internal_clash_constraints(problem, in_xi, available)
-
     problem.solve(pulp.PULP_CBC_CMD(msg=False))
 
     status = pulp.LpStatus[problem.status]
@@ -204,12 +266,7 @@ def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
 
     squad = available.loc[squad_idx]
     starters = available.loc[starter_idx].sort_values("xp_next", ascending=False).reset_index(drop=True)
-
-    bench = squad[~squad["id"].isin(starters["id"])]
-    bench_gk = bench[bench["position"] == "GKP"]
-    bench_outfield = bench[bench["position"] != "GKP"].sort_values("xp_next", ascending=False)
-    bench = pd.concat([bench_gk, bench_outfield]).reset_index(drop=True)
-
+    bench = _order_bench(squad, starters)
     return starters, bench
 
 
@@ -224,9 +281,15 @@ def _print_team(title: str, starters: pd.DataFrame, bench: pd.DataFrame) -> None
     print(f"\n=== {title} — Formación {formation} — £{cost:.1f}m / £{BUDGET:.1f}m ===")
     print("\n-- Titulares --")
     print(starters[cols].to_string(index=False))
-    print("\n-- Banco --")
-    print(bench[cols].to_string(index=False))
-    print(f"\nCapitán: {captain['web_name']}  |  Vice-capitán: {vice_captain['web_name']}")
+    print("\n-- Banco (en orden de ingreso) --")
+    print(bench[["bench_order"] + cols].to_string(index=False))
+    print(f"\nCapitán: {captain['web_name']}  |  Vice-capitán: {vice_captain['web_name']} "
+          f"(hereda la cinta si el capitán no juega)")
+
+    print("\n-- Auto-suplencias (quién entra si un titular no juega) --")
+    for starter in starters.itertuples():
+        sub_name = _first_valid_sub(starter, starters, bench)
+        print(f"  {starter.web_name} → {sub_name if sub_name else 'SIN COBERTURA VÁLIDA'}")
 
 
 def recommend_squad() -> None:
@@ -257,6 +320,8 @@ def _team_to_rows(starters: pd.DataFrame, bench: pd.DataFrame, squad_type: str) 
     team["squad_type"] = squad_type
     team["is_captain"] = team["id"] == captain_id
     team["is_vice_captain"] = team["id"] == vice_captain_id
+    # bench_order: 0 = titular; 1 = arquero suplente (slot fijo); 2-4 = orden de ingreso
+    team["bench_order"] = team["bench_order"].fillna(0).astype(int) if "bench_order" in team else 0
     return team
 
 
@@ -282,7 +347,7 @@ def export_squads_for_tableau(players: pd.DataFrame | None = None) -> pd.DataFra
     ], ignore_index=True)
 
     columns = [
-        "squad_type", "role", "is_captain", "is_vice_captain",
+        "squad_type", "role", "bench_order", "is_captain", "is_vice_captain",
         "web_name", "team_name", "position", "now_cost", "xp_next", "photo_url",
         "next_opponent", "next_is_home", "next_fixture_difficulty",
     ]

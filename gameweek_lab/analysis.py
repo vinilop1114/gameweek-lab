@@ -1,12 +1,17 @@
 import pandas as pd
 
-from gameweek_lab.build_dataset import build_players_dataset
+from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 # Debajo de esto, 'points_per_game' es ruido: pocos partidos alcanzan para
 # que una sola actuación puntuda dispare el promedio sin que sea repetible.
 # 900 minutos ~ 10 partidos completos.
 MIN_MINUTES_FOR_RANKING = 900
+
+# Cuántas fechas adelante mira el asesor de transferencias. Más allá de
+# ~4 las proyecciones de nuestra heurística pierden sentido — la idea es
+# prepararse para las próximas fechas e iterar, no predecir la temporada.
+HORIZON_GAMEWEEKS = 4
 
 
 def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
@@ -45,6 +50,48 @@ def add_expected_points(players: pd.DataFrame) -> pd.DataFrame:
     playing_prob = _playing_probability(players)
 
     players["xp_next"] = (base_rate * fixture_mult * playing_prob).round(2)
+    return players
+
+
+def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEWEEKS) -> pd.DataFrame:
+    """Agrega xp_horizon: puntos esperados acumulados en las próximas
+    `horizon` fechas, sumando el multiplicador de dificultad de cada
+    partido del equipo (double gameweeks suman dos partidos, blanks cero).
+
+    Disponibilidad: para la primera fecha usamos chance_of_playing_next_round
+    como en xp_next. Para las siguientes asumimos que un jugador sano ('a')
+    juega normal, y que la duda de un lesionado/suspendido persiste — es
+    conservador, pero un asesor de transferencias DEBE penalizar tener
+    jugadores que quizás no jueguen.
+    """
+    players = players.copy()
+    fixtures = get_team_fixtures_horizon(horizon)
+    fixtures["multiplier"] = _fixture_multiplier(fixtures["difficulty"])
+    fixtures["label"] = fixtures.apply(
+        lambda r: f"{r['opponent']}({'H' if r['is_home'] else 'A'})", axis=1
+    )
+
+    first_gw = fixtures["gameweek"].min()
+    is_first = fixtures["gameweek"] == first_gw
+    mult_first = fixtures[is_first].groupby("team_name")["multiplier"].sum()
+    mult_rest = fixtures[~is_first].groupby("team_name")["multiplier"].sum()
+    summary = fixtures.sort_values("gameweek").groupby("team_name")["label"].agg(" · ".join)
+
+    base_rate = _base_scoring_rate(players)
+    prob_next = _playing_probability(players)
+    later_availability = (
+        players["chance_of_playing_next_round"].fillna(0).div(100)
+        .where(players["status"] != "a", 1.0)
+    )
+
+    players["xp_horizon"] = (
+        base_rate
+        * (
+            players["team_name"].map(mult_first).fillna(0.0) * prob_next
+            + players["team_name"].map(mult_rest).fillna(0.0) * later_availability
+        )
+    ).round(2)
+    players["fixtures_horizon"] = players["team_name"].map(summary).fillna("—")
     return players
 
 

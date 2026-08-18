@@ -62,6 +62,40 @@ def get_next_gameweek_fixtures() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def get_team_fixtures_horizon(horizon: int = 4) -> pd.DataFrame:
+    """Todos los fixtures de cada equipo en las próximas `horizon` fechas,
+    una fila por (equipo, partido).
+
+    A diferencia de _next_fixture_by_team (que devuelve solo el próximo
+    partido), acá un equipo puede aparecer dos veces en la misma fecha
+    (double gameweek) o ninguna (blank gameweek) — el xP a horizonte
+    simplemente suma lo que haya, así esos casos quedan bien contados sin
+    lógica especial.
+    """
+    bootstrap = _load_raw("bootstrap-static")
+    fixtures = _load_raw("fixtures")
+    teams = pd.DataFrame(bootstrap["teams"]).set_index("id")
+
+    upcoming_events = sorted({f["event"] for f in fixtures if not f["finished"] and f["event"] is not None})
+    target_gws = set(upcoming_events[:horizon])
+
+    rows = []
+    for fixture in fixtures:
+        if fixture["event"] not in target_gws:
+            continue
+        for team_id, is_home in ((fixture["team_h"], True), (fixture["team_a"], False)):
+            opponent_id = fixture["team_a"] if is_home else fixture["team_h"]
+            difficulty = fixture["team_h_difficulty"] if is_home else fixture["team_a_difficulty"]
+            rows.append({
+                "team_name": teams.loc[team_id, "name"],
+                "gameweek": fixture["event"],
+                "opponent": teams.loc[opponent_id, "short_name"],
+                "is_home": is_home,
+                "difficulty": difficulty,
+            })
+    return pd.DataFrame(rows)
+
+
 def build_players_dataset() -> pd.DataFrame:
     bootstrap = _load_raw("bootstrap-static")
     fixtures = _load_raw("fixtures")

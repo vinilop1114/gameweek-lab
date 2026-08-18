@@ -5,6 +5,9 @@ from pathlib import Path
 # sin importar desde qué carpeta lo llames.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+# Consolas Windows con cp1252 crashean ante caracteres fuera de ese charset
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 from gameweek_lab.fetch import fetch_all
 
 if __name__ == "__main__":

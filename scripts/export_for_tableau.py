@@ -3,6 +3,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+# Consolas Windows con cp1252 crashean ante caracteres fuera de ese charset
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 from gameweek_lab.analysis import add_expected_points, save_scored_players
 from gameweek_lab.build_dataset import build_players_dataset
 from gameweek_lab.photos import resolve_photo_urls

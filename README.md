@@ -13,6 +13,7 @@ python scripts/run_analysis.py        # calcula xP, diferenciales y capitanía
 python scripts/run_squad.py           # equipo Base: sostenible para varias fechas
 python scripts/run_wildcard_squad.py  # equipo Wildcard: banco mínimo, XI máximo
 python scripts/export_for_tableau.py  # CSVs listos para Tableau (ver abajo)
+python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1
 ```
 
 ## Estructura
@@ -72,13 +73,16 @@ en diferenciales/capitanía, por la misma razón: evitar que un jugador con
 muestra chica (ej. un arquero con un solo partido bueno) desplace del
 plantel a un titular real por ruido estadístico.
 
-**Sin enfrentamientos internos:** el plantel no puede tener, a la vez, al
+**Enfrentamientos internos — permitidos, pero pagan su precio:** tener al
 defensor/arquero de un equipo y a un mediocampista/delantero del rival que
-enfrenta ese mismo gameweek (`_add_no_internal_clash_constraints` en
-`squad_builder.py`, usando `get_next_gameweek_fixtures` de
-`build_dataset.py`). Si ese rival anota, le rompe el clean sheet a nuestro
-propio defensor — dos jugadores del mismo plantel "compitiendo" entre sí es
-presupuesto desperdiciado.
+enfrenta ese mismo gameweek tiene un costo real (si el atacante anota, mata
+el clean sheet del propio defensor). En vez de prohibir esas duplas, el
+modelo les descuenta ese costo esperado (`CLASH_PENALTY_XP` ≈ 0.5 xP,
+ver `_internal_clash_penalty` en `squad_builder.py`): una dupla que proyecte
+ganar más que su penalización entra al equipo igual. El auto-sabotaje está
+permitido cuando los números lo justifican. En el Wildcard la penalización
+solo mira a los titulares — un suplente que no juega no le rompe el clean
+sheet a nadie.
 
 **Filosofía:** este plantel es la base de la temporada, no una apuesta a un
 solo gameweek — por eso importa que no se auto-sabotee. Los ajustes semana
@@ -111,6 +115,48 @@ Dos recomendaciones con objetivos distintos, para dos audiencias distintas:
 En la práctica, el XI del Wildcard saca más xP que el del Base (mismo
 presupuesto, mejor aprovechado) a costa de un banco que, si tuvieras que
 usarlo, rendiría mucho peor.
+
+**Capitán, vice y orden del banco:** cada equipo recomienda capitán (mayor
+xP del XI) y vice-capitán (segundo mayor — hereda la cinta si el capitán no
+juega). El banco sale ordenado según la mecánica real de FPL: el arquero
+suplente en su slot fijo (los arqueros solo se intercambian entre sí) y los
+tres de campo por xP descendente — poner al mejor primero no arriesga nada,
+porque cuando un titular no juega FPL recorre el banco en orden y saltea
+automáticamente a quien rompería la formación mínima (≥3 DEF, ≥2 MID,
+≥1 FWD). La salida incluye una simulación de auto-suplencias: para cada
+titular, quién entraría si no juega, ya validado contra esa regla.
+
+## Asesor de transferencias
+
+`python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1`
+
+Le das tu equipo actual (copiá `my_team.example.csv` a `my_team.csv` y poné
+tus 15 jugadores por `web_name`, con `team_name` para desambiguar), y responde:
+
+- **El mejor cambio disponible** esta fecha, rankeado por ganancia de xP en
+  las próximas `HORIZON_GAMEWEEKS` fechas (4 por defecto) — no solo la
+  próxima, así el cambio "se prepara" para el calendario que viene.
+- **Si conviene hacerlo o guardar la transferencia**: mejoras marginales
+  (< `BANK_THRESHOLD` xP en el horizonte) no justifican gastar la
+  transferencia — acumularla (hasta 5) habilita movimientos dobles después.
+- **Si un hit de -4 se justifica**: solo si el segundo mejor cambio gana más
+  de 4 + `HIT_UNCERTAINTY_MARGIN` puntos proyectados — pagar puntos ciertos
+  por una proyección requiere margen de seguridad, no empate técnico.
+- **Jugadores con bandera** (lesión/suspensión/duda) se marcan siempre, y
+  un cambio que saca a uno de ellos se recomienda aunque la ganancia sea chica.
+
+El xP a horizonte suma los partidos reales de cada equipo por fecha, así que
+double gameweeks (dos partidos) y blanks (ninguno) quedan contados
+naturalmente. La duda de disponibilidad de un lesionado se asume persistente
+en el horizonte — conservador a propósito.
+
+El timing de chips no se optimiza (requeriría proyectar la temporada
+completa): hay reglas guía en `docs/chips-strategy.md`, y el asesor avisa
+cuando detecta un double gameweek en el horizonte.
+
+Filosofía: **prepararse, no predecir** — el asesor se corre cada semana con
+datos frescos e itera; no arma un plan de 10 fechas que la realidad va a
+romper en la primera.
 
 ## Exports para Tableau
 
