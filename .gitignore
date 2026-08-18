@@ -32,3 +32,6 @@ my_team.csv
 
 # Salidas temporales de pruebas en terminal
 *_output.txt
+
+# Log del pull automático (scripts/auto_pull.ps1, local de cada máquina)
+auto_pull.log
