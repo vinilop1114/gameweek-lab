@@ -144,14 +144,21 @@ def select_starting_xi(squad: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]
     }
     goalkeeper = by_position["GKP"].head(1)
 
+    # select_starting_xi se llama una vez por candidato evaluado en
+    # find_best_swaps (puede ser cientos de veces por corrida), así que el
+    # overhead de pandas por llamada importa. Antes, cada una de las ~13
+    # formaciones repetía .head(n).sum() sobre las mismas columnas ya
+    # ordenadas — 39 llamadas a pandas por invocación. Precalculando la
+    # suma acumulada una sola vez, cada formación se evalúa con indexado
+    # de array (casi gratis) en vez de volver a filtrar/sumar.
+    cum_def = by_position["DEF"]["xp_next"].cumsum().to_numpy()
+    cum_mid = by_position["MID"]["xp_next"].cumsum().to_numpy()
+    cum_fwd = by_position["FWD"]["xp_next"].cumsum().to_numpy()
+
     best_total = -1.0
     best_formation = STARTING_FORMATIONS[0]
     for d, m, f in STARTING_FORMATIONS:
-        total = (
-            by_position["DEF"].head(d)["xp_next"].sum()
-            + by_position["MID"].head(m)["xp_next"].sum()
-            + by_position["FWD"].head(f)["xp_next"].sum()
-        )
+        total = cum_def[d - 1] + cum_mid[m - 1] + cum_fwd[f - 1]
         if total > best_total:
             best_total = total
             best_formation = (d, m, f)
@@ -166,6 +173,55 @@ def select_starting_xi(squad: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]
 
     bench = _order_bench(squad, starters)
     return starters.sort_values("xp_next", ascending=False), bench
+
+
+def _cumsum_with_zero(values: list) -> list:
+    cum = [0.0]
+    for v in values:
+        cum.append(cum[-1] + v)
+    return cum
+
+
+def would_start_after_swap(squad: pd.DataFrame, out_id, out_position: str, candidate_xp_next: float) -> bool:
+    """Versión rápida de "sacar a out_id, meter a un candidato con
+    candidate_xp_next en la misma posición, y ver si termina de titular"
+    — sin reconstruir el equipo ni llamar a select_starting_xi completo.
+
+    find_best_swaps la llama una vez por candidato evaluado (pueden ser
+    cientos por corrida) — reconstruir el equipo con pandas y correr
+    select_starting_xi por cada uno resultó ser el cuello de botella real
+    del asesor de transferencias (~14s por llamada con ~116 candidatos).
+    Acá se trabaja con listas de Python de como mucho 5 elementos por
+    posición, sin ninguna operación de pandas en el camino caliente.
+    """
+    if out_position == "GKP":
+        other_gk_xp = squad.loc[(squad["position"] == "GKP") & (squad["id"] != out_id), "xp_next"].iloc[0]
+        return candidate_xp_next > other_gk_xp
+
+    xp_by_position = {
+        pos: sorted(squad.loc[squad["position"] == pos, "xp_next"].tolist(), reverse=True)
+        for pos in ("DEF", "MID", "FWD")
+    }
+    out_xp = squad.loc[squad["id"] == out_id, "xp_next"].iloc[0]
+    others = xp_by_position[out_position]
+    others.remove(out_xp)  # por valor: si hay empate, da igual cuál de los empatados se saca
+
+    insert_at = 0
+    while insert_at < len(others) and others[insert_at] >= candidate_xp_next:
+        insert_at += 1
+    xp_by_position[out_position] = others[:insert_at] + [candidate_xp_next] + others[insert_at:]
+
+    cum = {pos: _cumsum_with_zero(xp_by_position[pos]) for pos in ("DEF", "MID", "FWD")}
+    best_total = -1.0
+    best_formation = STARTING_FORMATIONS[0]
+    for d, m, f in STARTING_FORMATIONS:
+        total = cum["DEF"][d] + cum["MID"][m] + cum["FWD"][f]
+        if total > best_total:
+            best_total = total
+            best_formation = (d, m, f)
+
+    chosen_count = dict(zip(("DEF", "MID", "FWD"), best_formation))[out_position]
+    return insert_at < chosen_count
 
 
 def _order_bench(squad: pd.DataFrame, starters: pd.DataFrame) -> pd.DataFrame:

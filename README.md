@@ -197,11 +197,39 @@ Ambas responden las mismas preguntas:
   para un movimiento que sí sea titular. (Se agregó después de detectar
   en la práctica que el primer cambio real dejó al jugador nuevo en el
   banco, gastando la transferencia sin que sus puntos contaran para nada.)
+- **El presupuesto usa el precio de venta real de FPL, no el precio de
+  mercado**: `my_team.csv` guarda `purchase_price` (precio al que
+  compraste cada jugador) además de `web_name`/`team_name`. Si un jugador
+  subió de precio desde que lo compraste, FPL solo te devuelve la mitad
+  de la ganancia al venderlo (redondeada hacia abajo al escalón de
+  £0.1m) — comprado en £5.0m, ahora vale £5.3m, se vende en £5.1m, no en
+  £5.3m. Si bajó o quedó igual, vendés al precio actual completo. Cuando
+  se aplica un cambio (`_apply_swap`), el jugador que entra queda
+  registrado como comprado a su precio de hoy. `advise()` muestra el
+  valor de mercado del equipo, lo gastado, y cuánto recuperarías
+  vendiendo todo — la "ganancia de valor" que FPL premia a lo largo de
+  la temporada, ahora visible.
 
 El xP a horizonte suma los partidos reales de cada equipo por fecha, así que
 double gameweeks (dos partidos) y blanks (ninguno) quedan contados
 naturalmente. La duda de disponibilidad de un lesionado se asume persistente
 en el horizonte — conservador a propósito.
+
+**Rendimiento:** `find_best_swaps` evalúa cientos de candidatos por
+corrida, y para cada uno necesita saber si terminaría de titular o en el
+banco. Hacerlo reconstruyendo el equipo con pandas y llamando a
+`select_starting_xi` (el enfoque original) escalaba mal: con el modelo de
+xP actual, que genera más candidatos "cercanos" que el anterior, una sola
+llamada a `find_best_swaps` tardaba ~14s, y la vista de 4 fechas
+(`simulate_squad_trajectory`, que la llama varias veces) casi 80s.
+`would_start_after_swap` (en `squad_builder.py`) resuelve lo mismo con
+listas de Python de como mucho 5 elementos, sin ninguna operación de
+pandas — verificado con una prueba diferencial contra el método original
+(877 candidatos reales, 0 discrepancias) antes de reemplazarlo. Bajó a
+~0.9s por llamada, ~10s la vista completa de 4 fechas — y a diferencia
+del filtro de `raw_gain > 0` (que ayuda pero depende de cuántos
+candidatos pasen), esta es una mejora estructural: no se degrada aunque
+el modelo cambie y aparezcan más candidatos cercanos.
 
 El timing de chips no se optimiza (requeriría proyectar la temporada
 completa): hay reglas guía en `docs/chips-strategy.md`, y el asesor avisa
@@ -211,6 +239,16 @@ Filosofía: **prepararse, no predecir** — el equipo Base itera fecha a fecha
 con datos frescos; no arma un plan de 10 fechas que la realidad va a romper
 en la primera. `my_team.csv` es público en el repo a propósito, junto con
 todos los demás CSVs — el Project de claude.ai también puede analizarlo.
+
+**Momentum de transferencias:** `players_scored.csv` incluye
+`transfers_in_event`/`transfers_out_event` (transferencias netas de la
+comunidad esta fecha, señal de posibles subidas/bajadas de precio antes
+de que pasen). Están en 0 para todos en pre-temporada — armar tu plantel
+inicial no cuenta como "transferencia" en FPL, así que no hay señal real
+todavía. Quedan expuestos para cuando arranque la temporada; no se
+integraron a ninguna decisión automática porque anticipar el algoritmo
+de precios de FPL con precisión (no está publicado oficialmente) sería
+una predicción, no una preparación — justo lo que este proyecto evita.
 
 ## Vista especulativa a 4 fechas
 

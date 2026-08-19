@@ -13,7 +13,7 @@ from gameweek_lab.analysis import (
 )
 from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
-from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION, select_starting_xi
+from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION, select_starting_xi, would_start_after_swap
 
 # Estado persistente del equipo Base autogestionado (ver evolve_base_squad).
 # Vive en data/processed porque el workflow de GitHub Actions ya commitea
@@ -43,16 +43,43 @@ MAX_BANKED_TRANSFERS = 5
 BENCH_GAIN_DISCOUNT = 0.3
 
 
+def _sell_price(now_cost: float, purchase_price: float) -> float:
+    """Precio de venta real de FPL — no es simplemente `now_cost`.
+
+    Si el jugador subió de precio desde que lo compraste, solo te quedás
+    con la mitad de la ganancia (redondeada hacia abajo al escalón de
+    £0.1m) — la otra mitad se pierde, es la regla oficial del juego. Si
+    bajó o quedó igual, vendés al precio actual completo, sin descuento
+    extra (el loss no se comparte).
+
+    Ej.: comprado en £5.0m, ahora vale £5.3m (3 escalones de ganancia) →
+    te quedás con 3//2=1 escalón → vendés en £5.1m, no en £5.3m.
+    """
+    if now_cost <= purchase_price:
+        return now_cost
+    profit_steps = round((now_cost - purchase_price) * 10)  # en escalones de £0.1m
+    kept_steps = profit_steps // 2
+    return round(purchase_price + kept_steps / 10, 1)
+
+
 def load_my_team(path: str, players: pd.DataFrame) -> pd.DataFrame:
     """Lee el equipo del usuario (CSV con columna web_name y, opcional,
-    team_name para desambiguar) y lo cruza contra el dataset de jugadores.
-    Falla con un mensaje útil si un nombre no existe o es ambiguo.
+    team_name para desambiguar y purchase_price para el precio de venta
+    real) y lo cruza contra el dataset de jugadores. Falla con un mensaje
+    útil si un nombre no existe o es ambiguo.
+
+    Si el CSV no trae `purchase_price` (o viene vacío para alguna fila),
+    se asume que se compró al precio actual — sin ganancia ni pérdida
+    todavía. Es el bootstrap razonable para un equipo recién armado; una
+    vez que `evolve_base_squad`/`_apply_swap` hacen un cambio, sí queda
+    el precio de compra real registrado.
     """
     team_file = pd.read_csv(path)
     if "web_name" not in team_file.columns:
         raise ValueError("El CSV del equipo necesita una columna 'web_name'.")
 
     matched = []
+    purchase_prices = []
     for _, row in team_file.iterrows():
         name = str(row["web_name"]).strip()
         candidates = players[players["web_name"].str.lower() == name.lower()]
@@ -70,8 +97,13 @@ def load_my_team(path: str, players: pd.DataFrame) -> pd.DataFrame:
                 f"'{name}' es ambiguo ({options}). Agregá la columna team_name para desambiguar."
             )
         matched.append(candidates.iloc[0])
+        has_purchase_price = "purchase_price" in team_file.columns and pd.notna(row.get("purchase_price"))
+        purchase_prices.append(float(row["purchase_price"]) if has_purchase_price else None)
 
     squad = pd.DataFrame(matched).reset_index(drop=True)
+    squad["purchase_price"] = [
+        pp if pp is not None else now_cost for pp, now_cost in zip(purchase_prices, squad["now_cost"])
+    ]
     if len(squad) != 15:
         raise ValueError(f"El equipo tiene {len(squad)} jugadores, deben ser 15.")
     for position, count in SQUAD_COMPOSITION.items():
@@ -112,10 +144,10 @@ def find_best_swaps(
     muestran el xP crudo (sin ajustar) para que quede claro qué es medida
     objetiva y qué es la lente de la postura elegida.
 
-    Simplificación: asumimos que el jugador se vende a su precio actual.
-    FPL en realidad paga el precio de compra + la mitad de la subida, pero
-    la API no expone tu precio de compra — para diferencias de ±0.1-0.2m
-    el ranking de cambios casi nunca cambia.
+    Presupuesto: usa el precio de venta REAL (`_sell_price`), no
+    `now_cost` — `squad` necesita traer `purchase_price` (lo agrega
+    `load_my_team`). Si el jugador subió de precio desde que lo
+    compraste, solo recuperás la mitad de la ganancia al venderlo.
     """
     combined = add_rank_adjusted_value(
         pd.concat([squad, pool], ignore_index=True), stance, xp_column="xp_horizon"
@@ -125,7 +157,8 @@ def find_best_swaps(
     club_counts = squad["team_name"].value_counts()
     swaps = []
     for out_player in squad.itertuples():
-        budget = bank + out_player.now_cost
+        sell_price = _sell_price(out_player.now_cost, out_player.purchase_price)
+        budget = bank + sell_price
         candidates = pool[(pool["position"] == out_player.position) & (pool["now_cost"] <= budget)]
         for cand in candidates.itertuples():
             same_club_count = int(club_counts.get(cand.team_name, 0))
@@ -141,9 +174,9 @@ def find_best_swaps(
 
             # ¿El que entra sería titular hoy? Si no, su xP no se cobra
             # mientras esté en el banco — ver BENCH_GAIN_DISCOUNT arriba.
-            hypothetical = _apply_swap(squad, pool, pd.Series({"out_id": out_player.id, "in_id": cand.id}))
-            new_starters, _ = select_starting_xi(hypothetical)
-            would_start = cand.id in set(new_starters["id"])
+            # (would_start_after_swap: versión rápida sin pandas, verificada
+            # contra select_starting_xi + _apply_swap — ver squad_builder.py)
+            would_start = would_start_after_swap(squad, out_player.id, out_player.position, cand.xp_next)
             gain = raw_gain if would_start else round(raw_gain * BENCH_GAIN_DISCOUNT, 2)
 
             swaps.append({
@@ -158,7 +191,8 @@ def find_best_swaps(
                 "gain": gain,
                 "raw_gain": raw_gain,
                 "would_start": would_start,
-                "cost_delta": round(cand.now_cost - out_player.now_cost, 1),
+                "sell_price": sell_price,
+                "cost_delta": round(cand.now_cost - sell_price, 1),
                 "in_id": cand.id,
                 "out_id": out_player.id,
             })
@@ -169,7 +203,10 @@ def find_best_swaps(
 
 
 def _apply_swap(squad: pd.DataFrame, pool: pd.DataFrame, swap: pd.Series) -> pd.DataFrame:
-    incoming = pool[pool["id"] == swap["in_id"]]
+    # El que entra queda registrado como comprado a su precio actual —
+    # necesario para calcular su propio precio de venta el día de mañana.
+    incoming = pool[pool["id"] == swap["in_id"]].copy()
+    incoming["purchase_price"] = incoming["now_cost"]
     return pd.concat([squad[squad["id"] != swap["out_id"]], incoming], ignore_index=True)
 
 
@@ -207,7 +244,16 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1, stance: s
     print(f"\n=== Asesor de transferencias — horizonte {HORIZON_GAMEWEEKS} fechas — postura: {stance} ({stance_note}) ===")
     print(f"Banco: £{bank:.1f}m | Transferencias libres: {free_transfers}")
 
-    squad_cols = ["web_name", "team_name", "position", "now_cost", "xp_horizon", "fixtures_horizon"]
+    squad = squad.copy()
+    squad["sell_price"] = squad.apply(lambda r: _sell_price(r["now_cost"], r["purchase_price"]), axis=1)
+    market_value = squad["now_cost"].sum()
+    spent = squad["purchase_price"].sum()
+    sellable_value = squad["sell_price"].sum()
+    print(f"Valor de mercado: £{market_value:.1f}m | Gastado: £{spent:.1f}m | "
+          f"Recuperarías vendiendo todo: £{sellable_value:.1f}m + £{bank:.1f}m de banco = "
+          f"£{sellable_value + bank:.1f}m")
+
+    squad_cols = ["web_name", "team_name", "position", "purchase_price", "now_cost", "sell_price", "xp_horizon", "fixtures_horizon"]
     print("\n-- Tu equipo (ordenado por xP del horizonte) --")
     print(squad.sort_values("xp_horizon", ascending=False)[squad_cols].to_string(index=False))
 
@@ -311,7 +357,7 @@ def _current_gameweek(players: pd.DataFrame) -> int:
 
 
 def save_my_team(squad: pd.DataFrame, path: str) -> None:
-    squad[["web_name", "team_name"]].to_csv(path, index=False)
+    squad[["web_name", "team_name", "purchase_price"]].to_csv(path, index=False)
 
 
 def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
@@ -453,7 +499,9 @@ def simulate_squad_trajectory(
                 break
 
             slot_idx = next(i for i, row in enumerate(squad) if row["id"] == candidate["out_id"])
-            squad[slot_idx] = pool[pool["id"] == candidate["in_id"]].iloc[0].to_dict()
+            incoming_row = pool[pool["id"] == candidate["in_id"]].iloc[0].to_dict()
+            incoming_row["purchase_price"] = incoming_row["now_cost"]  # comprado "hoy" en la simulación
+            squad[slot_idx] = incoming_row
             starts_note = "titular" if candidate["would_start"] else "banco"
             week_notes.append(f"{candidate['out_name']} → {candidate['in_name']} "
                               f"({kind}, +{candidate['gain']:.2f} xP, entra de {starts_note})")

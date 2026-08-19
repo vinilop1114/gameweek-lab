@@ -1,16 +1,16 @@
-web_name,team_name
-B.Fernandes,Man Utd
-Gabriel,Arsenal
-Bruno G.,Arsenal
-Gibbs-White,Nott'm Forest
-E.Le Fée,Sunderland
-Ballard,Sunderland
-Roefs,Sunderland
-Maguire,Man Utd
-João Pedro,Chelsea
-Aina,Nott'm Forest
-Lammens,Man Utd
-Thiago,Brentford
-Muñoz,Crystal Palace
-Nmecha,Leeds
-Schade,Brentford
+web_name,team_name,purchase_price
+B.Fernandes,Man Utd,12.0
+Gabriel,Arsenal,8.0
+Bruno G.,Arsenal,7.0
+Gibbs-White,Nott'm Forest,8.0
+E.Le Fée,Sunderland,6.0
+Ballard,Sunderland,5.0
+Roefs,Sunderland,5.0
+Maguire,Man Utd,5.0
+João Pedro,Chelsea,7.5
+Aina,Nott'm Forest,4.5
+Lammens,Man Utd,5.0
+Thiago,Brentford,8.0
+Muñoz,Crystal Palace,5.5
+Nmecha,Leeds,5.5
+Schade,Brentford,6.0
