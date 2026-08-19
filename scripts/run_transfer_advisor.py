@@ -17,6 +17,10 @@ if __name__ == "__main__":
                         help="CSV con tu equipo: columna web_name (+ team_name opcional)")
     parser.add_argument("--bank", type=float, default=0.0, help="Dinero en el banco, en millones (ej. 1.5)")
     parser.add_argument("--free-transfers", type=int, default=1, help="Transferencias libres acumuladas (1-5)")
+    parser.add_argument("--stance", choices=["protect", "neutral", "chase"], default="neutral",
+                        help="protect = favorece ownership alto (bajar varianza); "
+                             "chase = favorece diferenciales (subir varianza); "
+                             "neutral = solo xP, sin ajuste (default)")
     args = parser.parse_args()
 
-    advise(args.team, bank=args.bank, free_transfers=args.free_transfers)
+    advise(args.team, bank=args.bank, free_transfers=args.free_transfers, stance=args.stance)

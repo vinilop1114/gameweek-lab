@@ -153,10 +153,28 @@ Dos formas de usar la misma lógica de decisión:
    `my_team.csv`, sin pedir confirmación. Es lo que mantiene al equipo
    Base al día — ver la sección anterior.
 2. **Manual/interactiva** (`python scripts/run_transfer_advisor.py --team
-   my_team.csv --bank 0.5 --free-transfers 1`): la misma lógica, pero solo
-   imprime la recomendación para que la leas — no toca `my_team.csv`. Útil
-   para simular "¿qué pasaría si tuviera este banco/estas transferencias?"
-   sin afectar el estado real del Base.
+   my_team.csv --bank 0.5 --free-transfers 1 --stance neutral`): la misma
+   lógica, pero solo imprime la recomendación para que la leas — no toca
+   `my_team.csv`. Útil para simular "¿qué pasaría si tuviera este
+   banco/estas transferencias, o si jugara a proteger/remontar rank?" sin
+   afectar el estado real del Base.
+
+**`--stance` (protect/neutral/chase):** el xP puro no tiene opinión sobre
+riesgo. Proteger una buena posición en tu liga conviene con baja varianza
+(jugadores de alto ownership — si fallan, le fallan a todos tus rivales
+por igual); remontar desde atrás conviene con alta varianza (diferenciales
+de bajo ownership, que si aciertan te separan del resto — un template no
+te separa de nadie aunque rinda). `add_rank_adjusted_value` (en
+`analysis.py`) calcula `rank_value` = xP ajustado por el **percentil** de
+ownership del jugador dentro del propio pool evaluado (no un umbral fijo
+tipo "50%" — la distribución real está muy sesgada: mediana ~1.6% entre
+candidatos confiables, así que el percentil se autocalibra). Con
+`stance="neutral"` (default), `rank_value = xP`, sin cambios de
+comportamiento. Afecta tanto el ranking de cambios como la capitanía
+sugerida — la capitanía es donde más pesa, por el doble puntaje.
+El equipo Base automático (`evolve_base_squad`) se queda siempre en
+`neutral` — es un sistema sin humano en el loop, no tiene sentido que se
+vuelva más arriesgado sin que se lo pidas explícitamente cada vez.
 
 Ambas responden las mismas preguntas:
 

@@ -25,6 +25,15 @@ MIN_MINUTES_FOR_RANKING = 900
 # prepararse para las próximas fechas e iterar, no predecir la temporada.
 HORIZON_GAMEWEEKS = 4
 
+# Cuánto pesa el ownership en rank_value cuando se pide una postura
+# ("protect" o "chase"). El ajuste máximo posible (jugador en el extremo
+# del percentil) es ±RANK_STRATEGY_WEIGHT/2 sobre el xP — con 0.6, hasta
+# ±30%. Lo bastante fuerte para reordenar el ranking entre opciones
+# parecidas, sin que un diferencial mediocre le gane a un template
+# excelente solo por ser poco poseído.
+RANK_STRATEGY_WEIGHT = 0.6
+RANK_STANCES = ("protect", "neutral", "chase")
+
 
 def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     """Puntos esperados 'crudos' por 90 minutos, antes de ajustar por rival
@@ -132,6 +141,46 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
     return players
 
 
+def add_rank_adjusted_value(players: pd.DataFrame, stance: str = "neutral", xp_column: str = "xp_next") -> pd.DataFrame:
+    """Agrega `rank_value`: el xP visto a través de una postura de rank.
+
+    El xP puro (`xp_next`/`xp_horizon`) es una estimación de valor
+    esperado, sin opinión sobre riesgo — no distingue entre "proteger una
+    buena posición en tu liga" (conviene baja varianza: jugadores de alto
+    ownership, así si fallan, le fallan a todos tus rivales por igual) y
+    "remontar desde atrás" (conviene alta varianza: diferenciales de bajo
+    ownership, que si aciertan te separan del resto — un template no te
+    separa de nadie aunque rinda).
+
+    - `stance="neutral"` (default): rank_value = xp, sin ajuste — así
+      queda todo lo ya construido (equipo Base, Wildcard) sin cambios de
+      comportamiento salvo que se pida explícitamente lo contrario.
+    - `stance="protect"`: favorece ownership alto.
+    - `stance="chase"`: favorece ownership bajo (diferenciales).
+
+    El ownership se compara por PERCENTIL dentro del propio `players`
+    recibido, no por un umbral fijo — la distribución real está muy
+    sesgada (mediana ~1.6% entre candidatos con muestra confiable, media
+    ~5.5%, algún template en 70%), así que un pivote fijo tipo "50%" no
+    tendría sentido; el percentil se autocalibra al pool que se le pase.
+    """
+    players = players.copy()
+    if stance not in RANK_STANCES:
+        raise ValueError(f"stance debe ser uno de {RANK_STANCES}, recibí '{stance}'")
+
+    if stance == "neutral":
+        players["rank_value"] = players[xp_column]
+        return players
+
+    tilt = 1 if stance == "chase" else -1
+    ownership_percentile = players["selected_by_percent"].rank(pct=True)
+    ownership_edge = 0.5 - ownership_percentile  # +0.5 = el menos poseído, -0.5 = el más poseído
+    players["rank_value"] = (
+        players[xp_column] * (1 + tilt * RANK_STRATEGY_WEIGHT * ownership_edge)
+    ).round(2)
+    return players
+
+
 def top_differentials(players: pd.DataFrame, ownership_max: float = 10.0, top_n: int = 10) -> pd.DataFrame:
     """Buenos jugadores que casi nadie tiene: baja propiedad + buen xP.
 
@@ -146,15 +195,22 @@ def top_differentials(players: pd.DataFrame, ownership_max: float = 10.0, top_n:
     return candidates.sort_values("xp_next", ascending=False).head(top_n)[columns]
 
 
-def captaincy_picks(players: pd.DataFrame, top_n: int = 5) -> pd.DataFrame:
+def captaincy_picks(players: pd.DataFrame, top_n: int = 5, stance: str = "neutral") -> pd.DataFrame:
     """Mejores opciones de capitán para el próximo gameweek: alto xP, buena
-    probabilidad de jugar, y minutos suficientes para confiar en el dato."""
+    probabilidad de jugar, y minutos suficientes para confiar en el dato.
+
+    La capitanía es donde más pesa la varianza (duplica el puntaje) — con
+    `stance="protect"` prioriza capitanes de alto ownership (si falla, le
+    falla a todos tus rivales); con `stance="chase"`, diferenciales que
+    puedan separarte del resto de tu liga. Ver add_rank_adjusted_value.
+    """
     likely_to_play = players[
         (players["chance_of_playing_next_round"].fillna(100) >= 75)
         & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
     ]
-    columns = ["web_name", "team_name", "now_cost", "xp_next", "next_opponent", "next_is_home"]
-    return likely_to_play.sort_values("xp_next", ascending=False).head(top_n)[columns]
+    likely_to_play = add_rank_adjusted_value(likely_to_play, stance)
+    columns = ["web_name", "team_name", "now_cost", "xp_next", "selected_by_percent", "rank_value", "next_opponent", "next_is_home"]
+    return likely_to_play.sort_values("rank_value", ascending=False).head(top_n)[columns]
 
 
 def save_scored_players(players: pd.DataFrame) -> None:

@@ -8,6 +8,8 @@ from gameweek_lab.analysis import (
     MIN_MINUTES_FOR_RANKING,
     add_expected_points,
     add_horizon_expected_points,
+    add_rank_adjusted_value,
+    captaincy_picks,
 )
 from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
@@ -93,18 +95,33 @@ def _candidate_pool(players: pd.DataFrame, squad: pd.DataFrame) -> pd.DataFrame:
     ]
 
 
-def find_best_swaps(squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n: int | None = None) -> pd.DataFrame:
+def find_best_swaps(
+    squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n: int | None = None, stance: str = "neutral"
+) -> pd.DataFrame:
     """Evalúa todos los cambios 1-por-1 legales (misma posición, entra en
     el presupuesto, respeta máx. 3 por club, y el que entra termina de
     TITULAR — ver abajo) y los ordena por ganancia de xP en el horizonte.
     `squad` debe ser SIEMPRE el equipo completo de 15 — el límite por club
     y la formación resultante se calculan sobre él.
 
+    `stance` ("neutral"/"protect"/"chase"): con neutral (default), rankea
+    por xp_horizon puro — igual que siempre. Con protect/chase, rankea por
+    `rank_value` (ver add_rank_adjusted_value) calculado sobre squad+pool
+    juntos, para que el percentil de ownership sea consistente entre quién
+    sale y quién podría entrar. `out_xp`/`in_xp` en el resultado siempre
+    muestran el xP crudo (sin ajustar) para que quede claro qué es medida
+    objetiva y qué es la lente de la postura elegida.
+
     Simplificación: asumimos que el jugador se vende a su precio actual.
     FPL en realidad paga el precio de compra + la mitad de la subida, pero
     la API no expone tu precio de compra — para diferencias de ±0.1-0.2m
     el ranking de cambios casi nunca cambia.
     """
+    combined = add_rank_adjusted_value(
+        pd.concat([squad, pool], ignore_index=True), stance, xp_column="xp_horizon"
+    )
+    value_by_id = combined.set_index("id")["rank_value"]
+
     club_counts = squad["team_name"].value_counts()
     swaps = []
     for out_player in squad.itertuples():
@@ -115,7 +132,7 @@ def find_best_swaps(squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n:
             if cand.team_name != out_player.team_name and same_club_count >= MAX_PER_CLUB:
                 continue
 
-            raw_gain = round(cand.xp_horizon - out_player.xp_horizon, 2)
+            raw_gain = round(value_by_id[cand.id] - value_by_id[out_player.id], 2)
             if raw_gain <= 0:
                 # Ya perdería contra el que sale aunque terminara de titular
                 # — nunca va a ser el elegido, no vale la pena el chequeo
@@ -177,12 +194,17 @@ def _double_gameweek_note(horizon: int) -> str:
     return f"¡Double gameweek detectado!: {teams}. Revisá docs/chips-strategy.md para el timing de chips."
 
 
-def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
+def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1, stance: str = "neutral") -> None:
     players = add_horizon_expected_points(add_expected_points(build_players_dataset()))
     squad = load_my_team(team_path, players)
     pool = _candidate_pool(players, squad)
 
-    print(f"\n=== Asesor de transferencias — horizonte {HORIZON_GAMEWEEKS} fechas ===")
+    stance_note = {
+        "neutral": "sin ajuste, solo xP",
+        "protect": "favorece ownership alto (baja varianza)",
+        "chase": "favorece diferenciales de ownership bajo (alta varianza)",
+    }[stance]
+    print(f"\n=== Asesor de transferencias — horizonte {HORIZON_GAMEWEEKS} fechas — postura: {stance} ({stance_note}) ===")
     print(f"Banco: £{bank:.1f}m | Transferencias libres: {free_transfers}")
 
     squad_cols = ["web_name", "team_name", "position", "now_cost", "xp_horizon", "fixtures_horizon"]
@@ -197,7 +219,7 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
             chance_txt = f"{chance:.0f}% de jugar" if pd.notna(chance) else "sin probabilidad informada"
             print(f"  {p.web_name} ({p.team_name}) — status '{p.status}', {chance_txt}")
 
-    all_swaps = find_best_swaps(squad, pool, bank)
+    all_swaps = find_best_swaps(squad, pool, bank, stance=stance)
     if all_swaps.empty:
         print("\nNo hay cambios legales que mejoren el equipo dentro del presupuesto.")
         return
@@ -238,7 +260,7 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
         squad_after = _apply_swap(squad, pool, best)
         pool_after = _candidate_pool(players, squad_after)
         bank_after = bank - best["cost_delta"]
-        second_swaps = find_best_swaps(squad_after, pool_after, bank_after, top_n=1)
+        second_swaps = find_best_swaps(squad_after, pool_after, bank_after, top_n=1, stance=stance)
         if not second_swaps.empty:
             second = second_swaps.iloc[0]
             if free_transfers >= 2:
@@ -260,11 +282,9 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
 
     # Capitanía: decisión de la próxima fecha (xp_next), no del horizonte —
     # se re-elige cada semana, no tiene sentido promediar 4 fechas.
-    likely_starters = squad[
-        squad["chance_of_playing_next_round"].fillna(100) >= 75
-    ].sort_values("xp_next", ascending=False)
-    if len(likely_starters) >= 2:
-        cap, vice = likely_starters.iloc[0], likely_starters.iloc[1]
+    squad_captaincy = captaincy_picks(squad, top_n=2, stance=stance)
+    if len(squad_captaincy) >= 2:
+        cap, vice = squad_captaincy.iloc[0], squad_captaincy.iloc[1]
         print("\n-- Capitanía sugerida (próxima fecha) --")
         print(f"Capitán: {cap['web_name']} ({cap['xp_next']:.2f} xP vs {cap['next_opponent']}) | "
               f"Vice: {vice['web_name']} ({vice['xp_next']:.2f} xP vs {vice['next_opponent']}) — "
