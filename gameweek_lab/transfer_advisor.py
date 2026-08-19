@@ -28,6 +28,17 @@ HIT_UNCERTAINTY_MARGIN = 2.0
 # cambios la semana próxima vale más que una mejora marginal hoy.
 BANK_THRESHOLD = 2.0
 MAX_BANKED_TRANSFERS = 5
+# Si el jugador que entra no sería titular hoy, su xP no se cobra mientras
+# esté en el banco — solo entra por una auto-suplencia ocasional (si un
+# titular no juega) o si más adelante, dentro del horizonte, pasa a
+# titular por rotación/forma. No hay forma simple de estimar eso con
+# precisión, así que en vez de contar el xP entero (optimista) o excluir
+# el cambio directamente (visto en la práctica: el modelo cambió a Igor
+# Jesus por Calvert-Lewin con un "+6.40 xP" que nunca se iba a cobrar
+# porque Calvert-Lewin quedó en el banco), se descuenta la ganancia
+# proyectada — el cambio sigue siendo posible si la ventaja alcanza para
+# justificarlo igual, solo que el umbral efectivo sube.
+BENCH_GAIN_DISCOUNT = 0.3
 
 
 def load_my_team(path: str, players: pd.DataFrame) -> pd.DataFrame:
@@ -84,9 +95,10 @@ def _candidate_pool(players: pd.DataFrame, squad: pd.DataFrame) -> pd.DataFrame:
 
 def find_best_swaps(squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n: int | None = None) -> pd.DataFrame:
     """Evalúa todos los cambios 1-por-1 legales (misma posición, entra en
-    el presupuesto, respeta máx. 3 por club) y los ordena por ganancia de
-    xP en el horizonte. `squad` debe ser SIEMPRE el equipo completo de 15 —
-    el límite por club se calcula sobre él.
+    el presupuesto, respeta máx. 3 por club, y el que entra termina de
+    TITULAR — ver abajo) y los ordena por ganancia de xP en el horizonte.
+    `squad` debe ser SIEMPRE el equipo completo de 15 — el límite por club
+    y la formación resultante se calculan sobre él.
 
     Simplificación: asumimos que el jugador se vende a su precio actual.
     FPL en realidad paga el precio de compra + la mitad de la subida, pero
@@ -102,6 +114,21 @@ def find_best_swaps(squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n:
             same_club_count = int(club_counts.get(cand.team_name, 0))
             if cand.team_name != out_player.team_name and same_club_count >= MAX_PER_CLUB:
                 continue
+
+            raw_gain = round(cand.xp_horizon - out_player.xp_horizon, 2)
+            if raw_gain <= 0:
+                # Ya perdería contra el que sale aunque terminara de titular
+                # — nunca va a ser el elegido, no vale la pena el chequeo
+                # caro de abajo (rehacer la formación es lo más lento acá).
+                continue
+
+            # ¿El que entra sería titular hoy? Si no, su xP no se cobra
+            # mientras esté en el banco — ver BENCH_GAIN_DISCOUNT arriba.
+            hypothetical = _apply_swap(squad, pool, pd.Series({"out_id": out_player.id, "in_id": cand.id}))
+            new_starters, _ = select_starting_xi(hypothetical)
+            would_start = cand.id in set(new_starters["id"])
+            gain = raw_gain if would_start else round(raw_gain * BENCH_GAIN_DISCOUNT, 2)
+
             swaps.append({
                 "out_name": out_player.web_name,
                 "out_club": out_player.team_name,
@@ -111,7 +138,9 @@ def find_best_swaps(squad: pd.DataFrame, pool: pd.DataFrame, bank: float, top_n:
                 "in_xp": cand.xp_horizon,
                 "in_cost": cand.now_cost,
                 "in_fixtures": cand.fixtures_horizon,
-                "gain": round(cand.xp_horizon - out_player.xp_horizon, 2),
+                "gain": gain,
+                "raw_gain": raw_gain,
+                "would_start": would_start,
                 "cost_delta": round(cand.now_cost - out_player.now_cost, 1),
                 "in_id": cand.id,
                 "out_id": out_player.id,
@@ -174,7 +203,7 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
         return
 
     swaps = all_swaps.head(5)
-    swap_cols = ["out_name", "in_name", "in_club", "gain", "cost_delta", "in_fixtures"]
+    swap_cols = ["out_name", "in_name", "in_club", "gain", "would_start", "cost_delta", "in_fixtures"]
     print("\n-- Mejores cambios disponibles --")
     print(swaps[swap_cols].to_string(index=False))
 
@@ -188,15 +217,17 @@ def advise(team_path: str, bank: float = 0.0, free_transfers: int = 1) -> None:
         flagged_swaps = all_swaps[all_swaps["out_id"].isin(flagged_ids)]
         if not flagged_swaps.empty:
             fs = flagged_swaps.iloc[0]
+            fs_note = "titular" if fs["would_start"] else "banco"
             print("\n-- Salida sugerida para el jugador con bandera --")
             print(f"  {fs['out_name']} → {fs['in_name']} ({fs['in_club']}, "
-                  f"+{fs['gain']:.2f} xP, {fs['in_fixtures']})")
+                  f"+{fs['gain']:.2f} xP, entra de {fs_note}, {fs['in_fixtures']})")
 
     print("\n-- Recomendación --")
     if free_transfers >= 1:
         if best["gain"] >= BANK_THRESHOLD or best["out_id"] in flagged_ids:
+            best_note = "titular" if best["would_start"] else "banco"
             print(f"HACÉ EL CAMBIO: {best['out_name']} → {best['in_name']} "
-                  f"(+{best['gain']:.2f} xP en {HORIZON_GAMEWEEKS} fechas).")
+                  f"(+{best['gain']:.2f} xP en {HORIZON_GAMEWEEKS} fechas, entra de {best_note}).")
         else:
             banked_next_week = min(free_transfers + 1, MAX_BANKED_TRANSFERS)
             print(f"GUARDÁ LA TRANSFERENCIA: la mejor mejora disponible es marginal "
@@ -316,15 +347,17 @@ def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> 
             flagged_ids.discard(candidate["out_id"])
             free_transfers -= 1
             transfers_used += 1
+            starts_note = "titular" if candidate["would_start"] else "banco"
             log.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                       f"(+{candidate['gain']:.2f} xP, transferencia libre)")
+                       f"(+{candidate['gain']:.2f} xP, transferencia libre, entra de {starts_note})")
         elif free_transfers == 0 and worth_hit:
             squad = _apply_swap(squad, pool, candidate)
             pool = _candidate_pool(players, squad)
             flagged_ids.discard(candidate["out_id"])
             transfers_used += 1
+            starts_note = "titular" if candidate["would_start"] else "banco"
             log.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                       f"(+{candidate['gain']:.2f} xP, HIT -4 aplicado)")
+                       f"(+{candidate['gain']:.2f} xP, HIT -4 aplicado, entra de {starts_note})")
         else:
             break
 
@@ -401,8 +434,9 @@ def simulate_squad_trajectory(
 
             slot_idx = next(i for i, row in enumerate(squad) if row["id"] == candidate["out_id"])
             squad[slot_idx] = pool[pool["id"] == candidate["in_id"]].iloc[0].to_dict()
+            starts_note = "titular" if candidate["would_start"] else "banco"
             week_notes.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                              f"({kind}, +{candidate['gain']:.2f} xP)")
+                              f"({kind}, +{candidate['gain']:.2f} xP, entra de {starts_note})")
 
             squad_df = pd.DataFrame(squad)
             pool = _candidate_pool(players, squad_df)

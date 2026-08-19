@@ -167,6 +167,14 @@ Ambas responden las mismas preguntas:
   por una proyección requiere margen de seguridad, no empate técnico.
 - **Jugadores con bandera** (lesión/suspensión/duda) se marcan siempre, y
   un cambio que saca a uno de ellos se recomienda aunque la ganancia sea chica.
+- **Si el que entra terminaría en el banco**, su xP no se cobra mientras
+  esté ahí — la ganancia proyectada se descuenta (`BENCH_GAIN_DISCOUNT =
+  0.3`) en vez de contarse entera. El cambio todavía es posible si la
+  ventaja alcanza para justificarlo igual, pero el umbral efectivo sube —
+  así que en la práctica, casi siempre es mejor guardar la transferencia
+  para un movimiento que sí sea titular. (Se agregó después de detectar
+  en la práctica que el primer cambio real dejó al jugador nuevo en el
+  banco, gastando la transferencia sin que sus puntos contaran para nada.)
 
 El xP a horizonte suma los partidos reales de cada equipo por fecha, así que
 double gameweeks (dos partidos) y blanks (ninguno) quedan contados
