@@ -127,6 +127,7 @@ def build_players_dataset() -> pd.DataFrame:
         "id", "web_name", "full_name", "team_name", "position", "now_cost", "status", "photo_url",
         "total_points", "points_per_game", "form", "selected_by_percent",
         "minutes", "chance_of_playing_next_round", "ep_next",
+        "expected_goals_per_90", "expected_assists_per_90", "expected_goals_conceded_per_90",
         "next_gameweek", "next_opponent", "next_is_home", "next_fixture_difficulty",
     ]
     players = players[columns].sort_values("total_points", ascending=False).reset_index(drop=True)

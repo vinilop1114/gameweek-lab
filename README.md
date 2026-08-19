@@ -37,9 +37,17 @@ scripts/
 
 `xp_next = base_rate × fixture_multiplier × playing_probability`
 
-- **base_rate**: `form` (promedio reciente) si ya hay partidos jugados esta
-  temporada; si no (ej. pre-temporada, `form` en 0 para todos), usa
-  `points_per_game` de la temporada anterior como proxy.
+- **base_rate**: puntos esperados por 90 minutos, calculados desde
+  estadísticas subyacentes — `expected_goals_per_90 × puntos_por_gol(posición)`
+  `+ expected_assists_per_90 × 3` (ataque), más
+  `exp(-expected_goals_conceded_per_90) × puntos_por_clean_sheet(posición)`
+  (defensa, con la probabilidad de clean sheet estimada vía Poisson), más
+  2 puntos fijos de aparición. **No usa `form`/`points_per_game`** —
+  puntos ya anotados mezclan la calidad real del jugador con suerte
+  puntual (un bonus de un partido aislado no dice nada sobre si se
+  repite); xG/xA reflejan las oportunidades generadas, un proxy más
+  estable. Limitación conocida: no modela bonus points (BPS) ni atajadas
+  de arquero — FPL no expone un "bono esperado" por jugador.
 - **fixture_multiplier**: invierte el FDR de FPL (1=fácil, 5=difícil),
   centrado en 1.0 para dificultad media (3).
 - **playing_probability**: `chance_of_playing_next_round` / 100, o 100% si
@@ -48,10 +56,6 @@ scripts/
 Jugadores con menos de `MIN_MINUTES_FOR_RANKING` (900 min, ~10 partidos) se
 excluyen de diferenciales y capitanía — con poca muestra, el promedio de
 puntos es ruido, no señal.
-
-**Nota:** este xP es una heurística simple para aprender el proceso, no un
-modelo predictivo serio. FPL ya expone su propia estimación en el campo
-`ep_next` de la API — vale la pena comparar contra eso más adelante.
 
 ## Cómo funciona la recomendación de equipo
 

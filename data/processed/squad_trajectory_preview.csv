@@ -1,9 +1,8 @@
 position,GW1,GW2,GW3,GW4
 MID,B.Fernandes,B.Fernandes,B.Fernandes,B.Fernandes
 DEF,Gabriel,Gabriel,Gabriel,Gabriel
-MID,Bruno G.,Bruno G.,Bruno G.,Bruno G.
-MID,Rice,Rice,Rice,Rice
-MID,Gibbs-White,Gibbs-White,Gibbs-White,Gibbs-White
+MID,Bruno G.,Sarr,Sarr,Sarr
+MID,Gibbs-White,Gibbs-White,Cherki,Cherki
 MID,E.Le Fée,E.Le Fée,E.Le Fée,E.Le Fée
 DEF,Ballard,Ballard,Ballard,Ballard
 GKP,Roefs,Roefs,Roefs,Roefs
@@ -12,5 +11,6 @@ FWD,João Pedro,João Pedro,João Pedro,João Pedro
 DEF,Aina,Aina,Aina,Aina
 GKP,Lammens,Lammens,Lammens,Lammens
 FWD,Thiago,Thiago,Thiago,Thiago
-DEF,Muñoz,Muñoz,Muñoz,Muñoz
-FWD,Igor Jesus,Igor Jesus,Igor Jesus,Igor Jesus
+DEF,Muñoz,Muñoz,Muñoz,Calafiori
+FWD,Nmecha,Nmecha,Nmecha,Nmecha
+MID,Schade,Schade,Schade,Schade

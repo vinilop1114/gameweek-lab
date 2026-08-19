@@ -1,7 +1,19 @@
+import numpy as np
 import pandas as pd
 
 from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
+
+# Puntos por gol y por clean sheet, según posición — misma tabla que
+# fpl-scoring-rules-2026-27.md, pero acá se USA para calcular, no solo
+# como referencia.
+GOAL_POINTS = {"GKP": 10, "DEF": 6, "MID": 5, "FWD": 4}
+CLEAN_SHEET_POINTS = {"GKP": 4, "DEF": 4, "MID": 1, "FWD": 0}
+ASSIST_POINTS = 3
+# Puntos por jugar: 2 si arranca y completa 60+ minutos (lo asumible para
+# un titular sano), 1 si juega menos. Simplificamos a 2 fijo — la
+# probabilidad de jugar ya se aplica aparte, en _playing_probability.
+APPEARANCE_POINTS = 2
 
 # Debajo de esto, 'points_per_game' es ruido: pocos partidos alcanzan para
 # que una sola actuación puntuda dispare el promedio sin que sea repetible.
@@ -15,15 +27,40 @@ HORIZON_GAMEWEEKS = 4
 
 
 def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
-    """Puntos esperados 'crudos' por partido, antes de ajustar por rival.
+    """Puntos esperados 'crudos' por 90 minutos, antes de ajustar por rival
+    — calculados desde estadísticas subyacentes (goles/asistencias
+    esperados, goles esperados en contra), no desde puntos ya anotados.
 
-    Usamos 'form' (promedio de los últimos partidos) cuando hay datos de la
-    temporada en curso. Pre-temporada, form es 0.0 para todos los jugadores
-    (todavía no se jugó nada), así que ahí caemos a 'points_per_game' de la
-    temporada pasada como mejor proxy disponible.
+    Antes usábamos 'form'/'points_per_game': puntos reales, que mezclan la
+    calidad del jugador con la suerte de un partido puntual (un bonus de
+    3 puntos por estar en el lugar correcto no dice nada sobre si va a
+    repetirse). xG/xA reflejan las oportunidades que el jugador genera o
+    convierte en el proceso, no el resultado puntual — un proxy más
+    estable de la habilidad real.
+
+    Clean sheet: se estima P(0 goles en contra) con Poisson —
+    exp(-goles_esperados_en_contra_por_90) — un supuesto estándar en
+    analítica de fútbol (los goles en un partido se aproximan bien a una
+    distribución Poisson).
+
+    Limitación conocida: no modela bonus points (BPS). FPL no expone un
+    "bono esperado" por jugador, y aproximarlo requeriría replicar las
+    ~32 métricas del sistema de BPS. Para delanteros/mediocampistas de
+    ataque, el bono suele sumar un 15-20% extra sobre sus puntos reales
+    — este modelo los subestima un poco de forma sistemática. Tampoco
+    modela puntos por atajadas de arqueros.
     """
-    has_current_form = players["form"] > 0
-    return players["form"].where(has_current_form, players["points_per_game"])
+    goal_points = players["position"].map(GOAL_POINTS)
+    clean_sheet_points = players["position"].map(CLEAN_SHEET_POINTS)
+
+    attacking = (
+        players["expected_goals_per_90"] * goal_points
+        + players["expected_assists_per_90"] * ASSIST_POINTS
+    )
+    clean_sheet_probability = np.exp(-players["expected_goals_conceded_per_90"])
+    defensive = clean_sheet_probability * clean_sheet_points
+
+    return attacking + defensive + APPEARANCE_POINTS
 
 
 def _fixture_multiplier(difficulty: pd.Series) -> pd.Series:
