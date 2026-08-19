@@ -428,6 +428,7 @@ def export_squads_for_tableau(
         "web_name", "team_name", "position", "now_cost", "xp_next", "photo_url",
         "next_opponent", "next_is_home", "next_fixture_difficulty",
         "xp_horizon", "fixtures_horizon", "start_rate", "xp_ceiling", "haul_probability",
+        "set_piece_duties",
     ]
     combined = combined[columns]
 

@@ -304,6 +304,22 @@ con datos frescos; no arma un plan de 10 fechas que la realidad va a romper
 en la primera. `my_team.csv` es público en el repo a propósito, junto con
 todos los demás CSVs — el Project de claude.ai también puede analizarlo.
 
+**Jugadas a balón parado:** `set_piece_duties` marca quién es **primera
+opción** en penales, tiros libres directos y córners (B.Fernandes:
+"Penales, Tiros libres, Córners"). 43 jugadores tienen alguna función.
+
+Es información de contexto — **no entra al cálculo de xP**, y la razón
+importa: `expected_goals` de FPL **ya incluye los penales que el jugador
+pateó**. Multiplicar su xG por "es penalty taker" sería contar los
+penales dos veces. El ajuste correcto sería sumar solo cuando alguien es
+ejecutor *ahora* pero su histórico no lo refleja (llegó al club, o el
+ejecutor anterior se fue) — y eso no se puede distinguir: la API no
+expone xG sin penales (npxG) ni penales convertidos, verificado tanto en
+`bootstrap-static` como en el detalle por jugador. Se expone el dato
+para que la decisión la tome una persona con contexto: hay casos
+visibles donde importa, como un ejecutor de penales con xG histórico
+casi nulo por haber cambiado de liga.
+
 **Momentum de transferencias:** `players_scored.csv` incluye
 `transfers_in_event`/`transfers_out_event` (transferencias netas de la
 comunidad esta fecha, señal de posibles subidas/bajadas de precio antes

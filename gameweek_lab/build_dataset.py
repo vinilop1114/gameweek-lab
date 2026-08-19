@@ -96,6 +96,28 @@ def get_team_fixtures_horizon(horizon: int = 4) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _set_piece_duties(players: pd.DataFrame) -> pd.Series:
+    """Resumen legible de qué jugadas a balón parado ejecuta el jugador,
+    p. ej. "Penales, Córners". Vacío si no es primera opción en ninguna.
+
+    Solo se considera el orden 1 (primera opción): el segundo de la lista
+    patea tan pocas veces que no cambia una decisión.
+
+    Es información de CONTEXTO, no entra al cálculo de xP — ver el
+    comentario extenso en el README sobre el riesgo de doble conteo.
+    """
+    duties = {
+        "penalties_order": "Penales",
+        "direct_freekicks_order": "Tiros libres",
+        "corners_and_indirect_freekicks_order": "Córners",
+    }
+    labels = pd.Series([[] for _ in range(len(players))], index=players.index)
+    for column, label in duties.items():
+        is_first = players[column] == 1
+        labels[is_first] = labels[is_first].map(lambda existing, l=label: existing + [l])
+    return labels.map(", ".join)
+
+
 def get_matches_played_by_team() -> dict[str, int]:
     """Cuántos partidos lleva jugados cada equipo — el denominador para
     calcular con qué frecuencia un jugador es titular (`starts` es un
@@ -140,6 +162,7 @@ def build_players_dataset() -> pd.DataFrame:
     players["position"] = players["element_type"].map(positions["singular_name_short"])
     players["full_name"] = players["first_name"] + " " + players["second_name"]
     players["photo_url"] = players["code"].map(lambda code: PLAYER_PHOTO_URL_TEMPLATE.format(code=code))
+    players["set_piece_duties"] = _set_piece_duties(players)
 
     next_fixture = _next_fixture_by_team(fixtures)
     players["next_gameweek"] = players["team"].map(lambda t: next_fixture.get(t, {}).get("gameweek"))
@@ -152,7 +175,7 @@ def build_players_dataset() -> pd.DataFrame:
     columns = [
         "id", "web_name", "full_name", "team_name", "position", "now_cost", "status", "photo_url",
         "total_points", "points_per_game", "form", "selected_by_percent",
-        "minutes", "starts", "chance_of_playing_next_round", "ep_next",
+        "minutes", "starts", "chance_of_playing_next_round", "ep_next", "set_piece_duties",
         "expected_goals_per_90", "expected_assists_per_90", "expected_goals_conceded_per_90",
         # Momentum de transferencias — para anticipar subidas/bajadas de
         # precio. Pre-temporada están en 0 para todos (armar tu plantel
