@@ -96,6 +96,32 @@ def get_team_fixtures_horizon(horizon: int = 4) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def get_matches_played_by_team() -> dict[str, int]:
+    """Cuántos partidos lleva jugados cada equipo — el denominador para
+    calcular con qué frecuencia un jugador es titular (`starts` es un
+    acumulado, no una tasa).
+
+    Se cuenta desde `fixtures` (no desde los `events` de bootstrap) para
+    que un equipo con partidos postergados quede con su cuenta real, no
+    con la del calendario nominal.
+
+    Pre-temporada devuelve 0 para todos: ahí `starts` viene de la
+    temporada anterior, y quien llama debe usar `FULL_SEASON_MATCHES`
+    como denominador (ver `_start_rate` en analysis.py).
+    """
+    bootstrap = _load_raw("bootstrap-static")
+    fixtures = _load_raw("fixtures")
+    team_names = pd.DataFrame(bootstrap["teams"]).set_index("id")["name"]
+
+    played = {name: 0 for name in team_names}
+    for fixture in fixtures:
+        if not fixture["finished"]:
+            continue
+        for team_id in (fixture["team_h"], fixture["team_a"]):
+            played[team_names[team_id]] += 1
+    return played
+
+
 def build_players_dataset() -> pd.DataFrame:
     bootstrap = _load_raw("bootstrap-static")
     fixtures = _load_raw("fixtures")
@@ -126,7 +152,7 @@ def build_players_dataset() -> pd.DataFrame:
     columns = [
         "id", "web_name", "full_name", "team_name", "position", "now_cost", "status", "photo_url",
         "total_points", "points_per_game", "form", "selected_by_percent",
-        "minutes", "chance_of_playing_next_round", "ep_next",
+        "minutes", "starts", "chance_of_playing_next_round", "ep_next",
         "expected_goals_per_90", "expected_assists_per_90", "expected_goals_conceded_per_90",
         # Momentum de transferencias — para anticipar subidas/bajadas de
         # precio. Pre-temporada están en 0 para todos (armar tu plantel

@@ -1,7 +1,11 @@
 import numpy as np
 import pandas as pd
 
-from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
+from gameweek_lab.build_dataset import (
+    build_players_dataset,
+    get_matches_played_by_team,
+    get_team_fixtures_horizon,
+)
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 # Puntos por gol y por clean sheet, según posición — misma tabla que
@@ -33,6 +37,18 @@ HORIZON_GAMEWEEKS = 4
 # excelente solo por ser poco poseído.
 RANK_STRATEGY_WEIGHT = 0.6
 RANK_STANCES = ("protect", "neutral", "chase")
+
+# Parámetros del factor de rotación (ver `_start_rate`).
+FULL_SEASON_MATCHES = 38
+# Hacia dónde tira la tasa de titularidad cuando hay poca evidencia. 0.75
+# ≈ "titular habitual pero no indiscutido", razonable para el pool que ya
+# pasó el filtro de MIN_MINUTES_FOR_RANKING.
+START_RATE_PRIOR = 0.75
+# Cuántos partidos de evidencia "vale" el prior. Con 5: en GW2 (1 partido
+# jugado) la tasa apenas se mueve del prior, y recién con ~15 fechas los
+# datos de la temporada en curso dominan. Evita que 2 de 2 se lea como
+# "100% titular", o 0 de 2 como "nunca juega".
+START_RATE_PRIOR_WEIGHT = 5
 
 
 def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
@@ -83,19 +99,72 @@ def _fixture_multiplier(difficulty: pd.Series) -> pd.Series:
 
 
 def _playing_probability(players: pd.DataFrame) -> pd.Series:
-    """chance_of_playing_next_round viene en % (0-100) o NaN si no hay duda
-    de lesión/rotación — en ese caso asumimos 100% de probabilidad de jugar.
+    """Probabilidad de LESIÓN/suspensión únicamente, no de rotación.
+
+    `chance_of_playing_next_round` viene en % (0-100), o NaN cuando el
+    club no reportó ninguna duda física — ahí asumimos 100%. Ojo con la
+    interpretación: verificado contra datos reales, solo 9 de 224
+    jugadores elegibles tienen valor no nulo, así que este factor es un
+    no-op para el ~96% del pool. La rotación se modela aparte, en
+    `_start_rate` — son cosas distintas y este campo no la captura.
     """
     return players["chance_of_playing_next_round"].fillna(100) / 100
+
+
+def _start_rate(players: pd.DataFrame) -> pd.Series:
+    """Con qué frecuencia el jugador es TITULAR — el factor de rotación,
+    independiente de la duda por lesión (`_playing_probability`).
+
+    Por qué hace falta: `chance_of_playing_next_round` solo se llena
+    cuando hay una lesión reportada, así que un suplente habitual
+    perfectamente sano figura con "100% de probabilidad de jugar". Sin
+    esto, el modelo trataba igual a un titular indiscutido y a alguien
+    que entra 20 minutos: verificado en datos reales, Nmecha (10 starts)
+    y Thiago (37 starts) tenían el mismo factor de disponibilidad.
+
+    Se usa `starts` (no `minutes`) porque distingue al titular del
+    suplente que suma minutos entrando: dos jugadores con los mismos
+    minutos totales pueden ser uno titular fijo y otro rotativo.
+
+    Suavizado (shrinkage) hacia `START_RATE_PRIOR`: con pocos partidos
+    jugados, la tasa cruda es ruido — 2 de 2 no significa "100% titular".
+    `START_RATE_PRIOR_WEIGHT` equivale a partidos de evidencia previa,
+    así que la tasa arranca en el prior y se va acercando a la real a
+    medida que se acumulan partidos.
+    """
+    played = get_matches_played_by_team()
+    team_matches = players["team_name"].map(played).fillna(0)
+    # Pre-temporada no hay partidos jugados todavía: `starts` es de la
+    # temporada anterior, así que el denominador correcto es esa temporada
+    # completa, no cero.
+    team_matches = team_matches.where(team_matches > 0, FULL_SEASON_MATCHES)
+
+    starts = players["starts"].fillna(0)
+    return (
+        (starts + START_RATE_PRIOR_WEIGHT * START_RATE_PRIOR)
+        / (team_matches + START_RATE_PRIOR_WEIGHT)
+    ).clip(upper=1.0)
+
+
+def _availability(players: pd.DataFrame) -> pd.Series:
+    """Probabilidad de que el jugador aporte puntos en la próxima fecha:
+    rotación × lesión. Las dos son independientes y se modelan aparte
+    (ver `_start_rate` y `_playing_probability`).
+    """
+    return _start_rate(players) * _playing_probability(players)
 
 
 def add_expected_points(players: pd.DataFrame) -> pd.DataFrame:
     players = players.copy()
     base_rate = _base_scoring_rate(players)
     fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
-    playing_prob = _playing_probability(players)
 
-    players["xp_next"] = (base_rate * fixture_mult * playing_prob).round(2)
+    # `start_rate` se expone como columna propia (no solo multiplicada
+    # adentro del xP) para poder explicar POR QUÉ un jugador con buenas
+    # estadísticas igual proyecta bajo: no es que rinda mal, es que no
+    # arranca seguido.
+    players["start_rate"] = _start_rate(players).round(2)
+    players["xp_next"] = (base_rate * fixture_mult * _availability(players)).round(2)
     return players
 
 
@@ -104,11 +173,14 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
     `horizon` fechas, sumando el multiplicador de dificultad de cada
     partido del equipo (double gameweeks suman dos partidos, blanks cero).
 
-    Disponibilidad: para la primera fecha usamos chance_of_playing_next_round
-    como en xp_next. Para las siguientes asumimos que un jugador sano ('a')
-    juega normal, y que la duda de un lesionado/suspendido persiste — es
-    conservador, pero un asesor de transferencias DEBE penalizar tener
-    jugadores que quizás no jueguen.
+    Disponibilidad: la rotación (`_start_rate`) aplica a TODAS las fechas
+    del horizonte — un suplente habitual lo sigue siendo dentro de 4
+    semanas. La duda por lesión, en cambio, se trata distinto según la
+    fecha: para la primera usamos `chance_of_playing_next_round` tal
+    cual; para las siguientes asumimos que un jugador sano ('a') se
+    recupera y juega normal, pero que la duda de un lesionado/suspendido
+    persiste — conservador a propósito, un asesor de transferencias DEBE
+    penalizar tener jugadores que quizás no jueguen.
     """
     players = players.copy()
     fixtures = get_team_fixtures_horizon(horizon)
@@ -124,8 +196,9 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
     summary = fixtures.sort_values("gameweek").groupby("team_name")["label"].agg(" · ".join)
 
     base_rate = _base_scoring_rate(players)
-    prob_next = _playing_probability(players)
-    later_availability = (
+    start_rate = _start_rate(players)
+    prob_next = start_rate * _playing_probability(players)
+    later_availability = start_rate * (
         players["chance_of_playing_next_round"].fillna(0).div(100)
         .where(players["status"] != "a", 1.0)
     )

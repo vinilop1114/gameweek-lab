@@ -56,13 +56,37 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
   estable. Limitación conocida: no modela bonus points (BPS) ni atajadas
   de arquero — FPL no expone un "bono esperado" por jugador.
 - **fixture_multiplier**: invierte el FDR de FPL (1=fácil, 5=difícil),
-  centrado en 1.0 para dificultad media (3).
-- **playing_probability**: `chance_of_playing_next_round` / 100, o 100% si
-  no hay duda de lesión.
+  centrado en 1.0 para dificultad media (3). El FDR ya distingue localía
+  (verificado: 140 de 200 partidos tienen dificultad distinta para local
+  y visitante), y `xp_horizon` suma el multiplicador de **cada partido
+  individual** — no promedia dificultad.
+- **availability = start_rate × playing_probability** — dos cosas
+  distintas que se modelan por separado:
+  - **`start_rate`** (rotación): con qué frecuencia el jugador es
+    titular, desde el campo `starts` de la API dividido por los partidos
+    de su equipo. Se usa `starts` y no `minutes` porque distingue al
+    titular fijo del suplente que suma minutos entrando. Lleva suavizado
+    bayesiano hacia `START_RATE_PRIOR` (0.75) con peso
+    `START_RATE_PRIOR_WEIGHT` (5 partidos) para que "2 de 2" no se lea
+    como 100% titular al arrancar la temporada.
+  - **`playing_probability`** (lesión): `chance_of_playing_next_round` /
+    100, o 100% si no hay duda reportada. **Ojo:** verificado contra
+    datos reales, solo 9 de 224 jugadores elegibles tienen valor no nulo
+    — ese campo solo se llena ante lesión reportada, así que por sí solo
+    es un no-op para el 96% del pool. Sin `start_rate`, el modelo trataba
+    igual a un titular indiscutido y a un suplente habitual sano.
 
 Jugadores con menos de `MIN_MINUTES_FOR_RANKING` (900 min, ~10 partidos) se
 excluyen de diferenciales y capitanía — con poca muestra, el promedio de
 puntos es ruido, no señal.
+
+**Efecto secundario del factor de rotación:** modelarlo hizo innecesaria
+una restricción dura de "profundidad viable por posición". Un suplente
+habitual ahora proyecta poco (Nmecha, 10 titularidades, pasó de 4.83 a
+1.54 xP), así que el optimizador lo evita **solo**. El equipo rearmado
+quedó con 5/5 MID y 2/3 FWD por encima del 70% de titularidad — el
+mismo mínimo que se hubiera impuesto a mano, pero emergente en vez de
+cableado.
 
 ## Cómo funciona la recomendación de equipo
 
