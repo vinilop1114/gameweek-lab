@@ -10,27 +10,34 @@ pip install -r requirements.txt
 
 python scripts/run_fetch.py           # descarga datos frescos de la API de FPL
 python scripts/run_analysis.py        # calcula xP, diferenciales y capitanía
-python scripts/run_squad.py           # equipo Base: sostenible para varias fechas
-python scripts/run_wildcard_squad.py  # equipo Wildcard: banco mínimo, XI máximo
-python scripts/export_for_tableau.py  # CSVs listos para Tableau (ver abajo)
-python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1
+python scripts/run_squad.py           # evoluciona el equipo Base autogestionado (my_team.csv)
+python scripts/run_wildcard_squad.py  # equipo Wildcard: banco mínimo, XI máximo, sin memoria
+python scripts/export_for_tableau.py  # evoluciona el Base + exporta ambos equipos para Tableau
+python scripts/run_trajectory_preview.py  # vista especulativa del equipo a 4 fechas (solo lectura)
+python scripts/run_calibration.py     # graba predicción de la fecha + compara xP vs. puntos reales
+python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1 --stance neutral
 ```
 
 ## Estructura
 
 ```
 gameweek_lab/
-  config.py          # rutas y URLs de la API
-  fetch.py            # descarga bootstrap-static y fixtures → data/raw/*.json
-  build_dataset.py    # limpia y combina el JSON crudo → data/processed/players.csv
-  analysis.py          # expected points (xP), diferenciales, capitanía
-  squad_builder.py     # plantel de 15 (PuLP/ILP) + 11 titulares (fuerza bruta sobre formaciones)
+  config.py            # rutas y URLs de la API
+  fetch.py              # descarga bootstrap-static, fixtures y event/{id}/live → data/raw/*.json
+  build_dataset.py      # limpia y combina el JSON crudo → data/processed/players.csv
+  analysis.py            # xP (próximo GW y horizonte de 4), diferenciales, capitanía, estrategia de rank
+  squad_builder.py       # Wildcard (ILP) + piezas compartidas (XI, banco, auto-suplencias)
+  transfer_advisor.py    # asesor manual + evolve_base_squad (motor del Base autogestionado)
+  photos.py              # verificación/fallback de fotos de jugadores
+  calibration.py         # loop de calibración: xP proyectado vs. puntos reales
 data/
-  raw/                # snapshots JSON tal cual los devuelve la API
-  processed/           # players.csv, listo para analizar
-scripts/
-  run_fetch.py         # entry point: descarga
-  run_analysis.py       # entry point: análisis
+  raw/                  # snapshots JSON tal cual los devuelve la API (gitignoreado)
+  processed/             # CSVs finales + estado persistido — todo público, versionado
+docs/
+  chips-strategy.md      # reglas guía para el timing de chips
+scripts/                 # un entry point por módulo, ver "Uso" arriba
+my_team.csv               # equipo Base persistido (público) — lo edita el propio pipeline
+my_team.example.csv       # plantilla de referencia (formato del archivo)
 ```
 
 ## Cómo funciona el cálculo de xP
