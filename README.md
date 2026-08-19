@@ -182,6 +182,24 @@ con datos frescos; no arma un plan de 10 fechas que la realidad va a romper
 en la primera. `my_team.csv` es público en el repo a propósito, junto con
 todos los demás CSVs — el Project de claude.ai también puede analizarlo.
 
+## Vista especulativa a 4 fechas
+
+`python scripts/run_trajectory_preview.py` genera
+`data/processed/squad_trajectory_preview.csv`: 15 filas (un "slot" del
+plantel actual) × columnas `GW1`...`GW4` con el nombre del jugador en ese
+slot cada fecha. Si un slot no cambia, el nombre se repite en las columnas
+siguientes; si cambia, se ve el nombre nuevo desde esa columna en
+adelante — fácil de leer de un vistazo.
+
+**Importante — esto NO es una predicción**, es una simulación: corre la
+misma lógica de `evolve_base_squad` (banco-vs-usar, hit-vs-no-hit) cuatro
+veces seguidas usando el `xp_horizon` de **hoy**, sin esperar datos nuevos
+entre fecha y fecha simulada. En la vida real, cada gameweek trae datos
+frescos (lesiones, precios, forma) que probablemente cambien la decisión
+real cuando de verdad llegue esa fecha — por eso es "el plan de hoy, si
+nada cambiara", no un compromiso. Es de solo lectura: nunca toca
+`my_team.csv` ni `base_squad_state.json`, son completamente independientes.
+
 ## Exports para Tableau
 
 `python scripts/export_for_tableau.py` genera dos CSVs en `data/processed/`:

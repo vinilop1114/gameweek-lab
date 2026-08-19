@@ -339,3 +339,78 @@ def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> 
 
     starters, bench = select_starting_xi(squad)
     return starters, bench, log
+
+
+def simulate_squad_trajectory(
+    players: pd.DataFrame, weeks: int = HORIZON_GAMEWEEKS, team_path: str = "my_team.csv"
+) -> tuple[pd.DataFrame, dict[str, str]]:
+    """Vista ESPECULATIVA de cómo evolucionaría el equipo Base en las
+    próximas `weeks` fechas si el modelo corriera hoy mismo, semana a
+    semana, la misma lógica de `evolve_base_squad` — sin esperar datos
+    nuevos entre medio. No es una predicción ni se escribe en piedra: usa
+    el `xp_horizon` de hoy para las decisiones de las 4 fechas; en la
+    vida real, cada semana va a traer datos frescos (lesiones, precios,
+    forma) que probablemente cambien el resultado real. Sirve para
+    ilustrar "el plan de hoy, si nada cambiara" — no para comprometerse
+    con él.
+
+    A diferencia de evolve_base_squad, esto es de **solo lectura**: nunca
+    toca `my_team.csv` ni el estado persistido — trabaja sobre copias.
+
+    Devuelve (trayectoria, notas):
+    - trayectoria: 15 filas (una por jugador del equipo actual, "slot" fijo
+      del plantel), columnas `position`, `GW{n}`...`GW{n+weeks-1}` con el
+      nombre del jugador en ese slot esa fecha. Si no hubo cambio en la
+      semana, el nombre se repite; si cambió, el slot pasa a mostrar el
+      nombre del jugador nuevo desde esa columna en adelante.
+    - notas: un dict {gameweek: descripción de los cambios de esa semana}.
+    """
+    state = _load_base_state()
+    squad = load_my_team(team_path, players).to_dict("records")
+    free_transfers = state["banked_free_transfers"]
+    current_gw = _current_gameweek(players)
+
+    gw_labels = [f"GW{current_gw + offset}" for offset in range(weeks)]
+    positions = [row["position"] for row in squad]
+    trajectory = {gw_labels[0]: [row["web_name"] for row in squad]}
+    notes = {gw_labels[0]: "Equipo actual (persistido en my_team.csv)"}
+
+    for offset in range(1, weeks):
+        free_transfers = min(free_transfers + 1, MAX_BANKED_TRANSFERS)
+        squad_df = pd.DataFrame(squad)
+        pool = _candidate_pool(players, squad_df)
+        flagged_ids = set(_flag_problem_players(squad_df)["id"])
+        week_notes = []
+
+        for _ in range(2):  # como mucho 2 movimientos por fecha simulada
+            swaps = find_best_swaps(squad_df, pool, 0.0)
+            if swaps.empty:
+                break
+            flagged_swaps = swaps[swaps["out_id"].isin(flagged_ids)]
+            candidate = flagged_swaps.iloc[0] if not flagged_swaps.empty else swaps.iloc[0]
+            worth_free = candidate["gain"] >= BANK_THRESHOLD or candidate["out_id"] in flagged_ids
+            worth_hit = candidate["gain"] > HIT_COST + HIT_UNCERTAINTY_MARGIN
+
+            if free_transfers > 0 and worth_free:
+                kind = "transferencia libre"
+                free_transfers -= 1
+            elif free_transfers == 0 and worth_hit:
+                kind = "HIT -4"
+            else:
+                break
+
+            slot_idx = next(i for i, row in enumerate(squad) if row["id"] == candidate["out_id"])
+            squad[slot_idx] = pool[pool["id"] == candidate["in_id"]].iloc[0].to_dict()
+            week_notes.append(f"{candidate['out_name']} → {candidate['in_name']} "
+                              f"({kind}, +{candidate['gain']:.2f} xP)")
+
+            squad_df = pd.DataFrame(squad)
+            pool = _candidate_pool(players, squad_df)
+            flagged_ids.discard(candidate["out_id"])
+
+        trajectory[gw_labels[offset]] = [row["web_name"] for row in squad]
+        notes[gw_labels[offset]] = "; ".join(week_notes) if week_notes else "Sin cambios"
+
+    result = pd.DataFrame(trajectory)
+    result.insert(0, "position", positions)
+    return result, notes

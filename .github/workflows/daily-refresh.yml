@@ -29,6 +29,9 @@ jobs:
       - name: Calcular xP y exportar CSVs para Tableau
         run: python scripts/export_for_tableau.py
 
+      - name: Vista especulativa del equipo a 4 fechas (no toca my_team.csv)
+        run: python scripts/run_trajectory_preview.py
+
       - name: Commitear y subir los CSVs actualizados
         run: |
           git config user.name "github-actions[bot]"
