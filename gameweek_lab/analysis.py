@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 import pandas as pd
 
@@ -50,6 +52,18 @@ START_RATE_PRIOR = 0.75
 # "100% titular", o 0 de 2 como "nunca juega".
 START_RATE_PRIOR_WEIGHT = 5
 
+# Parámetros de la distribución de puntos (ver `_points_distribution`).
+# Los máximos son cortes prácticos. Para un jugador típico (xG90 ~0.5)
+# P(4+ goles) ya es despreciable, pero se toma margen porque hay tasas por
+# 90' infladas por muestra chica (algún jugador con pocos minutos llega a
+# xG90 > 3). Igual la pmf se renormaliza, así que el corte no rompe nada.
+MAX_GOALS = 10
+MAX_ASSISTS = 6
+CEILING_PERCENTILE = 0.90
+# 10 puntos es el umbral clásico de "haul" en FPL (gol + clean sheet +
+# bonus, o doblete).
+HAUL_THRESHOLD = 10
+
 
 def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     """Puntos esperados 'crudos' por 90 minutos, antes de ajustar por rival
@@ -86,6 +100,125 @@ def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     defensive = clean_sheet_probability * clean_sheet_points
 
     return attacking + defensive + APPEARANCE_POINTS
+
+
+def _poisson_pmf_matrix(lambdas: np.ndarray, max_k: int) -> np.ndarray:
+    """P(exactamente k eventos) para k = 0..max_k, vectorizado.
+
+    Devuelve una matriz (n_jugadores, max_k + 1). Se calcula a mano
+    (`exp(-λ)·λ^k / k!`) en vez de usar scipy para no sumar una
+    dependencia pesada por una fórmula de una línea.
+    """
+    k = np.arange(max_k + 1)
+    factorials = np.array([math.factorial(int(i)) for i in k], dtype=float)
+    lam = np.asarray(lambdas, dtype=float)[:, None]
+    pmf = np.exp(-lam) * lam**k / factorials
+    # Truncar en max_k deja fuera la cola, así que las probabilidades no
+    # sumarían 1 y el percentil se calcularía sobre una distribución
+    # incompleta. Se renormaliza para redistribuir esa masa: robusto ante
+    # cualquier λ, incluso los inflados por muestra chica (hay jugadores
+    # con xG90 > 3 por haber jugado pocos minutos).
+    return pmf / pmf.sum(axis=1, keepdims=True)
+
+
+def _points_distribution(players: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]:
+    """Distribución completa de puntos por jugador para la próxima fecha,
+    no solo su promedio.
+
+    El xP lineal responde "cuánto saca en promedio", pero para capitanía
+    importa el techo: duplicar a un jugador de 5 xP consistente no es lo
+    mismo que duplicar a uno de 5 xP que reparte entre blanks y hauls. Un
+    delantero con λ alto tiene una cola derecha mucho más gorda (chance
+    real de doblete o triplete) que un defensor con el mismo promedio.
+
+    Modelo: goles ~ Poisson(xG90 · fixture_mult), asistencias ~
+    Poisson(xA90 · fixture_mult), clean sheet ~ Bernoulli, los tres
+    independientes entre sí. Se enumeran todas las combinaciones y sus
+    probabilidades. Con `1 - availability` el jugador no juega y saca 0
+    (no arranca o está lesionado) — ese riesgo es parte del techo real de
+    una decisión de capitanía.
+
+    Devuelve (puntos, probabilidades), ambas matrices (n_jugadores,
+    n_resultados), alineadas fila a fila con `players`.
+
+    Aproximación conocida: el `fixture_multiplier` escala los λ y la
+    probabilidad de clean sheet, pero no los 2 puntos de aparición (que
+    no dependen del rival). El xP lineal sí los escala, así que la media
+    de esta distribución no coincide exactamente con `xp_next` — difieren
+    en ese término. Se mantiene así para no alterar `xp_next`, que ya
+    está en uso y grabado en el historial de calibración.
+    """
+    fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"]).fillna(0).to_numpy()
+    goal_points = players["position"].map(GOAL_POINTS).to_numpy()
+    clean_sheet_points = players["position"].map(CLEAN_SHEET_POINTS).to_numpy()
+
+    goal_pmf = _poisson_pmf_matrix(players["expected_goals_per_90"].fillna(0) * fixture_mult, MAX_GOALS)
+    assist_pmf = _poisson_pmf_matrix(players["expected_assists_per_90"].fillna(0) * fixture_mult, MAX_ASSISTS)
+    clean_sheet_prob = np.clip(
+        np.exp(-players["expected_goals_conceded_per_90"].fillna(0)) * fixture_mult, 0.0, 1.0
+    )
+
+    goals = np.arange(MAX_GOALS + 1)[:, None, None]
+    assists = np.arange(MAX_ASSISTS + 1)[None, :, None]
+    kept_clean_sheet = np.arange(2)[None, None, :]
+
+    # (n_jugadores, goles, asistencias, clean_sheet)
+    points = (
+        APPEARANCE_POINTS
+        + goals * goal_points[:, None, None, None]
+        + assists * ASSIST_POINTS
+        + kept_clean_sheet * clean_sheet_points[:, None, None, None]
+    )
+    cs_pmf = np.stack([1 - clean_sheet_prob, clean_sheet_prob], axis=1)
+    probs = (
+        goal_pmf[:, :, None, None]
+        * assist_pmf[:, None, :, None]
+        * cs_pmf[:, None, None, :]
+    )
+
+    n_players = len(players)
+    points = points.reshape(n_players, -1)
+    probs = probs.reshape(n_players, -1)
+
+    # El jugador podría no jugar: ese escenario aporta 0 puntos y se lleva
+    # la probabilidad restante.
+    availability = _availability(players).to_numpy()
+    probs = probs * availability[:, None]
+    points = np.concatenate([np.zeros((n_players, 1)), points], axis=1)
+    probs = np.concatenate([(1 - availability)[:, None], probs], axis=1)
+    return points, probs
+
+
+def _distribution_percentile(points: np.ndarray, probs: np.ndarray, percentile: float) -> np.ndarray:
+    """Percentil `percentile` de cada fila de la distribución.
+
+    Ordena los resultados por puntos, acumula probabilidad y devuelve el
+    primer valor donde el acumulado alcanza el percentil pedido.
+    """
+    order = np.argsort(points, axis=1)
+    sorted_points = np.take_along_axis(points, order, axis=1)
+    cumulative = np.cumsum(np.take_along_axis(probs, order, axis=1), axis=1)
+    # `searchsorted` no admite un eje, así que se resuelve con una máscara:
+    # el primer índice cuyo acumulado supera el umbral.
+    reached = cumulative >= percentile
+    idx = np.argmax(reached, axis=1)
+    return sorted_points[np.arange(len(points)), idx]
+
+
+def add_ceiling_metrics(players: pd.DataFrame) -> pd.DataFrame:
+    """Agrega el techo (`xp_ceiling`) y la probabilidad de haul
+    (`haul_probability`) — la varianza que el xP promedio no captura.
+
+    - `xp_ceiling`: percentil `CEILING_PERCENTILE` de puntos. "En su 10%
+      de mejores partidos, saca al menos esto."
+    - `haul_probability`: P(puntos >= `HAUL_THRESHOLD`). Muy directo de
+      comunicar y la métrica que de verdad decide una capitanía.
+    """
+    players = players.copy()
+    points, probs = _points_distribution(players)
+    players["xp_ceiling"] = _distribution_percentile(points, probs, CEILING_PERCENTILE).round(2)
+    players["haul_probability"] = (probs * (points >= HAUL_THRESHOLD)).sum(axis=1).round(3)
+    return players
 
 
 def _fixture_multiplier(difficulty: pd.Series) -> pd.Series:
@@ -276,14 +409,33 @@ def captaincy_picks(players: pd.DataFrame, top_n: int = 5, stance: str = "neutra
     `stance="protect"` prioriza capitanes de alto ownership (si falla, le
     falla a todos tus rivales); con `stance="chase"`, diferenciales que
     puedan separarte del resto de tu liga. Ver add_rank_adjusted_value.
+
+    Muestra siempre `xp_ceiling` y `haul_probability` junto al xP medio,
+    porque para capitanía el promedio engaña: verificado con datos
+    reales, Raya (GKP) proyectaba MÁS xP que Haaland pero con 0% de
+    probabilidad de haul — duplicar a un arquero no puede dar un
+    resultado grande. Con `stance="chase"` el ranking pasa a ordenarse
+    por techo en vez de por media: remontar posiciones necesita
+    resultados grandes, no consistencia.
+
+    Solo la capitanía usa el techo. Para transferencias sigue mandando el
+    promedio a 4 fechas: ahí la varianza semana a semana se diluye, y lo
+    que importa es el acumulado.
     """
     likely_to_play = players[
         (players["chance_of_playing_next_round"].fillna(100) >= 75)
         & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
     ]
     likely_to_play = add_rank_adjusted_value(likely_to_play, stance)
-    columns = ["web_name", "team_name", "now_cost", "xp_next", "selected_by_percent", "rank_value", "next_opponent", "next_is_home"]
-    return likely_to_play.sort_values("rank_value", ascending=False).head(top_n)[columns]
+    if "xp_ceiling" not in likely_to_play.columns:
+        likely_to_play = add_ceiling_metrics(likely_to_play)
+
+    sort_column = "xp_ceiling" if stance == "chase" else "rank_value"
+    columns = [
+        "web_name", "team_name", "position", "now_cost", "xp_next", "xp_ceiling", "haul_probability",
+        "selected_by_percent", "rank_value", "next_opponent", "next_is_home",
+    ]
+    return likely_to_play.sort_values(sort_column, ascending=False).head(top_n)[columns]
 
 
 def save_scored_players(players: pd.DataFrame) -> None:
@@ -300,7 +452,7 @@ def save_scored_players(players: pd.DataFrame) -> None:
 
 def run_analysis() -> None:
     players = build_players_dataset()
-    players = add_expected_points(players)
+    players = add_ceiling_metrics(add_expected_points(players))
     save_scored_players(players)
 
     print("\n=== Top 5 opciones de capitanía — próximo gameweek ===")

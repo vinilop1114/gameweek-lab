@@ -80,6 +80,39 @@ Jugadores con menos de `MIN_MINUTES_FOR_RANKING` (900 min, ~10 partidos) se
 excluyen de diferenciales y capitanía — con poca muestra, el promedio de
 puntos es ruido, no señal.
 
+## Techo y probabilidad de haul
+
+`xp_next` responde "cuánto saca en promedio", pero para capitanía eso
+engaña: duplicar a un jugador de 5 xP consistente no es lo mismo que
+duplicar a uno de 5 xP que alterna entre blanks y hauls.
+`add_ceiling_metrics` construye la **distribución completa** de puntos —
+goles ~ Poisson(xG90 × dificultad), asistencias ~ Poisson(xA90 ×
+dificultad), clean sheet ~ Bernoulli, más el escenario "no juega" que
+aporta 0 — y de ahí saca dos métricas:
+
+- **`xp_ceiling`**: percentil 90 de puntos. "En su 10% de mejores
+  partidos, saca al menos esto."
+- **`haul_probability`**: P(puntos ≥ 10), el umbral clásico de haul en
+  FPL. Muy directo de comunicar.
+
+El contraste real que motivó esto, con datos de hoy:
+
+| Jugador | xP medio | Techo | P(haul) |
+|---|---|---|---|
+| Raya (GKP) | 4.94 | 6.0 | 0.0% |
+| Haaland (FWD) | 4.71 | 10.0 | 16.3% |
+
+Raya proyecta **más** xP promedio, pero un arquero no puede hacer un
+haul — su distribución es estrecha. El modelo lineal no distinguía esos
+dos casos.
+
+**Dónde se usa:** solo en capitanía. `captaincy_picks` siempre muestra
+techo y probabilidad de haul, y con `--stance chase` ordena por techo en
+vez de por media (remontar posiciones necesita resultados grandes, no
+consistencia). Las transferencias siguen usando el promedio a 4 fechas:
+ahí la varianza semana a semana se diluye y lo que importa es el
+acumulado.
+
 **Efecto secundario del factor de rotación:** modelarlo hizo innecesaria
 una restricción dura de "profundidad viable por posición". Un suplente
 habitual ahora proyecta poco (Nmecha, 10 titularidades, pasó de 4.83 a
