@@ -388,6 +388,31 @@ real cuando de verdad llegue esa fecha — por eso es "el plan de hoy, si
 nada cambiara", no un compromiso. Es de solo lectura: nunca toca
 `my_team.csv` ni `base_squad_state.json`, son completamente independientes.
 
+## Briefing para redactar posts
+
+`data/processed/briefing.md` — un resumen en Markdown que genera el mismo
+pipeline, pensado para que un modelo redacte posts sin leer los CSVs
+completos. Trae equipo Base, equipo Wildcard, top capitanías, top
+diferenciales, y una sección que explica cómo interpretar cada métrica.
+
+Existe por tres razones concretas:
+
+1. **Costo**: `players_scored.csv` son 592 jugadores × 32 columnas (~39k
+   tokens) para armar un post que usa ~20 jugadores. El briefing pesa
+   ~6 KB — unas 10 veces menos.
+2. **Seguridad de los datos**: viene ya filtrado por
+   `MIN_MINUTES_FOR_RANKING`, así que no expone la trampa de las tasas
+   por 90' infladas (hay jugadores con 2 minutos jugados y el "mejor
+   xG90 de la liga").
+3. **Menos ambigüedad**: incluye la explicación de cada métrica en el
+   propio archivo, en vez de depender de que quien lo lea recuerde qué
+   significa `xp_ceiling` o por qué `set_piece_duties` no está sumado al
+   xP.
+
+Se arma reusando el DataFrame que ya produjo `export_squads_for_tableau`,
+no recalculando los equipos — así el briefing no puede contradecir al
+CSV.
+
 ## Exports para Tableau
 
 `python scripts/export_for_tableau.py` genera dos CSVs en `data/processed/`:

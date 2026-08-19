@@ -12,6 +12,7 @@ from gameweek_lab.analysis import (
     add_horizon_expected_points,
     save_scored_players,
 )
+from gameweek_lab.briefing import save_briefing
 from gameweek_lab.build_dataset import build_players_dataset
 from gameweek_lab.photos import resolve_photo_urls
 from gameweek_lab.squad_builder import export_squads_for_tableau
@@ -32,4 +33,5 @@ if __name__ == "__main__":
     for line in log:
         print(f"  {line}")
 
-    export_squads_for_tableau(players, base_starters, base_bench)
+    squads = export_squads_for_tableau(players, base_starters, base_bench)
+    save_briefing(players, squads)

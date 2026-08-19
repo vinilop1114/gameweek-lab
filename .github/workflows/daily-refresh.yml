@@ -26,7 +26,7 @@ jobs:
       - name: Descargar datos frescos de la API de FPL
         run: python scripts/run_fetch.py
 
-      - name: Calcular xP y exportar CSVs para Tableau
+      - name: Calcular xP, exportar CSVs para Tableau y generar el briefing
         run: python scripts/export_for_tableau.py
 
       - name: Vista especulativa del equipo a 4 fechas (no toca my_team.csv)
