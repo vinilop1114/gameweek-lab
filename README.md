@@ -250,6 +250,46 @@ integraron a ninguna decisión automática porque anticipar el algoritmo
 de precios de FPL con precisión (no está publicado oficialmente) sería
 una predicción, no una preparación — justo lo que este proyecto evita.
 
+## Loop de calibración
+
+`python scripts/run_calibration.py` — la única forma de saber si el xP le
+está pegando bien es comparar, fecha a fecha, lo que proyectó contra lo
+que realmente pasó. Sin esto, no hay manera de detectar si el modelo
+sobrestima delanteros o subestima defensas baratas — solo la sensación de
+que "parece razonable".
+
+Dos pasos, gateados para no duplicar trabajo si el pipeline corre varias
+veces el mismo día:
+
+1. **`snapshot_predictions`**: antes de que se juegue cada fecha, graba
+   `xp_next` de cada jugador disponible en `data/processed/xp_calibration.csv`
+   (append, no se sobreescribe). Sin esto la proyección se pierde apenas
+   se refrescan los datos al día siguiente — `players_scored.csv` no
+   guarda historial, siempre muestra el estado actual.
+2. **`record_actual_points`**: una vez que una fecha queda con resultados
+   y bonus points confirmados oficialmente (`data_checked=True` en la
+   API), completa los puntos reales de esa fecha usando
+   `/event/{id}/live/` — a diferencia de `event_points` en
+   bootstrap-static (que solo refleja la fecha "actual" del juego y se
+   pisa apenas arranca la siguiente), este endpoint da los puntos de esa
+   fecha puntual sin ambigüedad, así que no importa si el pipeline se
+   atrasa unos días en completarla.
+
+`build_calibration_report` compara `xp_predicted` vs `actual_points` y
+reporta el sesgo general y por posición — pero **con menos de
+`MIN_OBSERVATIONS_FOR_BIAS_REPORT` (100) observaciones, lo dice
+explícitamente en vez de mostrar un "sesgo" que en realidad es ruido de
+1-2 fechas**. Verificado con datos sintéticos (sesgo inyectado a
+propósito: FWD -1.5, DEF +1.0) antes de confiar en la lógica — el reporte
+lo detectó con precisión (FWD -1.46, DEF +1.15).
+
+**Deliberadamente no auto-corrige nada**: la temporada 2026/27 arranca
+recién el 21 de agosto, así que hoy hay 0 fechas jugadas — "corregir" el
+modelo ahora sería ajustarlo contra ruido. El reporte es para que una
+persona lo lea; decidir si vale ajustar `GOAL_POINTS`, `CLEAN_SHEET_POINTS`
+o el peso de cada componente del xP, una vez haya semanas suficientes, es
+una decisión aparte y deliberada.
+
 ## Vista especulativa a 4 fechas
 
 `python scripts/run_trajectory_preview.py` genera

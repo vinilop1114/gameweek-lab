@@ -32,6 +32,9 @@ jobs:
       - name: Vista especulativa del equipo a 4 fechas (no toca my_team.csv)
         run: python scripts/run_trajectory_preview.py
 
+      - name: Grabar predicción de la fecha + completar puntos reales de fechas ya jugadas
+        run: python scripts/run_calibration.py
+
       - name: Commitear y subir los CSVs actualizados
         run: |
           git config user.name "github-actions[bot]"

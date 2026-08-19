@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from gameweek_lab.config import BOOTSTRAP_URL, DATA_RAW_DIR, FIXTURES_URL
+from gameweek_lab.config import BOOTSTRAP_URL, DATA_RAW_DIR, FIXTURES_URL, FPL_BASE_URL
 
 
 def _get_json(url: str) -> dict | list:
@@ -29,6 +29,21 @@ def fetch_bootstrap() -> dict:
 def fetch_fixtures() -> list:
     data = _get_json(FIXTURES_URL)
     _save_raw(data, "fixtures")
+    return data
+
+
+def fetch_event_live(event_id: int) -> dict:
+    """Puntos reales de cada jugador en UNA fecha específica — a
+    diferencia de `event_points` en bootstrap-static (que solo refleja la
+    fecha "actual" del juego y se pisa apenas arranca la siguiente), este
+    endpoint no es ambiguo: siempre da los puntos de `event_id`, sin
+    importar en qué fecha esté la temporada ahora. Se usa para completar
+    el historial de calibración (gameweek_lab/calibration.py) — no se
+    llama en cada corrida diaria, solo cuando hay una fecha finalizada
+    pendiente de completar.
+    """
+    data = _get_json(f"{FPL_BASE_URL}/event/{event_id}/live/")
+    _save_raw(data, f"event-{event_id}-live")
     return data
 
 
