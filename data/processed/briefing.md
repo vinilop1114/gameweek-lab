@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-21 09:32 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-21 12:39 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 5.95 | 11.0 | 16% | 51.1% | Hull City |
-| Mbeumo | Man Utd | MID | 5.23 | 11.0 | 14% | 36.5% | Hull City |
+| B.Fernandes | Man Utd | MID | 5.95 | 11.0 | 16% | 51.4% | Hull City |
+| Mbeumo | Man Utd | MID | 5.23 | 11.0 | 14% | 37.2% | Hull City |
 | Gabriel | Arsenal | DEF | 4.95 | 9.0 | 7% | 29.7% | Coventry City |
-| Raya | Arsenal | GKP | 4.94 | 6.0 | 0% | 37.0% | Coventry City |
+| Raya | Arsenal | GKP | 4.94 | 6.0 | 0% | 37.2% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.84 | 8.0 | 8% | 11.8% | Leeds |
-| Haaland | Man City | FWD | 4.71 | 10.0 | 16% | 69.3% | Bournemouth |
+| Haaland | Man City | FWD | 4.71 | 10.0 | 16% | 69.4% | Bournemouth |
 | N.Williams | Nott'm Forest | DEF | 4.48 | 8.0 | 3% | 10.5% | Leeds |
 | Shaw | Man Utd | DEF | 4.46 | 6.0 | 1% | 21.5% | Hull City |
 
@@ -64,13 +64,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Saka | Arsenal | MID | £9.5m | 9.2% | 4.42 | 10.0 | 10% | Coventry City |
-| Hume | Sunderland | DEF | £4.5m | 6.6% | 4.2 | 8.0 | 3% | Ipswich Town |
-| Enzo | Chelsea | MID | £7.0m | 5.1% | 4.1 | 8.0 | 8% | Fulham |
+| Hume | Sunderland | DEF | £4.5m | 6.7% | 4.2 | 8.0 | 3% | Ipswich Town |
+| Enzo | Chelsea | MID | £7.0m | 5.0% | 4.1 | 8.0 | 8% | Fulham |
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 3.92 | 6.0 | 1% | Leeds |
-| Gyökeres | Arsenal | FWD | £7.5m | 9.7% | 3.91 | 10.0 | 10% | Coventry City |
-| Mukiele | Sunderland | DEF | £5.5m | 2.4% | 3.89 | 6.0 | 2% | Ipswich Town |
+| Gyökeres | Arsenal | FWD | £7.5m | 9.5% | 3.91 | 10.0 | 10% | Coventry City |
+| Mukiele | Sunderland | DEF | £5.5m | 2.6% | 3.89 | 6.0 | 2% | Ipswich Town |
 | Dalot | Man Utd | DEF | £5.0m | 2.8% | 3.88 | 8.0 | 3% | Hull City |
-| Schade | Brentford | MID | £6.0m | 3.5% | 3.72 | 8.0 | 7% | Spurs |
+| Schade | Brentford | MID | £6.0m | 3.6% | 3.72 | 8.0 | 7% | Spurs |
 
 ## Cómo leer estos números
 
