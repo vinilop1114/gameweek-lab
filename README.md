@@ -69,6 +69,15 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
     bayesiano hacia `START_RATE_PRIOR` (0.75) con peso
     `START_RATE_PRIOR_WEIGHT` (5 partidos) para que "2 de 2" no se lea
     como 100% titular al arrancar la temporada.
+    **El reseteo de temporada:** FPL pone `starts` en 0 al arrancar cada
+    temporada. Sin protección, en GW1 un titular indiscutido y un
+    suplente habitual quedarían ambos en ~0.7 (los dos pegados al prior)
+    y harían falta ~10 fechas para volver a distinguirlos.
+    `save_last_season_baseline` congela la tasa del año anterior mientras
+    todavía está disponible — en pre-temporada — y `_start_rate` la usa
+    como prior informado en vez del 0.75 genérico. Verificado: tras GW1,
+    sin baseline Thiago y Nmecha darían ambos 0.79; con baseline dan 0.98
+    y 0.39.
   - **`playing_probability`** (lesión): `chance_of_playing_next_round` /
     100, o 100% si no hay duda reportada. **Ojo:** verificado contra
     datos reales, solo 9 de 224 jugadores elegibles tienen valor no nulo

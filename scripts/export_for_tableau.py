@@ -10,6 +10,7 @@ from gameweek_lab.analysis import (
     add_ceiling_metrics,
     add_expected_points,
     add_horizon_expected_points,
+    save_last_season_baseline,
     save_scored_players,
 )
 from gameweek_lab.briefing import save_briefing
@@ -19,7 +20,14 @@ from gameweek_lab.squad_builder import export_squads_for_tableau
 from gameweek_lab.transfer_advisor import evolve_base_squad
 
 if __name__ == "__main__":
-    players = add_ceiling_metrics(add_horizon_expected_points(add_expected_points(build_players_dataset())))
+    raw_players = build_players_dataset()
+
+    # Antes de calcular nada: congelar la titularidad de la temporada
+    # anterior mientras `starts` todavía la refleja. Es idempotente y no
+    # hace nada una vez arrancada la temporada.
+    print(save_last_season_baseline(raw_players))
+
+    players = add_ceiling_metrics(add_horizon_expected_points(add_expected_points(raw_players)))
 
     # Fotos resueltas ANTES de evolucionar el Base: evolve_base_squad toma
     # una porción (slice) del DataFrame, así que si resolviéramos las fotos

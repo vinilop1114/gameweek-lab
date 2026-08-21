@@ -51,6 +51,10 @@ START_RATE_PRIOR = 0.75
 # datos de la temporada en curso dominan. Evita que 2 de 2 se lea como
 # "100% titular", o 0 de 2 como "nunca juega".
 START_RATE_PRIOR_WEIGHT = 5
+# Tasa de titularidad de la temporada anterior, congelada en pre-temporada.
+# FPL resetea `starts` a 0 cada temporada; sin esta referencia, la señal de
+# rotación se pierde durante las primeras ~10 fechas.
+LAST_SEASON_BASELINE_PATH = DATA_PROCESSED_DIR / "last_season_start_rates.csv"
 
 # Parámetros de la distribución de puntos (ver `_points_distribution`).
 # Los máximos son cortes prácticos. Para un jugador típico (xG90 ~0.5)
@@ -244,6 +248,40 @@ def _playing_probability(players: pd.DataFrame) -> pd.Series:
     return players["chance_of_playing_next_round"].fillna(100) / 100
 
 
+def _load_last_season_baseline() -> dict[int, float]:
+    """Tasa de titularidad de la temporada anterior, por `player_id`.
+
+    Existe porque FPL resetea `starts` a 0 al arrancar cada temporada: sin
+    esto, en GW1 un titular indiscutido y un suplente habitual quedarían
+    con la misma tasa (ambos cerca del prior), y harían falta ~10 fechas
+    para recuperar la señal. Con el baseline, la evidencia del año pasado
+    es el punto de partida y los datos nuevos la corrigen de a poco.
+    """
+    if not LAST_SEASON_BASELINE_PATH.exists():
+        return {}
+    baseline = pd.read_csv(LAST_SEASON_BASELINE_PATH)
+    return dict(zip(baseline["player_id"], baseline["start_rate"]))
+
+
+def save_last_season_baseline(players: pd.DataFrame) -> str:
+    """Congela la tasa de titularidad mientras `starts` todavía es de la
+    temporada anterior — es decir, en pre-temporada.
+
+    Solo escribe si no se jugó ningún partido aún. Una vez arrancada la
+    temporada los `starts` ya son de la actual, y sobrescribir el archivo
+    destruiría justamente la referencia que queremos conservar.
+    """
+    played = get_matches_played_by_team()
+    if any(matches > 0 for matches in played.values()):
+        return "La temporada ya arrancó — no se toca el baseline (sería sobrescribirlo con datos de la temporada en curso)."
+
+    rate = (players["starts"].fillna(0) / FULL_SEASON_MATCHES).clip(upper=1.0)
+    baseline = pd.DataFrame({"player_id": players["id"], "web_name": players["web_name"], "start_rate": rate.round(3)})
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    baseline.to_csv(LAST_SEASON_BASELINE_PATH, index=False)
+    return f"Baseline de titularidad guardado para {len(baseline)} jugadores (temporada anterior)."
+
+
 def _start_rate(players: pd.DataFrame) -> pd.Series:
     """Con qué frecuencia el jugador es TITULAR — el factor de rotación,
     independiente de la duda por lesión (`_playing_probability`).
@@ -259,22 +297,39 @@ def _start_rate(players: pd.DataFrame) -> pd.Series:
     suplente que suma minutos entrando: dos jugadores con los mismos
     minutos totales pueden ser uno titular fijo y otro rotativo.
 
-    Suavizado (shrinkage) hacia `START_RATE_PRIOR`: con pocos partidos
-    jugados, la tasa cruda es ruido — 2 de 2 no significa "100% titular".
-    `START_RATE_PRIOR_WEIGHT` equivale a partidos de evidencia previa,
-    así que la tasa arranca en el prior y se va acercando a la real a
-    medida que se acumulan partidos.
+    Suavizado (shrinkage) bayesiano: con pocos partidos jugados la tasa
+    cruda es ruido — 2 de 2 no significa "100% titular".
+    `START_RATE_PRIOR_WEIGHT` equivale a partidos de evidencia previa, así
+    que la tasa arranca en el prior y se acerca a la real a medida que se
+    acumulan partidos.
+
+    El prior es **informado cuando se puede**: la tasa del jugador la
+    temporada pasada (`save_last_season_baseline`), y solo cae a
+    `START_RATE_PRIOR` para quien no tenga historial (un debutante, o un
+    fichaje que llega de otra liga). Sin esto, el reseteo de `starts` al
+    arrancar la temporada borraría de golpe la señal: en GW1 un titular
+    indiscutido daría 0.79 y un suplente 0.62 — prácticamente lo mismo —
+    y harían falta ~10 fechas para volver a distinguirlos.
     """
     played = get_matches_played_by_team()
     team_matches = players["team_name"].map(played).fillna(0)
+    season_started = (team_matches > 0).any()
     # Pre-temporada no hay partidos jugados todavía: `starts` es de la
     # temporada anterior, así que el denominador correcto es esa temporada
     # completa, no cero.
     team_matches = team_matches.where(team_matches > 0, FULL_SEASON_MATCHES)
 
+    if season_started:
+        baseline = _load_last_season_baseline()
+        prior = players["id"].map(baseline).fillna(START_RATE_PRIOR)
+    else:
+        # En pre-temporada los propios `starts` ya son la evidencia del
+        # año pasado; usar el baseline acá sería contar lo mismo dos veces.
+        prior = START_RATE_PRIOR
+
     starts = players["starts"].fillna(0)
     return (
-        (starts + START_RATE_PRIOR_WEIGHT * START_RATE_PRIOR)
+        (starts + START_RATE_PRIOR_WEIGHT * prior)
         / (team_matches + START_RATE_PRIOR_WEIGHT)
     ).clip(upper=1.0)
 
