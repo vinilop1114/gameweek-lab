@@ -51,10 +51,23 @@ START_RATE_PRIOR = 0.75
 # datos de la temporada en curso dominan. Evita que 2 de 2 se lea como
 # "100% titular", o 0 de 2 como "nunca juega".
 START_RATE_PRIOR_WEIGHT = 5
-# Tasa de titularidad de la temporada anterior, congelada en pre-temporada.
-# FPL resetea `starts` a 0 cada temporada; sin esta referencia, la señal de
-# rotación se pierde durante las primeras ~10 fechas.
-LAST_SEASON_BASELINE_PATH = DATA_PROCESSED_DIR / "last_season_start_rates.csv"
+# Métricas de la temporada anterior, congeladas en pre-temporada. FPL
+# resetea TODOS los acumulados al empezar una temporada nueva (minutos,
+# starts, goles esperados...). Sin esta referencia, el modelo se quedaría
+# sin insumo: en GW2, el xG90 de un jugador saldría de un solo partido.
+LAST_SEASON_BASELINE_PATH = DATA_PROCESSED_DIR / "last_season_baseline.csv"
+# Métricas que se congelan. Son tasas por 90' (comparables entre
+# temporadas) más `starts`/`minutes`, que dan el peso de la evidencia.
+BASELINE_RATE_COLUMNS = [
+    "expected_goals_per_90",
+    "expected_assists_per_90",
+    "expected_goals_conceded_per_90",
+]
+# Cuántos minutos de la temporada en curso hacen falta para que los datos
+# nuevos pesen lo mismo que los de la anterior. 900 (~10 partidos) es el
+# mismo umbral que MIN_MINUTES_FOR_RANKING usa para considerar una muestra
+# confiable: antes de eso, la temporada pasada sigue siendo mejor evidencia.
+BASELINE_BLEND_MINUTES = 900
 
 # Parámetros de la distribución de puntos (ver `_points_distribution`).
 # Los máximos son cortes prácticos. Para un jugador típico (xG90 ~0.5)
@@ -96,11 +109,16 @@ def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     goal_points = players["position"].map(GOAL_POINTS)
     clean_sheet_points = players["position"].map(CLEAN_SHEET_POINTS)
 
-    attacking = (
-        players["expected_goals_per_90"] * goal_points
-        + players["expected_assists_per_90"] * ASSIST_POINTS
-    )
-    clean_sheet_probability = np.exp(-players["expected_goals_conceded_per_90"])
+    # Las tasas se mezclan con las de la temporada anterior según cuántos
+    # minutos lleve jugados el jugador (ver `_blend_with_baseline`). FPL
+    # resetea estos acumulados cada temporada, así que sin esto el modelo
+    # se quedaría sin insumo en las primeras fechas.
+    expected_goals = _blend_with_baseline(players, "expected_goals_per_90")
+    expected_assists = _blend_with_baseline(players, "expected_assists_per_90")
+    expected_conceded = _blend_with_baseline(players, "expected_goals_conceded_per_90")
+
+    attacking = expected_goals * goal_points + expected_assists * ASSIST_POINTS
+    clean_sheet_probability = np.exp(-expected_conceded)
     defensive = clean_sheet_probability * clean_sheet_points
 
     return attacking + defensive + APPEARANCE_POINTS
@@ -156,10 +174,12 @@ def _points_distribution(players: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]
     goal_points = players["position"].map(GOAL_POINTS).to_numpy()
     clean_sheet_points = players["position"].map(CLEAN_SHEET_POINTS).to_numpy()
 
-    goal_pmf = _poisson_pmf_matrix(players["expected_goals_per_90"].fillna(0) * fixture_mult, MAX_GOALS)
-    assist_pmf = _poisson_pmf_matrix(players["expected_assists_per_90"].fillna(0) * fixture_mult, MAX_ASSISTS)
+    # Mismas tasas mezcladas que usa `_base_scoring_rate`, para que la
+    # distribución y el promedio no se calculen sobre insumos distintos.
+    goal_pmf = _poisson_pmf_matrix(_blend_with_baseline(players, "expected_goals_per_90") * fixture_mult, MAX_GOALS)
+    assist_pmf = _poisson_pmf_matrix(_blend_with_baseline(players, "expected_assists_per_90") * fixture_mult, MAX_ASSISTS)
     clean_sheet_prob = np.clip(
-        np.exp(-players["expected_goals_conceded_per_90"].fillna(0)) * fixture_mult, 0.0, 1.0
+        np.exp(-_blend_with_baseline(players, "expected_goals_conceded_per_90")) * fixture_mult, 0.0, 1.0
     )
 
     goals = np.arange(MAX_GOALS + 1)[:, None, None]
@@ -248,38 +268,67 @@ def _playing_probability(players: pd.DataFrame) -> pd.Series:
     return players["chance_of_playing_next_round"].fillna(100) / 100
 
 
-def _load_last_season_baseline() -> dict[int, float]:
-    """Tasa de titularidad de la temporada anterior, por `player_id`.
+def _load_last_season_baseline() -> pd.DataFrame | None:
+    """Métricas de la temporada anterior, o None si no se guardaron.
 
-    Existe porque FPL resetea `starts` a 0 al arrancar cada temporada: sin
-    esto, en GW1 un titular indiscutido y un suplente habitual quedarían
-    con la misma tasa (ambos cerca del prior), y harían falta ~10 fechas
-    para recuperar la señal. Con el baseline, la evidencia del año pasado
-    es el punto de partida y los datos nuevos la corrigen de a poco.
+    Existe porque FPL resetea todos los acumulados al arrancar una
+    temporada: `starts`, `minutes` y las tasas por 90' vuelven a cero. Sin
+    esta referencia el modelo se quedaría sin insumo — en GW2, el xG90 de
+    un jugador saldría de un único partido, que es ruido, y un titular
+    indiscutido sería indistinguible de un suplente.
     """
     if not LAST_SEASON_BASELINE_PATH.exists():
-        return {}
-    baseline = pd.read_csv(LAST_SEASON_BASELINE_PATH)
-    return dict(zip(baseline["player_id"], baseline["start_rate"]))
+        return None
+    return pd.read_csv(LAST_SEASON_BASELINE_PATH)
+
+
+def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
+    """Mezcla una tasa por 90' de la temporada en curso con la de la
+    anterior, ponderando por minutos jugados.
+
+    Al principio de la temporada manda la evidencia vieja; al llegar a
+    `BASELINE_BLEND_MINUTES` pesan igual; después domina la nueva. Evita
+    el salto brusco de "toda la información desaparece en GW1" sin
+    quedarse anclado a datos viejos cuando ya hay muestra fresca.
+
+    Sin baseline (o para un jugador que no figure en él — un debutante)
+    devuelve la tasa actual tal cual.
+    """
+    current = players[column].fillna(0)
+    baseline = _load_last_season_baseline()
+    if baseline is None or column not in baseline.columns:
+        return current
+
+    previous = players["id"].map(dict(zip(baseline["player_id"], baseline[column])))
+    minutes = players["minutes"].fillna(0)
+    blended = (current * minutes + previous * BASELINE_BLEND_MINUTES) / (minutes + BASELINE_BLEND_MINUTES)
+    return blended.fillna(current)
 
 
 def save_last_season_baseline(players: pd.DataFrame) -> str:
-    """Congela la tasa de titularidad mientras `starts` todavía es de la
-    temporada anterior — es decir, en pre-temporada.
+    """Congela las métricas mientras todavía son de la temporada anterior
+    — es decir, en pre-temporada.
 
-    Solo escribe si no se jugó ningún partido aún. Una vez arrancada la
-    temporada los `starts` ya son de la actual, y sobrescribir el archivo
+    Solo escribe si no se jugó ningún partido. Una vez arrancada la
+    temporada los datos ya son de la actual, y sobrescribir el archivo
     destruiría justamente la referencia que queremos conservar.
     """
     played = get_matches_played_by_team()
     if any(matches > 0 for matches in played.values()):
         return "La temporada ya arrancó — no se toca el baseline (sería sobrescribirlo con datos de la temporada en curso)."
 
-    rate = (players["starts"].fillna(0) / FULL_SEASON_MATCHES).clip(upper=1.0)
-    baseline = pd.DataFrame({"player_id": players["id"], "web_name": players["web_name"], "start_rate": rate.round(3)})
+    baseline = pd.DataFrame({
+        "player_id": players["id"],
+        "web_name": players["web_name"],
+        "start_rate": (players["starts"].fillna(0) / FULL_SEASON_MATCHES).clip(upper=1.0).round(3),
+        "minutes": players["minutes"].fillna(0),
+    })
+    for column in BASELINE_RATE_COLUMNS:
+        baseline[column] = players[column].fillna(0)
+
     DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     baseline.to_csv(LAST_SEASON_BASELINE_PATH, index=False)
-    return f"Baseline de titularidad guardado para {len(baseline)} jugadores (temporada anterior)."
+    return f"Baseline de la temporada anterior guardado: {len(baseline)} jugadores, {len(BASELINE_RATE_COLUMNS) + 2} métricas."
 
 
 def _start_rate(players: pd.DataFrame) -> pd.Series:
@@ -321,7 +370,12 @@ def _start_rate(players: pd.DataFrame) -> pd.Series:
 
     if season_started:
         baseline = _load_last_season_baseline()
-        prior = players["id"].map(baseline).fillna(START_RATE_PRIOR)
+        if baseline is not None:
+            prior = players["id"].map(
+                dict(zip(baseline["player_id"], baseline["start_rate"]))
+            ).fillna(START_RATE_PRIOR)
+        else:
+            prior = START_RATE_PRIOR
     else:
         # En pre-temporada los propios `starts` ya son la evidencia del
         # año pasado; usar el baseline acá sería contar lo mismo dos veces.

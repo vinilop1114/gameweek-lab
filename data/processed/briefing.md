@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-21 12:39 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-21 15:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,35 +42,35 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Thiago | Brentford | FWD | £8.0m | 4.16 | 10.0 | 10% | 18.03 | Spurs (casa) | Penales |
 | Titular | Enzo | Chelsea | MID | £7.0m | 4.1 | 8.0 | 8% | 16.41 | Fulham (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 2.27 | 6.0 | 0% | 9.84 | Brentford (fuera) | — |
-| Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.51 | 3.0 | 0% | 6.06 | Everton (fuera) | — |
-| Banco 3 | Delap | Chelsea | FWD | £5.5m | 1.3 | 6.0 | 2% | 5.19 | Fulham (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.5m | 0.69 | 2.0 | 1% | 3.44 | Chelsea (casa) | — |
+| Banco 2 | Beto | Everton | FWD | £5.5m | 1.98 | 6.0 | 5% | 7.27 | Crystal Palace (casa) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.5m | 1.68 | 5.0 | 1% | 7.3 | Aston Villa (casa) | — |
+| Banco 4 | Hughes | Crystal Palace | MID | £4.5m | 1.51 | 3.0 | 0% | 6.06 | Everton (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 5.95 | 11.0 | 16% | 51.4% | Hull City |
-| Mbeumo | Man Utd | MID | 5.23 | 11.0 | 14% | 37.2% | Hull City |
-| Gabriel | Arsenal | DEF | 4.95 | 9.0 | 7% | 29.7% | Coventry City |
-| Raya | Arsenal | GKP | 4.94 | 6.0 | 0% | 37.2% | Coventry City |
-| Gibbs-White | Nott'm Forest | MID | 4.84 | 8.0 | 8% | 11.8% | Leeds |
-| Haaland | Man City | FWD | 4.71 | 10.0 | 16% | 69.4% | Bournemouth |
-| N.Williams | Nott'm Forest | DEF | 4.48 | 8.0 | 3% | 10.5% | Leeds |
-| Shaw | Man Utd | DEF | 4.46 | 6.0 | 1% | 21.5% | Hull City |
+| B.Fernandes | Man Utd | MID | 5.95 | 11.0 | 16% | 49.1% | Hull City |
+| Mbeumo | Man Utd | MID | 5.23 | 11.0 | 14% | 31.3% | Hull City |
+| Gabriel | Arsenal | DEF | 4.95 | 9.0 | 7% | 28.8% | Coventry City |
+| Raya | Arsenal | GKP | 4.94 | 6.0 | 0% | 34.4% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 4.84 | 8.0 | 8% | 11.9% | Leeds |
+| Haaland | Man City | FWD | 4.71 | 10.0 | 16% | 70.3% | Bournemouth |
+| N.Williams | Nott'm Forest | DEF | 4.48 | 8.0 | 3% | 11.1% | Leeds |
+| Shaw | Man Utd | DEF | 4.46 | 6.0 | 1% | 22.3% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Saka | Arsenal | MID | £9.5m | 9.2% | 4.42 | 10.0 | 10% | Coventry City |
-| Hume | Sunderland | DEF | £4.5m | 6.7% | 4.2 | 8.0 | 3% | Ipswich Town |
-| Enzo | Chelsea | MID | £7.0m | 5.0% | 4.1 | 8.0 | 8% | Fulham |
-| Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 3.92 | 6.0 | 1% | Leeds |
-| Gyökeres | Arsenal | FWD | £7.5m | 9.5% | 3.91 | 10.0 | 10% | Coventry City |
-| Mukiele | Sunderland | DEF | £5.5m | 2.6% | 3.89 | 6.0 | 2% | Ipswich Town |
-| Dalot | Man Utd | DEF | £5.0m | 2.8% | 3.88 | 8.0 | 3% | Hull City |
-| Schade | Brentford | MID | £6.0m | 3.6% | 3.72 | 8.0 | 7% | Spurs |
+| Saka | Arsenal | MID | £9.5m | 9.6% | 4.42 | 10.0 | 10% | Coventry City |
+| Hume | Sunderland | DEF | £4.5m | 6.0% | 4.2 | 8.0 | 3% | Ipswich Town |
+| Enzo | Chelsea | MID | £7.0m | 5.2% | 4.1 | 8.0 | 8% | Fulham |
+| Milenković | Nott'm Forest | DEF | £5.5m | 2.2% | 3.92 | 6.0 | 1% | Leeds |
+| Dalot | Man Utd | DEF | £5.0m | 3.0% | 3.88 | 8.0 | 3% | Hull City |
+| Schade | Brentford | MID | £6.0m | 3.2% | 3.72 | 8.0 | 7% | Spurs |
+| Amad | Man Utd | MID | £6.0m | 1.6% | 3.7 | 8.0 | 6% | Hull City |
+| Bruno G. | Arsenal | MID | £7.0m | 8.9% | 3.67 | 8.0 | 5% | Coventry City |
 
 ## Cómo leer estos números
 

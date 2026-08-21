@@ -69,15 +69,22 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
     bayesiano hacia `START_RATE_PRIOR` (0.75) con peso
     `START_RATE_PRIOR_WEIGHT` (5 partidos) para que "2 de 2" no se lea
     como 100% titular al arrancar la temporada.
-    **El reseteo de temporada:** FPL pone `starts` en 0 al arrancar cada
-    temporada. Sin protección, en GW1 un titular indiscutido y un
-    suplente habitual quedarían ambos en ~0.7 (los dos pegados al prior)
-    y harían falta ~10 fechas para volver a distinguirlos.
-    `save_last_season_baseline` congela la tasa del año anterior mientras
-    todavía está disponible — en pre-temporada — y `_start_rate` la usa
-    como prior informado en vez del 0.75 genérico. Verificado: tras GW1,
-    sin baseline Thiago y Nmecha darían ambos 0.79; con baseline dan 0.98
-    y 0.39.
+    **El reseteo de temporada** (aplica a TODO el modelo, no solo a la
+    rotación): FPL pone en cero todos los acumulados al empezar una
+    temporada — `starts`, `minutes` y también las tasas por 90' que son
+    el insumo principal del xP. Sin protección, en GW2 el xG90 de un
+    jugador saldría de un único partido (ruido puro) y un titular
+    indiscutido sería indistinguible de un suplente.
+
+    `save_last_season_baseline` congela esas métricas en pre-temporada,
+    mientras todavía están disponibles, en
+    `data/processed/last_season_baseline.csv`. Después se usan de dos
+    formas: como **prior** para `start_rate`, y como **mezcla ponderada**
+    para las tasas por 90' (`_blend_with_baseline`) — al principio manda
+    la temporada anterior, y los datos nuevos van ganando peso hasta
+    dominar al llegar a `BASELINE_BLEND_MINUTES` (900 min ≈ 10 partidos).
+    Verificado: tras GW1, sin baseline Thiago y Nmecha darían ambos 0.79
+    de titularidad; con baseline dan 0.98 y 0.39.
   - **`playing_probability`** (lesión): `chance_of_playing_next_round` /
     100, o 100% si no hay duda reportada. **Ojo:** verificado contra
     datos reales, solo 9 de 224 jugadores elegibles tienen valor no nulo
