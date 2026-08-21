@@ -348,7 +348,7 @@ def _print_team(title: str, starters: pd.DataFrame, bench: pd.DataFrame) -> None
         print(f"  {starter.web_name} → {sub_name if sub_name else 'SIN COBERTURA VÁLIDA'}")
 
 
-def recommend_squad() -> None:
+def recommend_squad(force: bool = False) -> None:
     """Equipo Base autogestionado: se importa evolve_base_squad acá adentro
     (no arriba del archivo) porque transfer_advisor.py ya importa de este
     módulo — un import circular a nivel de módulo rompería la carga. Al
@@ -359,7 +359,7 @@ def recommend_squad() -> None:
     from gameweek_lab.transfer_advisor import evolve_base_squad
 
     players = add_horizon_expected_points(add_expected_points(build_players_dataset()))
-    starters, bench, log = evolve_base_squad(players)
+    starters, bench, log = evolve_base_squad(players, force=force)
     print("\n".join(f"  {line}" for line in log))
     _print_team("Equipo Base (autogestionado)", starters, bench)
 

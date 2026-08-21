@@ -1,5 +1,6 @@
 import difflib
 import json
+from datetime import datetime, timezone
 
 import pandas as pd
 
@@ -11,7 +12,7 @@ from gameweek_lab.analysis import (
     add_rank_adjusted_value,
     captaincy_picks,
 )
-from gameweek_lab.build_dataset import build_players_dataset, get_team_fixtures_horizon
+from gameweek_lab.build_dataset import build_players_dataset, get_next_deadline, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
 from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION, select_starting_xi, would_start_after_swap
 
@@ -41,6 +42,13 @@ MAX_BANKED_TRANSFERS = 5
 # proyectada — el cambio sigue siendo posible si la ventaja alcanza para
 # justificarlo igual, solo que el umbral efectivo sube.
 BENCH_GAIN_DISCOUNT = 0.3
+# Cuántas horas antes del deadline se decide la transferencia de la fecha.
+# El gate natural sería "cambió el gameweek", pero eso dispara la decisión
+# apenas termina la fecha anterior — el lunes, con la peor información de
+# la semana. Las conferencias de prensa (donde se confirman lesiones) son
+# jueves y viernes, y los precios se mueven todos los días. Esperar hasta
+# el final de la ventana usa la mejor información disponible.
+TRANSFER_DECISION_WINDOW_HOURS = 3
 
 
 def _sell_price(now_cost: float, purchase_price: float) -> float:
@@ -360,15 +368,26 @@ def save_my_team(squad: pd.DataFrame, path: str) -> None:
     squad[["web_name", "team_name", "purchase_price"]].to_csv(path, index=False)
 
 
-def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
+def evolve_base_squad(
+    players: pd.DataFrame, team_path: str = "my_team.csv", force: bool = False
+) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
     """Motor del equipo Base autogestionado: a diferencia de `advise` (que
     solo imprime una recomendación para que la leas), esto la EJECUTA.
 
-    Se evalúa una sola vez por gameweek, no una vez por corrida diaria —
-    las transferencias de FPL son semanales, así que sin este freno el
-    equipo podría "gastar" una transferencia distinta cada día dentro de
-    la misma fecha, algo que en el juego real no existe. El freno es el
-    estado persistido en BASE_STATE_PATH (última fecha evaluada).
+    Dos frenos, no uno:
+
+    1. **Una sola vez por gameweek** (estado en BASE_STATE_PATH): las
+       transferencias de FPL son semanales, así que sin esto el equipo
+       podría "gastar" una transferencia distinta cada día de la misma
+       fecha, algo que en el juego no existe.
+    2. **Solo dentro de las últimas `TRANSFER_DECISION_WINDOW_HOURS`
+       antes del deadline**: el primer freno por sí solo dispara la
+       decisión apenas termina la fecha anterior — el lunes, con la peor
+       información de la semana. Las lesiones se confirman en las
+       conferencias de jueves y viernes, y los precios cambian a diario.
+
+    `force=True` saltea el segundo freno (no el primero). Sirve para
+    correrlo a mano y ver qué haría, sin esperar a la ventana.
 
     Usa exactamente los mismos umbrales que `advise` (BANK_THRESHOLD,
     HIT_UNCERTAINTY_MARGIN) para decidir si mover, pero en vez de
@@ -377,12 +396,24 @@ def evolve_base_squad(players: pd.DataFrame, team_path: str = "my_team.csv") -> 
     modelo considera que vale un hit de -4, lo aplica solo.
 
     Devuelve (starters, bench, log) — log es la lista de movimientos
-    hechos en esta corrida (o un aviso de que ya se evaluó esta fecha).
+    hechos en esta corrida (o el motivo por el que no se hizo ninguno).
     """
     state = _load_base_state()
     squad = load_my_team(team_path, players)
     current_gw = _current_gameweek(players)
     log = []
+
+    deadline = get_next_deadline()
+    if deadline is not None and not force:
+        hours_left = (deadline - datetime.now(timezone.utc)).total_seconds() / 3600
+        if hours_left > TRANSFER_DECISION_WINDOW_HOURS:
+            log.append(
+                f"Faltan {hours_left:.1f}h para el deadline de GW{current_gw} — se decide "
+                f"dentro de las últimas {TRANSFER_DECISION_WINDOW_HOURS}h, cuando ya se "
+                "conocen las lesiones reportadas."
+            )
+            starters, bench = select_starting_xi(squad)
+            return starters, bench, log
 
     if state["last_evaluated_gameweek"] == current_gw:
         log.append(f"GW{current_gw} ya evaluado — sin cambios nuevos hasta la próxima fecha.")

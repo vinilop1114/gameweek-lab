@@ -195,12 +195,22 @@ del mismo cálculo:
   no hay una mejora que justifique gastar la transferencia, el Base se
   queda exactamente igual. Si la hay, aplica el cambio — hits de -4
   incluidos, si el modelo los considera rentables (ver "Asesor de
-  transferencias"). Corre una sola vez por gameweek (no una vez por
-  corrida diaria): un archivo de estado
-  (`data/processed/base_squad_state.json`) guarda la última fecha
-  evaluada y cuántas transferencias tiene acumuladas, para no "gastar"
-  cambios distintos cada día dentro de la misma semana — algo que en el
-  juego real no existe.
+  transferencias").
+
+  Tiene **dos frenos**, no uno:
+
+  1. *Una sola vez por gameweek* — un archivo de estado
+     (`data/processed/base_squad_state.json`) guarda la última fecha
+     evaluada y las transferencias acumuladas, para no "gastar" cambios
+     distintos cada día de la misma semana.
+  2. *Solo en las últimas `TRANSFER_DECISION_WINDOW_HOURS` (3h) antes del
+     deadline* — sin esto, el primer freno dispararía la decisión apenas
+     termina la fecha anterior: el lunes, con la peor información de la
+     semana. Las lesiones se confirman en las conferencias de jueves y
+     viernes, y los precios de FPL se mueven a diario.
+
+  `python scripts/run_squad.py --force` saltea la ventana (no el primer
+  freno) para ver qué haría sin esperar al deadline.
 
 En la práctica, el XI del Wildcard suele sacar más xP que el del Base
 (mismo presupuesto, banco mucho más barato) — es la comparación esperada:

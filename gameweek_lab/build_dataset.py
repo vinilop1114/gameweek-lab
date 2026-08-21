@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import pandas as pd
 
@@ -116,6 +117,21 @@ def _set_piece_duties(players: pd.DataFrame) -> pd.Series:
         is_first = players[column] == 1
         labels[is_first] = labels[is_first].map(lambda existing, l=label: existing + [l])
     return labels.map(", ".join)
+
+
+def get_next_deadline() -> datetime | None:
+    """Fecha/hora límite del próximo gameweek, en UTC.
+
+    La usa `evolve_base_squad` para decidir transferencias cerca del
+    deadline y no apenas termina la fecha anterior — ver
+    TRANSFER_DECISION_WINDOW_HOURS.
+    """
+    bootstrap = _load_raw("bootstrap-static")
+    upcoming = [e for e in bootstrap["events"] if not e["finished"]]
+    if not upcoming:
+        return None
+    next_event = min(upcoming, key=lambda e: e["deadline_time"])
+    return datetime.fromisoformat(next_event["deadline_time"].replace("Z", "+00:00"))
 
 
 def get_matches_played_by_team() -> dict[str, int]:

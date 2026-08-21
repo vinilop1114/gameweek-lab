@@ -2,7 +2,13 @@ name: Daily Data Refresh
 
 on:
   schedule:
-    - cron: "0 6 * * *" # todos los días a las 06:00 UTC (07:00 UK en horario de invierno)
+    # Cada 3 horas. No es por los datos (con una vez al día alcanzaría),
+    # sino por la ventana de decisión de transferencias: evolve_base_squad
+    # solo decide en las últimas 3h antes del deadline, y los deadlines de
+    # FPL caen a horas muy distintas (vie 17:30, sáb 10:00, sáb 12:30...).
+    # Corriendo cada 3h siempre cae al menos una ejecución dentro de la
+    # ventana, sin importar el horario del deadline.
+    - cron: "0 */3 * * *"
   workflow_dispatch: # permite dispararlo a mano desde la pestaña Actions de GitHub
 
 permissions:
