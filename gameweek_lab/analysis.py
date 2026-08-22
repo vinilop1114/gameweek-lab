@@ -282,6 +282,28 @@ def _load_last_season_baseline() -> pd.DataFrame | None:
     return pd.read_csv(LAST_SEASON_BASELINE_PATH)
 
 
+def effective_minutes(players: pd.DataFrame) -> pd.Series:
+    """Minutos de evidencia disponible: los de esta temporada más los de
+    la anterior (del baseline).
+
+    `MIN_MINUTES_FOR_RANKING` filtra por muestra confiable, pero FPL
+    resetea `minutes` a cero cada temporada. Usando solo los minutos
+    actuales, en GW1 **nadie** pasa el filtro: verificado en la práctica
+    — el pool elegible quedó en 0 jugadores y el ILP del Wildcard tiró
+    `Infeasible`, que fue lo que rompió el pipeline.
+
+    Un jugador con 3.000 minutos el año pasado es una muestra confiable
+    aunque hoy lleve 90. La confiabilidad de la muestra no desaparece
+    porque cambie el número de temporada.
+    """
+    current = players["minutes"].fillna(0)
+    baseline = _load_last_season_baseline()
+    if baseline is None:
+        return current
+    previous = players["id"].map(dict(zip(baseline["player_id"], baseline["minutes"]))).fillna(0)
+    return current + previous
+
+
 def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
     """Mezcla una tasa por 90' de la temporada en curso con la de la
     anterior, ponderando por minutos jugados.
@@ -309,13 +331,19 @@ def save_last_season_baseline(players: pd.DataFrame) -> str:
     """Congela las métricas mientras todavía son de la temporada anterior
     — es decir, en pre-temporada.
 
-    Solo escribe si no se jugó ningún partido. Una vez arrancada la
-    temporada los datos ya son de la actual, y sobrescribir el archivo
-    destruiría justamente la referencia que queremos conservar.
+    **Se escribe una sola vez**: si el archivo ya existe, no se toca. Es
+    un snapshot único, y reescribirlo solo puede empeorarlo.
+
+    El guard original miraba si algún partido figuraba como `finished`,
+    y falló en la práctica: durante GW1, seis partidos ya se habían
+    jugado (`started=True`) pero ninguno estaba marcado `finished`
+    todavía — FPL lo marca recién cuando procesa los datos. En esa
+    ventana los acumulados de los jugadores YA estaban reseteados, así
+    que el guard dejó pasar la escritura y sobrescribió el baseline con
+    ceros. Existir o no existir el archivo no depende del timing de FPL.
     """
-    played = get_matches_played_by_team()
-    if any(matches > 0 for matches in played.values()):
-        return "La temporada ya arrancó — no se toca el baseline (sería sobrescribirlo con datos de la temporada en curso)."
+    if LAST_SEASON_BASELINE_PATH.exists():
+        return "El baseline ya existe — no se sobrescribe (es un snapshot de una sola vez)."
 
     baseline = pd.DataFrame({
         "player_id": players["id"],
@@ -362,11 +390,14 @@ def _start_rate(players: pd.DataFrame) -> pd.Series:
     """
     played = get_matches_played_by_team()
     team_matches = players["team_name"].map(played).fillna(0)
-    season_started = (team_matches > 0).any()
-    # Pre-temporada no hay partidos jugados todavía: `starts` es de la
-    # temporada anterior, así que el denominador correcto es esa temporada
-    # completa, no cero.
-    team_matches = team_matches.where(team_matches > 0, FULL_SEASON_MATCHES)
+    season_started = bool(team_matches.gt(0).any())
+    if not season_started:
+        # Pre-temporada: `starts` es de la temporada anterior, así que el
+        # denominador correcto es esa temporada completa, no cero. Ya
+        # empezada la temporada NO se fuerza: un equipo que todavía no
+        # jugó debe quedar con denominador 0, lo que hace que la tasa
+        # caiga limpiamente en su prior del baseline.
+        team_matches = pd.Series(FULL_SEASON_MATCHES, index=players.index)
 
     if season_started:
         baseline = _load_last_season_baseline()
@@ -504,7 +535,7 @@ def top_differentials(players: pd.DataFrame, ownership_max: float = 10.0, top_n:
     """
     candidates = players[
         (players["selected_by_percent"] <= ownership_max)
-        & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
+        & (effective_minutes(players) >= MIN_MINUTES_FOR_RANKING)
     ]
     columns = ["web_name", "team_name", "position", "now_cost", "selected_by_percent", "xp_next", "next_opponent"]
     return candidates.sort_values("xp_next", ascending=False).head(top_n)[columns]
@@ -533,7 +564,7 @@ def captaincy_picks(players: pd.DataFrame, top_n: int = 5, stance: str = "neutra
     """
     likely_to_play = players[
         (players["chance_of_playing_next_round"].fillna(100) >= 75)
-        & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
+        & (effective_minutes(players) >= MIN_MINUTES_FOR_RANKING)
     ]
     likely_to_play = add_rank_adjusted_value(likely_to_play, stance)
     if "xp_ceiling" not in likely_to_play.columns:

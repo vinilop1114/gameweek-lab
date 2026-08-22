@@ -143,6 +143,14 @@ def get_matches_played_by_team() -> dict[str, int]:
     que un equipo con partidos postergados quede con su cuenta real, no
     con la del calendario nominal.
 
+    Cuenta por `started`, no por `finished`: FPL marca `finished` recién
+    cuando termina de procesar los datos del partido, pero los acumulados
+    del jugador (minutos, starts, xG) ya se actualizan apenas se juega.
+    Usar `finished` dejaba una ventana — verificada durante GW1, con 6
+    partidos jugados y 0 marcados como terminados — en la que el modelo
+    creía estar en pre-temporada mientras los datos ya eran de la
+    temporada nueva.
+
     Pre-temporada devuelve 0 para todos: ahí `starts` viene de la
     temporada anterior, y quien llama debe usar `FULL_SEASON_MATCHES`
     como denominador (ver `_start_rate` en analysis.py).
@@ -153,7 +161,7 @@ def get_matches_played_by_team() -> dict[str, int]:
 
     played = {name: 0 for name in team_names}
     for fixture in fixtures:
-        if not fixture["finished"]:
+        if not (fixture.get("started") or fixture["finished"]):
             continue
         for team_id in (fixture["team_h"], fixture["team_a"]):
             played[team_names[team_id]] += 1

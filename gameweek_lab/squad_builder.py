@@ -1,7 +1,7 @@
 import pandas as pd
 import pulp
 
-from gameweek_lab.analysis import MIN_MINUTES_FOR_RANKING, add_expected_points
+from gameweek_lab.analysis import MIN_MINUTES_FOR_RANKING, add_expected_points, effective_minutes
 from gameweek_lab.build_dataset import build_players_dataset, get_next_gameweek_fixtures
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
@@ -40,7 +40,7 @@ def _eligible_players(players: pd.DataFrame) -> pd.DataFrame:
     en analysis.py) — el punto de partida para cualquier optimización de plantel.
     """
     return players[
-        (players["status"] == "a") & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
+        (players["status"] == "a") & (effective_minutes(players) >= MIN_MINUTES_FOR_RANKING)
     ].reset_index(drop=True)
 
 

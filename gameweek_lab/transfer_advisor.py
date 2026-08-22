@@ -11,6 +11,7 @@ from gameweek_lab.analysis import (
     add_horizon_expected_points,
     add_rank_adjusted_value,
     captaincy_picks,
+    effective_minutes,
 )
 from gameweek_lab.build_dataset import build_players_dataset, get_next_deadline, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
@@ -130,7 +131,7 @@ def _candidate_pool(players: pd.DataFrame, squad: pd.DataFrame) -> pd.DataFrame:
     """
     return players[
         (players["status"] == "a")
-        & (players["minutes"] >= MIN_MINUTES_FOR_RANKING)
+        & (effective_minutes(players) >= MIN_MINUTES_FOR_RANKING)
         & (~players["id"].isin(squad["id"]))
     ]
 
