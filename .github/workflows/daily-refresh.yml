@@ -35,11 +35,17 @@ jobs:
       - name: Calcular xP, exportar CSVs para Tableau y generar el briefing
         run: python scripts/export_for_tableau.py
 
+      # Los dos pasos siguientes son complementarios: si fallan, los datos
+      # principales (CSVs para Tableau, briefing, equipo Base) igual se
+      # publican. Antes, un error acá dejaba todo el pipeline sin
+      # actualizar — el commit es el último paso y no se alcanzaba.
       - name: Vista especulativa del equipo a 4 fechas (no toca my_team.csv)
         run: python scripts/run_trajectory_preview.py
+        continue-on-error: true
 
       - name: Grabar predicción de la fecha + completar puntos reales de fechas ya jugadas
         run: python scripts/run_calibration.py
+        continue-on-error: true
 
       - name: Commitear y subir los CSVs actualizados
         run: |
