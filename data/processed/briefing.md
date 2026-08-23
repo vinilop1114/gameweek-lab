@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-23 06:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-23 09:24 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,16 +42,16 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 14.22 | Ipswich Town (fuera) | — |
 | Titular | Milenković | Nott'm Forest | DEF | £5.5m | 4.22 | 6.0 | 1% | 11.61 | Leeds (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
-| Banco 2 | Barry | Everton | FWD | £5.5m | 2.31 | 6.0 | 4% | 8.47 | Crystal Palace (casa) | — |
+| Banco 2 | Georginio | Brighton | FWD | £5.5m | 1.6 | 5.0 | 1% | 6.95 | Aston Villa (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
-| Banco 4 | Delap | Chelsea | FWD | £5.5m | 1.12 | 5.0 | 2% | 4.47 | Fulham (fuera) | — |
+| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 1.13 | 2.0 | 2% | 3.68 | Ipswich Town (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 51.3% | Hull City |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 38.4% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 38.3% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.6% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.7% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.93 | 8.0 | 8% | 11.6% | Leeds |
@@ -68,8 +68,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 4.22 | 6.0 | 1% | Leeds |
 | Enzo | Chelsea | MID | £7.0m | 5.2% | 4.19 | 8.0 | 8% | Fulham |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
-| Kayode | Brentford | DEF | £4.5m | 3.5% | 3.64 | 6.0 | 3% | Spurs |
 | Roefs | Sunderland | GKP | £5.0m | 4.4% | 3.64 | 6.0 | 0% | Ipswich Town |
+| Kayode | Brentford | DEF | £4.5m | 3.6% | 3.64 | 6.0 | 3% | Spurs |
 | Gakpo | Liverpool | MID | £7.0m | 3.6% | 3.47 | 8.0 | 5% | Newcastle |
 
 ## Cómo leer estos números
