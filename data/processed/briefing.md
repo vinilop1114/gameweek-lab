@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-23 18:23 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-23 21:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -44,27 +44,27 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
 | Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
 | Banco 3 | Delap | Chelsea | FWD | £5.5m | 1.12 | 5.0 | 2% | 4.47 | Fulham (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.5m | 1.06 | 6.0 | 3% | 4.59 | Nott'm Forest (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.5m | 0.57 | 2.0 | 0% | 2.83 | Chelsea (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 51.0% | Hull City |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 38.0% | Hull City |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.9% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.9% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.6% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.8% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.93 | 8.0 | 8% | 11.4% | Leeds |
 | Haaland | Man City | FWD | 4.9 | 10.0 | 17% | 69.1% | Bournemouth |
 | Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 9.9% | Coventry City |
-| Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.2% | Coventry City |
+| Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.3% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Saka | Arsenal | MID | £9.5m | 9.9% | 4.89 | 11.0 | 12% | Coventry City |
-| N.Williams | Nott'm Forest | DEF | £5.0m | 10.0% | 4.67 | 8.0 | 3% | Leeds |
+| N.Williams | Nott'm Forest | DEF | £5.0m | 9.9% | 4.67 | 8.0 | 3% | Leeds |
 | Hume | Sunderland | DEF | £4.5m | 6.9% | 4.38 | 8.0 | 3% | Ipswich Town |
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 4.22 | 6.0 | 1% | Leeds |
 | Cunha | Man Utd | MID | £8.0m | 10.0% | 4.2 | 8.0 | 7% | Hull City |
