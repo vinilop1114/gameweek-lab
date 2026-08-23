@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-23 03:47 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-23 06:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,14 +8,14 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 5.99 | 11.0 | 16% | 19.48 | Hull City (fuera) | Penales, Tiros libres, Córners |
-| Vice | Mbeumo | Man Utd | MID | £8.0m | 5.54 | 11.0 | 15% | 18.0 | Hull City (fuera) | — |
+| **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 6.01 | 11.0 | 16% | 19.53 | Hull City (fuera) | Penales, Tiros libres, Córners |
+| Vice | Mbeumo | Man Utd | MID | £8.0m | 5.55 | 11.0 | 15% | 18.02 | Hull City (fuera) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 5.22 | 6.0 | 0% | 14.36 | Coventry City (casa) | — |
 | Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 4.93 | 8.0 | 8% | 13.57 | Leeds (casa) | Tiros libres |
 | Titular | Calafiori | Arsenal | DEF | £5.5m | 4.86 | 12.0 | 11% | 13.36 | Coventry City (casa) | — |
+| Titular | Shaw | Man Utd | DEF | £4.5m | 4.69 | 6.0 | 1% | 15.23 | Hull City (fuera) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 4.67 | 8.0 | 3% | 12.85 | Leeds (casa) | Córners |
-| Titular | Shaw | Man Utd | DEF | £4.5m | 4.65 | 6.0 | 1% | 15.12 | Hull City (fuera) | — |
-| Titular | Thiago | Brentford | FWD | £8.0m | 4.46 | 10.0 | 12% | 19.33 | Spurs (casa) | Penales |
+| Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 19.42 | Spurs (casa) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 14.22 | Ipswich Town (fuera) | — |
 | Titular | Milenković | Nott'm Forest | DEF | £5.5m | 4.22 | 6.0 | 1% | 11.61 | Leeds (casa) | — |
 | Titular | Enzo | Chelsea | MID | £7.0m | 4.19 | 8.0 | 8% | 16.77 | Fulham (fuera) | — |
@@ -30,28 +30,28 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 5.99 | 11.0 | 16% | 19.48 | Hull City (fuera) | Penales, Tiros libres, Córners |
-| Vice | Mbeumo | Man Utd | MID | £8.0m | 5.54 | 11.0 | 15% | 18.0 | Hull City (fuera) | — |
+| **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 6.01 | 11.0 | 16% | 19.53 | Hull City (fuera) | Penales, Tiros libres, Córners |
+| Vice | Mbeumo | Man Utd | MID | £8.0m | 5.55 | 11.0 | 15% | 18.02 | Hull City (fuera) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.0m | 5.25 | 9.0 | 7% | 14.45 | Coventry City (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 5.22 | 6.0 | 0% | 14.36 | Coventry City (casa) | — |
 | Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 4.93 | 8.0 | 8% | 13.57 | Leeds (casa) | Tiros libres |
 | Titular | Saka | Arsenal | MID | £9.5m | 4.89 | 11.0 | 12% | 13.44 | Coventry City (casa) | Penales |
+| Titular | Shaw | Man Utd | DEF | £4.5m | 4.69 | 6.0 | 1% | 15.23 | Hull City (fuera) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 4.67 | 8.0 | 3% | 12.85 | Leeds (casa) | Córners |
-| Titular | Shaw | Man Utd | DEF | £4.5m | 4.65 | 6.0 | 1% | 15.12 | Hull City (fuera) | — |
-| Titular | Thiago | Brentford | FWD | £8.0m | 4.46 | 10.0 | 12% | 19.33 | Spurs (casa) | Penales |
+| Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 19.42 | Spurs (casa) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 14.22 | Ipswich Town (fuera) | — |
 | Titular | Milenković | Nott'm Forest | DEF | £5.5m | 4.22 | 6.0 | 1% | 11.61 | Leeds (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
-| Banco 2 | Georginio | Brighton | FWD | £5.5m | 1.6 | 5.0 | 1% | 6.95 | Aston Villa (casa) | — |
+| Banco 2 | Barry | Everton | FWD | £5.5m | 2.31 | 6.0 | 4% | 8.47 | Crystal Palace (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
-| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 1.13 | 2.0 | 2% | 3.68 | Ipswich Town (fuera) | — |
+| Banco 4 | Delap | Chelsea | FWD | £5.5m | 1.12 | 5.0 | 2% | 4.47 | Fulham (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 5.99 | 11.0 | 16% | 51.4% | Hull City |
-| Mbeumo | Man Utd | MID | 5.54 | 11.0 | 15% | 38.4% | Hull City |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 51.3% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 38.4% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.6% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.7% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.93 | 8.0 | 8% | 11.6% | Leeds |
@@ -67,8 +67,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Hume | Sunderland | DEF | £4.5m | 7.0% | 4.38 | 8.0 | 3% | Ipswich Town |
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 4.22 | 6.0 | 1% | Leeds |
 | Enzo | Chelsea | MID | £7.0m | 5.2% | 4.19 | 8.0 | 8% | Fulham |
-| Schade | Brentford | MID | £6.0m | 3.6% | 3.91 | 8.0 | 7% | Spurs |
-| Kayode | Brentford | DEF | £4.5m | 3.5% | 3.85 | 8.0 | 4% | Spurs |
+| Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
+| Kayode | Brentford | DEF | £4.5m | 3.5% | 3.64 | 6.0 | 3% | Spurs |
 | Roefs | Sunderland | GKP | £5.0m | 4.4% | 3.64 | 6.0 | 0% | Ipswich Town |
 | Gakpo | Liverpool | MID | £7.0m | 3.6% | 3.47 | 8.0 | 5% | Newcastle |
 
