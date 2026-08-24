@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-24 06:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-24 09:43 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,18 +42,18 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 14.22 | Ipswich Town (fuera) | — |
 | Titular | Guéhi | Man City | DEF | £6.0m | 4.3 | 8.0 | 7% | 17.21 | Bournemouth (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
-| Banco 2 | Beto | Everton | FWD | £5.5m | 1.53 | 6.0 | 4% | 5.61 | Crystal Palace (casa) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
-| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 1.13 | 2.0 | 2% | 3.68 | Ipswich Town (fuera) | — |
+| Banco 2 | Barry | Everton | FWD | £5.5m | 2.31 | 6.0 | 4% | 8.47 | Crystal Palace (casa) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.5m | 1.88 | 5.0 | 1% | 8.14 | Aston Villa (casa) | — |
+| Banco 4 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.8% | Hull City |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.7% | Hull City |
 | Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.8% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.6% | Coventry City |
-| Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.8% | Coventry City |
+| Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.9% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.93 | 8.0 | 8% | 11.3% | Leeds |
 | Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.0% | Coventry City |
 | Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 69.0% | Bournemouth |
