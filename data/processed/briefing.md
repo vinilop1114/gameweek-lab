@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-24 15:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-24 18:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,10 +51,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.6% | Hull City |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.7% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.6% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.5% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.9% | Coventry City |
-| Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.0% | Coventry City |
+| Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.1% | Coventry City |
 | Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 69.0% | Bournemouth |
 | Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.5% | Coventry City |
 | Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 20.7% | Hull City |
@@ -63,7 +63,6 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Saka | Arsenal | MID | £9.5m | 10.0% | 4.89 | 11.0 | 12% | Coventry City |
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.8% | 4.67 | 8.0 | 3% | Leeds |
 | Hume | Sunderland | DEF | £4.5m | 6.8% | 4.38 | 8.0 | 3% | Ipswich Town |
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 4.22 | 6.0 | 1% | Leeds |
@@ -71,6 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Enzo | Chelsea | MID | £7.0m | 5.3% | 4.19 | 8.0 | 8% | Fulham |
 | E.Le Fée | Sunderland | MID | £6.0m | 9.7% | 4.12 | 7.0 | 4% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
+| Roefs | Sunderland | GKP | £5.0m | 4.3% | 3.64 | 6.0 | 0% | Ipswich Town |
 
 ## Cómo leer estos números
 
