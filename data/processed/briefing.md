@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-24 01:04 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-24 03:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,20 +42,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 14.22 | Ipswich Town (fuera) | — |
 | Titular | Guéhi | Man City | DEF | £6.0m | 4.3 | 8.0 | 7% | 17.21 | Bournemouth (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
-| Banco 2 | Beto | Everton | FWD | £5.5m | 1.53 | 6.0 | 4% | 5.61 | Crystal Palace (casa) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
-| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 1.13 | 2.0 | 2% | 3.68 | Ipswich Town (fuera) | — |
+| Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
+| Banco 3 | Delap | Chelsea | FWD | £5.5m | 1.12 | 5.0 | 2% | 4.47 | Fulham (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.5m | 0.57 | 2.0 | 0% | 2.83 | Chelsea (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.8% | Hull City |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.9% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.8% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.6% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 37.8% | Coventry City |
 | Gibbs-White | Nott'm Forest | MID | 4.93 | 8.0 | 8% | 11.4% | Leeds |
-| Haaland | Man City | FWD | 4.9 | 10.0 | 17% | 69.1% | Bournemouth |
+| Haaland | Man City | FWD | 4.9 | 10.0 | 17% | 69.0% | Bournemouth |
 | Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.0% | Coventry City |
 | Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.3% | Coventry City |
 
@@ -69,7 +69,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Milenković | Nott'm Forest | DEF | £5.5m | 2.0% | 4.22 | 6.0 | 1% | Leeds |
 | Cunha | Man Utd | MID | £8.0m | 10.0% | 4.2 | 8.0 | 7% | Hull City |
 | Enzo | Chelsea | MID | £7.0m | 5.3% | 4.19 | 8.0 | 8% | Fulham |
-| E.Le Fée | Sunderland | MID | £6.0m | 9.9% | 4.12 | 7.0 | 4% | Ipswich Town |
+| E.Le Fée | Sunderland | MID | £6.0m | 9.8% | 4.12 | 7.0 | 4% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
 
 ## Cómo leer estos números
