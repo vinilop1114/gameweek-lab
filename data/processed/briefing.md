@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-25 05:54 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-25 06:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -70,7 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | E.Le Fée | Sunderland | MID | £6.0m | 9.5% | 4.12 | 7.0 | 4% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
 | Roefs | Sunderland | GKP | £5.0m | 4.2% | 3.64 | 6.0 | 0% | Ipswich Town |
-| Kayode | Brentford | DEF | £4.5m | 5.2% | 3.64 | 6.0 | 3% | Spurs |
+| Kayode | Brentford | DEF | £4.5m | 5.3% | 3.64 | 6.0 | 3% | Spurs |
 
 ## Repaso de GW1 (fecha cerrada)
 
