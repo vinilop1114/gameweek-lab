@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-25 03:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-25 05:54 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,35 +42,60 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Guéhi | Man City | DEF | £6.0m | 4.3 | 8.0 | 7% | 17.21 | Bournemouth (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 13.38 | Ipswich Town (fuera) | Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.93 | 2.0 | 0% | 8.38 | Brentford (fuera) | — |
-| Banco 2 | Georginio | Brighton | FWD | £5.5m | 1.88 | 5.0 | 1% | 8.14 | Aston Villa (casa) | — |
+| Banco 2 | Barry | Everton | FWD | £5.5m | 2.31 | 6.0 | 4% | 8.47 | Crystal Palace (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.19 | 3.0 | 0% | 4.77 | Everton (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.5m | 0.47 | 2.0 | 0% | 2.36 | Chelsea (casa) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.5m | 1.06 | 6.0 | 3% | 4.59 | Nott'm Forest (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.1% | Hull City |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.3% | Hull City |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 50.0% | Hull City |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 37.2% | Hull City |
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.5% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 38.0% | Coventry City |
 | Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.2% | Coventry City |
 | Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.9% | Coventry City |
 | Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.7% | Bournemouth |
-| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 20.5% | Hull City |
+| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 20.4% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| N.Williams | Nott'm Forest | DEF | £5.0m | 9.7% | 4.67 | 8.0 | 3% | Leeds |
+| N.Williams | Nott'm Forest | DEF | £5.0m | 9.6% | 4.67 | 8.0 | 3% | Leeds |
 | Hume | Sunderland | DEF | £4.5m | 6.7% | 4.38 | 8.0 | 3% | Ipswich Town |
 | Milenković | Nott'm Forest | DEF | £5.5m | 1.9% | 4.22 | 6.0 | 1% | Leeds |
 | Cunha | Man Utd | MID | £8.0m | 9.8% | 4.2 | 8.0 | 7% | Hull City |
 | E.Le Fée | Sunderland | MID | £6.0m | 9.5% | 4.12 | 7.0 | 4% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
-| Kayode | Brentford | DEF | £4.5m | 5.2% | 3.64 | 6.0 | 3% | Spurs |
 | Roefs | Sunderland | GKP | £5.0m | 4.2% | 3.64 | 6.0 | 0% | Ipswich Town |
+| Kayode | Brentford | DEF | £4.5m | 5.2% | 3.64 | 6.0 | 3% | Spurs |
+
+## Repaso de GW1 (fecha cerrada)
+
+Sesgo del modelo: +0.62 pts por jugador (subestimó en promedio). Error absoluto medio: 1.82 pts.
+
+Sesgo por posición (positivo = el modelo se quedó corto):
+
+| Posición | Sesgo | Jugadores |
+|---|---|---|
+| DEF | +0.64 | 161 |
+| FWD | +0.47 | 53 |
+| GKP | +0.05 | 56 |
+| MID | +0.79 | 211 |
+
+Mejores puntajes reales de GW1:
+
+| Jugador | Equipo | Pos | Puntos reales | xP previsto |
+|---|---|---|---|---|
+| De Cuyper | Brighton | DEF | 17 | 2.07 |
+| Hinshelwood | Brighton | MID | 16 | 2.15 |
+| Mendy | Hull City | DEF | 15 | 0.35 |
+| Ajayi | Hull City | DEF | 14 | 0.35 |
+| Sangaré | Brentford | MID | 14 | 0.26 |
+
+**Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
 ## Cómo leer estos números
 

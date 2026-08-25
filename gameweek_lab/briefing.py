@@ -21,6 +21,7 @@ from gameweek_lab.analysis import (
     captaincy_picks,
     top_differentials,
 )
+from gameweek_lab.calibration import _load_history
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 BRIEFING_PATH = DATA_PROCESSED_DIR / "briefing.md"
@@ -52,6 +53,63 @@ def _squad_from_export(squads: pd.DataFrame, squad_type: str) -> tuple[pd.DataFr
     starters = team[team["role"] == "Titular"].sort_values("xp_next", ascending=False)
     bench = team[team["role"] == "Banco"].sort_values("bench_order")
     return starters, bench
+
+
+def _last_gameweek_review() -> list[str]:
+    """Repaso de la última fecha cerrada: qué tan bien le pegó el modelo.
+
+    Sale del historial de calibración, que ya cruza predicción contra
+    puntos reales. Es material propio para contenido — nadie más publica
+    el error de su propio modelo — y obliga a que los posts de repaso
+    salgan de datos medidos y no de impresiones.
+    """
+    history = _load_history()
+    complete = history.dropna(subset=["actual_points"])
+    if complete.empty:
+        return []
+
+    last_gw = int(complete["gameweek"].max())
+    gw_data = complete[complete["gameweek"] == last_gw].copy()
+    gw_data["error"] = gw_data["actual_points"] - gw_data["xp_predicted"]
+
+    lines = [
+        "",
+        f"## Repaso de GW{last_gw} (fecha cerrada)",
+        "",
+        f"Sesgo del modelo: {gw_data['error'].mean():+.2f} pts por jugador "
+        f"({'subestimó' if gw_data['error'].mean() > 0 else 'sobrestimó'} en promedio). "
+        f"Error absoluto medio: {gw_data['error'].abs().mean():.2f} pts.",
+        "",
+        "Sesgo por posición (positivo = el modelo se quedó corto):",
+        "",
+        "| Posición | Sesgo | Jugadores |",
+        "|---|---|---|",
+    ]
+    for position, row in gw_data.groupby("position")["error"].agg(["mean", "count"]).iterrows():
+        lines.append(f"| {position} | {row['mean']:+.2f} | {int(row['count'])} |")
+
+    best = gw_data.nlargest(5, "actual_points")
+    lines += [
+        "",
+        f"Mejores puntajes reales de GW{last_gw}:",
+        "",
+        "| Jugador | Equipo | Pos | Puntos reales | xP previsto |",
+        "|---|---|---|---|---|",
+    ]
+    for p in best.itertuples():
+        lines.append(
+            f"| {p.web_name} | {p.team_name} | {p.position} | "
+            f"{int(p.actual_points)} | {p.xp_predicted} |"
+        )
+
+    lines += [
+        "",
+        "**Ojo al usar esto:** el modelo no estima bonus points, así que "
+        "subestimar es su sesgo esperado — sobre todo en mediocampistas y "
+        "defensores, que son quienes más bonus reciben. Con pocas fechas "
+        "acumuladas todavía es un vistazo, no una tendencia.",
+    ]
+    return lines
 
 
 def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
@@ -117,6 +175,8 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
             f"{d.selected_by_percent}% | {d.xp_next} | {d.xp_ceiling} | "
             f"{d.haul_probability:.0%} | {d.next_opponent} |"
         )
+
+    sections += _last_gameweek_review()
 
     sections += [
         "",

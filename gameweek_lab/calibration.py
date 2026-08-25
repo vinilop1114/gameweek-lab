@@ -10,7 +10,7 @@ Dos pasos independientes, cada uno gateado para no duplicar trabajo:
    pierde apenas se refrescan los datos al día siguiente —
    `players_scored.csv` se sobreescribe, no guarda historial.
 2. `record_actual_points()`: una vez que una fecha queda con resultados y
-   bonus points confirmados oficialmente (`data_checked=True` en la API),
+   bonus points ya asignados (todos sus partidos terminados),
    completa los puntos reales de esa fecha en el historial, usando
    `/event/{id}/live/` — a diferencia de `event_points` en
    bootstrap-static (que solo refleja la fecha "actual" del juego y se
@@ -37,11 +37,12 @@ CALIBRATION_COLUMNS = [
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
     "actual_points",
 ]
-# Con menos observaciones que esto no reportamos sesgo por posición: 1-2
-# fechas de una temporada de 38 es ruido de muestra chica, no una señal
-# confiable — mismo criterio que MIN_MINUTES_FOR_RANKING en analysis.py,
-# aplicado acá a "cuántas fechas hacen falta" en vez de "cuántos minutos".
-MIN_OBSERVATIONS_FOR_BIAS_REPORT = 100
+# El umbral se cuenta en FECHAS, no en observaciones. Una fecha aporta
+# ~480 filas, pero no son 480 evidencias independientes: comparten los
+# mismos 10 partidos, el mismo clima de resultados y las mismas sorpresas.
+# Un umbral por observaciones daba vía libre tras un solo gameweek, que es
+# justo cuando las conclusiones son menos confiables.
+MIN_GAMEWEEKS_FOR_BIAS_REPORT = 4
 
 
 def _load_history() -> pd.DataFrame:
@@ -55,10 +56,33 @@ def _save_history(history: pd.DataFrame) -> None:
     history.to_csv(CALIBRATION_PATH, index=False)
 
 
-def _load_events() -> list[dict]:
-    path = DATA_RAW_DIR / "bootstrap-static.json"
+def _completed_gameweeks() -> set[int]:
+    """Gameweeks cuyos partidos ya terminaron todos.
+
+    Se mira `finished_provisional` (o `finished`) en los fixtures, no
+    `data_checked` en los events. Verificado en GW1: los 10 partidos
+    terminaron, los bonus ya estaban asignados y los puntos eran
+    definitivos, pero `data_checked` seguía en False — FPL lo marca
+    recién tras su verificación final, que puede tardar días. Esperar ese
+    flag dejaba la calibración parada indefinidamente sobre datos que ya
+    estaban completos.
+
+    Exige que TODOS los partidos de la fecha hayan terminado: capturar con
+    un partido en curso daría puntos parciales.
+    """
+    path = DATA_RAW_DIR / "fixtures.json"
     with open(path, encoding="utf-8") as f:
-        return json.load(f)["events"]
+        fixtures = json.load(f)
+
+    by_gameweek: dict[int, list[bool]] = {}
+    for fixture in fixtures:
+        gameweek = fixture.get("event")
+        if gameweek is None:
+            continue  # partido postergado sin fecha asignada
+        done = bool(fixture.get("finished") or fixture.get("finished_provisional"))
+        by_gameweek.setdefault(gameweek, []).append(done)
+
+    return {gw for gw, done_flags in by_gameweek.items() if all(done_flags)}
 
 
 def snapshot_predictions(players: pd.DataFrame) -> str:
@@ -91,7 +115,7 @@ def snapshot_predictions(players: pd.DataFrame) -> str:
 
 def record_actual_points() -> str:
     """Completa `actual_points` para cualquier fecha ya finalizada
-    (`data_checked=True`) que todavía tenga huecos en el historial.
+    (todos sus partidos jugados) que todavía tenga huecos en el historial.
 
     Frágil a propósito, documentado: si el pipeline no corre por un buen
     tiempo, no se pierde nada — /event/{id}/live/ siempre da los puntos
@@ -106,9 +130,8 @@ def record_actual_points() -> str:
     if not pending_mask.any():
         return "El historial ya tiene todos los puntos reales completados."
 
-    events = _load_events()
-    finalized_gws = {e["id"] for e in events if e["data_checked"]}
-    pending_gws = sorted(set(history.loc[pending_mask, "gameweek"]) & finalized_gws)
+    completed_gws = _completed_gameweeks()
+    pending_gws = sorted(set(history.loc[pending_mask, "gameweek"]) & completed_gws)
 
     if not pending_gws:
         return "No hay fechas finalizadas todavía pendientes de completar."
@@ -117,7 +140,7 @@ def record_actual_points() -> str:
     for gw in pending_gws:
         live = fetch_event_live(gw)
         if not live["elements"]:
-            continue  # figura data_checked pero el endpoint vino vacío — no forzar, se reintenta después
+            continue  # la fecha figura terminada pero el endpoint vino vacío — se reintenta después
         points_by_id = {e["id"]: e["stats"]["total_points"] for e in live["elements"]}
         rows = history.index[(history["gameweek"] == gw) & pending_mask]
         for idx in rows:
@@ -148,10 +171,13 @@ def build_calibration_report() -> str:
         f"=== Calibración del modelo — {len(complete)} observaciones "
         f"({complete['gameweek'].nunique()} fecha(s)) ==="
     ]
-    if len(complete) < MIN_OBSERVATIONS_FOR_BIAS_REPORT:
+    gameweeks = complete["gameweek"].nunique()
+    if gameweeks < MIN_GAMEWEEKS_FOR_BIAS_REPORT:
         lines.append(
-            f"Todavía muy pocas observaciones (< {MIN_OBSERVATIONS_FOR_BIAS_REPORT}) "
-            "para sacar conclusiones confiables — esto es solo un vistazo, no un diagnóstico."
+            f"AVISO: solo {gameweeks} fecha(s) de datos (hacen falta "
+            f"{MIN_GAMEWEEKS_FOR_BIAS_REPORT} para leer esto como tendencia). Las "
+            f"{len(complete)} filas provienen de los mismos partidos, así que no son "
+            "observaciones independientes: es un vistazo, no un diagnóstico."
         )
 
     overall_bias = complete["error"].mean()
