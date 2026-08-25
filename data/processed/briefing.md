@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW1
 
-Generado automáticamente: 2026-08-25 01:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-25 03:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -55,8 +55,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gabriel | Arsenal | DEF | 5.25 | 9.0 | 7% | 29.5% | Coventry City |
 | Raya | Arsenal | GKP | 5.22 | 6.0 | 0% | 38.0% | Coventry City |
 | Saka | Arsenal | MID | 4.89 | 11.0 | 12% | 10.2% | Coventry City |
-| Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.8% | Coventry City |
-| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.8% | Bournemouth |
+| Calafiori | Arsenal | DEF | 4.86 | 12.0 | 11% | 40.9% | Coventry City |
+| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.7% | Bournemouth |
 | Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 20.5% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -66,10 +66,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.7% | 4.67 | 8.0 | 3% | Leeds |
 | Hume | Sunderland | DEF | £4.5m | 6.7% | 4.38 | 8.0 | 3% | Ipswich Town |
 | Milenković | Nott'm Forest | DEF | £5.5m | 1.9% | 4.22 | 6.0 | 1% | Leeds |
-| Cunha | Man Utd | MID | £8.0m | 9.9% | 4.2 | 8.0 | 7% | Hull City |
-| E.Le Fée | Sunderland | MID | £6.0m | 9.6% | 4.12 | 7.0 | 4% | Ipswich Town |
+| Cunha | Man Utd | MID | £8.0m | 9.8% | 4.2 | 8.0 | 7% | Hull City |
+| E.Le Fée | Sunderland | MID | £6.0m | 9.5% | 4.12 | 7.0 | 4% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.94 | 8.0 | 7% | Spurs |
-| Kayode | Brentford | DEF | £4.5m | 5.1% | 3.64 | 6.0 | 3% | Spurs |
+| Kayode | Brentford | DEF | £4.5m | 5.2% | 3.64 | 6.0 | 3% | Spurs |
 | Roefs | Sunderland | GKP | £5.0m | 4.2% | 3.64 | 6.0 | 0% | Ipswich Town |
 
 ## Cómo leer estos números
