@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-26 16:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-26 19:44 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 49.1% | Ipswich Town |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.5% | Ipswich Town |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 49.0% | Ipswich Town |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.4% | Ipswich Town |
 | Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 25.7% | Brighton |
 | Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.2% | Crystal Palace |
-| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 66.7% | Brighton |
-| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 20.0% | Ipswich Town |
-| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 13.9% | Brighton |
+| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 66.8% | Brighton |
+| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.9% | Ipswich Town |
+| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 14.1% | Brighton |
 | Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.8% | Brighton |
 
 ## Diferenciales (propiedad ≤ 10%)
