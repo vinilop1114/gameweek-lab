@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-26 19:44 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-27 00:25 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -10,7 +10,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 6.01 | 11.0 | 16% | 18.02 | Ipswich Town (casa) | Penales, Tiros libres, Córners |
 | Vice | Mbeumo | Man Utd | MID | £8.0m | 5.55 | 11.0 | 15% | 16.64 | Ipswich Town (casa) | — |
-| Titular | João Pedro | Chelsea | FWD | £7.5m | 4.8 | 10.0 | 13% | 14.41 | Brighton (casa) | — |
+| Titular | João Pedro | Chelsea | FWD | £7.6m | 4.8 | 10.0 | 13% | 14.41 | Brighton (casa) | — |
 | Titular | Shaw | Man Utd | DEF | £4.5m | 4.69 | 6.0 | 1% | 14.06 | Ipswich Town (casa) | — |
 | Titular | Enzo | Chelsea | MID | £7.0m | 4.6 | 10.0 | 11% | 13.81 | Brighton (casa) | — |
 | Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 17.92 | Leeds (fuera) | Penales |
@@ -18,7 +18,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Schade | Brentford | MID | £6.0m | 3.94 | 8.0 | 7% | 15.76 | Leeds (fuera) | — |
 | Titular | Szoboszlai | Liverpool | MID | £7.0m | 3.67 | 7.0 | 4% | 17.14 | Nott'm Forest (casa) | Penales, Tiros libres, Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 3.64 | 6.0 | 0% | 9.11 | Fulham (casa) | — |
-| Titular | Calafiori | Arsenal | DEF | £5.5m | 2.43 | 6.0 | 3% | 12.15 | Aston Villa (fuera) | — |
+| Titular | Calafiori | Arsenal | DEF | £5.6m | 2.43 | 6.0 | 3% | 12.15 | Aston Villa (fuera) | — |
 | Banco 1 | Raya | Arsenal | GKP | £6.0m | 2.61 | 6.0 | 0% | 13.06 | Aston Villa (fuera) | — |
 | Banco 2 | N.Williams | Nott'm Forest | DEF | £5.0m | 2.34 | 6.0 | 1% | 12.85 | Liverpool (fuera) | Córners |
 | Banco 3 | Milenković | Nott'm Forest | DEF | £5.5m | 2.11 | 6.0 | 0% | 11.61 | Liverpool (fuera) | — |
@@ -34,7 +34,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Vice | Mbeumo | Man Utd | MID | £8.0m | 5.55 | 11.0 | 15% | 16.64 | Ipswich Town (casa) | — |
 | Titular | Rogers | Chelsea | MID | £7.5m | 5.11 | 8.0 | 8% | 15.32 | Brighton (casa) | — |
 | Titular | Haaland | Man City | FWD | £15.5m | 4.86 | 10.0 | 17% | 21.07 | Crystal Palace (fuera) | Penales |
-| Titular | João Pedro | Chelsea | FWD | £7.5m | 4.8 | 10.0 | 13% | 14.41 | Brighton (casa) | — |
+| Titular | João Pedro | Chelsea | FWD | £7.6m | 4.8 | 10.0 | 13% | 14.41 | Brighton (casa) | — |
 | Titular | Shaw | Man Utd | DEF | £4.5m | 4.69 | 6.0 | 1% | 14.06 | Ipswich Town (casa) | — |
 | Titular | Lacroix | Chelsea | DEF | £6.0m | 4.48 | 6.0 | 3% | 13.44 | Brighton (casa) | — |
 | Titular | Van Hecke | Spurs | DEF | £5.0m | 4.42 | 8.0 | 4% | 14.38 | Newcastle (casa) | — |
@@ -52,19 +52,19 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 49.0% | Ipswich Town |
 | Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.4% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 25.7% | Brighton |
+| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 25.8% | Brighton |
 | Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.2% | Crystal Palace |
-| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 66.8% | Brighton |
+| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 66.9% | Brighton |
 | Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.9% | Ipswich Town |
-| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 14.1% | Brighton |
-| Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.8% | Brighton |
+| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 14.3% | Brighton |
+| Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.7% | Brighton |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Enzo | Chelsea | MID | £7.0m | 4.8% | 4.6 | 10.0 | 11% | Brighton |
-| Lacroix | Chelsea | DEF | £6.0m | 9.4% | 4.48 | 6.0 | 3% | Brighton |
+| Enzo | Chelsea | MID | £7.0m | 4.7% | 4.6 | 10.0 | 11% | Brighton |
+| Lacroix | Chelsea | DEF | £6.0m | 9.5% | 4.48 | 6.0 | 3% | Brighton |
 | Van Hecke | Spurs | DEF | £5.0m | 9.9% | 4.42 | 8.0 | 4% | Newcastle |
 | Hume | Sunderland | DEF | £4.5m | 6.5% | 4.38 | 8.0 | 3% | Fulham |
 | Senesi | Spurs | DEF | £6.0m | 7.8% | 4.3 | 6.0 | 2% | Newcastle |
