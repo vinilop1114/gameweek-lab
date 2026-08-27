@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-27 00:25 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-27 13:42 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,14 +50,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 49.0% | Ipswich Town |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.4% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 25.8% | Brighton |
-| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.2% | Crystal Palace |
-| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 66.9% | Brighton |
-| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.9% | Ipswich Town |
-| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 14.3% | Brighton |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 48.8% | Ipswich Town |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.3% | Ipswich Town |
+| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 25.9% | Brighton |
+| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.1% | Crystal Palace |
+| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 67.2% | Brighton |
+| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.8% | Ipswich Town |
 | Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.7% | Brighton |
+| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 14.6% | Brighton |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,11 +65,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Enzo | Chelsea | MID | £7.0m | 4.7% | 4.6 | 10.0 | 11% | Brighton |
 | Lacroix | Chelsea | DEF | £6.0m | 9.5% | 4.48 | 6.0 | 3% | Brighton |
-| Van Hecke | Spurs | DEF | £5.0m | 9.9% | 4.42 | 8.0 | 4% | Newcastle |
+| Van Hecke | Spurs | DEF | £5.0m | 9.8% | 4.42 | 8.0 | 4% | Newcastle |
 | Hume | Sunderland | DEF | £4.5m | 6.5% | 4.38 | 8.0 | 3% | Fulham |
-| Senesi | Spurs | DEF | £6.0m | 7.8% | 4.3 | 6.0 | 2% | Newcastle |
-| Cunha | Man Utd | MID | £8.0m | 9.6% | 4.2 | 8.0 | 7% | Ipswich Town |
-| E.Le Fée | Sunderland | MID | £6.0m | 9.1% | 4.12 | 7.0 | 4% | Fulham |
+| Senesi | Spurs | DEF | £6.0m | 7.7% | 4.3 | 6.0 | 2% | Newcastle |
+| Cunha | Man Utd | MID | £8.0m | 9.5% | 4.2 | 8.0 | 7% | Ipswich Town |
+| E.Le Fée | Sunderland | MID | £6.0m | 9.0% | 4.12 | 7.0 | 4% | Fulham |
 | Schade | Brentford | MID | £6.0m | 3.5% | 3.94 | 8.0 | 7% | Leeds |
 
 ## Repaso de GW1 (fecha cerrada)
