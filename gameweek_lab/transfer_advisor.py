@@ -481,6 +481,12 @@ def evolve_base_squad(
     save_my_team(squad, team_path)
     state["last_evaluated_gameweek"] = current_gw
     state["banked_free_transfers"] = free_transfers
+    # Se persiste qué se movió, no solo el equipo resultante: mirando
+    # `my_team.csv` o el CSV de equipos no hay forma de saber si un
+    # jugador entró esta semana o llevaba meses. El briefing lo publica
+    # para que la transferencia sea visible sin leer la salida del script.
+    state["last_transfer_gameweek"] = current_gw
+    state["last_transfers"] = log.copy()
     _save_base_state(state)
 
     starters, bench = select_starting_xi(squad)

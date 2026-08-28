@@ -22,6 +22,7 @@ from gameweek_lab.analysis import (
     top_differentials,
 )
 from gameweek_lab.calibration import _load_history
+from gameweek_lab.transfer_advisor import _load_base_state
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 BRIEFING_PATH = DATA_PROCESSED_DIR / "briefing.md"
@@ -53,6 +54,32 @@ def _squad_from_export(squads: pd.DataFrame, squad_type: str) -> tuple[pd.DataFr
     starters = team[team["role"] == "Titular"].sort_values("xp_next", ascending=False)
     bench = team[team["role"] == "Banco"].sort_values("bench_order")
     return starters, bench
+
+
+def _transfer_section() -> list[str]:
+    """Qué movió el modelo en la fecha actual, y cuántas transferencias
+    quedan disponibles.
+
+    Ni `my_team.csv` ni `squad_recommendations.csv` distinguen a un
+    jugador que entró esta semana de uno que lleva meses en el equipo —
+    solo muestran el plantel resultante. Sin esto, la transferencia solo
+    existía en la salida de terminal de `run_squad.py`, que se pierde.
+    """
+    state = _load_base_state()
+    transfers = state.get("last_transfers")
+    if not transfers:
+        return []
+
+    gameweek = state.get("last_transfer_gameweek", state.get("last_evaluated_gameweek"))
+    banked = state.get("banked_free_transfers", 0)
+    return [
+        "",
+        f"## Movimientos del modelo en GW{gameweek}",
+        "",
+        *[f"- {line}" for line in transfers],
+        "",
+        f"Transferencias libres disponibles tras esta fecha: {banked}.",
+    ]
 
 
 def _last_gameweek_review() -> list[str]:
@@ -176,6 +203,7 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
             f"{d.haul_probability:.0%} | {d.next_opponent} |"
         )
 
+    sections += _transfer_section()
     sections += _last_gameweek_review()
 
     sections += [
