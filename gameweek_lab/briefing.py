@@ -22,7 +22,7 @@ from gameweek_lab.analysis import (
     top_differentials,
 )
 from gameweek_lab.calibration import _load_history
-from gameweek_lab.transfer_advisor import _load_base_state
+from gameweek_lab.transfer_advisor import _load_base_state, preview_base_transfers
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 BRIEFING_PATH = DATA_PROCESSED_DIR / "briefing.md"
@@ -56,30 +56,52 @@ def _squad_from_export(squads: pd.DataFrame, squad_type: str) -> tuple[pd.DataFr
     return starters, bench
 
 
-def _transfer_section() -> list[str]:
-    """Qué movió el modelo en la fecha actual, y cuántas transferencias
-    quedan disponibles.
+def _transfer_section(squads: pd.DataFrame, proposed_log: list[str]) -> list[str]:
+    """Las transferencias: la propuesta de hoy y, si ya se ejecutó, la
+    aplicada.
 
-    Ni `my_team.csv` ni `squad_recommendations.csv` distinguen a un
-    jugador que entró esta semana de uno que lleva meses en el equipo —
-    solo muestran el plantel resultante. Sin esto, la transferencia solo
-    existía en la salida de terminal de `run_squad.py`, que se pierde.
+    Ni `my_team.csv` ni el CSV de equipos distinguen a un jugador que
+    entró esta semana de uno que lleva meses — solo muestran el plantel
+    resultante. Sin esta sección, la transferencia solo existía en la
+    salida de terminal de `run_squad.py`, que se pierde.
     """
     state = _load_base_state()
-    transfers = state.get("last_transfers")
-    if not transfers:
-        return []
+    lines: list[str] = []
 
-    gameweek = state.get("last_transfer_gameweek", state.get("last_evaluated_gameweek"))
-    banked = state.get("banked_free_transfers", 0)
-    return [
-        "",
-        f"## Movimientos del modelo en GW{gameweek}",
-        "",
-        *[f"- {line}" for line in transfers],
-        "",
-        f"Transferencias libres disponibles tras esta fecha: {banked}.",
-    ]
+    base = set(squads[squads["squad_type"] == "Base"]["web_name"])
+    projected = set(squads[squads["squad_type"] == "Base proyectado"]["web_name"])
+    outgoing, incoming = sorted(base - projected), sorted(projected - base)
+
+    if outgoing or incoming:
+        lines += [
+            "",
+            "## Transferencia propuesta para esta fecha",
+            "",
+            "Todavía **no está aplicada**: la decisión definitiva se toma en las últimas "
+            "horas antes del deadline, cuando ya se conocen las lesiones. Esta es la "
+            "propuesta con los datos de hoy, publicada para poder preparar contenido con "
+            "anticipación — puede cambiar si aparece una lesión.",
+            "",
+            *[f"- {line}" for line in proposed_log],
+            "",
+            f"Sale: {', '.join(outgoing)} · Entra: {', '.join(incoming)}",
+            "",
+            "El equipo con el cambio ya aplicado está en `squad_recommendations.csv` "
+            "bajo `squad_type = \"Base proyectado\"`.",
+        ]
+
+    applied = state.get("last_transfers")
+    if applied:
+        gameweek = state.get("last_transfer_gameweek", state.get("last_evaluated_gameweek"))
+        lines += [
+            "",
+            f"## Movimientos ya ejecutados en GW{gameweek}",
+            "",
+            *[f"- {line}" for line in applied],
+            "",
+            f"Transferencias libres disponibles tras esa fecha: {state.get('banked_free_transfers', 0)}.",
+        ]
+    return lines
 
 
 def _last_gameweek_review() -> list[str]:
@@ -203,7 +225,8 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
             f"{d.haul_probability:.0%} | {d.next_opponent} |"
         )
 
-    sections += _transfer_section()
+    _, _, proposed_log = preview_base_transfers(players)
+    sections += _transfer_section(squads, proposed_log)
     sections += _last_gameweek_review()
 
     sections += [

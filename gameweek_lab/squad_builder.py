@@ -418,8 +418,18 @@ def export_squads_for_tableau(
         base_starters, base_bench = select_starting_xi(base_squad)
     wildcard_starters, wildcard_bench = select_wildcard_squad(players)
 
+    # "Base proyectado": el Base con las transferencias propuestas ya
+    # aplicadas. Se recalcula a diario, sin tocar my_team.csv ni el
+    # estado — la decisión real espera a la ventana del deadline. Existe
+    # para poder escribir contenido con anticipación, ya que un post se
+    # prepara días antes de que el modelo se comprometa.
+    from gameweek_lab.transfer_advisor import preview_base_transfers
+
+    projected_starters, projected_bench, _ = preview_base_transfers(players)
+
     combined = pd.concat([
         _team_to_rows(base_starters, base_bench, "Base"),
+        _team_to_rows(projected_starters, projected_bench, "Base proyectado"),
         _team_to_rows(wildcard_starters, wildcard_bench, "Wildcard"),
     ], ignore_index=True)
 

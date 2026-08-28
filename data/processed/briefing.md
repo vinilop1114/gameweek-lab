@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-28 01:26 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-28 01:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -71,6 +71,16 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Cunha | Man Utd | MID | £8.0m | 9.5% | 4.2 | 8.0 | 7% | Ipswich Town |
 | E.Le Fée | Sunderland | MID | £6.0m | 8.9% | 4.12 | 7.0 | 4% | Fulham |
 | Schade | Brentford | MID | £6.0m | 3.5% | 3.94 | 8.0 | 7% | Leeds |
+
+## Transferencia propuesta para esta fecha
+
+Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+
+- Gibbs-White → Szoboszlai (+6.96 xP, transferencia libre, entra de titular)
+
+Sale: Gibbs-White · Entra: Szoboszlai
+
+El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
 ## Repaso de GW1 (fecha cerrada)
 

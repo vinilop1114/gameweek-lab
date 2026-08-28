@@ -361,6 +361,99 @@ def _save_base_state(state: dict) -> None:
     BASE_STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
 
 
+def plan_transfers(
+    players: pd.DataFrame, squad: pd.DataFrame, free_transfers: int, gameweek: int
+) -> tuple[pd.DataFrame, int, list[str]]:
+    """Decide qué transferencias hacer y devuelve el plantel resultante,
+    **sin persistir nada**.
+
+    Es la lógica de decisión pura, compartida por dos usos que difieren
+    solo en si el resultado se guarda: `evolve_base_squad` (lo aplica y lo
+    persiste, una vez por fecha y dentro de la ventana del deadline) y
+    `preview_base_transfers` (lo calcula a diario para anticipar
+    contenido). Tenerla en un solo lugar evita que la propuesta que se
+    publica y la decisión que se ejecuta puedan divergir.
+
+    Devuelve (plantel, transferencias_libres_restantes, log).
+    """
+    pool = _candidate_pool(players, squad)
+    flagged_ids = set(_flag_problem_players(squad)["id"])
+    log: list[str] = []
+    transfers_used = 0
+
+    for _ in range(2):  # como mucho 2 movimientos por fecha, igual que advise()
+        swaps = find_best_swaps(squad, pool, 0.0)
+        if swaps.empty:
+            break
+        # Un jugador con bandera tiene prioridad de salida aunque no sea
+        # el de mayor ganancia — puede valer 0 si no juega.
+        flagged_swaps = swaps[swaps["out_id"].isin(flagged_ids)]
+        candidate = flagged_swaps.iloc[0] if not flagged_swaps.empty else swaps.iloc[0]
+
+        worth_free = candidate["gain"] >= BANK_THRESHOLD or candidate["out_id"] in flagged_ids
+        worth_hit = candidate["gain"] > HIT_COST + HIT_UNCERTAINTY_MARGIN
+
+        if free_transfers > 0 and worth_free:
+            kind = "transferencia libre"
+            free_transfers -= 1
+        elif free_transfers == 0 and worth_hit:
+            kind = "HIT -4 aplicado"
+        else:
+            break
+
+        squad = _apply_swap(squad, pool, candidate)
+        pool = _candidate_pool(players, squad)
+        flagged_ids.discard(candidate["out_id"])
+        transfers_used += 1
+        starts_note = "titular" if candidate["would_start"] else "banco"
+        log.append(
+            f"{candidate['out_name']} → {candidate['in_name']} "
+            f"(+{candidate['gain']:.2f} xP, {kind}, entra de {starts_note})"
+        )
+
+    if transfers_used == 0:
+        log.append(
+            f"Sin cambios en GW{gameweek} — transferencia guardada "
+            f"({free_transfers} acumuladas para la próxima fecha)."
+        )
+    return squad, free_transfers, log
+
+
+def preview_base_transfers(
+    players: pd.DataFrame, team_path: str = "my_team.csv"
+) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
+    """Cómo quedaría el equipo Base si se aplicaran hoy las transferencias
+    que el modelo propone — **sin tocar `my_team.csv` ni el estado**.
+
+    Existe para poder preparar contenido con anticipación: la decisión
+    real se toma dentro de las últimas horas antes del deadline (para
+    aprovechar las lesiones ya confirmadas), pero un post se escribe
+    antes. Esta vista se recalcula en cada corrida, así que refleja lo
+    que el modelo haría con los datos de hoy.
+
+    No es un compromiso: si el jueves se lesiona alguien, la decisión
+    final del viernes puede ser otra.
+
+    Devuelve (titulares, banco, log) del plantel proyectado.
+    """
+    state = _load_base_state()
+    squad = load_my_team(team_path, players)
+    current_gw = _current_gameweek(players)
+
+    # Si la fecha ya se evaluó, `my_team.csv` YA tiene las transferencias
+    # aplicadas: proponer más sería inventar movimientos que no existen.
+    if state["last_evaluated_gameweek"] == current_gw:
+        starters, bench = select_starting_xi(squad)
+        return starters, bench, [f"GW{current_gw} ya ejecutado — el equipo Base ya incluye sus transferencias."]
+
+    free_transfers = min(
+        state["banked_free_transfers"] + _transfers_granted(current_gw), MAX_BANKED_TRANSFERS
+    )
+    squad, _, log = plan_transfers(players, squad, free_transfers, current_gw)
+    starters, bench = select_starting_xi(squad)
+    return starters, bench, log
+
+
 def _transfers_granted(gameweek: int) -> int:
     """Transferencias libres que otorga el arranque de `gameweek`.
 
@@ -438,45 +531,8 @@ def evolve_base_squad(
     free_transfers = min(
         state["banked_free_transfers"] + _transfers_granted(current_gw), MAX_BANKED_TRANSFERS
     )
-    pool = _candidate_pool(players, squad)
-    flagged_ids = set(_flag_problem_players(squad)["id"])
-    transfers_used = 0
-
-    for _ in range(2):  # como mucho 2 movimientos por fecha, igual que advise()
-        swaps = find_best_swaps(squad, pool, 0.0)
-        if swaps.empty:
-            break
-        # Un jugador con bandera tiene prioridad de salida aunque no sea
-        # el de mayor ganancia — puede valer 0 si no juega.
-        flagged_swaps = swaps[swaps["out_id"].isin(flagged_ids)]
-        candidate = flagged_swaps.iloc[0] if not flagged_swaps.empty else swaps.iloc[0]
-
-        worth_free = candidate["gain"] >= BANK_THRESHOLD or candidate["out_id"] in flagged_ids
-        worth_hit = candidate["gain"] > HIT_COST + HIT_UNCERTAINTY_MARGIN
-
-        if free_transfers > 0 and worth_free:
-            squad = _apply_swap(squad, pool, candidate)
-            pool = _candidate_pool(players, squad)
-            flagged_ids.discard(candidate["out_id"])
-            free_transfers -= 1
-            transfers_used += 1
-            starts_note = "titular" if candidate["would_start"] else "banco"
-            log.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                       f"(+{candidate['gain']:.2f} xP, transferencia libre, entra de {starts_note})")
-        elif free_transfers == 0 and worth_hit:
-            squad = _apply_swap(squad, pool, candidate)
-            pool = _candidate_pool(players, squad)
-            flagged_ids.discard(candidate["out_id"])
-            transfers_used += 1
-            starts_note = "titular" if candidate["would_start"] else "banco"
-            log.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                       f"(+{candidate['gain']:.2f} xP, HIT -4 aplicado, entra de {starts_note})")
-        else:
-            break
-
-    if transfers_used == 0:
-        log.append(f"Sin cambios en GW{current_gw} — transferencia guardada "
-                   f"({free_transfers} acumuladas para la próxima fecha).")
+    squad, free_transfers, plan_log = plan_transfers(players, squad, free_transfers, current_gw)
+    log.extend(plan_log)
 
     save_my_team(squad, team_path)
     state["last_evaluated_gameweek"] = current_gw
