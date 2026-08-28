@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-28 01:04 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-28 01:07 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -16,12 +16,12 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 17.92 | Leeds (fuera) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 10.94 | Fulham (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 10.29 | Fulham (casa) | Córners |
-| Titular | Szoboszlai | Liverpool | MID | £7.0m | 3.67 | 7.0 | 4% | 17.14 | Nott'm Forest (casa) | Penales, Tiros libres, Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 3.64 | 6.0 | 0% | 9.11 | Fulham (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £5.6m | 2.43 | 6.0 | 3% | 12.15 | Aston Villa (fuera) | — |
+| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 2.34 | 6.0 | 1% | 12.85 | Liverpool (fuera) | Córners |
 | Banco 1 | Raya | Arsenal | GKP | £6.0m | 2.61 | 6.0 | 0% | 13.06 | Aston Villa (fuera) | — |
-| Banco 2 | N.Williams | Nott'm Forest | DEF | £5.0m | 2.34 | 6.0 | 1% | 12.85 | Liverpool (fuera) | Córners |
-| Banco 3 | Milenković | Nott'm Forest | DEF | £5.5m | 2.11 | 6.0 | 0% | 11.61 | Liverpool (fuera) | — |
+| Banco 2 | Milenković | Nott'm Forest | DEF | £5.5m | 2.11 | 6.0 | 0% | 11.61 | Liverpool (fuera) | — |
+| Banco 3 | Gibbs-White | Nott'm Forest | MID | £8.0m | 1.85 | 7.0 | 2% | 10.18 | Liverpool (fuera) | Tiros libres |
 | Banco 4 | Gyökeres | Arsenal | FWD | £7.4m | 1.61 | 6.0 | 3% | 8.06 | Aston Villa (fuera) | — |
 
 ## Equipo Wildcard
