@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-28 01:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-28 14:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -17,12 +17,12 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 10.94 | Fulham (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 10.29 | Fulham (casa) | Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 3.64 | 6.0 | 0% | 9.11 | Fulham (casa) | — |
+| Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 3.31 | 6.0 | 7% | 14.32 | Brentford (casa) | Penales |
 | Titular | Calafiori | Arsenal | DEF | £5.6m | 2.43 | 6.0 | 3% | 12.15 | Aston Villa (fuera) | — |
-| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 2.34 | 6.0 | 1% | 12.85 | Liverpool (fuera) | Córners |
 | Banco 1 | Raya | Arsenal | GKP | £6.0m | 2.61 | 6.0 | 0% | 13.06 | Aston Villa (fuera) | — |
-| Banco 2 | Milenković | Nott'm Forest | DEF | £5.5m | 2.11 | 6.0 | 0% | 11.61 | Liverpool (fuera) | — |
-| Banco 3 | Gibbs-White | Nott'm Forest | MID | £8.0m | 1.85 | 7.0 | 2% | 10.18 | Liverpool (fuera) | Tiros libres |
-| Banco 4 | Gyökeres | Arsenal | FWD | £7.4m | 1.61 | 6.0 | 3% | 8.06 | Aston Villa (fuera) | — |
+| Banco 2 | Gibbs-White | Nott'm Forest | MID | £8.0m | 2.47 | 7.0 | 2% | 13.57 | Liverpool (fuera) | Tiros libres |
+| Banco 3 | N.Williams | Nott'm Forest | DEF | £5.0m | 2.34 | 6.0 | 1% | 12.85 | Liverpool (fuera) | Córners |
+| Banco 4 | Milenković | Nott'm Forest | DEF | £5.5m | 2.11 | 6.0 | 0% | 11.61 | Liverpool (fuera) | — |
 
 ## Equipo Wildcard
 
@@ -42,7 +42,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 10.29 | Fulham (casa) | Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 3.64 | 6.0 | 0% | 9.11 | Fulham (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 2.58 | 6.0 | 0% | 8.38 | Newcastle (casa) | — |
-| Banco 2 | Nmecha | Leeds | FWD | £5.5m | 1.06 | 6.0 | 3% | 4.59 | Brentford (casa) | — |
+| Banco 2 | Beto | Everton | FWD | £5.5m | 1.53 | 6.0 | 4% | 6.12 | Bournemouth (fuera) | — |
 | Banco 3 | Diop | Ipswich Town | DEF | £4.0m | 0.82 | 2.0 | 0% | 4.1 | Man Utd (fuera) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.5m | 0.8 | 3.0 | 0% | 4.77 | Man City (casa) | — |
 
@@ -50,37 +50,33 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 48.6% | Ipswich Town |
-| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 36.1% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 26.0% | Brighton |
-| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 68.0% | Crystal Palace |
-| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 67.5% | Brighton |
-| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.7% | Ipswich Town |
-| Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.6% | Brighton |
-| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 15.2% | Brighton |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 48.3% | Ipswich Town |
+| Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 35.8% | Ipswich Town |
+| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 26.2% | Brighton |
+| Haaland | Man City | FWD | 4.86 | 10.0 | 17% | 67.9% | Crystal Palace |
+| João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 68.1% | Brighton |
+| Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.6% | Ipswich Town |
+| Palmer | Chelsea | MID | 4.6 | 11.0 | 13% | 16.1% | Brighton |
+| Enzo | Chelsea | MID | 4.6 | 10.0 | 11% | 4.4% | Brighton |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Enzo | Chelsea | MID | £7.0m | 4.6% | 4.6 | 10.0 | 11% | Brighton |
+| Enzo | Chelsea | MID | £7.0m | 4.4% | 4.6 | 10.0 | 11% | Brighton |
 | Lacroix | Chelsea | DEF | £6.0m | 9.5% | 4.48 | 6.0 | 3% | Brighton |
-| Van Hecke | Spurs | DEF | £5.0m | 9.7% | 4.42 | 8.0 | 4% | Newcastle |
-| Hume | Sunderland | DEF | £4.5m | 6.5% | 4.38 | 8.0 | 3% | Fulham |
-| Senesi | Spurs | DEF | £6.0m | 7.7% | 4.3 | 6.0 | 2% | Newcastle |
-| Cunha | Man Utd | MID | £8.0m | 9.5% | 4.2 | 8.0 | 7% | Ipswich Town |
-| E.Le Fée | Sunderland | MID | £6.0m | 8.9% | 4.12 | 7.0 | 4% | Fulham |
+| Van Hecke | Spurs | DEF | £5.0m | 9.6% | 4.42 | 8.0 | 4% | Newcastle |
+| Hume | Sunderland | DEF | £4.5m | 6.4% | 4.38 | 8.0 | 3% | Fulham |
+| Senesi | Spurs | DEF | £6.0m | 7.6% | 4.3 | 6.0 | 2% | Newcastle |
+| Cunha | Man Utd | MID | £8.0m | 9.4% | 4.2 | 8.0 | 7% | Ipswich Town |
+| E.Le Fée | Sunderland | MID | £6.0m | 8.7% | 4.12 | 7.0 | 4% | Fulham |
 | Schade | Brentford | MID | £6.0m | 3.5% | 3.94 | 8.0 | 7% | Leeds |
 
-## Transferencia propuesta para esta fecha
+## Movimientos ya ejecutados en GW2
 
-Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+- Gyökeres → Calvert-Lewin (+6.26 xP, transferencia libre, entra de titular)
 
-- Gibbs-White → Szoboszlai (+6.96 xP, transferencia libre, entra de titular)
-
-Sale: Gibbs-White · Entra: Szoboszlai
-
-El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
+Transferencias libres disponibles tras esa fecha: 0.
 
 ## Repaso de GW1 (fecha cerrada)
 

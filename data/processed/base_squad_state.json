@@ -1,4 +1,8 @@
 {
-  "last_evaluated_gameweek": 1,
-  "banked_free_transfers": 0
+  "last_evaluated_gameweek": 2,
+  "banked_free_transfers": 0,
+  "last_transfer_gameweek": 2,
+  "last_transfers": [
+    "Gy\u00f6keres \u2192 Calvert-Lewin (+6.26 xP, transferencia libre, entra de titular)"
+  ]
 }
