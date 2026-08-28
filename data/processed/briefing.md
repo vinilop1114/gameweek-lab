@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-28 00:13 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-28 01:04 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -15,7 +15,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Enzo | Chelsea | MID | £7.0m | 4.6 | 10.0 | 11% | 13.81 | Brighton (casa) | — |
 | Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 17.92 | Leeds (fuera) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 10.94 | Fulham (casa) | — |
-| Titular | Schade | Brentford | MID | £6.0m | 3.94 | 8.0 | 7% | 15.76 | Leeds (fuera) | — |
+| Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 10.29 | Fulham (casa) | Córners |
 | Titular | Szoboszlai | Liverpool | MID | £7.0m | 3.67 | 7.0 | 4% | 17.14 | Nott'm Forest (casa) | Penales, Tiros libres, Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 3.64 | 6.0 | 0% | 9.11 | Fulham (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £5.6m | 2.43 | 6.0 | 3% | 12.15 | Aston Villa (fuera) | — |

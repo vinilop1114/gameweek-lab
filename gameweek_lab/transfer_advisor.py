@@ -361,6 +361,20 @@ def _save_base_state(state: dict) -> None:
     BASE_STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
 
 
+def _transfers_granted(gameweek: int) -> int:
+    """Transferencias libres que otorga el arranque de `gameweek`.
+
+    GW1 no otorga ninguna: el equipo inicial se arma con cambios
+    ilimitados hasta el deadline, así que no hay nada que "ahorrar". La
+    primera transferencia libre de la temporada llega recién en GW2.
+
+    Sin esto, el modelo se acreditaba una transferencia en GW1, no la
+    usaba, y llegaba a GW2 creyendo tener dos — sugiriendo un movimiento
+    doble que en la app real habría costado -4 puntos.
+    """
+    return 0 if gameweek <= 1 else 1
+
+
 def _current_gameweek(players: pd.DataFrame) -> int:
     return int(players["next_gameweek"].dropna().mode().iloc[0])
 
@@ -421,8 +435,9 @@ def evolve_base_squad(
         starters, bench = select_starting_xi(squad)
         return starters, bench, log
 
-    # +1 transferencia libre al arrancar la fecha, tope de 5 acumuladas.
-    free_transfers = min(state["banked_free_transfers"] + 1, MAX_BANKED_TRANSFERS)
+    free_transfers = min(
+        state["banked_free_transfers"] + _transfers_granted(current_gw), MAX_BANKED_TRANSFERS
+    )
     pool = _candidate_pool(players, squad)
     flagged_ids = set(_flag_problem_players(squad)["id"])
     transfers_used = 0
@@ -507,7 +522,9 @@ def simulate_squad_trajectory(
     notes = {gw_labels[0]: "Equipo actual (persistido en my_team.csv)"}
 
     for offset in range(1, weeks):
-        free_transfers = min(free_transfers + 1, MAX_BANKED_TRANSFERS)
+        free_transfers = min(
+            free_transfers + _transfers_granted(current_gw + offset), MAX_BANKED_TRANSFERS
+        )
         squad_df = pd.DataFrame(squad)
         pool = _candidate_pool(players, squad_df)
         flagged_ids = set(_flag_problem_players(squad_df)["id"])
