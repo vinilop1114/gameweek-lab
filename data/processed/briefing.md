@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-29 22:58 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-30 03:27 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -12,7 +12,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Vice | Mbeumo | Man Utd | MID | £8.0m | 5.55 | 11.0 | 15% | 16.64 | Ipswich Town (casa) | — |
 | Titular | João Pedro | Chelsea | FWD | £7.6m | 4.8 | 10.0 | 13% | 14.41 | Brighton (casa) | — |
 | Titular | Shaw | Man Utd | DEF | £4.5m | 4.69 | 6.0 | 1% | 14.06 | Ipswich Town (casa) | — |
-| Titular | Enzo | Chelsea | MID | £7.0m | 4.6 | 10.0 | 11% | 13.81 | Brighton (casa) | — |
+| Titular | Enzo | Chelsea | MID | £6.9m | 4.6 | 10.0 | 11% | 13.81 | Brighton (casa) | — |
 | Titular | Thiago | Brentford | FWD | £8.0m | 4.48 | 10.0 | 12% | 17.92 | Leeds (fuera) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 4.38 | 8.0 | 3% | 10.94 | Fulham (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £6.0m | 4.12 | 7.0 | 4% | 10.29 | Fulham (casa) | Córners |
@@ -50,9 +50,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 46.8% | Ipswich Town |
+| B.Fernandes | Man Utd | MID | 6.01 | 11.0 | 16% | 46.7% | Ipswich Town |
 | Mbeumo | Man Utd | MID | 5.55 | 11.0 | 15% | 34.1% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 26.1% | Brighton |
+| Rogers | Chelsea | MID | 5.11 | 8.0 | 8% | 26.0% | Brighton |
 | Haaland | Man City | FWD | 4.88 | 10.0 | 17% | 68.7% | Crystal Palace |
 | João Pedro | Chelsea | FWD | 4.8 | 10.0 | 13% | 68.5% | Brighton |
 | Shaw | Man Utd | DEF | 4.69 | 6.0 | 1% | 19.1% | Ipswich Town |
@@ -63,14 +63,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Enzo | Chelsea | MID | £7.0m | 4.2% | 4.6 | 10.0 | 11% | Brighton |
+| Enzo | Chelsea | MID | £6.9m | 4.2% | 4.6 | 10.0 | 11% | Brighton |
 | Van Hecke | Spurs | DEF | £5.0m | 9.3% | 4.55 | 8.0 | 4% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 9.5% | 4.48 | 6.0 | 3% | Brighton |
 | Hume | Sunderland | DEF | £4.5m | 6.2% | 4.38 | 8.0 | 3% | Fulham |
-| Cunha | Man Utd | MID | £8.0m | 9.1% | 4.2 | 8.0 | 7% | Ipswich Town |
+| Cunha | Man Utd | MID | £8.0m | 9.0% | 4.2 | 8.0 | 7% | Ipswich Town |
 | E.Le Fée | Sunderland | MID | £6.0m | 8.3% | 4.12 | 7.0 | 4% | Fulham |
 | Schade | Brentford | MID | £6.0m | 3.4% | 3.94 | 8.0 | 7% | Leeds |
-| Van de Ven | Spurs | DEF | £5.0m | 4.3% | 3.89 | 6.0 | 3% | Newcastle |
+| Van de Ven | Spurs | DEF | £5.0m | 4.3% | 3.9 | 6.0 | 3% | Newcastle |
 
 ## Movimientos ya ejecutados en GW2
 
