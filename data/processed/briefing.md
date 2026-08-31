@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-08-30 23:07 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-08-31 03:25 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.89 | 12.0 | 23% | 47.2% | Ipswich Town |
-| Mbeumo | Man Utd | MID | 6.26 | 12.0 | 20% | 32.7% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.35 | 9.0 | 10% | 26.0% | Brighton |
+| B.Fernandes | Man Utd | MID | 6.89 | 12.0 | 23% | 47.3% | Ipswich Town |
+| Mbeumo | Man Utd | MID | 6.26 | 12.0 | 20% | 32.6% | Ipswich Town |
+| Rogers | Chelsea | MID | 5.35 | 9.0 | 10% | 25.9% | Brighton |
 | João Pedro | Chelsea | FWD | 5.2 | 10.0 | 16% | 69.2% | Brighton |
-| Palmer | Chelsea | MID | 4.96 | 12.0 | 14% | 17.6% | Brighton |
-| Haaland | Man City | FWD | 4.88 | 10.0 | 17% | 69.3% | Crystal Palace |
-| Shaw | Man Utd | DEF | 4.66 | 6.0 | 1% | 18.5% | Ipswich Town |
+| Palmer | Chelsea | MID | 4.96 | 12.0 | 14% | 17.7% | Brighton |
+| Haaland | Man City | FWD | 4.88 | 10.0 | 17% | 69.4% | Crystal Palace |
+| Shaw | Man Utd | DEF | 4.66 | 6.0 | 1% | 18.4% | Ipswich Town |
 | Thiago | Brentford | FWD | 4.55 | 10.0 | 13% | 15.5% | Leeds |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -66,11 +66,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Van Hecke | Spurs | DEF | £5.0m | 8.8% | 4.55 | 8.0 | 4% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 9.3% | 4.47 | 6.0 | 3% | Brighton |
 | Hume | Sunderland | DEF | £4.5m | 6.0% | 4.42 | 8.0 | 3% | Fulham |
-| E.Le Fée | Sunderland | MID | £5.9m | 7.7% | 4.32 | 8.0 | 5% | Fulham |
+| E.Le Fée | Sunderland | MID | £5.9m | 7.6% | 4.32 | 8.0 | 5% | Fulham |
 | Cunha | Man Utd | MID | £8.0m | 8.8% | 4.31 | 8.0 | 7% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.6% | 3.96 | 8.0 | 7% | Leeds |
 | Enzo | Chelsea | MID | £6.9m | 3.9% | 3.95 | 8.0 | 9% | Brighton |
-| Van de Ven | Spurs | DEF | £5.0m | 4.2% | 3.9 | 6.0 | 3% | Newcastle |
+| Van de Ven | Spurs | DEF | £5.0m | 4.1% | 3.9 | 6.0 | 3% | Newcastle |
 
 ## Movimientos ya ejecutados en GW2
 
