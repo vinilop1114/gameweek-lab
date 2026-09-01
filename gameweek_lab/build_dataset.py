@@ -201,6 +201,7 @@ def build_players_dataset() -> pd.DataFrame:
         "total_points", "points_per_game", "form", "selected_by_percent",
         "minutes", "starts", "chance_of_playing_next_round", "ep_next", "set_piece_duties",
         "expected_goals_per_90", "expected_assists_per_90", "expected_goals_conceded_per_90",
+        "defensive_contribution_per_90",
         # Momentum de transferencias — para anticipar subidas/bajadas de
         # precio. Pre-temporada están en 0 para todos (armar tu plantel
         # inicial no cuenta como "transferencia" en FPL); solo van a tener

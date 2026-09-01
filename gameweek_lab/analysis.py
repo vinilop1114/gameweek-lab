@@ -80,6 +80,26 @@ BASELINE_BLEND_MINUTES = 900
 # sin evidencia y descartaría señal real de casi la mitad del pool.
 MIN_BASELINE_MINUTES = 1
 
+# Contribución defensiva (DEFCON): 2 puntos por partido al superar un
+# umbral de acciones defensivas. Los umbrales son los oficiales de
+# 2026/27 (ver initial setup/fpl-scoring-rules): defensores necesitan 10
+# CBIT (despejes, bloqueos, intercepciones, entradas); medios y
+# delanteros 12 CBIRT (lo mismo más recuperaciones). Los arqueros no
+# reciben DEFCON.
+DEFCON_THRESHOLDS = {"DEF": 10, "MID": 12, "FWD": 12}
+DEFCON_POINTS = 2
+# Minutos de la temporada en curso para que la tasa defensiva propia pese
+# igual que la mediana de su posición. El baseline de pre-temporada no
+# guardó esta métrica (se agregó después de congelarlo), así que no hay
+# datos del año pasado con qué mezclar: el shrinkage va contra la mediana
+# posicional hasta que se acumulen minutos.
+#
+# Es menor que BASELINE_BLEND_MINUTES (900) a propósito: son 10-20
+# acciones por partido, no 0-1 goles, así que la tasa se estabiliza con
+# muchos menos minutos que el xG. Exigir la misma muestra que para goles
+# dejaría a todo el pool pegado a la mediana durante media temporada.
+DEFCON_BLEND_MINUTES = 270
+
 # Parámetros de la distribución de puntos (ver `_points_distribution`).
 # Los máximos son cortes prácticos. Para un jugador típico (xG90 ~0.5)
 # P(4+ goles) ya es despreciable, pero se toma margen porque hay tasas por
@@ -132,7 +152,51 @@ def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     clean_sheet_probability = np.exp(-expected_conceded)
     defensive = clean_sheet_probability * clean_sheet_points
 
-    return attacking + defensive + APPEARANCE_POINTS
+    return attacking + defensive + _defcon_expected_points(players) + APPEARANCE_POINTS
+
+
+def _defcon_expected_points(players: pd.DataFrame) -> pd.Series:
+    """Puntos esperados por contribución defensiva.
+
+    DEFCON paga 2 puntos fijos al superar un umbral de acciones
+    defensivas en el partido, así que lo que hay que estimar es la
+    PROBABILIDAD de superarlo, no un promedio. Se modela el conteo de
+    acciones como Poisson con λ = tasa por 90' del jugador — el mismo
+    supuesto que ya se usa para goles.
+
+    La tasa propia se mezcla con la mediana de su posición ponderando por
+    minutos jugados: el baseline de pre-temporada no guardó esta métrica
+    (se agregó después de congelarlo), así que no hay datos del año
+    anterior con los cuales estabilizar a quien lleva pocos minutos.
+
+    Limitación: Poisson asume varianza igual a la media, y las acciones
+    defensivas son más consistentes partido a partido que los goles. Eso
+    infla levemente la probabilidad de los umbrales lejanos. Es
+    preferible a ignorar el componente por completo, y la calibración lo
+    va a mostrar si el sesgo es material.
+    """
+    thresholds = players["position"].map(DEFCON_THRESHOLDS)
+    rate = players["defensive_contribution_per_90"].fillna(0)
+    minutes = players["minutes"].fillna(0)
+
+    # La mediana se calcula SOLO sobre quienes jugaron: 265 de 629
+    # jugadores llevan 0 minutos y su tasa de 0 hundía la referencia
+    # (DEF caía de 7.0 a 4.5), castigando de más a todo el mundo.
+    played = players[minutes > 0]
+    medians = played.groupby("position")["defensive_contribution_per_90"].median()
+    position_median = players["position"].map(medians).fillna(0)
+    blended = (rate * minutes + position_median * DEFCON_BLEND_MINUTES) / (minutes + DEFCON_BLEND_MINUTES)
+
+    # P(acciones >= umbral) = 1 - P(acciones <= umbral - 1)
+    max_threshold = int(thresholds.max()) if thresholds.notna().any() else 0
+    pmf = _poisson_pmf_matrix(blended.to_numpy(), max_threshold)
+    cumulative = pmf.cumsum(axis=1)
+
+    reaches = np.zeros(len(players))
+    for position, threshold in DEFCON_THRESHOLDS.items():
+        mask = (players["position"] == position).to_numpy()
+        reaches[mask] = 1 - cumulative[mask, threshold - 1]
+    return pd.Series(reaches * DEFCON_POINTS, index=players.index)
 
 
 def _poisson_pmf_matrix(lambdas: np.ndarray, max_k: int) -> np.ndarray:

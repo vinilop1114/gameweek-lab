@@ -237,7 +237,11 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
         f"(qué tan seguido es titular) y lesión.",
         f"- **Techo**: percentil 90 — \"en su 10% de mejores partidos saca al menos esto\". "
         "Para capitanía el promedio engaña: un arquero puede tener buen xP y 0% de haul.",
-        "- **P(haul)**: probabilidad de hacer 10+ puntos.",
+        "- **P(haul)**: probabilidad de hacer 10+ puntos. **Usar el orden, no el "
+        "número.** Medido contra GW2, el ranking entre jugadores es correcto pero "
+        "el nivel absoluto está subestimado 2-3 veces: sin bonus points en el "
+        "cálculo, cuesta más llegar al umbral de 10. Sirve para decir \"X tiene más "
+        "chances de explotar que Y\", no para publicar \"X tiene 14% de probabilidad\".",
         f"- **xP 4GW**: puntos esperados acumulados en las próximas {HORIZON_GAMEWEEKS} fechas.",
         "- **Balón parado**: quién patea penales/tiros libres/córners. Es contexto: "
         "el xP **no** lo suma aparte, porque el xG de FPL ya incluye los penales ejecutados.",
