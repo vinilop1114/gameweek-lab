@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW2
 
-Generado automáticamente: 2026-09-01 00:21 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-01 08:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,24 +50,24 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 6.99 | 13.0 | 24% | 48.0% | Ipswich Town |
-| Mbeumo | Man Utd | MID | 6.32 | 12.0 | 20% | 31.6% | Ipswich Town |
-| Rogers | Chelsea | MID | 5.35 | 9.0 | 10% | 25.6% | Brighton |
-| João Pedro | Chelsea | FWD | 5.2 | 10.0 | 16% | 69.6% | Brighton |
-| Palmer | Chelsea | MID | 4.96 | 12.0 | 14% | 18.0% | Brighton |
-| Haaland | Man City | FWD | 4.88 | 10.0 | 17% | 69.9% | Crystal Palace |
-| Shaw | Man Utd | DEF | 4.65 | 6.0 | 1% | 17.8% | Ipswich Town |
-| Van Hecke | Spurs | DEF | 4.55 | 8.0 | 4% | 8.4% | Newcastle |
+| B.Fernandes | Man Utd | MID | 6.99 | 13.0 | 24% | 48.1% | Ipswich Town |
+| Mbeumo | Man Utd | MID | 6.32 | 12.0 | 20% | 31.4% | Ipswich Town |
+| Rogers | Chelsea | MID | 5.35 | 9.0 | 10% | 25.5% | Brighton |
+| João Pedro | Chelsea | FWD | 5.2 | 10.0 | 16% | 69.7% | Brighton |
+| Palmer | Chelsea | MID | 4.96 | 12.0 | 14% | 18.1% | Brighton |
+| Haaland | Man City | FWD | 4.88 | 10.0 | 17% | 70.0% | Crystal Palace |
+| Shaw | Man Utd | DEF | 4.65 | 6.0 | 1% | 17.7% | Ipswich Town |
+| Van Hecke | Spurs | DEF | 4.55 | 8.0 | 4% | 8.3% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £5.0m | 8.4% | 4.55 | 8.0 | 4% | Newcastle |
-| Lacroix | Chelsea | DEF | £6.0m | 9.0% | 4.47 | 6.0 | 3% | Brighton |
-| Hume | Sunderland | DEF | £4.5m | 5.9% | 4.42 | 8.0 | 3% | Fulham |
-| E.Le Fée | Sunderland | MID | £5.9m | 7.2% | 4.32 | 8.0 | 5% | Fulham |
-| Cunha | Man Utd | MID | £8.0m | 8.6% | 4.31 | 8.0 | 7% | Ipswich Town |
+| Van Hecke | Spurs | DEF | £5.0m | 8.3% | 4.55 | 8.0 | 4% | Newcastle |
+| Lacroix | Chelsea | DEF | £6.0m | 8.9% | 4.47 | 6.0 | 3% | Brighton |
+| Hume | Sunderland | DEF | £4.5m | 5.8% | 4.42 | 8.0 | 3% | Fulham |
+| E.Le Fée | Sunderland | MID | £5.9m | 7.1% | 4.32 | 8.0 | 5% | Fulham |
+| Cunha | Man Utd | MID | £8.0m | 8.5% | 4.31 | 8.0 | 7% | Ipswich Town |
 | Schade | Brentford | MID | £6.0m | 3.7% | 3.96 | 8.0 | 7% | Leeds |
 | Enzo | Chelsea | MID | £6.9m | 3.6% | 3.95 | 8.0 | 9% | Brighton |
 | Van de Ven | Spurs | DEF | £5.0m | 4.0% | 3.9 | 6.0 | 3% | Newcastle |
@@ -78,28 +78,28 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Transferencias libres disponibles tras esa fecha: 0.
 
-## Repaso de GW1 (fecha cerrada)
+## Repaso de GW2 (fecha cerrada)
 
-Sesgo del modelo: +0.62 pts por jugador (subestimó en promedio). Error absoluto medio: 1.82 pts.
+Sesgo del modelo: +0.54 pts por jugador (subestimó en promedio). Error absoluto medio: 1.44 pts.
 
 Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | +0.64 | 161 |
-| FWD | +0.47 | 53 |
-| GKP | +0.05 | 56 |
-| MID | +0.79 | 211 |
+| DEF | +0.27 | 164 |
+| FWD | +0.76 | 57 |
+| GKP | +0.05 | 57 |
+| MID | +0.81 | 214 |
 
-Mejores puntajes reales de GW1:
+Mejores puntajes reales de GW2:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| De Cuyper | Brighton | DEF | 17 | 2.07 |
-| Hinshelwood | Brighton | MID | 16 | 2.15 |
-| Mendy | Hull City | DEF | 15 | 0.35 |
-| Ajayi | Hull City | DEF | 14 | 0.35 |
-| Sangaré | Brentford | MID | 14 | 0.26 |
+| B.Fernandes | Man Utd | MID | 23 | 6.01 |
+| Cherki | Man City | MID | 14 | 2.0 |
+| Haaland | Man City | FWD | 13 | 4.86 |
+| Groß | Brighton | MID | 13 | 1.27 |
+| Tarkowski | Everton | DEF | 12 | 3.39 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
