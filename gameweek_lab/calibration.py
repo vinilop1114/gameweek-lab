@@ -35,8 +35,23 @@ CALIBRATION_PATH = DATA_PROCESSED_DIR / "xp_calibration.csv"
 CALIBRATION_COLUMNS = [
     "gameweek", "player_id", "web_name", "position", "team_name",
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
+    "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
     "actual_points",
 ]
+# Predictores contra los que se compara el modelo, además de él mismo.
+# Sin un baseline, un MAE de 1.44 no dice nada: lo que importa es si
+# `xp_next` ordena mejor que alternativas triviales que no requieren
+# modelo alguno. `ep_next` es la propia estimación de FPL, el rival
+# natural; `points_per_game` es el predictor de una línea; y
+# `selected_by_percent` es el consenso del mercado.
+BASELINE_COLUMNS = {
+    "xp_predicted": "xp_next (el modelo)",
+    "ep_next_at_prediction": "ep_next (estimación de FPL)",
+    "points_per_game_at_prediction": "points_per_game (temporada previa)",
+    "selected_by_percent_at_prediction": "selected_by_percent (el mercado)",
+    "start_rate_at_prediction": "start_rate (solo titularidad)",
+    "now_cost_at_prediction": "now_cost (solo precio)",
+}
 # El umbral se cuenta en FECHAS, no en observaciones. Una fecha aporta
 # ~480 filas, pero no son 480 evidencias independientes: comparten los
 # mismos 10 partidos, el mismo clima de resultados y las mismas sorpresas.
@@ -106,6 +121,13 @@ def snapshot_predictions(players: pd.DataFrame) -> str:
         "xp_predicted": eligible["xp_next"],
         "now_cost_at_prediction": eligible["now_cost"],
         "selected_by_percent_at_prediction": eligible["selected_by_percent"],
+        # Baselines congelados junto con la predicción: comparar contra
+        # ellos más tarde exige tener su valor *previo al deadline*, no el
+        # de hoy. Sin esto no hay forma de saber si el modelo aporta algo
+        # sobre predictores triviales.
+        "points_per_game_at_prediction": eligible["points_per_game"],
+        "ep_next_at_prediction": eligible["ep_next"],
+        "start_rate_at_prediction": eligible["start_rate"],
         "actual_points": pd.NA,
     })
     history = pd.concat([history, snapshot], ignore_index=True)
@@ -188,8 +210,112 @@ def build_calibration_report() -> str:
         f"| Error absoluto promedio: {mae:.2f} pts"
     )
 
-    by_position = complete.groupby("position")["error"].agg(["mean", "count"]).round(2)
-    lines.append("\nSesgo por posición (positivo = subestima, negativo = sobrestima):")
+    lines += _availability_vs_scoring_section(complete)
+    lines += _ranking_power_section(complete)
+
+    played = complete[complete["actual_points"] > 0]
+    by_position = played.groupby("position")["error"].agg(["mean", "count"]).round(2)
+    lines.append("\n-- Sesgo por posición (SOLO jugadores con puntos) --")
+    lines.append("Positivo = el modelo se quedó corto.")
     lines.append(by_position.to_string())
 
     return "\n".join(lines)
+
+
+def _availability_vs_scoring_section(complete: pd.DataFrame) -> list[str]:
+    """Separa el error de disponibilidad del error de scoring.
+
+    El sesgo agregado promedia dos poblaciones que fallan en direcciones
+    opuestas y se cancelan: al que no juega se le regalan puntos que nunca
+    va a cobrar (sesgo negativo), y al que juega se le queda corto (sesgo
+    positivo). Un solo número no permite saber cuál de los dos problemas
+    se está arreglando.
+
+    Cuidado al leer la fila "jugó": una parte de ese sesgo es artefacto de
+    condicionar, no un defecto. Si a un jugador con 60% de probabilidad de
+    arrancar se le cobran 1.2 de los 2 puntos de aparición, al mirar solo
+    a quienes efectivamente jugaron el modelo SIEMPRE va a quedar corto.
+    Ese componente es correcto por diseño (el xP es un valor esperado
+    incondicional); lo que importa es cuánto sesgo queda por encima de él.
+    """
+    played = complete[complete["actual_points"] > 0]
+    missed = complete[complete["actual_points"] == 0]
+
+    rows = [
+        ("No apareció", missed["error"].mean(), len(missed)),
+        ("Jugó", played["error"].mean(), len(played)),
+        ("Agregado", complete["error"].mean(), len(complete)),
+    ]
+    lines = ["\n-- Sesgo separado: disponibilidad vs scoring --"]
+    lines.append(f"{'Población':<14}{'Sesgo':>9}{'n':>7}")
+    for label, bias, n in rows:
+        bias_text = f"{bias:+.2f}" if n else "—"
+        lines.append(f"{label:<14}{bias_text:>9}{n:>7}")
+
+    if len(played):
+        # Cuánto del sesgo de los que jugaron es el artefacto de
+        # condicionar: los puntos de aparición que el modelo repartió
+        # hacia el escenario "no juega" y que, visto solo entre quienes
+        # jugaron, nunca podía cobrar.
+        start_rate = complete.get("start_rate_at_prediction")
+        if start_rate is not None and played["start_rate_at_prediction"].notna().any():
+            expected_shortfall = (2 * (1 - played["start_rate_at_prediction"])).mean()
+            residual = played["error"].mean() - expected_shortfall
+            lines.append(
+                f"\nDe los {played['error'].mean():+.2f} de quienes jugaron, ~{expected_shortfall:.2f} "
+                f"es artefacto de condicionar (puntos de aparición asignados al escenario "
+                f"'no juega'). Sesgo de scoring residual: {residual:+.2f}."
+            )
+        else:
+            lines.append(
+                "\n(Sin `start_rate_at_prediction` en estas fechas no se puede separar el "
+                "artefacto de condicionar del sesgo real; disponible desde el próximo snapshot.)"
+            )
+    return lines
+
+
+def _ranking_power_section(complete: pd.DataFrame) -> list[str]:
+    """Poder de ORDENAMIENTO del modelo frente a predictores triviales.
+
+    El sesgo es una constante que se puede corregir sumando; lo que el
+    modelo realmente vende es el ranking — a quién capitanear, a quién
+    transferir. Un modelo perfectamente insesgado puede ser inútil para
+    elegir jugadores, y uno sesgado puede ordenar perfecto.
+
+    Se usa Spearman (correlación de rangos) porque mide exactamente eso:
+    si el orden propuesto coincide con el orden real, sin importar la
+    escala. Si `xp_next` no le gana a `points_per_game` de forma
+    sostenida, la complejidad del modelo no se está pagando.
+    """
+    lines = ["\n-- Poder de ordenamiento (Spearman vs puntos reales) --"]
+    available = {
+        column: label for column, label in BASELINE_COLUMNS.items()
+        if column in complete.columns and complete[column].notna().any()
+    }
+    if len(available) <= 1:
+        lines.append(
+            "Todavía sin baselines guardados para comparar — se registran desde el "
+            "próximo snapshot (points_per_game, ep_next, start_rate)."
+        )
+        return lines
+
+    scores = []
+    for column, label in available.items():
+        subset = complete[[column, "actual_points"]].dropna()
+        if len(subset) > 10:
+            # Spearman = Pearson sobre los rangos. Se calcula así en vez
+            # de con method="spearman" porque esa vía exige scipy, una
+            # dependencia pesada para una transformación de una línea
+            # (mismo criterio que la Poisson en analysis.py).
+            score = subset[column].rank().corr(subset["actual_points"].rank())
+            scores.append((label, score))
+
+    lines.append(f"{'Predictor':<38}{'Spearman':>10}")
+    for label, score in sorted(scores, key=lambda item: item[1], reverse=True):
+        marker = "  <-- el modelo" if label.startswith("xp_next") else ""
+        lines.append(f"{label:<38}{score:>10.3f}{marker}")
+    lines.append(
+        "\nSi un predictor trivial le gana al modelo de forma sostenida, la complejidad "
+        "no se está pagando. Una fecha aislada no alcanza para concluirlo."
+    )
+    return lines

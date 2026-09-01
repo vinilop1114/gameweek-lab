@@ -68,6 +68,17 @@ BASELINE_RATE_COLUMNS = [
 # mismo umbral que MIN_MINUTES_FOR_RANKING usa para considerar una muestra
 # confiable: antes de eso, la temporada pasada sigue siendo mejor evidencia.
 BASELINE_BLEND_MINUTES = 900
+# Minutos mínimos en la temporada anterior para que su tasa de titularidad
+# sirva como prior. Con 0 minutos, un `start_rate` de 0 no significa "era
+# suplente" sino "no jugó en esta liga" — fichaje, ascenso o cesión — y
+# usarlo como prior hunde a jugadores que hoy son titulares.
+#
+# El umbral es 1 y no un número mayor a propósito: 200 de los 600
+# jugadores del baseline tienen exactamente 0 minutos (caso inequívoco de
+# ausencia de información), mientras que alguien con 300 minutos sí dice
+# algo sobre su rol. Poner el corte más arriba sería inventar un umbral
+# sin evidencia y descartaría señal real de casi la mitad del pool.
+MIN_BASELINE_MINUTES = 1
 
 # Parámetros de la distribución de puntos (ver `_points_distribution`).
 # Los máximos son cortes prácticos. Para un jugador típico (xG90 ~0.5)
@@ -402,8 +413,17 @@ def _start_rate(players: pd.DataFrame) -> pd.Series:
     if season_started:
         baseline = _load_last_season_baseline()
         if baseline is not None:
+            # Solo se usa el baseline de quien acumuló minutos suficientes
+            # la temporada pasada. Un `start_rate` de 0 puede significar
+            # dos cosas muy distintas: "fue suplente" o "no jugó en esta
+            # liga" — y tratar la segunda como la primera hunde a
+            # fichajes, ascendidos y cedidos que hoy son titulares.
+            # Detectado en datos reales: Rashford, Rudoni, Schlager y
+            # otros arrancaron GW1/GW2 cargando un prior de 0.00 que
+            # provenía de cero minutos registrados, no de suplencia.
+            informative = baseline[baseline["minutes"] >= MIN_BASELINE_MINUTES]
             prior = players["id"].map(
-                dict(zip(baseline["player_id"], baseline["start_rate"]))
+                dict(zip(informative["player_id"], informative["start_rate"]))
             ).fillna(START_RATE_PRIOR)
         else:
             prior = START_RATE_PRIOR
