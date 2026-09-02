@@ -541,16 +541,36 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
     """
     players = players.copy()
     fixtures = get_team_fixtures_horizon(horizon)
-    fixtures["multiplier"] = _fixture_multiplier(fixtures["difficulty"])
     fixtures["label"] = fixtures.apply(
         lambda r: f"{r['opponent']}({'H' if r['is_home'] else 'A'})", axis=1
     )
-
-    first_gw = fixtures["gameweek"].min()
-    is_first = fixtures["gameweek"] == first_gw
-    mult_first = fixtures[is_first].groupby("team_name")["multiplier"].sum()
-    mult_rest = fixtures[~is_first].groupby("team_name")["multiplier"].sum()
     summary = fixtures.sort_values("gameweek").groupby("team_name")["label"].agg(" · ".join)
+
+    players["xp_horizon"] = gameweek_expected_points(players, horizon).sum(axis=1).round(2)
+    players["fixtures_horizon"] = players["team_name"].map(summary).fillna("—")
+    return players
+
+
+def gameweek_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEWEEKS) -> pd.DataFrame:
+    """El mismo xP del horizonte, pero **desglosado fecha por fecha** en vez
+    de sumado. Devuelve un DataFrame con el índice de `players` y una
+    columna por gameweek.
+
+    `xp_horizon` es la suma de estas columnas — literalmente, para que no
+    puedan divergir. Existe por separado porque hay decisiones donde el
+    total no alcanza: en una posición solo juega un número fijo de
+    titulares por fecha, así que para saber cuánto rinde REALMENTE un
+    plantel hay que resolver semana a semana quién de los que tenés
+    arranca. Sumar `xp_horizon` cuenta puntos de suplentes que nunca se
+    van a cobrar (el caso extremo es el arquero: tenés dos, juega uno).
+
+    Un blank gameweek queda en 0 y un double suma sus dos partidos, sin
+    lógica especial: el multiplicador de la fecha es la suma de los
+    partidos que el equipo juegue en ella.
+    """
+    fixtures = get_team_fixtures_horizon(horizon)
+    fixtures["multiplier"] = _fixture_multiplier(fixtures["difficulty"])
+    first_gw = fixtures["gameweek"].min()
 
     base_rate = _base_scoring_rate(players)
     start_rate = _start_rate(players)
@@ -560,15 +580,15 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
         .where(players["status"] != "a", 1.0)
     )
 
-    players["xp_horizon"] = (
-        base_rate
-        * (
-            players["team_name"].map(mult_first).fillna(0.0) * prob_next
-            + players["team_name"].map(mult_rest).fillna(0.0) * later_availability
-        )
-    ).round(2)
-    players["fixtures_horizon"] = players["team_name"].map(summary).fillna("—")
-    return players
+    by_gameweek = {}
+    for gameweek, week in fixtures.groupby("gameweek"):
+        multiplier = players["team_name"].map(week.groupby("team_name")["multiplier"].sum()).fillna(0.0)
+        # La duda por lesión solo se toma literal para la próxima fecha;
+        # de ahí en adelante se asume que un jugador sano juega normal y
+        # que la duda de un lesionado persiste (ver docstring de arriba).
+        availability = prob_next if gameweek == first_gw else later_availability
+        by_gameweek[int(gameweek)] = base_rate * multiplier * availability
+    return pd.DataFrame(by_gameweek, index=players.index)
 
 
 def add_rank_adjusted_value(players: pd.DataFrame, stance: str = "neutral", xp_column: str = "xp_next") -> pd.DataFrame:

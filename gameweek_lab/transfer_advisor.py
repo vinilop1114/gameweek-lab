@@ -2,6 +2,7 @@ import difflib
 import json
 from datetime import datetime, timezone
 
+import numpy as np
 import pandas as pd
 
 from gameweek_lab.analysis import (
@@ -12,10 +13,17 @@ from gameweek_lab.analysis import (
     add_rank_adjusted_value,
     captaincy_picks,
     effective_minutes,
+    gameweek_expected_points,
 )
 from gameweek_lab.build_dataset import build_players_dataset, get_next_deadline, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
-from gameweek_lab.squad_builder import MAX_PER_CLUB, SQUAD_COMPOSITION, select_starting_xi, would_start_after_swap
+from gameweek_lab.squad_builder import (
+    MAX_PER_CLUB,
+    SQUAD_COMPOSITION,
+    select_starting_xi,
+    xi_gain_context,
+    xi_horizon_gain,
+)
 
 # Estado persistente del equipo Base autogestionado (ver evolve_base_squad).
 # Vive en data/processed porque el workflow de GitHub Actions ya commitea
@@ -163,6 +171,19 @@ def find_best_swaps(
     )
     value_by_id = combined.set_index("id")["rank_value"]
 
+    # xP fecha por fecha, para poder medir la ganancia sobre el XI y no
+    # sobre el jugador suelto (ver xi_horizon_gain). La postura se aplica
+    # como factor por jugador —`rank_value` es `xp_horizon` multiplicado—
+    # así que se traslada igual a cada fecha y protect/chase siguen
+    # cambiando el ranking como antes.
+    weekly = gameweek_expected_points(combined)
+    stance_factor = (combined["rank_value"] / combined["xp_horizon"]).replace(
+        [np.inf, -np.inf], 1.0
+    ).fillna(1.0)
+    weekly = weekly.mul(stance_factor, axis=0)
+    weekly_by_id = dict(zip(combined["id"], weekly.to_numpy().tolist()))
+    context = xi_gain_context(squad, weekly_by_id)
+
     club_counts = squad["team_name"].value_counts()
     swaps = []
     for out_player in squad.itertuples():
@@ -181,12 +202,20 @@ def find_best_swaps(
                 # caro de abajo (rehacer la formación es lo más lento acá).
                 continue
 
-            # ¿El que entra sería titular hoy? Si no, su xP no se cobra
-            # mientras esté en el banco — ver BENCH_GAIN_DISCOUNT arriba.
-            # (would_start_after_swap: versión rápida sin pandas, verificada
-            # contra select_starting_xi + _apply_swap — ver squad_builder.py)
-            would_start = would_start_after_swap(squad, out_player.id, out_player.position, cand.xp_next)
-            gain = raw_gain if would_start else round(raw_gain * BENCH_GAIN_DISCOUNT, 2)
+            # Ganancia real: cuánto sube el mejor XI de cada fecha, ya
+            # contando al resto del plantel. Puede ser bastante menor que
+            # `raw_gain` cuando el que sale iba a perder su lugar de todos
+            # modos contra alguien que ya tenés — ver xi_horizon_gain.
+            xi_gain, would_start, starts_any = xi_horizon_gain(
+                context, out_player.id, out_player.position, weekly_by_id[cand.id]
+            )
+            # Si no arranca en ninguna fecha del horizonte, el XI no gana
+            # nada y `xi_gain` es 0. Aun así el cambio no se descarta: se
+            # cobra la fracción BENCH_GAIN_DISCOUNT del avance bruto, por
+            # las auto-suplencias y por el calendario más allá del
+            # horizonte. Es la misma decisión de siempre — penalización
+            # suave, no prohibición.
+            gain = xi_gain if starts_any else round(raw_gain * BENCH_GAIN_DISCOUNT, 2)
 
             swaps.append({
                 "out_name": out_player.web_name,
@@ -565,65 +594,86 @@ def simulate_squad_trajectory(
     A diferencia de evolve_base_squad, esto es de **solo lectura**: nunca
     toca `my_team.csv` ni el estado persistido — trabaja sobre copias.
 
+    **Cada columna es el plantel que JUEGA esa fecha**, o sea con la
+    decisión de esa fecha ya aplicada. Eso incluye la primera columna: si
+    el modelo propone una transferencia para la fecha en curso, la columna
+    de hoy ya la muestra, igual que `squad_type = "Base proyectado"` en
+    `squad_recommendations.csv`.
+
+    Antes el loop arrancaba en la segunda fecha y sembraba la primera
+    columna con `my_team.csv` tal cual, así que la transferencia de esta
+    fecha aparecía recién en la columna siguiente: la vista contradecía al
+    Base proyectado con una fecha de desfase. La excepción es cuando la
+    fecha en curso ya se ejecutó — ahí `my_team.csv` YA tiene sus
+    transferencias y proponer otra sería inventar un movimiento, el mismo
+    criterio que usa `preview_base_transfers`.
+
     Devuelve (trayectoria, notas):
-    - trayectoria: 15 filas (una por jugador del equipo actual, "slot" fijo
-      del plantel), columnas `position`, `GW{n}`...`GW{n+weeks-1}` con el
-      nombre del jugador en ese slot esa fecha. Si no hubo cambio en la
-      semana, el nombre se repite; si cambió, el slot pasa a mostrar el
-      nombre del jugador nuevo desde esa columna en adelante.
+    - trayectoria: 15 filas (una por slot del plantel, con el slot fijo a
+      lo largo de las columnas), columnas `position`,
+      `GW{n}`...`GW{n+weeks-1}` con el nombre del jugador en ese slot esa
+      fecha. Si no hubo cambio en la semana, el nombre se repite.
     - notas: un dict {gameweek: descripción de los cambios de esa semana}.
     """
     state = _load_base_state()
-    squad = load_my_team(team_path, players).to_dict("records")
+    squad = load_my_team(team_path, players)
     free_transfers = state["banked_free_transfers"]
     current_gw = _current_gameweek(players)
 
-    gw_labels = [f"GW{current_gw + offset}" for offset in range(weeks)]
-    positions = [row["position"] for row in squad]
-    trajectory = {gw_labels[0]: [row["web_name"] for row in squad]}
-    notes = {gw_labels[0]: "Equipo actual (persistido en my_team.csv)"}
+    slots = squad[["id", "web_name", "position"]].to_dict("records")
+    positions = [slot["position"] for slot in slots]
+    trajectory: dict[str, list[str]] = {}
+    notes: dict[str, str] = {}
 
-    for offset in range(1, weeks):
+    for offset in range(weeks):
+        gameweek = current_gw + offset
+        label = f"GW{gameweek}"
+
+        if offset == 0 and state["last_evaluated_gameweek"] == current_gw:
+            notes[label] = f"GW{gameweek} ya ejecutado — my_team.csv ya incluye sus transferencias."
+            trajectory[label] = [slot["web_name"] for slot in slots]
+            continue
+
         free_transfers = min(
-            free_transfers + _transfers_granted(current_gw + offset), MAX_BANKED_TRANSFERS
+            free_transfers + _transfers_granted(gameweek), MAX_BANKED_TRANSFERS
         )
-        squad_df = pd.DataFrame(squad)
-        pool = _candidate_pool(players, squad_df)
-        flagged_ids = set(_flag_problem_players(squad_df)["id"])
-        week_notes = []
+        previous_ids = set(squad["id"])
+        # Se reusa el mismo núcleo de decisión que ejecuta el equipo real:
+        # si esta simulación tuviera su propia copia de la lógica, podría
+        # anunciar un plan que el modelo nunca haría.
+        squad, free_transfers, log = plan_transfers(players, squad, free_transfers, gameweek)
+        _reassign_slots(slots, squad, previous_ids)
 
-        for _ in range(2):  # como mucho 2 movimientos por fecha simulada
-            swaps = find_best_swaps(squad_df, pool, 0.0)
-            if swaps.empty:
-                break
-            flagged_swaps = swaps[swaps["out_id"].isin(flagged_ids)]
-            candidate = flagged_swaps.iloc[0] if not flagged_swaps.empty else swaps.iloc[0]
-            worth_free = candidate["gain"] >= BANK_THRESHOLD or candidate["out_id"] in flagged_ids
-            worth_hit = candidate["gain"] > HIT_COST + HIT_UNCERTAINTY_MARGIN
-
-            if free_transfers > 0 and worth_free:
-                kind = "transferencia libre"
-                free_transfers -= 1
-            elif free_transfers == 0 and worth_hit:
-                kind = "HIT -4"
-            else:
-                break
-
-            slot_idx = next(i for i, row in enumerate(squad) if row["id"] == candidate["out_id"])
-            incoming_row = pool[pool["id"] == candidate["in_id"]].iloc[0].to_dict()
-            incoming_row["purchase_price"] = incoming_row["now_cost"]  # comprado "hoy" en la simulación
-            squad[slot_idx] = incoming_row
-            starts_note = "titular" if candidate["would_start"] else "banco"
-            week_notes.append(f"{candidate['out_name']} → {candidate['in_name']} "
-                              f"({kind}, +{candidate['gain']:.2f} xP, entra de {starts_note})")
-
-            squad_df = pd.DataFrame(squad)
-            pool = _candidate_pool(players, squad_df)
-            flagged_ids.discard(candidate["out_id"])
-
-        trajectory[gw_labels[offset]] = [row["web_name"] for row in squad]
-        notes[gw_labels[offset]] = "; ".join(week_notes) if week_notes else "Sin cambios"
+        trajectory[label] = [slot["web_name"] for slot in slots]
+        notes[label] = "; ".join(log)
 
     result = pd.DataFrame(trajectory)
     result.insert(0, "position", positions)
     return result, notes
+
+
+def _reassign_slots(slots: list[dict], squad: pd.DataFrame, previous_ids: set) -> None:
+    """Mantiene fijo el "slot" de cada jugador entre columnas de la
+    trayectoria, mutando `slots` en el lugar.
+
+    Hace falta porque `_apply_swap` no conserva el orden de las filas
+    (saca al que se va y agrega al que entra al final), y la tabla de
+    trayectoria se lee en horizontal: la gracia es ver qué nombre ocupa
+    la misma línea fecha a fecha. Cada jugador que entra se asigna al slot
+    de alguien que salió en su misma posición — los cambios siempre son
+    dentro de la misma posición, así que el emparejamiento existe. Si dos
+    salidas de la misma posición caen en la misma fecha, da igual cuál de
+    los dos slots recibe a cuál: la fila sigue siendo esa posición.
+    """
+    vacated = previous_ids - set(squad["id"])
+    for incoming in squad[~squad["id"].isin(previous_ids)].itertuples():
+        index = next(
+            i for i, slot in enumerate(slots)
+            if slot["id"] in vacated and slot["position"] == incoming.position
+        )
+        vacated.discard(slots[index]["id"])
+        slots[index] = {
+            "id": incoming.id,
+            "web_name": incoming.web_name,
+            "position": incoming.position,
+        }

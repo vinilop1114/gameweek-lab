@@ -12,7 +12,7 @@ python scripts/run_fetch.py           # descarga datos frescos de la API de FPL
 python scripts/run_analysis.py        # calcula xP, diferenciales y capitanía
 python scripts/run_squad.py           # evoluciona el equipo Base autogestionado (my_team.csv)
 python scripts/run_wildcard_squad.py  # equipo Wildcard: banco mínimo, XI máximo, sin memoria
-python scripts/export_for_tableau.py  # evoluciona el Base + exporta ambos equipos para Tableau
+python scripts/export_for_tableau.py  # evoluciona el Base + exporta los tres equipos para Tableau
 python scripts/run_trajectory_preview.py  # vista especulativa del equipo a 4 fechas (solo lectura)
 python scripts/run_calibration.py     # graba predicción de la fecha + compara xP vs. puntos reales
 python scripts/run_transfer_advisor.py --team my_team.csv --bank 0.5 --free-transfers 1 --stance neutral
@@ -49,12 +49,22 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
   `+ expected_assists_per_90 × 3` (ataque), más
   `exp(-expected_goals_conceded_per_90) × puntos_por_clean_sheet(posición)`
   (defensa, con la probabilidad de clean sheet estimada vía Poisson), más
+  los puntos esperados por **contribución defensiva** (ver abajo), más
   2 puntos fijos de aparición. **No usa `form`/`points_per_game`** —
   puntos ya anotados mezclan la calidad real del jugador con suerte
   puntual (un bonus de un partido aislado no dice nada sobre si se
   repite); xG/xA reflejan las oportunidades generadas, un proxy más
   estable. Limitación conocida: no modela bonus points (BPS) ni atajadas
   de arquero — FPL no expone un "bono esperado" por jugador.
+- **DEFCON (contribución defensiva)**: FPL paga 2 puntos fijos al superar
+  un umbral de acciones defensivas (10 CBIT para defensores, 12 CBIRT
+  para medios y delanteros; los arqueros no reciben). Como el pago es
+  fijo, lo que se estima es la **probabilidad** de superar el umbral, con
+  Poisson sobre `defensive_contribution_per_90`. Los defensores promedian
+  ~0.33 puntos esperados; los delanteros, casi cero (su umbral de 12 es
+  difícil de alcanzar). La tasa propia se mezcla con la mediana de su
+  posición, calculada **solo entre quienes jugaron** — los jugadores con
+  cero minutos hundían esa referencia de 7.0 a 4.5.
 - **fixture_multiplier**: invierte el FDR de FPL (1=fácil, 5=difícil),
   centrado en 1.0 para dificultad media (3). El FDR ya distingue localía
   (verificado: 140 de 200 partidos tienen dificultad distinta para local
@@ -85,6 +95,17 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
     dominar al llegar a `BASELINE_BLEND_MINUTES` (900 min ≈ 10 partidos).
     Verificado: tras GW1, sin baseline Thiago y Nmecha darían ambos 0.79
     de titularidad; con baseline dan 0.98 y 0.39.
+
+    **El baseline solo se usa si tiene minutos detrás** (`MIN_BASELINE_MINUTES`).
+    Un `start_rate` de 0.00 confundía dos cosas muy distintas: "era
+    suplente" y "no jugó en esta liga" — y **200 de 600 jugadores del
+    baseline tienen exactamente cero minutos** (equipos ascendidos,
+    fichajes, cesiones que volvieron). Rashford, Mendy, Ajayi y Sangaré
+    arrancaron GW1/GW2 cargando un prior de 0.00 que no venía de
+    suplencia sino de ausencia de datos; Mendy y Ajayi estuvieron entre
+    los mejores puntajes de la fecha contra una proyección de 0.35. El
+    corte es 1 minuto y no un número mayor: cero es inequívoco, mientras
+    que 300 minutos sí dicen algo sobre el rol del jugador.
   - **`playing_probability`** (lesión): `chance_of_playing_next_round` /
     100, o 100% si no hay duda reportada. **Ojo:** verificado contra
     datos reales, solo 9 de 224 jugadores elegibles tienen valor no nulo
@@ -219,6 +240,23 @@ del mismo cálculo:
   `python scripts/run_squad.py --force` saltea la ventana (no el primer
   freno) para ver qué haría sin esperar al deadline.
 
+- **Base proyectado** (`preview_base_transfers`): el Base con la
+  transferencia propuesta **ya aplicada**, calculado todos los días y
+  publicado como un tercer `squad_type` en `squad_recommendations.csv`.
+  No toca `my_team.csv` ni el archivo de estado — es puramente de
+  lectura.
+
+  Existe porque los dos frenos de arriba, que son correctos para
+  *decidir*, eran un problema para *publicar*: hasta 3 horas antes del
+  deadline el CSV mostraba el equipo viejo, y el cambio recién aparecía
+  cuando ya no quedaba tiempo de preparar un post. La decisión definitiva
+  sigue tomándose en la ventana del deadline, con las lesiones ya
+  confirmadas; el proyectado es la mejor apuesta con los datos de hoy y
+  puede cambiar. `plan_transfers()` es el núcleo de decisión compartido:
+  `evolve_base_squad` y `preview_base_transfers` lo llaman con los mismos
+  argumentos y difieren solo en si persisten el resultado, así que el
+  proyectado no puede desviarse de lo que el modelo realmente haría.
+
 En la práctica, el XI del Wildcard suele sacar más xP que el del Base
 (mismo presupuesto, banco mucho más barato) — es la comparación esperada:
 uno es el techo teórico sin restricciones reales, el otro es el equipo
@@ -274,19 +312,41 @@ Ambas responden las mismas preguntas:
 - **Si conviene hacerlo o guardar la transferencia**: mejoras marginales
   (< `BANK_THRESHOLD` xP en el horizonte) no justifican gastar la
   transferencia — acumularla (hasta 5) habilita movimientos dobles después.
+- **Cuántas transferencias libres hay realmente** (`_transfers_granted`):
+  el Base automático acredita **1 por fecha, salvo GW1, que no da
+  ninguna** — el plantel inicial se arma sin límite de cambios, así que
+  la primera transferencia libre recién aparece en GW2. Sin esto el
+  modelo arrancaba la temporada creyendo tener una de más y llegó a
+  proponer dos cambios teniendo una sola disponible (detectado en la
+  práctica, GW2). El saldo acumulado vive en `banked_free_transfers`
+  dentro del archivo de estado.
 - **Si un hit de -4 se justifica**: solo si el segundo mejor cambio gana más
   de 4 + `HIT_UNCERTAINTY_MARGIN` puntos proyectados — pagar puntos ciertos
   por una proyección requiere margen de seguridad, no empate técnico.
 - **Jugadores con bandera** (lesión/suspensión/duda) se marcan siempre, y
   un cambio que saca a uno de ellos se recomienda aunque la ganancia sea chica.
-- **Si el que entra terminaría en el banco**, su xP no se cobra mientras
-  esté ahí — la ganancia proyectada se descuenta (`BENCH_GAIN_DISCOUNT =
-  0.3`) en vez de contarse entera. El cambio todavía es posible si la
-  ventaja alcanza para justificarlo igual, pero el umbral efectivo sube —
-  así que en la práctica, casi siempre es mejor guardar la transferencia
-  para un movimiento que sí sea titular. (Se agregó después de detectar
-  en la práctica que el primer cambio real dejó al jugador nuevo en el
-  banco, gastando la transferencia sin que sus puntos contaran para nada.)
+- **La ganancia se mide sobre el XI, no sobre el jugador suelto**
+  (`xi_horizon_gain`). En cada posición juega un número fijo de titulares
+  por fecha, así que lo que vale un cambio no es `xP(entra) − xP(sale)`
+  sino cuánto sube el mejor XI posible de cada fecha, ya contando al
+  resto del plantel. La diferencia es enorme en el arco, donde tenés dos
+  arqueros y juega uno: si el suplente ya iba a arrancar en tres de las
+  cuatro fechas, el arquero que entra se mide contra **ese suplente**, no
+  contra el que sale.
+
+  El caso que lo motivó (GW3): el modelo valuó Roefs → Verbruggen en
+  +3.86 y gastó la transferencia libre. Contando que Raya ya estaba en el
+  banco y habría arrancado en GW4-GW6, la ganancia real era **+1.33** —
+  por debajo del umbral, o sea que correspondía guardarla. Sobre el
+  plantel real, la valuación vieja sobrestimaba la ganancia en 1.17 xP
+  (mediana) y hasta 3.13 en el peor caso, y dejaba 10 cambios por encima
+  del umbral donde en realidad había 3.
+- **Si el que entra no arranca en ninguna fecha del horizonte**, el XI no
+  gana nada, así que la ganancia se cobra al `BENCH_GAIN_DISCOUNT` (0.3)
+  del avance bruto. Sigue siendo una penalización suave y no una
+  prohibición: el cambio es posible si la ventaja alcanza igual. Si en
+  cambio arranca en *algunas* fechas, ya no hace falta descuento alguno —
+  el cálculo por fecha lo cobra exactamente en las semanas que juega.
 - **El presupuesto usa el precio de venta real de FPL, no el precio de
   mercado**: `my_team.csv` guarda `purchase_price` (precio al que
   compraste cada jugador) además de `web_name`/`team_name`. Si un jugador
@@ -305,6 +365,24 @@ double gameweeks (dos partidos) y blanks (ninguno) quedan contados
 naturalmente. La duda de disponibilidad de un lesionado se asume persistente
 en el horizonte — conservador a propósito.
 
+**Lo que el asesor NO evalúa: financiar un puesto vendiendo en otro.** Cada
+cambio recibe un presupuesto de `banco + precio de venta de ese mismo
+jugador`, y los dos movimientos que permite por fecha se evalúan con banco
+en cero, así que la plata que sobra del primero nunca financia al segundo.
+"Bajo el arquero suplente para subir un defensor" —una jugada común en
+FPL— no aparece en las recomendaciones porque **no existe en su espacio de
+búsqueda**, no porque la haya evaluado y descartado.
+
+Medido en GW3: el aporte marginal del segundo arquero, dado que el otro ya
+está en el plantel, era de 0.14 xP en 4 fechas (£5.0m comprando casi nada,
+porque el otro arranca en 3 de las 4 igual). Liberando esa plata había un
+plan de dos movimientos que valía +4.90 xP contra los +2.64 del mejor
+movimiento único. Se dejó sin implementar a propósito: buscar pares
+multiplica el espacio de búsqueda (~35 candidatos pasan a ~600 pares) y
+gasta 2 transferencias en vez de 1 — con una sola libre eso es un hit de
+-4, que la ganancia no llega a justificar. El Wildcard captura esta
+jugada solo, porque reparte todo el presupuesto desde cero.
+
 **Rendimiento:** `find_best_swaps` evalúa cientos de candidatos por
 corrida, y para cada uno necesita saber si terminaría de titular o en el
 banco. Hacerlo reconstruyendo el equipo con pandas y llamando a
@@ -312,14 +390,16 @@ banco. Hacerlo reconstruyendo el equipo con pandas y llamando a
 xP actual, que genera más candidatos "cercanos" que el anterior, una sola
 llamada a `find_best_swaps` tardaba ~14s, y la vista de 4 fechas
 (`simulate_squad_trajectory`, que la llama varias veces) casi 80s.
-`would_start_after_swap` (en `squad_builder.py`) resuelve lo mismo con
-listas de Python de como mucho 5 elementos, sin ninguna operación de
-pandas — verificado con una prueba diferencial contra el método original
-(877 candidatos reales, 0 discrepancias) antes de reemplazarlo. Bajó a
-~0.9s por llamada, ~10s la vista completa de 4 fechas — y a diferencia
-del filtro de `raw_gain > 0` (que ayuda pero depende de cuántos
-candidatos pasen), esta es una mejora estructural: no se degrada aunque
-el modelo cambie y aparezcan más candidatos cercanos.
+`_best_xi_total` (en `squad_builder.py`) es `select_starting_xi` reducido
+a aritmética: listas de Python de como mucho 5 elementos por posición,
+sin ninguna operación de pandas. Hoy `xi_horizon_gain` lo llama una vez
+por fecha del horizonte y por candidato, y aun así la llamada completa
+corre en ~0.2s. Verificado con una prueba diferencial contra el camino
+lento de verdad — aplicar el cambio y correr `select_starting_xi` una vez
+por fecha — sobre 974 casos reales, 0 discrepancias. A diferencia del
+filtro de `raw_gain > 0` (que ayuda pero depende de cuántos candidatos
+pasen), esta es una mejora estructural: no se degrada aunque el modelo
+cambie y aparezcan más candidatos cercanos.
 
 El timing de chips no se optimiza (requeriría proyectar la temporada
 completa): hay reglas guía en `docs/chips-strategy.md`, y el asesor avisa
@@ -372,29 +452,48 @@ veces el mismo día:
    (append, no se sobreescribe). Sin esto la proyección se pierde apenas
    se refrescan los datos al día siguiente — `players_scored.csv` no
    guarda historial, siempre muestra el estado actual.
-2. **`record_actual_points`**: una vez que una fecha queda con resultados
-   y bonus points confirmados oficialmente (`data_checked=True` en la
-   API), completa los puntos reales de esa fecha usando
+2. **`record_actual_points`**: una vez que **todos los partidos de una
+   fecha terminaron**, completa los puntos reales usando
    `/event/{id}/live/` — a diferencia de `event_points` en
    bootstrap-static (que solo refleja la fecha "actual" del juego y se
    pisa apenas arranca la siguiente), este endpoint da los puntos de esa
    fecha puntual sin ambigüedad, así que no importa si el pipeline se
-   atrasa unos días en completarla.
+   atrasa unos días. El corte mira `finished_provisional` en los
+   fixtures, **no `data_checked` en los events**: verificado en GW1, los
+   10 partidos habían terminado con los bonus ya asignados mientras
+   `data_checked` seguía en `False` — FPL lo marca tras su verificación
+   final, que puede tardar días, y esperarlo dejaba la calibración
+   parada sobre datos ya completos.
 
-`build_calibration_report` compara `xp_predicted` vs `actual_points` y
-reporta el sesgo general y por posición — pero **con menos de
-`MIN_OBSERVATIONS_FOR_BIAS_REPORT` (100) observaciones, lo dice
-explícitamente en vez de mostrar un "sesgo" que en realidad es ruido de
-1-2 fechas**. Verificado con datos sintéticos (sesgo inyectado a
-propósito: FWD -1.5, DEF +1.0) antes de confiar en la lógica — el reporte
-lo detectó con precisión (FWD -1.46, DEF +1.15).
+`build_calibration_report` hace tres cortes:
 
-**Deliberadamente no auto-corrige nada**: la temporada 2026/27 arranca
-recién el 21 de agosto, así que hoy hay 0 fechas jugadas — "corregir" el
-modelo ahora sería ajustarlo contra ruido. El reporte es para que una
-persona lo lea; decidir si vale ajustar `GOAL_POINTS`, `CLEAN_SHEET_POINTS`
-o el peso de cada componente del xP, una vez haya semanas suficientes, es
-una decisión aparte y deliberada.
+- **Sesgo separado por población** (disponibilidad vs. scoring). El
+  agregado promedia dos grupos que fallan en direcciones opuestas y se
+  cancelan: `-0.76` para quienes no aparecieron, `+1.63` para quienes
+  jugaron. Un solo número no permite saber cuál de los dos problemas
+  está mejorando. El reporte además descuenta el **artefacto de
+  condicionar**: a un jugador con 60% de probabilidad de arrancar se le
+  acreditan 1.2 de los 2 puntos de aparición, así que mirando solo a
+  quienes jugaron el modelo queda corto **por diseño** — lo que importa
+  es el sesgo que queda por encima de eso.
+- **Poder de ordenamiento** contra baselines (`ep_next` de FPL,
+  `points_per_game`, `selected_by_percent`, `now_cost`). El sesgo es una
+  constante que se puede sumar después; lo que el modelo realmente vende
+  es el ranking. Se mide con Spearman, calculado como Pearson sobre
+  rangos para no agregar scipy por una transformación de una línea.
+  Primera lectura: `selected_by_percent` 0.430 vs `xp_next` 0.423 — si
+  un predictor trivial le gana de forma sostenida, la complejidad no se
+  está pagando.
+- **Sesgo por posición**, solo entre quienes tuvieron minutos.
+
+Con menos de `MIN_GAMEWEEKS_FOR_BIAS_REPORT` (4) **fechas**, el reporte
+lo advierte explícitamente. El umbral se cuenta en fechas y no en filas
+a propósito: una fecha aporta ~480 observaciones, pero salen de los
+mismos 10 partidos y no son evidencia independiente.
+
+**Deliberadamente no auto-corrige nada.** El reporte es para que una
+persona lo lea; ajustar `GOAL_POINTS`, `CLEAN_SHEET_POINTS` o cualquier
+peso del xP contra dos o tres fechas sería ajustar contra ruido.
 
 ## Vista especulativa a 4 fechas
 
@@ -405,10 +504,22 @@ slot cada fecha. Si un slot no cambia, el nombre se repite en las columnas
 siguientes; si cambia, se ve el nombre nuevo desde esa columna en
 adelante — fácil de leer de un vistazo.
 
-**Importante — esto NO es una predicción**, es una simulación: corre la
-misma lógica de `evolve_base_squad` (banco-vs-usar, hit-vs-no-hit) cuatro
-veces seguidas usando el `xp_horizon` de **hoy**, sin esperar datos nuevos
-entre fecha y fecha simulada. En la vida real, cada gameweek trae datos
+**Cada columna es el plantel que juega esa fecha**, o sea con la decisión
+de esa fecha ya aplicada — la primera columna incluida. Eso hace que la
+columna de hoy sea exactamente el `squad_type = "Base proyectado"` de
+`squad_recommendations.csv`; si no coinciden, hay un bug. (Antes el loop
+arrancaba en la segunda fecha y sembraba la primera columna con
+`my_team.csv` tal cual, así que la transferencia de esta fecha aparecía
+recién en la columna siguiente: la vista contradecía al Base proyectado
+con una fecha de desfase.) La excepción es cuando la fecha en curso ya se
+ejecutó: ahí `my_team.csv` ya tiene sus transferencias, la primera
+columna lo dice, y la primera decisión simulada es la de la fecha
+siguiente.
+
+**Importante — esto NO es una predicción**, es una simulación: corre
+`plan_transfers` —el mismo núcleo de decisión que ejecuta el equipo real,
+no una copia— cuatro veces seguidas usando el `xp_horizon` de **hoy**, sin
+esperar datos nuevos entre fecha y fecha simulada. En la vida real, cada gameweek trae datos
 frescos (lesiones, precios, forma) que probablemente cambien la decisión
 real cuando de verdad llegue esa fecha — por eso es "el plan de hoy, si
 nada cambiara", no un compromiso. Es de solo lectura: nunca toca
@@ -419,7 +530,26 @@ nada cambiara", no un compromiso. Es de solo lectura: nunca toca
 `data/processed/briefing.md` — un resumen en Markdown que genera el mismo
 pipeline, pensado para que un modelo redacte posts sin leer los CSVs
 completos. Trae equipo Base, equipo Wildcard, top capitanías, top
-diferenciales, y una sección que explica cómo interpretar cada métrica.
+diferenciales, las transferencias, el repaso de la última fecha cerrada y
+una sección que explica cómo interpretar cada métrica.
+
+Dos de esas secciones son material que no existe en ningún CSV:
+
+- **Transferencias** (`_transfer_section`): la propuesta de esta fecha
+  (todavía sin aplicar, marcada como tal) y los movimientos ya
+  ejecutados, con el motivo y la ganancia de xP de cada uno. Ni
+  `my_team.csv` ni `squad_recommendations.csv` distinguen a un jugador
+  que entró esta semana de uno que lleva meses — solo muestran el plantel
+  resultante, así que sin esta sección la transferencia solo existía en
+  la salida de terminal de `run_squad.py`, que se pierde.
+- **Repaso de la última fecha** (`_last_gameweek_review`): sesgo del
+  modelo, error absoluto medio, sesgo por posición y los 5 mejores
+  puntajes reales contra lo que el modelo había previsto — sale del
+  historial de calibración. Es material propio para contenido (nadie
+  publica el error de su propio modelo) y obliga a que los posts de
+  repaso salgan de datos medidos y no de impresiones. Incluye la
+  advertencia de que subestimar es el sesgo *esperado*, porque el modelo
+  no cuenta bonus points.
 
 Existe por tres razones concretas:
 
@@ -445,9 +575,14 @@ CSV.
 
 - **`players_scored.csv`**: los ~590 jugadores con xP, precio, ownership,
   próximo rival, etc. — para dashboards sobre todo el pool.
-- **`squad_recommendations.csv`**: Base + Wildcard combinados en formato
-  tidy (una fila por jugador, columnas `squad_type`/`role`/`is_captain`
-  para filtrar) — una sola fuente de datos para comparar ambos equipos.
+- **`squad_recommendations.csv`**: los **tres** equipos combinados en
+  formato tidy (una fila por jugador, columnas
+  `squad_type`/`role`/`is_captain` para filtrar) — una sola fuente de
+  datos para compararlos. `squad_type` toma tres valores: `Base` (el
+  equipo tal como está hoy en FPL), `Base proyectado` (el mismo, con la
+  transferencia propuesta ya aplicada) y `Wildcard` (el techo teórico).
+  Cuando no hay transferencia propuesta, `Base` y `Base proyectado` son
+  idénticos; la diferencia entre ambos conjuntos *es* el cambio.
 
 Ambos incluyen `xp_horizon` y `fixtures_horizon` (el xP y el calendario
 resumido de las próximas 4 fechas, no solo la siguiente — pensado para que

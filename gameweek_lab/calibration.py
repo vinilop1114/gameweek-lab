@@ -17,11 +17,11 @@ Dos pasos independientes, cada uno gateado para no duplicar trabajo:
    pisa apenas arranca la siguiente), este endpoint no es ambiguo sobre
    a qué fecha se refiere.
 
-Deliberadamente NO auto-corrige el modelo con lo que encuentra: con 0
-fechas jugadas todavía (la temporada 2026/27 arranca el 21/8),
-"corregir" ahora sería ajustar contra ruido, no señal. `build_calibration_report`
-imprime el análisis para que lo lea una persona — decidir si vale ajustar
-el modelo, una vez haya semanas suficientes, es aparte.
+Deliberadamente NO auto-corrige el modelo con lo que encuentra: con dos
+o tres fechas jugadas, "corregir" sería ajustar contra ruido, no señal.
+`build_calibration_report` imprime el análisis para que lo lea una
+persona — decidir si vale ajustar el modelo, una vez haya semanas
+suficientes, es aparte.
 """
 
 import json

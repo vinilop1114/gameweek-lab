@@ -182,46 +182,102 @@ def _cumsum_with_zero(values: list) -> list:
     return cum
 
 
-def would_start_after_swap(squad: pd.DataFrame, out_id, out_position: str, candidate_xp_next: float) -> bool:
-    """Versión rápida de "sacar a out_id, meter a un candidato con
-    candidate_xp_next en la misma posición, y ver si termina de titular"
-    — sin reconstruir el equipo ni llamar a select_starting_xi completo.
+def _best_xi_total(values: dict[str, list[float]]) -> tuple[float, tuple[int, int, int]]:
+    """Mejor XI posible de una fecha, dados los valores del plantel ya
+    ordenados de mayor a menor por posición. Devuelve (total, formación).
 
-    find_best_swaps la llama una vez por candidato evaluado (pueden ser
-    cientos por corrida) — reconstruir el equipo con pandas y correr
-    select_starting_xi por cada uno resultó ser el cuello de botella real
-    del asesor de transferencias (~14s por llamada con ~116 candidatos).
-    Acá se trabaja con listas de Python de como mucho 5 elementos por
-    posición, sin ninguna operación de pandas en el camino caliente.
+    Es `select_starting_xi` reducido a aritmética: sin pandas y sin armar
+    filas, porque corre miles de veces en el camino caliente del asesor.
+    El arquero no entra a la búsqueda de formación — siempre juega
+    exactamente uno, así que es el primero de su lista.
     """
-    if out_position == "GKP":
-        other_gk_xp = squad.loc[(squad["position"] == "GKP") & (squad["id"] != out_id), "xp_next"].iloc[0]
-        return candidate_xp_next > other_gk_xp
-
-    xp_by_position = {
-        pos: sorted(squad.loc[squad["position"] == pos, "xp_next"].tolist(), reverse=True)
-        for pos in ("DEF", "MID", "FWD")
-    }
-    out_xp = squad.loc[squad["id"] == out_id, "xp_next"].iloc[0]
-    others = xp_by_position[out_position]
-    others.remove(out_xp)  # por valor: si hay empate, da igual cuál de los empatados se saca
-
-    insert_at = 0
-    while insert_at < len(others) and others[insert_at] >= candidate_xp_next:
-        insert_at += 1
-    xp_by_position[out_position] = others[:insert_at] + [candidate_xp_next] + others[insert_at:]
-
-    cum = {pos: _cumsum_with_zero(xp_by_position[pos]) for pos in ("DEF", "MID", "FWD")}
-    best_total = -1.0
-    best_formation = STARTING_FORMATIONS[0]
+    cum = {pos: _cumsum_with_zero(values[pos]) for pos in ("DEF", "MID", "FWD")}
+    best_total, best_formation = -1.0, STARTING_FORMATIONS[0]
     for d, m, f in STARTING_FORMATIONS:
         total = cum["DEF"][d] + cum["MID"][m] + cum["FWD"][f]
         if total > best_total:
-            best_total = total
-            best_formation = (d, m, f)
+            best_total, best_formation = total, (d, m, f)
+    return best_total + values["GKP"][0], best_formation
 
-    chosen_count = dict(zip(("DEF", "MID", "FWD"), best_formation))[out_position]
-    return insert_at < chosen_count
+
+def xi_gain_context(squad: pd.DataFrame, weekly_by_id: dict) -> dict:
+    """Precomputa, para cada fecha del horizonte, los valores del plantel
+    ordenados por posición y el total del mejor XI de esa fecha.
+
+    Es la referencia "no hago nada" contra la que se mide cada cambio:
+    lo que el plantel actual rinde si cada semana se arranca al mejor de
+    los que ya tenés. Se calcula una sola vez por llamada a
+    `find_best_swaps` porque no depende del candidato.
+    """
+    ids_by_position = {
+        position: squad.loc[squad["position"] == position, "id"].tolist()
+        for position in ("GKP", "DEF", "MID", "FWD")
+    }
+    weeks = []
+    for index in range(len(next(iter(weekly_by_id.values())))):
+        values = {
+            position: sorted((weekly_by_id[pid][index] for pid in ids), reverse=True)
+            for position, ids in ids_by_position.items()
+        }
+        weeks.append({"values": values, "total": _best_xi_total(values)[0]})
+    return {"weeks": weeks, "by_id": weekly_by_id}
+
+
+def xi_horizon_gain(
+    context: dict, out_id, out_position: str, candidate_weekly: list[float]
+) -> tuple[float, bool, bool]:
+    """Cuánto gana el XI —no el jugador— si se cambia `out_id` por un
+    candidato, sumado sobre las fechas del horizonte.
+
+    Devuelve (ganancia, arranca_la_primera_fecha, arranca_alguna_fecha).
+
+    Por qué a nivel XI y no jugador contra jugador: en cada posición juega
+    un número fijo de titulares por fecha, así que el valor real de un
+    cambio no es `xP(entra) − xP(sale)`, sino cuánto sube el mejor XI
+    posible cuando ya se cuenta con el resto del plantel. La diferencia
+    se vuelve enorme en el arco, donde tenés dos arqueros y juega uno: si
+    el suplente ya era mejor que el titular en tres de las cuatro fechas,
+    la mejora que trae un arquero nuevo se mide contra ese suplente, no
+    contra el que sale.
+
+    Caso real que lo motivó (GW3): el modelo valuó Roefs → Verbruggen en
+    +3.86 (13.19 − 9.33 de xp_horizon) y gastó la transferencia libre.
+    Contando que Raya ya estaba en el banco y habría arrancado en GW4-GW6,
+    la ganancia real era +1.33 — por debajo de BANK_THRESHOLD, o sea que
+    correspondía guardar la transferencia.
+
+    La formación se recalcula en cada fecha (no se hereda la de hoy),
+    porque un cambio puede hacer que convenga otra distribución.
+    """
+    gain = 0.0
+    starts_first = starts_any = False
+
+    for index, week in enumerate(context["weeks"]):
+        others = list(week["values"][out_position])
+        # Por valor, igual que en el resto del módulo: si hay empate da lo
+        # mismo cuál de los empatados se saque.
+        others.remove(context["by_id"][out_id][index])
+        candidate = candidate_weekly[index]
+
+        insert_at = 0
+        while insert_at < len(others) and others[insert_at] >= candidate:
+            insert_at += 1
+        others.insert(insert_at, candidate)
+
+        values = dict(week["values"])
+        values[out_position] = others
+        total, formation = _best_xi_total(values)
+        gain += total - week["total"]
+
+        if out_position == "GKP":
+            starts = insert_at == 0
+        else:
+            starts = insert_at < dict(zip(("DEF", "MID", "FWD"), formation))[out_position]
+        starts_any = starts_any or starts
+        if index == 0:
+            starts_first = starts
+
+    return round(gain, 2), starts_first, starts_any
 
 
 def _order_bench(squad: pd.DataFrame, starters: pd.DataFrame) -> pd.DataFrame:
@@ -395,9 +451,10 @@ def export_squads_for_tableau(
     base_starters: pd.DataFrame | None = None,
     base_bench: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
-    """Calcula ambos equipos (Base y Wildcard) y los guarda en un solo CSV
-    tidy — una fuente de datos lista para conectar directo en Tableau,
-    con columnas para distinguir equipo, titular/banco y capitanía.
+    """Calcula los tres equipos (Base, Base proyectado y Wildcard) y los
+    guarda en un solo CSV tidy — una fuente de datos lista para conectar
+    directo en Tableau, con columnas para distinguir equipo,
+    titular/banco y capitanía.
 
     Acepta un `players` ya calculado (por ejemplo, con las fotos ya
     resueltas por resolve_photo_urls) para no recalcular todo de nuevo;

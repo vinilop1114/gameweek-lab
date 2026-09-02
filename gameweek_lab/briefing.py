@@ -88,6 +88,12 @@ def _transfer_section(squads: pd.DataFrame, proposed_log: list[str]) -> list[str
             "",
             "El equipo con el cambio ya aplicado está en `squad_recommendations.csv` "
             "bajo `squad_type = \"Base proyectado\"`.",
+            "",
+            "**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo "
+            "evalúa reemplazos dentro de una misma posición y nunca financia un "
+            "puesto vendiendo en otro (\"bajo el arquero suplente para subir un "
+            "defensor\"), así que esa alternativa no fue descartada: no se evaluó. "
+            "Al escribir, no lo presentes como el movimiento óptimo de la fecha.",
         ]
 
     applied = state.get("last_transfers")
@@ -246,9 +252,18 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
         "- **Balón parado**: quién patea penales/tiros libres/córners. Es contexto: "
         "el xP **no** lo suma aparte, porque el xG de FPL ya incluye los penales ejecutados.",
         "",
-        f"Todos los jugadores listados superan los {MIN_MINUTES_FOR_RANKING} minutos jugados. "
-        "Es un filtro deliberado: por debajo de eso las tasas por 90 minutos son ruido "
-        "(hay jugadores con 2 minutos jugados y el \"mejor xG90 de la liga\").",
+        f"Todos los jugadores listados superan los {MIN_MINUTES_FOR_RANKING} minutos de "
+        "**evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con "
+        "el matiz al escribir: al arrancar la temporada casi todos esos minutos son del "
+        "año pasado — hoy nadie lleva más de "
+        f"{int(players['minutes'].max())} minutos jugados en esta temporada, así que "
+        "**no** se puede afirmar que alguien \"superó los 900 minutos\".",
+        "",
+        "Es un filtro deliberado: con muestra chica las tasas por 90 minutos son ruido "
+        "(hay jugadores con 1 minuto jugado y el \"mejor xG90 de la liga\"). Esos jugadores "
+        "están excluidos de las tablas de arriba, pero **siguen apareciendo en "
+        "`players_scored.csv`** con métricas irreales. Regla operativa: rankear siempre "
+        "por `xp_next` o `xp_horizon`, nunca por las columnas per-90 del CSV crudo.",
         "",
         "El modelo no estima bonus points (BPS) ni puntos por atajadas, así que "
         "subestima levemente a delanteros y arqueros.",
