@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-02 07:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-02 13:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,25 +50,25 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 70.5% | Coventry City |
-| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.6% | Sunderland |
+| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 70.7% | Coventry City |
+| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.5% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 19.0% | Coventry City |
-| Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 18.1% | Ipswich Town |
+| Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 18.0% | Ipswich Town |
 | Schade | Brentford | MID | 5.45 | 10.0 | 11% | 3.9% | Sunderland |
-| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 19.3% | Coventry City |
+| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 19.2% | Coventry City |
 | B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.5% | Everton |
-| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 21.0% | Coventry City |
+| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 20.9% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Schade | Brentford | MID | £6.0m | 3.9% | 5.45 | 10.0 | 11% | Sunderland |
-| Kayode | Brentford | DEF | £4.6m | 9.1% | 5.08 | 8.0 | 4% | Sunderland |
-| Gakpo | Liverpool | MID | £7.0m | 7.8% | 5.04 | 8.0 | 9% | Ipswich Town |
+| Kayode | Brentford | DEF | £4.6m | 9.2% | 5.08 | 8.0 | 4% | Sunderland |
+| Gakpo | Liverpool | MID | £7.0m | 7.9% | 5.04 | 8.0 | 9% | Ipswich Town |
 | Collins | Brentford | DEF | £5.5m | 2.2% | 4.88 | 8.0 | 5% | Sunderland |
-| Foden | Man City | MID | £7.0m | 4.9% | 4.47 | 10.0 | 10% | Coventry City |
-| Cash | Aston Villa | DEF | £4.5m | 7.2% | 4.44 | 6.0 | 2% | Hull City |
+| Foden | Man City | MID | £7.0m | 5.0% | 4.47 | 10.0 | 10% | Coventry City |
+| Cash | Aston Villa | DEF | £4.5m | 7.1% | 4.44 | 6.0 | 2% | Hull City |
 | Anderson | Man City | MID | £6.4m | 5.3% | 4.34 | 7.0 | 2% | Coventry City |
 | Donnarumma | Man City | GKP | £5.5m | 8.0% | 4.19 | 6.0 | 0% | Coventry City |
 
