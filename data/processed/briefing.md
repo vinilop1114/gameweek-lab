@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-03 17:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-03 18:05 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -44,7 +44,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.66 | 2.0 | 0% | 6.08 | Nott'm Forest (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 1.07 | 2.0 | 0% | 6.42 | Liverpool (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.07 | 3.0 | 0% | 4.62 | Fulham (fuera) | — |
-| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 0.83 | 2.0 | 2% | 2.76 | Brentford (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.5m | 0.9 | 2.0 | 2% | 3.31 | Brighton (fuera) | — |
 
 ## Mejores opciones de capitanía
 
@@ -52,12 +52,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 71.2% | Coventry City |
 | Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.3% | Sunderland |
-| Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 18.9% | Coventry City |
+| Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 18.8% | Coventry City |
 | Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 17.8% | Ipswich Town |
 | Schade | Brentford | MID | 5.45 | 10.0 | 11% | 4.1% | Sunderland |
-| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 19.0% | Coventry City |
+| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 18.9% | Coventry City |
 | B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.6% | Everton |
-| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 20.4% | Coventry City |
+| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 20.3% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
