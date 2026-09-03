@@ -99,10 +99,28 @@ def load_my_team(path: str, players: pd.DataFrame) -> pd.DataFrame:
     purchase_prices = []
     for _, row in team_file.iterrows():
         name = str(row["web_name"]).strip()
-        candidates = players[players["web_name"].str.lower() == name.lower()]
+        by_name = players[players["web_name"].str.lower() == name.lower()]
+        candidates = by_name
+
         if "team_name" in team_file.columns and pd.notna(row.get("team_name")):
             club = str(row["team_name"]).strip().lower()
-            candidates = candidates[candidates["team_name"].str.lower() == club]
+            by_club = by_name[by_name["team_name"].str.lower() == club]
+            # El club es un DESAMBIGUADOR, no una llave. Un jugador que se
+            # transfiere en la vida real sigue siendo tuyo en FPL: solo
+            # cambia de equipo dentro del juego. Si el club guardado quedó
+            # viejo pero el nombre es inequívoco, se usa el nombre y se
+            # avisa — `save_my_team` persiste el club nuevo en la próxima
+            # escritura, así que se corrige solo.
+            if by_club.empty and len(by_name) == 1:
+                print(f"  {name} cambió de club: {row['team_name']} → {by_name.iloc[0]['team_name']}")
+            elif by_club.empty and len(by_name) > 1:
+                clubs = ", ".join(sorted(by_name["team_name"]))
+                raise ValueError(
+                    f"'{name}' ya no juega en {row['team_name']}, y hay varios jugadores con "
+                    f"ese nombre ({clubs}). Actualizá team_name en {path} para desambiguar."
+                )
+            else:
+                candidates = by_club
 
         if len(candidates) == 0:
             suggestions = difflib.get_close_matches(name, players["web_name"].tolist(), n=3)

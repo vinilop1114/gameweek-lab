@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-02 13:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-03 17:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -11,18 +11,18 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | **Capitán** | Thiago | Brentford | FWD | £8.0m | 6.07 | 10.0 | 20% | 16.68 | Sunderland (casa) | Penales |
 | Vice | B.Fernandes | Man Utd | MID | £12.0m | 5.33 | 11.0 | 15% | 19.54 | Everton (fuera) | Penales, Tiros libres, Córners |
 | Titular | Mbeumo | Man Utd | MID | £8.0m | 4.78 | 11.0 | 13% | 17.54 | Everton (fuera) | — |
-| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 3.95 | 6.0 | 2% | 15.82 | Spurs (casa) | — |
+| Titular | Enzo | Man City | MID | £6.9m | 4.07 | 8.0 | 9% | 12.2 | Coventry City (casa) | — |
 | Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 3.95 | 8.0 | 6% | 15.82 | Spurs (casa) | Penales, Tiros libres |
+| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 3.95 | 6.0 | 2% | 15.82 | Spurs (casa) | — |
 | Titular | Shaw | Man Utd | DEF | £4.5m | 3.77 | 6.0 | 1% | 13.81 | Everton (fuera) | — |
 | Titular | Milenković | Nott'm Forest | DEF | £5.5m | 3.63 | 6.0 | 1% | 14.52 | Spurs (casa) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 3.53 | 6.0 | 8% | 12.93 | Brighton (fuera) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 3.49 | 6.0 | 2% | 11.65 | Brentford (fuera) | — |
-| Titular | E.Le Fée | Sunderland | MID | £5.9m | 3.29 | 7.0 | 3% | 10.95 | Brentford (fuera) | Córners |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 2.8 | 6.0 | 0% | 9.33 | Brentford (fuera) | — |
 | Banco 1 | Raya | Arsenal | GKP | £6.0m | 2.66 | 6.0 | 0% | 15.97 | Chelsea (casa) | — |
-| Banco 2 | Calafiori | Arsenal | DEF | £5.6m | 2.73 | 6.0 | 4% | 16.41 | Chelsea (casa) | — |
-| Banco 3 | João Pedro | Chelsea | FWD | £7.7m | 1.3 | 6.0 | 1% | 14.29 | Arsenal (fuera) | — |
-| Banco 4 | Enzo | Chelsea | MID | £6.9m | 1.02 | 5.0 | 1% | 11.19 | Arsenal (fuera) | — |
+| Banco 2 | E.Le Fée | Sunderland | MID | £5.9m | 3.29 | 7.0 | 3% | 10.95 | Brentford (fuera) | Córners |
+| Banco 3 | Calafiori | Arsenal | DEF | £5.6m | 2.73 | 6.0 | 4% | 16.41 | Chelsea (casa) | — |
+| Banco 4 | João Pedro | Chelsea | FWD | £7.7m | 1.3 | 6.0 | 1% | 14.29 | Arsenal (fuera) | — |
 
 ## Equipo Wildcard
 
@@ -44,39 +44,39 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.66 | 2.0 | 0% | 6.08 | Nott'm Forest (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 1.07 | 2.0 | 0% | 6.42 | Liverpool (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.07 | 3.0 | 0% | 4.62 | Fulham (fuera) | — |
-| Banco 4 | Beto | Everton | FWD | £5.4m | 0.87 | 2.0 | 2% | 5.64 | Man Utd (casa) | — |
+| Banco 4 | Isidor | Sunderland | FWD | £5.5m | 0.83 | 2.0 | 2% | 2.76 | Brentford (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 70.7% | Coventry City |
-| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.5% | Sunderland |
-| Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 19.0% | Coventry City |
-| Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 18.0% | Ipswich Town |
-| Schade | Brentford | MID | 5.45 | 10.0 | 11% | 3.9% | Sunderland |
-| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 19.2% | Coventry City |
-| B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.5% | Everton |
-| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 20.9% | Coventry City |
+| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 71.2% | Coventry City |
+| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.3% | Sunderland |
+| Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 18.9% | Coventry City |
+| Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 17.8% | Ipswich Town |
+| Schade | Brentford | MID | 5.45 | 10.0 | 11% | 4.1% | Sunderland |
+| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 19.0% | Coventry City |
+| B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.6% | Everton |
+| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 20.4% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Schade | Brentford | MID | £6.0m | 3.9% | 5.45 | 10.0 | 11% | Sunderland |
-| Kayode | Brentford | DEF | £4.6m | 9.2% | 5.08 | 8.0 | 4% | Sunderland |
-| Gakpo | Liverpool | MID | £7.0m | 7.9% | 5.04 | 8.0 | 9% | Ipswich Town |
-| Collins | Brentford | DEF | £5.5m | 2.2% | 4.88 | 8.0 | 5% | Sunderland |
-| Foden | Man City | MID | £7.0m | 5.0% | 4.47 | 10.0 | 10% | Coventry City |
+| Schade | Brentford | MID | £6.0m | 4.1% | 5.45 | 10.0 | 11% | Sunderland |
+| Kayode | Brentford | DEF | £4.6m | 9.4% | 5.08 | 8.0 | 4% | Sunderland |
+| Gakpo | Liverpool | MID | £7.0m | 8.3% | 5.04 | 8.0 | 9% | Ipswich Town |
+| Collins | Brentford | DEF | £5.5m | 2.3% | 4.88 | 8.0 | 5% | Sunderland |
+| Foden | Man City | MID | £7.0m | 5.3% | 4.47 | 10.0 | 10% | Coventry City |
 | Cash | Aston Villa | DEF | £4.5m | 7.1% | 4.44 | 6.0 | 2% | Hull City |
-| Anderson | Man City | MID | £6.4m | 5.3% | 4.34 | 7.0 | 2% | Coventry City |
+| Anderson | Man City | MID | £6.4m | 5.2% | 4.34 | 7.0 | 2% | Coventry City |
 | Donnarumma | Man City | GKP | £5.5m | 8.0% | 4.19 | 6.0 | 0% | Coventry City |
 
 ## Transferencia propuesta para esta fecha
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Milenković → Thiaw (+2.64 xP, transferencia libre, entra de titular)
+- Milenković → Thiaw (+2.73 xP, transferencia libre, entra de titular)
 
 Sale: Milenković · Entra: Thiaw
 
