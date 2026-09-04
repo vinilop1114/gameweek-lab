@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-04 13:07 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-04 16:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -15,7 +15,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 3.95 | 8.0 | 6% | 15.82 | Spurs (casa) | Penales, Tiros libres |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 3.95 | 6.0 | 2% | 15.82 | Spurs (casa) | — |
 | Titular | Shaw | Man Utd | DEF | £4.5m | 3.77 | 6.0 | 1% | 13.81 | Everton (fuera) | — |
-| Titular | Milenković | Nott'm Forest | DEF | £5.5m | 3.63 | 6.0 | 1% | 14.52 | Spurs (casa) | — |
+| Titular | Thiaw | Newcastle | DEF | £5.0m | 3.7 | 8.0 | 3% | 17.26 | Bournemouth (casa) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 3.53 | 6.0 | 8% | 12.93 | Brighton (fuera) | Penales |
 | Titular | Hume | Sunderland | DEF | £4.5m | 3.49 | 6.0 | 2% | 11.65 | Brentford (fuera) | — |
 | Titular | Roefs | Sunderland | GKP | £5.0m | 2.8 | 6.0 | 0% | 9.33 | Brentford (fuera) | — |
@@ -50,43 +50,31 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 72.0% | Coventry City |
+| Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 72.3% | Coventry City |
 | Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 14.1% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 18.7% | Coventry City |
 | Virgil | Liverpool | DEF | 5.58 | 8.0 | 5% | 17.6% | Ipswich Town |
-| Schade | Brentford | MID | 5.45 | 10.0 | 11% | 4.4% | Sunderland |
-| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 18.7% | Coventry City |
-| B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.5% | Everton |
-| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 19.7% | Coventry City |
+| Schade | Brentford | MID | 5.45 | 10.0 | 11% | 4.5% | Sunderland |
+| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 18.6% | Coventry City |
+| B.Fernandes | Man Utd | MID | 5.33 | 11.0 | 15% | 48.4% | Everton |
+| Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 19.5% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Schade | Brentford | MID | £6.0m | 4.4% | 5.45 | 10.0 | 11% | Sunderland |
-| Kayode | Brentford | DEF | £4.6m | 9.7% | 5.08 | 8.0 | 4% | Sunderland |
-| Gakpo | Liverpool | MID | £7.1m | 8.7% | 5.04 | 8.0 | 9% | Ipswich Town |
-| Collins | Brentford | DEF | £5.5m | 2.4% | 4.88 | 8.0 | 5% | Sunderland |
+| Schade | Brentford | MID | £6.0m | 4.5% | 5.45 | 10.0 | 11% | Sunderland |
+| Kayode | Brentford | DEF | £4.6m | 9.9% | 5.08 | 8.0 | 4% | Sunderland |
+| Gakpo | Liverpool | MID | £7.1m | 8.8% | 5.04 | 8.0 | 9% | Ipswich Town |
+| Collins | Brentford | DEF | £5.5m | 2.5% | 4.88 | 8.0 | 5% | Sunderland |
 | Wirtz | Liverpool | MID | £7.5m | 10.0% | 4.52 | 8.0 | 8% | Ipswich Town |
-| Foden | Man City | MID | £7.0m | 5.9% | 4.47 | 10.0 | 10% | Coventry City |
+| Foden | Man City | MID | £7.0m | 6.2% | 4.47 | 10.0 | 10% | Coventry City |
 | Cash | Aston Villa | DEF | £4.5m | 7.0% | 4.44 | 6.0 | 2% | Hull City |
-| Anderson | Man City | MID | £6.4m | 5.1% | 4.34 | 7.0 | 2% | Coventry City |
+| Anderson | Man City | MID | £6.4m | 5.0% | 4.34 | 7.0 | 2% | Coventry City |
 
-## Transferencia propuesta para esta fecha
-
-Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+## Movimientos ya ejecutados en GW3
 
 - Milenković → Thiaw (+2.73 xP, transferencia libre, entra de titular)
-
-Sale: Milenković · Entra: Thiaw
-
-El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
-
-**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo evalúa reemplazos dentro de una misma posición y nunca financia un puesto vendiendo en otro ("bajo el arquero suplente para subir un defensor"), así que esa alternativa no fue descartada: no se evaluó. Al escribir, no lo presentes como el movimiento óptimo de la fecha.
-
-## Movimientos ya ejecutados en GW2
-
-- Gyökeres → Calvert-Lewin (+6.26 xP, transferencia libre, entra de titular)
 
 Transferencias libres disponibles tras esa fecha: 0.
 
