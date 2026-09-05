@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-05 02:49 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-05 07:22 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,11 +51,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.5 | 10.0 | 25% | 71.2% | Coventry City |
-| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 13.6% | Sunderland |
+| Thiago | Brentford | FWD | 6.07 | 10.0 | 20% | 13.5% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 11.0 | 11% | 18.8% | Coventry City |
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.4% | Ipswich Town |
 | Schade | Brentford | MID | 5.44 | 10.0 | 11% | 4.3% | Sunderland |
-| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 18.6% | Coventry City |
+| O'Reilly | Man City | DEF | 5.36 | 11.0 | 11% | 18.5% | Coventry City |
 | B.Fernandes | Man Utd | MID | 5.32 | 11.0 | 15% | 48.6% | Everton |
 | Semenyo | Man City | MID | 5.3 | 8.0 | 9% | 19.4% | Coventry City |
 
@@ -64,7 +64,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Schade | Brentford | MID | £6.0m | 4.3% | 5.44 | 10.0 | 11% | Sunderland |
-| Gakpo | Liverpool | MID | £7.1m | 9.0% | 5.11 | 8.0 | 9% | Ipswich Town |
+| Gakpo | Liverpool | MID | £7.1m | 9.1% | 5.11 | 8.0 | 9% | Ipswich Town |
 | Kayode | Brentford | DEF | £4.6m | 9.6% | 5.08 | 8.0 | 4% | Sunderland |
 | Collins | Brentford | DEF | £5.5m | 2.2% | 4.88 | 8.0 | 5% | Sunderland |
 | Wirtz | Liverpool | MID | £7.4m | 9.5% | 4.55 | 8.0 | 8% | Ipswich Town |
