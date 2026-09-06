@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-05 22:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-06 02:46 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -35,7 +35,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Guéhi | Man City | DEF | £6.0m | 5.91 | 9.0 | 10% | 17.73 | Coventry City (casa) | — |
 | Titular | Virgil | Liverpool | DEF | £6.5m | 5.54 | 8.0 | 5% | 18.02 | Ipswich Town (fuera) | — |
 | Titular | Schade | Brentford | MID | £6.0m | 5.31 | 10.0 | 10% | 14.61 | Sunderland (casa) | — |
-| Titular | Semenyo | Man City | MID | £8.5m | 5.24 | 8.0 | 9% | 15.73 | Coventry City (casa) | — |
+| Titular | Semenyo | Man City | MID | £8.4m | 5.24 | 8.0 | 9% | 15.73 | Coventry City (casa) | — |
 | Titular | Kayode | Brentford | DEF | £4.6m | 5.16 | 8.0 | 4% | 14.2 | Sunderland (casa) | — |
 | Titular | Gakpo | Liverpool | MID | £7.1m | 5.11 | 8.0 | 9% | 16.6 | Ipswich Town (fuera) | — |
 | Titular | Szoboszlai | Liverpool | MID | £7.0m | 5.06 | 8.0 | 7% | 16.46 | Ipswich Town (fuera) | Penales, Tiros libres, Córners |
@@ -51,7 +51,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.8 | 13.0 | 27% | 71.1% | Coventry City |
-| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 13.2% | Sunderland |
+| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 13.1% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 9.0 | 10% | 18.7% | Coventry City |
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Ipswich Town |
 | B.Fernandes | Man Utd | MID | 5.32 | 11.0 | 15% | 48.5% | Everton |
@@ -66,7 +66,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Schade | Brentford | MID | £6.0m | 4.2% | 5.31 | 10.0 | 10% | Sunderland |
 | Kayode | Brentford | DEF | £4.6m | 9.5% | 5.16 | 8.0 | 4% | Sunderland |
 | Wirtz | Liverpool | MID | £7.4m | 9.2% | 4.55 | 8.0 | 8% | Ipswich Town |
-| Cash | Aston Villa | DEF | £4.5m | 7.0% | 4.37 | 6.0 | 2% | Hull City |
+| Cash | Aston Villa | DEF | £4.5m | 7.0% | 4.38 | 6.0 | 2% | Hull City |
 | Anderson | Man City | MID | £6.4m | 4.9% | 4.33 | 7.0 | 2% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 5.0% | 4.21 | 8.0 | 6% | Leeds |
 | Gomez | Brighton | MID | £5.0m | 5.0% | 4.21 | 0.0 | 0% | Leeds |
