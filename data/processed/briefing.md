@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-06 07:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-06 12:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,10 +51,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.8 | 13.0 | 27% | 71.1% | Coventry City |
-| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 13.1% | Sunderland |
+| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 13.0% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 9.0 | 10% | 18.7% | Coventry City |
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Ipswich Town |
-| B.Fernandes | Man Utd | MID | 5.32 | 11.0 | 15% | 48.5% | Everton |
+| B.Fernandes | Man Utd | MID | 5.32 | 11.0 | 15% | 48.4% | Everton |
 | Schade | Brentford | MID | 5.31 | 10.0 | 10% | 4.2% | Sunderland |
 | Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 19.0% | Coventry City |
 | Kayode | Brentford | DEF | 5.16 | 8.0 | 4% | 9.5% | Sunderland |
