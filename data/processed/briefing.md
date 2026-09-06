@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-06 02:46 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-06 07:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -56,7 +56,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Ipswich Town |
 | B.Fernandes | Man Utd | MID | 5.32 | 11.0 | 15% | 48.5% | Everton |
 | Schade | Brentford | MID | 5.31 | 10.0 | 10% | 4.2% | Sunderland |
-| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 19.1% | Coventry City |
+| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 19.0% | Coventry City |
 | Kayode | Brentford | DEF | 5.16 | 8.0 | 4% | 9.5% | Sunderland |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -66,7 +66,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Schade | Brentford | MID | £6.0m | 4.2% | 5.31 | 10.0 | 10% | Sunderland |
 | Kayode | Brentford | DEF | £4.6m | 9.5% | 5.16 | 8.0 | 4% | Sunderland |
 | Wirtz | Liverpool | MID | £7.4m | 9.2% | 4.55 | 8.0 | 8% | Ipswich Town |
-| Cash | Aston Villa | DEF | £4.5m | 7.0% | 4.38 | 6.0 | 2% | Hull City |
+| Cash | Aston Villa | DEF | £4.5m | 6.9% | 4.38 | 6.0 | 2% | Hull City |
 | Anderson | Man City | MID | £6.4m | 4.9% | 4.33 | 7.0 | 2% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 5.0% | 4.21 | 8.0 | 6% | Leeds |
 | Gomez | Brighton | MID | £5.0m | 5.0% | 4.21 | 0.0 | 0% | Leeds |
