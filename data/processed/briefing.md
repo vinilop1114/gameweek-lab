@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-06 19:57 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-06 22:39 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,13 +51,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.8 | 13.0 | 27% | 71.2% | Coventry City |
-| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 12.7% | Sunderland |
+| Thiago | Brentford | FWD | 6.02 | 10.0 | 19% | 12.6% | Sunderland |
 | Guéhi | Man City | DEF | 5.91 | 9.0 | 10% | 18.7% | Coventry City |
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Ipswich Town |
 | Schade | Brentford | MID | 5.3 | 10.0 | 10% | 4.1% | Sunderland |
-| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 18.7% | Coventry City |
+| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 18.6% | Coventry City |
 | Kayode | Brentford | DEF | 5.16 | 8.0 | 4% | 9.3% | Sunderland |
-| B.Fernandes | Man Utd | MID | 5.15 | 10.0 | 14% | 47.9% | Everton |
+| B.Fernandes | Man Utd | MID | 5.15 | 10.0 | 14% | 47.7% | Everton |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -79,28 +79,28 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Transferencias libres disponibles tras esa fecha: 0.
 
-## Repaso de GW2 (fecha cerrada)
+## Repaso de GW3 (fecha cerrada)
 
-Sesgo del modelo: +0.54 pts por jugador (subestimó en promedio). Error absoluto medio: 1.44 pts.
+Sesgo del modelo: +0.44 pts por jugador (subestimó en promedio). Error absoluto medio: 1.49 pts.
 
 Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | +0.27 | 164 |
-| FWD | +0.76 | 57 |
-| GKP | +0.05 | 57 |
-| MID | +0.81 | 214 |
+| DEF | +0.50 | 164 |
+| FWD | +0.50 | 51 |
+| GKP | +0.15 | 57 |
+| MID | +0.45 | 219 |
 
-Mejores puntajes reales de GW2:
+Mejores puntajes reales de GW3:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| B.Fernandes | Man Utd | MID | 23 | 6.01 |
-| Cherki | Man City | MID | 14 | 2.0 |
-| Haaland | Man City | FWD | 13 | 4.86 |
-| Groß | Brighton | MID | 13 | 1.27 |
-| Tarkowski | Everton | DEF | 12 | 3.39 |
+| Mitchell | Crystal Palace | DEF | 15 | 3.31 |
+| Bogle | Leeds | DEF | 14 | 3.37 |
+| Isak | Liverpool | FWD | 13 | 2.24 |
+| Vuskovic | Brighton | DEF | 12 | 1.96 |
+| Barnes | Newcastle | MID | 12 | 2.53 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
