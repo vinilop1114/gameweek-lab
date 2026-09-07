@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-07 14:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-07 18:58 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,12 +52,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.2% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 27.5% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 27.7% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.2% | Hull City |
-| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 13.1% | Fulham |
+| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 13.4% | Fulham |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.1% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 21.2% | Hull City |
-| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 39.1% | Fulham |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 21.4% | Hull City |
+| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 39.0% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,9 +65,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Bogle | Leeds | DEF | £4.5m | 1.2% | 5.31 | 9.0 | 8% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 8.2% | 5.19 | 6.0 | 3% | Hull City |
-| Mitchell | Crystal Palace | DEF | £4.5m | 5.4% | 4.9 | 8.0 | 4% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | £4.5m | 5.5% | 4.9 | 8.0 | 4% | Ipswich Town |
 | Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.73 | 6.0 | 3% | Ipswich Town |
-| Wirtz | Liverpool | MID | £7.4m | 8.7% | 4.54 | 8.0 | 8% | Fulham |
+| Wirtz | Liverpool | MID | £7.4m | 8.6% | 4.54 | 8.0 | 8% | Fulham |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 8.0 | 6% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 0.0 | 0% | Coventry City |
 | Kerkez | Liverpool | DEF | £5.4m | 2.8% | 4.13 | 6.0 | 2% | Fulham |
