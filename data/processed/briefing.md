@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW3
 
-Generado automáticamente: 2026-09-07 02:44 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-07 07:53 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -55,9 +55,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Guéhi | Man City | DEF | 5.91 | 9.0 | 10% | 18.7% | Coventry City |
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Ipswich Town |
 | Schade | Brentford | MID | 5.3 | 10.0 | 10% | 4.1% | Sunderland |
-| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 18.6% | Coventry City |
+| Semenyo | Man City | MID | 5.24 | 8.0 | 9% | 18.5% | Coventry City |
 | Kayode | Brentford | DEF | 5.16 | 8.0 | 4% | 9.3% | Sunderland |
-| B.Fernandes | Man Utd | MID | 5.15 | 10.0 | 14% | 47.5% | Everton |
+| B.Fernandes | Man Utd | MID | 5.15 | 10.0 | 14% | 47.4% | Everton |
 
 ## Diferenciales (propiedad ≤ 10%)
 
