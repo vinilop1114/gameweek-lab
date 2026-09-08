@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-07 23:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-08 02:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,7 +43,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.45 | 2.0 | 0% | 5.8 | Everton (casa) | — |
 | Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
-| Banco 3 | Longstaff | Leeds | MID | £4.9m | 0.74 | 2.0 | 1% | 1.84 | Newcastle (casa) | — |
+| Banco 3 | I.Sangaré | Nott'm Forest | MID | £4.9m | 0.99 | 3.0 | 0% | 5.47 | Aston Villa (fuera) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.37 | 2.0 | 0% | 2.21 | Liverpool (fuera) | — |
 
 ## Mejores opciones de capitanía
@@ -52,11 +52,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.3% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 27.8% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 27.9% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.2% | Hull City |
-| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 13.6% | Fulham |
+| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 13.7% | Fulham |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.2% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 21.6% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 21.7% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.8% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
