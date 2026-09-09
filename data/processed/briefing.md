@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-09 07:54 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-09 13:21 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,12 +52,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.5% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 28.5% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 28.6% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.2% | Hull City |
-| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 14.5% | Fulham |
+| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 14.6% | Fulham |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.4% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 22.2% | Hull City |
-| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 22.3% | Hull City |
+| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.3% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
