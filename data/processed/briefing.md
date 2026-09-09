@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-09 02:56 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-09 07:54 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,20 +50,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.3% | Fulham |
-| Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.4% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 28.4% | Hull City |
+| Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
+| Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.5% | Newcastle |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 28.5% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.2% | Hull City |
-| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 14.4% | Fulham |
+| Gakpo | Liverpool | MID | 5.09 | 8.0 | 9% | 14.5% | Fulham |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.4% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 22.1% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 22.2% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.5m | 1.4% | 5.31 | 9.0 | 8% | Newcastle |
+| Bogle | Leeds | DEF | £4.5m | 1.5% | 5.31 | 9.0 | 8% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 8.2% | 5.19 | 6.0 | 3% | Hull City |
 | Mitchell | Crystal Palace | DEF | £4.5m | 5.7% | 4.9 | 8.0 | 4% | Ipswich Town |
 | Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.73 | 6.0 | 3% | Ipswich Town |
