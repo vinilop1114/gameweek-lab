@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-10 02:56 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-10 07:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,8 +42,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Wirtz | Liverpool | MID | £7.4m | 4.54 | 8.0 | 8% | 13.61 | Fulham (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.45 | 2.0 | 0% | 5.8 | Everton (casa) | — |
-| Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
-| Banco 3 | J.Ramsey | Newcastle | MID | £4.9m | 0.75 | 2.0 | 0% | 3.5 | Leeds (fuera) | — |
+| Banco 2 | Tanaka | Leeds | MID | £4.9m | 1.61 | 3.0 | 1% | 4.02 | Newcastle (casa) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.37 | 2.0 | 0% | 2.21 | Liverpool (fuera) | — |
 
 ## Mejores opciones de capitanía
@@ -52,10 +52,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.6% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 29.1% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 29.3% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.1% | Hull City |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.5% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 22.8% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 23.0% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
 | Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 5.8% | Ipswich Town |
 
