@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-11 18:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-11 22:56 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,9 +42,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Wirtz | Liverpool | MID | £7.4m | 4.54 | 8.0 | 8% | 13.61 | Fulham (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.45 | 2.0 | 0% | 5.8 | Everton (casa) | — |
-| Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
-| Banco 3 | Nmecha | Leeds | FWD | £5.4m | 1.07 | 5.0 | 3% | 2.66 | Newcastle (casa) | — |
-| Banco 4 | Dominguez | Nott'm Forest | MID | £4.9m | 0.55 | 2.0 | 0% | 3.05 | Aston Villa (fuera) | — |
+| Banco 2 | Sadiki | Sunderland | MID | £4.9m | 1.7 | 3.0 | 0% | 8.52 | Arsenal (casa) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 1.07 | 5.0 | 3% | 2.66 | Newcastle (casa) | — |
 
 ## Mejores opciones de capitanía
 
@@ -52,12 +52,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.9% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 32.2% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 32.9% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.1% | Hull City |
-| João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 73.2% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 25.5% | Hull City |
-| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
-| Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 6.4% | Ipswich Town |
+| João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 73.3% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 26.1% | Hull City |
+| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.5% | Fulham |
+| Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 6.5% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,13 +65,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Bogle | Leeds | DEF | £4.5m | 1.9% | 5.31 | 9.0 | 8% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 8.1% | 5.19 | 6.0 | 3% | Hull City |
-| Mitchell | Crystal Palace | DEF | £4.5m | 6.4% | 4.9 | 8.0 | 4% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | £4.5m | 6.5% | 4.9 | 8.0 | 4% | Ipswich Town |
 | Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.73 | 6.0 | 3% | Ipswich Town |
 | Wirtz | Liverpool | MID | £7.4m | 8.0% | 4.54 | 8.0 | 8% | Fulham |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 8.0 | 6% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 0.0 | 0% | Coventry City |
 | Kerkez | Liverpool | DEF | £5.4m | 2.7% | 4.13 | 6.0 | 2% | Fulham |
-| Dunk | Brighton | DEF | £4.5m | 1.3% | 4.08 | 6.0 | 2% | Coventry City |
+| Dunk | Brighton | DEF | £4.5m | 1.4% | 4.08 | 6.0 | 2% | Coventry City |
 
 ## Transferencia propuesta para esta fecha
 
