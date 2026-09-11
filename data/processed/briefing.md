@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-10 22:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-11 02:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -11,7 +11,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | **Capitán** | João Pedro | Chelsea | FWD | £7.7m | 5.09 | 10.0 | 14% | 16.55 | Hull City (casa) | — |
 | Vice | Calvert-Lewin | Leeds | FWD | £6.0m | 4.88 | 10.0 | 14% | 12.2 | Newcastle (casa) | Penales |
 | Titular | Thiago | Brentford | FWD | £7.9m | 4.51 | 10.0 | 12% | 13.54 | Bournemouth (fuera) | Penales |
-| Titular | Calafiori | Arsenal | DEF | £5.7m | 4.38 | 9.0 | 9% | 19.0 | Sunderland (fuera) | — |
+| Titular | Calafiori | Arsenal | DEF | £5.8m | 4.38 | 9.0 | 9% | 19.0 | Sunderland (fuera) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 3.58 | 8.0 | 3% | 16.71 | Leeds (fuera) | — |
 | Titular | B.Fernandes | Man Utd | MID | £12.0m | 3.43 | 8.0 | 7% | 18.88 | Man City (casa) | Penales, Tiros libres, Córners |
@@ -22,7 +22,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Banco 1 | Roefs | Sunderland | GKP | £5.0m | 1.89 | 6.0 | 0% | 9.45 | Arsenal (casa) | — |
 | Banco 2 | E.Le Fée | Sunderland | MID | £5.9m | 2.35 | 7.0 | 2% | 11.74 | Arsenal (casa) | Córners |
 | Banco 3 | Enzo | Man City | MID | £6.9m | 2.09 | 7.0 | 3% | 12.56 | Man Utd (fuera) | — |
-| Banco 4 | Hume | Sunderland | DEF | £4.5m | 2.03 | 6.0 | 1% | 10.16 | Arsenal (casa) | — |
+| Banco 4 | Hume | Sunderland | DEF | £4.4m | 2.03 | 6.0 | 1% | 10.16 | Arsenal (casa) | — |
 
 ## Equipo Wildcard
 
@@ -52,10 +52,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
 | Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.7% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 30.3% | Hull City |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 30.4% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.1% | Hull City |
 | João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 72.7% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 24.0% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 24.1% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
 | Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 6.0% | Ipswich Town |
 
@@ -77,9 +77,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Hume → Mitchell (+2.56 xP, transferencia libre, entra de titular)
+- Gibbs-White → Rogers (+2.05 xP, transferencia libre, entra de titular)
 
-Sale: Hume · Entra: Mitchell
+Sale: Gibbs-White · Entra: Rogers
 
 El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
