@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-11 13:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-11 18:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,33 +43,33 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.45 | 2.0 | 0% | 5.8 | Everton (casa) | — |
 | Banco 2 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
-| Banco 3 | Andrey Santos | Man Utd | MID | £4.9m | 0.76 | 2.0 | 0% | 4.2 | Man City (casa) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.37 | 2.0 | 0% | 2.21 | Liverpool (fuera) | — |
+| Banco 3 | Nmecha | Leeds | FWD | £5.4m | 1.07 | 5.0 | 3% | 2.66 | Newcastle (casa) | — |
+| Banco 4 | Dominguez | Nott'm Forest | MID | £4.9m | 0.55 | 2.0 | 0% | 3.05 | Aston Villa (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.2% | Fulham |
-| Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.8% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 31.4% | Hull City |
+| Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 1.9% | Newcastle |
+| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 32.2% | Hull City |
 | Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.1% | Hull City |
-| João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 73.0% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 24.8% | Hull City |
+| João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 73.2% | Hull City |
+| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 25.5% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.4% | Fulham |
-| Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 6.2% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 6.4% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.5m | 1.8% | 5.31 | 9.0 | 8% | Newcastle |
+| Bogle | Leeds | DEF | £4.5m | 1.9% | 5.31 | 9.0 | 8% | Newcastle |
 | Lacroix | Chelsea | DEF | £6.0m | 8.1% | 5.19 | 6.0 | 3% | Hull City |
-| Mitchell | Crystal Palace | DEF | £4.5m | 6.2% | 4.9 | 8.0 | 4% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | £4.5m | 6.4% | 4.9 | 8.0 | 4% | Ipswich Town |
 | Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.73 | 6.0 | 3% | Ipswich Town |
-| Wirtz | Liverpool | MID | £7.4m | 8.1% | 4.54 | 8.0 | 8% | Fulham |
-| Gomez | Brighton | MID | £5.0m | 4.8% | 4.2 | 8.0 | 6% | Coventry City |
-| Gomez | Brighton | MID | £5.0m | 4.8% | 4.2 | 0.0 | 0% | Coventry City |
+| Wirtz | Liverpool | MID | £7.4m | 8.0% | 4.54 | 8.0 | 8% | Fulham |
+| Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 8.0 | 6% | Coventry City |
+| Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 0.0 | 0% | Coventry City |
 | Kerkez | Liverpool | DEF | £5.4m | 2.7% | 4.13 | 6.0 | 2% | Fulham |
 | Dunk | Brighton | DEF | £4.5m | 1.3% | 4.08 | 6.0 | 2% | Coventry City |
 
