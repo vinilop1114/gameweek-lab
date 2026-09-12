@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-12 12:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-12 17:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,21 +8,21 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | João Pedro | Chelsea | FWD | £7.7m | 5.09 | 10.0 | 14% | 16.55 | Hull City (casa) | — |
+| **Capitán** | João Pedro | Chelsea | FWD | £7.7m | 5.07 | 10.0 | 14% | 16.49 | Hull City (casa) | — |
 | Vice | Calvert-Lewin | Leeds | FWD | £6.0m | 4.88 | 10.0 | 14% | 12.2 | Newcastle (casa) | Penales |
-| Titular | Thiago | Brentford | FWD | £7.9m | 4.51 | 10.0 | 12% | 13.54 | Bournemouth (fuera) | Penales |
-| Titular | Calafiori | Arsenal | DEF | £5.8m | 4.38 | 9.0 | 9% | 19.0 | Sunderland (fuera) | — |
+| Titular | Calafiori | Arsenal | DEF | £5.8m | 4.38 | 9.0 | 9% | 18.97 | Sunderland (fuera) | — |
+| Titular | Thiago | Brentford | FWD | £7.9m | 4.38 | 10.0 | 11% | 13.13 | Bournemouth (fuera) | Penales |
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
-| Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 3.83 | 6.0 | 2% | 11.5 | Coventry City (fuera) | — |
-| Titular | Thiaw | Newcastle | DEF | £5.0m | 3.58 | 8.0 | 3% | 16.71 | Leeds (fuera) | — |
-| Titular | B.Fernandes | Man Utd | MID | £12.0m | 3.43 | 8.0 | 7% | 18.88 | Man City (casa) | Penales, Tiros libres, Córners |
+| Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 3.82 | 6.0 | 2% | 11.47 | Coventry City (fuera) | — |
+| Titular | Thiaw | Newcastle | DEF | £5.0m | 3.57 | 8.0 | 3% | 16.65 | Leeds (fuera) | — |
+| Titular | B.Fernandes | Man Utd | MID | £12.0m | 3.43 | 8.0 | 7% | 18.89 | Man City (casa) | Penales, Tiros libres, Córners |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 3.12 | 7.0 | 6% | 17.17 | Man City (casa) | — |
-| Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 2.68 | 7.0 | 3% | 14.76 | Aston Villa (fuera) | Penales, Tiros libres |
-| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 2.61 | 6.0 | 1% | 14.35 | Aston Villa (fuera) | — |
+| Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 2.77 | 7.0 | 4% | 15.25 | Aston Villa (fuera) | Penales, Tiros libres |
+| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 2.59 | 6.0 | 1% | 14.26 | Aston Villa (fuera) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £5.0m | 1.89 | 6.0 | 0% | 9.45 | Arsenal (casa) | — |
 | Banco 2 | E.Le Fée | Sunderland | MID | £5.8m | 2.35 | 7.0 | 2% | 11.74 | Arsenal (casa) | Córners |
 | Banco 3 | Enzo | Man City | MID | £6.9m | 2.09 | 7.0 | 3% | 12.56 | Man Utd (fuera) | — |
-| Banco 4 | Hume | Sunderland | DEF | £4.4m | 2.03 | 6.0 | 1% | 10.16 | Arsenal (casa) | — |
+| Banco 4 | Hume | Sunderland | DEF | £4.4m | 2.02 | 6.0 | 1% | 10.12 | Arsenal (casa) | — |
 
 ## Equipo Wildcard
 
@@ -30,48 +30,48 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | Virgil | Liverpool | DEF | £6.5m | 5.54 | 8.0 | 5% | 16.63 | Fulham (casa) | — |
-| Vice | Bogle | Leeds | DEF | £4.5m | 5.31 | 9.0 | 8% | 13.28 | Newcastle (casa) | — |
-| Titular | Rogers | Chelsea | MID | £7.6m | 5.27 | 8.0 | 9% | 17.13 | Hull City (casa) | — |
-| Titular | Lacroix | Chelsea | DEF | £6.0m | 5.19 | 6.0 | 3% | 16.86 | Hull City (casa) | — |
-| Titular | João Pedro | Chelsea | FWD | £7.7m | 5.09 | 10.0 | 14% | 16.55 | Hull City (casa) | — |
-| Titular | Szoboszlai | Liverpool | MID | £7.0m | 5.04 | 8.0 | 7% | 15.13 | Fulham (casa) | Penales, Tiros libres, Córners |
-| Titular | Mitchell | Crystal Palace | DEF | £4.5m | 4.9 | 8.0 | 4% | 15.94 | Ipswich Town (casa) | — |
+| **Capitán** | Virgil | Liverpool | DEF | £6.5m | 5.61 | 8.0 | 5% | 16.82 | Fulham (casa) | — |
+| Vice | Bogle | Leeds | DEF | £4.5m | 5.3 | 9.0 | 8% | 13.24 | Newcastle (casa) | — |
+| Titular | Rogers | Chelsea | MID | £7.6m | 5.22 | 8.0 | 9% | 16.96 | Hull City (casa) | — |
+| Titular | Palmer | Chelsea | MID | £9.7m | 5.12 | 11.0 | 13% | 16.63 | Hull City (casa) | Penales |
+| Titular | João Pedro | Chelsea | FWD | £7.7m | 5.07 | 10.0 | 14% | 16.49 | Hull City (casa) | — |
+| Titular | Szoboszlai | Liverpool | MID | £7.0m | 5.02 | 8.0 | 7% | 15.06 | Fulham (casa) | Penales, Tiros libres, Córners |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 4.88 | 10.0 | 14% | 12.2 | Newcastle (casa) | Penales |
-| Titular | Richards | Crystal Palace | DEF | £5.0m | 4.73 | 6.0 | 3% | 15.37 | Ipswich Town (casa) | — |
-| Titular | Wirtz | Liverpool | MID | £7.4m | 4.54 | 8.0 | 8% | 13.61 | Fulham (casa) | — |
+| Titular | Richards | Crystal Palace | DEF | £5.0m | 4.85 | 6.0 | 3% | 15.75 | Ipswich Town (casa) | — |
+| Titular | Mitchell | Crystal Palace | DEF | £4.5m | 4.79 | 8.0 | 4% | 15.58 | Ipswich Town (casa) | — |
+| Titular | Wirtz | Liverpool | MID | £7.4m | 4.59 | 8.0 | 8% | 13.78 | Fulham (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.0m | 4.04 | 6.0 | 0% | 17.51 | Sunderland (fuera) | — |
-| Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.45 | 2.0 | 0% | 5.8 | Everton (casa) | — |
-| Banco 2 | Sadiki | Sunderland | MID | £4.9m | 1.7 | 3.0 | 0% | 8.52 | Arsenal (casa) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.23 | 3.0 | 0% | 4.0 | Ipswich Town (casa) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 1.07 | 5.0 | 3% | 2.66 | Newcastle (casa) | — |
+| Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 5.16 | Everton (casa) | — |
+| Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 2.15 | 6.0 | 1% | 7.87 | Crystal Palace (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.11 | 3.0 | 0% | 3.62 | Ipswich Town (casa) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 1.96 | Liverpool (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Virgil | Liverpool | DEF | 5.54 | 8.0 | 5% | 17.1% | Fulham |
-| Bogle | Leeds | DEF | 5.31 | 9.0 | 8% | 2.2% | Newcastle |
-| Rogers | Chelsea | MID | 5.27 | 8.0 | 9% | 35.6% | Hull City |
-| Lacroix | Chelsea | DEF | 5.19 | 6.0 | 3% | 8.1% | Hull City |
-| João Pedro | Chelsea | FWD | 5.09 | 10.0 | 14% | 74.1% | Hull City |
-| Palmer | Chelsea | MID | 5.07 | 12.0 | 13% | 28.6% | Hull City |
-| Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.6% | Fulham |
-| Mitchell | Crystal Palace | DEF | 4.9 | 8.0 | 4% | 7.1% | Ipswich Town |
+| Virgil | Liverpool | DEF | 5.61 | 8.0 | 5% | 16.9% | Fulham |
+| Bogle | Leeds | DEF | 5.3 | 9.0 | 8% | 2.1% | Newcastle |
+| Rogers | Chelsea | MID | 5.22 | 8.0 | 9% | 34.8% | Hull City |
+| Palmer | Chelsea | MID | 5.12 | 11.0 | 13% | 26.9% | Hull City |
+| João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 73.8% | Hull City |
+| Szoboszlai | Liverpool | MID | 5.02 | 8.0 | 7% | 38.4% | Fulham |
+| Calvert-Lewin | Leeds | FWD | 4.88 | 10.0 | 14% | 22.1% | Newcastle |
+| Richards | Crystal Palace | DEF | 4.85 | 6.0 | 3% | 0.7% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.5m | 2.2% | 5.31 | 9.0 | 8% | Newcastle |
-| Lacroix | Chelsea | DEF | £6.0m | 8.1% | 5.19 | 6.0 | 3% | Hull City |
-| Mitchell | Crystal Palace | DEF | £4.5m | 7.1% | 4.9 | 8.0 | 4% | Ipswich Town |
-| Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.73 | 6.0 | 3% | Ipswich Town |
-| Wirtz | Liverpool | MID | £7.4m | 7.8% | 4.54 | 8.0 | 8% | Fulham |
+| Bogle | Leeds | DEF | £4.5m | 2.1% | 5.3 | 9.0 | 8% | Newcastle |
+| Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.85 | 6.0 | 3% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | £4.5m | 6.6% | 4.79 | 8.0 | 4% | Ipswich Town |
+| Lacroix | Chelsea | DEF | £6.0m | 8.0% | 4.62 | 6.0 | 2% | Hull City |
+| Wirtz | Liverpool | MID | £7.4m | 7.7% | 4.59 | 8.0 | 8% | Fulham |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 8.0 | 6% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 0.0 | 0% | Coventry City |
-| Kerkez | Liverpool | DEF | £5.4m | 2.7% | 4.13 | 6.0 | 2% | Fulham |
-| Dunk | Brighton | DEF | £4.5m | 1.4% | 4.08 | 6.0 | 2% | Coventry City |
+| Tavernier | Bournemouth | MID | £6.0m | 3.9% | 4.11 | 8.0 | 7% | Brentford |
+| Dunk | Brighton | DEF | £4.5m | 1.4% | 4.07 | 6.0 | 2% | Coventry City |
 
 ## Movimientos ya ejecutados en GW4
 
@@ -112,7 +112,7 @@ Mejores puntajes reales de GW3:
 - **xP 4GW**: puntos esperados acumulados en las próximas 4 fechas.
 - **Balón parado**: quién patea penales/tiros libres/córners. Es contexto: el xP **no** lo suma aparte, porque el xG de FPL ya incluye los penales ejecutados.
 
-Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 270 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
+Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 360 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
 
 Es un filtro deliberado: con muestra chica las tasas por 90 minutos son ruido (hay jugadores con 1 minuto jugado y el "mejor xG90 de la liga"). Esos jugadores están excluidos de las tablas de arriba, pero **siguen apareciendo en `players_scored.csv`** con métricas irreales. Regla operativa: rankear siempre por `xp_next` o `xp_horizon`, nunca por las columnas per-90 del CSV crudo.
 
