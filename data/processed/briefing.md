@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-13 02:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-13 08:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.6 | 8.0 | 5% | 16.9% | Fulham |
 | Bogle | Leeds | DEF | 5.29 | 9.0 | 8% | 2.1% | Newcastle |
-| Rogers | Chelsea | MID | 5.22 | 8.0 | 9% | 35.3% | Hull City |
+| Rogers | Chelsea | MID | 5.22 | 8.0 | 9% | 35.4% | Hull City |
 | Palmer | Chelsea | MID | 5.12 | 11.0 | 13% | 26.8% | Hull City |
 | João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 74.1% | Hull City |
 | Szoboszlai | Liverpool | MID | 5.04 | 8.0 | 7% | 38.0% | Fulham |
@@ -67,7 +67,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Richards | Crystal Palace | DEF | £5.0m | 0.7% | 4.84 | 6.0 | 3% | Ipswich Town |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.6% | 4.79 | 8.0 | 4% | Ipswich Town |
 | Lacroix | Chelsea | DEF | £6.0m | 7.9% | 4.64 | 6.0 | 2% | Hull City |
-| Wirtz | Liverpool | MID | £7.4m | 7.6% | 4.58 | 8.0 | 8% | Fulham |
+| Wirtz | Liverpool | MID | £7.4m | 7.5% | 4.58 | 8.0 | 8% | Fulham |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 8.0 | 6% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 4.9% | 4.2 | 0.0 | 0% | Coventry City |
 | Tavernier | Bournemouth | MID | £6.0m | 4.1% | 4.12 | 8.0 | 8% | Brentford |
