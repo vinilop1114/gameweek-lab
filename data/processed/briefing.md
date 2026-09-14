@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-14 11:42 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-14 17:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,11 +52,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.61 | 8.0 | 5% | 16.8% | Fulham |
 | Bogle | Leeds | DEF | 5.3 | 9.0 | 8% | 2.1% | Newcastle |
-| Rogers | Chelsea | MID | 5.23 | 8.0 | 9% | 36.6% | Hull City |
+| Rogers | Chelsea | MID | 5.23 | 8.0 | 9% | 36.7% | Hull City |
 | Palmer | Chelsea | MID | 5.12 | 11.0 | 13% | 26.8% | Hull City |
-| João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 74.8% | Hull City |
-| Szoboszlai | Liverpool | MID | 5.05 | 8.0 | 7% | 37.0% | Fulham |
-| Calvert-Lewin | Leeds | FWD | 4.88 | 10.0 | 14% | 21.7% | Newcastle |
+| João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 74.9% | Hull City |
+| Szoboszlai | Liverpool | MID | 5.05 | 8.0 | 7% | 36.9% | Fulham |
+| Calvert-Lewin | Leeds | FWD | 4.88 | 10.0 | 14% | 21.6% | Newcastle |
 | Richards | Crystal Palace | DEF | 4.88 | 6.0 | 3% | 0.6% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -68,7 +68,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.5% | 4.79 | 8.0 | 4% | Ipswich Town |
 | Lacroix | Chelsea | DEF | £6.0m | 7.6% | 4.65 | 6.0 | 2% | Hull City |
 | Wirtz | Liverpool | MID | £7.4m | 7.2% | 4.59 | 8.0 | 8% | Fulham |
-| Thiago | Brentford | FWD | £7.9m | 10.0% | 4.38 | 10.0 | 11% | Bournemouth |
+| Thiago | Brentford | FWD | £7.9m | 9.9% | 4.38 | 10.0 | 11% | Bournemouth |
 | Gomez | Brighton | MID | £5.0m | 4.7% | 4.25 | 8.0 | 6% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 4.7% | 4.25 | 0.0 | 0% | Coventry City |
 | Dunk | Brighton | DEF | £4.5m | 1.4% | 4.13 | 6.0 | 2% | Coventry City |
