@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-15 18:41 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-15 18:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -72,11 +72,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Dewsbury-Hall | Everton | MID | £6.5m | 5.1% | 4.28 | 7.0 | 5% | Ipswich Town |
 | Donnarumma | Man City | GKP | £5.5m | 7.6% | 4.23 | 6.0 | 0% | Sunderland |
 
-## Movimientos ya ejecutados en GW5
+## Movimientos ya ejecutados en GW4
 
-- Sin cambios en GW5 — transferencia guardada (1 acumuladas para la próxima fecha).
+- Shaw → F.Kadıoğlu (+1.45 xP, transferencia libre, entra de titular)
 
-Transferencias libres disponibles tras esa fecha: 1.
+Transferencias libres disponibles tras esa fecha: 0.
 
 ## Repaso de GW4 (fecha cerrada)
 
