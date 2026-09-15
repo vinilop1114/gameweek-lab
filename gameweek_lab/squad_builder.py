@@ -25,13 +25,25 @@ STARTING_FORMATIONS = [
 # (el ahorro máximo posible es del orden del presupuesto total, £100m).
 WILDCARD_XI_WEIGHT = 100_000
 
-# Costo estimado de un "enfrentamiento interno": tener al DEF/GK de un
-# equipo y a un MID/FWD del rival que enfrenta esa misma fecha. Si el
-# atacante anota, mata el clean sheet (4 pts) del propio defensor.
-# Estimación gruesa: un buen atacante anota en ~35% de sus partidos, y el
-# clean sheet estaba vivo hasta ese gol en ~40% de los casos:
-# 0.35 × 4 × 0.40 ≈ 0.5 xP. No es una prohibición — una dupla que gane
-# más que esto sigue entrando al equipo, pagando su precio.
+# Penalización a un "enfrentamiento interno": tener al DEF/GK de un equipo
+# y a un MID/FWD del rival que enfrenta esa misma fecha.
+#
+# **No es un costo esperado.** El xP del arquero ya descuenta el ataque
+# del rival, y el del delantero ya descuenta esa defensa: tener a los dos
+# no cambia ninguno de los dos números, porque los valores esperados se
+# suman sin importar cómo estén correlacionados. Una versión anterior de
+# este comentario lo justificaba como P(gol) × 4 × P(clean sheet vivo), y
+# eso es doble conteo — esa probabilidad ya está adentro del xP.
+#
+# Lo que la dupla cuesta es TECHO: sus resultados se cancelan entre sí, y
+# quien busca subir de rank necesita varianza hacia arriba. O sea que es
+# una herramienta de estrategia de rank, no de valor esperado, y su lugar
+# natural sería `--stance` y no el objetivo por defecto. Se dejó acá
+# porque medirlo en GW3 no cambió nada (58.91 xP de XI con y sin ella) y
+# mover una perilla inerte no valía el riesgo.
+#
+# El valor es un juicio, no una derivación. No es una prohibición: una
+# dupla que gane más que esto entra al equipo igual.
 CLASH_PENALTY_XP = 0.5
 
 

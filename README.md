@@ -182,14 +182,23 @@ plantel a un titular real por ruido estadístico.
 
 **Enfrentamientos internos — permitidos, pero pagan su precio:** tener al
 defensor/arquero de un equipo y a un mediocampista/delantero del rival que
-enfrenta ese mismo gameweek tiene un costo real (si el atacante anota, mata
-el clean sheet del propio defensor). En vez de prohibir esas duplas, el
-modelo les descuenta ese costo esperado (`CLASH_PENALTY_XP` ≈ 0.5 xP,
-ver `_internal_clash_penalty` en `squad_builder.py`): una dupla que proyecte
-ganar más que su penalización entra al equipo igual. El auto-sabotaje está
-permitido cuando los números lo justifican. En el Wildcard la penalización
-solo mira a los titulares — un suplente que no juega no le rompe el clean
-sheet a nadie.
+enfrenta ese mismo gameweek se penaliza con `CLASH_PENALTY_XP` (≈0.5 xP,
+ver `_internal_clash_penalty` en `squad_builder.py`). No es una
+prohibición: una dupla que proyecte ganar más que eso entra igual.
+
+**Lo que la dupla cuesta es techo, no promedio.** El xP del arquero ya
+descuenta el ataque del rival y el del delantero ya descuenta esa defensa,
+así que tener a los dos **no cambia los puntos esperados** — se suman sin
+importar la correlación. Lo que se pierde es varianza hacia arriba: los
+dos lados se cancelan, y en la práctica solo uno de cada siete partidos
+paga por ambos. Eso importa para subir de rank, no para maximizar puntos
+totales, así que la penalización es una herramienta de estrategia de rank
+que conceptualmente pertenece a `--stance`. Se mantiene en el objetivo por
+defecto porque medirla no cambió el equipo (mismo xP del XI con y sin
+ella).
+
+En el Wildcard la penalización solo mira a los titulares — un suplente que
+no juega no le rompe el clean sheet a nadie.
 
 **Simplificación conocida:** cuando se arma desde cero (Wildcard, o el
 Base la primera vez), el modelo maximiza el xP total de los 15, no
