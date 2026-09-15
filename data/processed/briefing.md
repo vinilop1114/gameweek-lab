@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW4
 
-Generado automáticamente: 2026-09-14 21:25 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-15 03:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,7 +43,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Verbruggen | Brighton | GKP | £4.5m | 4.01 | 6.0 | 0% | 12.02 | Coventry City (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 5.16 | Everton (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 2.15 | 6.0 | 1% | 7.87 | Crystal Palace (fuera) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.5m | 1.12 | 3.0 | 0% | 3.64 | Ipswich Town (casa) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 1.12 | 3.0 | 0% | 3.64 | Ipswich Town (casa) | — |
 | Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.94 | 2.0 | 3% | 2.35 | Newcastle (casa) | — |
 
 ## Mejores opciones de capitanía
@@ -51,26 +51,26 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Virgil | Liverpool | DEF | 5.62 | 8.0 | 5% | 16.8% | Fulham |
-| Bogle | Leeds | DEF | 5.52 | 9.0 | 9% | 2.3% | Newcastle |
-| Rogers | Chelsea | MID | 5.23 | 8.0 | 9% | 37.0% | Hull City |
+| Bogle | Leeds | DEF | 5.52 | 9.0 | 9% | 2.5% | Newcastle |
+| Rogers | Chelsea | MID | 5.23 | 8.0 | 9% | 37.2% | Hull City |
 | Palmer | Chelsea | MID | 5.13 | 11.0 | 13% | 26.8% | Hull City |
-| João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 75.0% | Hull City |
-| Calvert-Lewin | Leeds | FWD | 5.06 | 10.0 | 15% | 21.9% | Newcastle |
-| Szoboszlai | Liverpool | MID | 5.05 | 8.0 | 7% | 36.7% | Fulham |
+| João Pedro | Chelsea | FWD | 5.07 | 10.0 | 14% | 75.1% | Hull City |
+| Calvert-Lewin | Leeds | FWD | 5.06 | 10.0 | 15% | 22.1% | Newcastle |
+| Szoboszlai | Liverpool | MID | 5.05 | 8.0 | 7% | 36.6% | Fulham |
 | Richards | Crystal Palace | DEF | 4.88 | 6.0 | 3% | 0.6% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.5m | 2.3% | 5.52 | 9.0 | 9% | Newcastle |
+| Bogle | Leeds | DEF | £4.5m | 2.5% | 5.52 | 9.0 | 9% | Newcastle |
 | Richards | Crystal Palace | DEF | £5.0m | 0.6% | 4.88 | 6.0 | 3% | Ipswich Town |
-| Mitchell | Crystal Palace | DEF | £4.5m | 6.5% | 4.8 | 8.0 | 4% | Ipswich Town |
+| Mitchell | Crystal Palace | DEF | £4.5m | 6.4% | 4.8 | 8.0 | 4% | Ipswich Town |
 | Lacroix | Chelsea | DEF | £6.0m | 7.5% | 4.65 | 6.0 | 2% | Hull City |
 | Wirtz | Liverpool | MID | £7.4m | 7.1% | 4.59 | 8.0 | 8% | Fulham |
 | Thiago | Brentford | FWD | £7.9m | 9.8% | 4.38 | 10.0 | 11% | Bournemouth |
-| Gomez | Brighton | MID | £5.0m | 4.7% | 4.25 | 8.0 | 6% | Coventry City |
-| Gomez | Brighton | MID | £5.0m | 4.7% | 4.25 | 0.0 | 0% | Coventry City |
+| Gomez | Brighton | MID | £5.0m | 4.6% | 4.25 | 8.0 | 6% | Coventry City |
+| Gomez | Brighton | MID | £5.0m | 4.6% | 4.25 | 0.0 | 0% | Coventry City |
 | Stach | Leeds | MID | £6.0m | 2.7% | 4.2 | 7.0 | 4% | Newcastle |
 
 ## Movimientos ya ejecutados en GW4
@@ -79,28 +79,28 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Transferencias libres disponibles tras esa fecha: 0.
 
-## Repaso de GW3 (fecha cerrada)
+## Repaso de GW4 (fecha cerrada)
 
-Sesgo del modelo: +0.44 pts por jugador (subestimó en promedio). Error absoluto medio: 1.49 pts.
+Sesgo del modelo: -0.22 pts por jugador (sobrestimó en promedio). Error absoluto medio: 1.99 pts.
 
 Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | +0.50 | 164 |
-| FWD | +0.50 | 51 |
-| GKP | +0.15 | 57 |
-| MID | +0.45 | 219 |
+| DEF | -0.64 | 162 |
+| FWD | +0.69 | 52 |
+| GKP | -0.93 | 55 |
+| MID | +0.07 | 215 |
 
-Mejores puntajes reales de GW3:
+Mejores puntajes reales de GW4:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| Mitchell | Crystal Palace | DEF | 15 | 3.31 |
-| Bogle | Leeds | DEF | 14 | 3.37 |
-| Isak | Liverpool | FWD | 13 | 2.24 |
-| Vuskovic | Brighton | DEF | 12 | 1.96 |
-| Barnes | Newcastle | MID | 12 | 2.53 |
+| Groß | Brighton | MID | 17 | 3.17 |
+| Bogle | Leeds | DEF | 15 | 5.31 |
+| Schade | Brentford | MID | 15 | 3.97 |
+| Raya | Arsenal | GKP | 14 | 4.04 |
+| Davis | Ipswich Town | DEF | 14 | 4.26 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
