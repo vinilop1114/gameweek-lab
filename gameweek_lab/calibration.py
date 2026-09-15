@@ -29,6 +29,7 @@ import json
 import pandas as pd
 
 from gameweek_lab.config import DATA_PROCESSED_DIR, DATA_RAW_DIR
+from gameweek_lab.analysis import shadow_expected_points
 from gameweek_lab.fetch import fetch_event_live
 
 CALIBRATION_PATH = DATA_PROCESSED_DIR / "xp_calibration.csv"
@@ -36,6 +37,7 @@ CALIBRATION_COLUMNS = [
     "gameweek", "player_id", "web_name", "position", "team_name",
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
     "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
+    "xp_fresh_at_prediction", "xp_ep_blend_at_prediction",
     "actual_points",
 ]
 # Predictores contra los que se compara el modelo, además de él mismo.
@@ -51,6 +53,11 @@ BASELINE_COLUMNS = {
     "selected_by_percent_at_prediction": "selected_by_percent (el mercado)",
     "start_rate_at_prediction": "start_rate (solo titularidad)",
     "now_cost_at_prediction": "now_cost (solo precio)",
+    # Variantes candidatas del propio modelo (ver shadow_expected_points en
+    # analysis.py). No deciden nada: se miden al lado del modelo vigente
+    # para que el ajuste de GW6 salga de datos y no de una apuesta.
+    "xp_fresh_at_prediction": "[sombra] xp con baseline corto",
+    "xp_ep_blend_at_prediction": "[sombra] xp mezclado con ep_next",
 }
 # El umbral se cuenta en FECHAS, no en observaciones. Una fecha aporta
 # ~480 filas, pero no son 480 evidencias independientes: comparten los
@@ -130,6 +137,11 @@ def snapshot_predictions(players: pd.DataFrame) -> str:
         "start_rate_at_prediction": eligible["start_rate"],
         "actual_points": pd.NA,
     })
+    # Variantes candidatas: se graban junto a la prediccion real para poder
+    # compararlas despues sobre las mismas filas. No influyen en ninguna
+    # decision de esta fecha ni de ninguna otra.
+    for name, values in shadow_expected_points(eligible).items():
+        snapshot[f"{name}_at_prediction"] = values.values
     history = pd.concat([history, snapshot], ignore_index=True)
     _save_history(history)
     return f"GW{next_gw}: predicción grabada para {len(snapshot)} jugadores."

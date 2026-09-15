@@ -113,7 +113,7 @@ CEILING_PERCENTILE = 0.90
 HAUL_THRESHOLD = 10
 
 
-def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
+def _base_scoring_rate(players: pd.DataFrame, blend_minutes: int | None = None) -> pd.Series:
     """Puntos esperados 'crudos' por 90 minutos, antes de ajustar por rival
     — calculados desde estadísticas subyacentes (goles/asistencias
     esperados, goles esperados en contra), no desde puntos ya anotados.
@@ -144,9 +144,9 @@ def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     # minutos lleve jugados el jugador (ver `_blend_with_baseline`). FPL
     # resetea estos acumulados cada temporada, así que sin esto el modelo
     # se quedaría sin insumo en las primeras fechas.
-    expected_goals = _blend_with_baseline(players, "expected_goals_per_90")
-    expected_assists = _blend_with_baseline(players, "expected_assists_per_90")
-    expected_conceded = _blend_with_baseline(players, "expected_goals_conceded_per_90")
+    expected_goals = _blend_with_baseline(players, "expected_goals_per_90", blend_minutes)
+    expected_assists = _blend_with_baseline(players, "expected_assists_per_90", blend_minutes)
+    expected_conceded = _blend_with_baseline(players, "expected_goals_conceded_per_90", blend_minutes)
 
     attacking = expected_goals * goal_points + expected_assists * ASSIST_POINTS
     clean_sheet_probability = np.exp(-expected_conceded)
@@ -379,7 +379,9 @@ def effective_minutes(players: pd.DataFrame) -> pd.Series:
     return current + previous
 
 
-def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
+def _blend_with_baseline(
+    players: pd.DataFrame, column: str, blend_minutes: int | None = None
+) -> pd.Series:
     """Mezcla una tasa por 90' de la temporada en curso con la de la
     anterior, ponderando por minutos jugados.
 
@@ -391,6 +393,7 @@ def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
     Sin baseline (o para un jugador que no figure en él — un debutante)
     devuelve la tasa actual tal cual.
     """
+    weight = BASELINE_BLEND_MINUTES if blend_minutes is None else blend_minutes
     current = players[column].fillna(0)
     baseline = _load_last_season_baseline()
     if baseline is None or column not in baseline.columns:
@@ -398,7 +401,7 @@ def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
 
     previous = players["id"].map(dict(zip(baseline["player_id"], baseline[column])))
     minutes = players["minutes"].fillna(0)
-    blended = (current * minutes + previous * BASELINE_BLEND_MINUTES) / (minutes + BASELINE_BLEND_MINUTES)
+    blended = (current * minutes + previous * weight) / (minutes + weight)
     return blended.fillna(current)
 
 
@@ -523,6 +526,55 @@ def add_expected_points(players: pd.DataFrame) -> pd.DataFrame:
     players["start_rate"] = _start_rate(players).round(2)
     players["xp_next"] = (base_rate * fixture_mult * _availability(players)).round(2)
     return players
+
+
+# Peso de la mezcla con la temporada anterior para la variante "fresca".
+# 270 minutos (~3 partidos) contra los 900 del modelo en produccion: en
+# GW4, con el jugador mediano en 270 minutos, el modelo actual le da 23%
+# de peso a esta temporada y esta variante le da 50%.
+SHADOW_BLEND_MINUTES = 270
+# Cuanto pesa `ep_next` en la variante mezclada. 0.5 es deliberadamente
+# el punto medio: la pregunta no es cual es el peso optimo (para eso
+# hacen falta muchas mas fechas) sino si mezclar le gana a cualquiera de
+# los dos por separado, que es lo que la tabla de ordenamiento contesta.
+SHADOW_EP_WEIGHT = 0.5
+
+
+def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
+    """Variantes candidatas del xP, calculadas SOLO para medirlas.
+
+    No entran en ninguna decision: no se exportan a ningun CSV de
+    jugadores, no las ve el asesor de transferencias ni el armador de
+    equipos. Se graban junto a la prediccion en `xp_calibration.csv` y
+    aparecen en la tabla de poder de ordenamiento, al lado del modelo real
+    y de los baselines triviales.
+
+    Existen porque la calibracion de GW4 mostro que el motor de scoring
+    (xG/xA/clean sheet/DEFCON) no tiene poder de ordenamiento — Spearman
+    0.036 entre los jugadores que efectivamente jugaron, contra 0.367 de
+    `start_rate` solo. Cambiar el modelo ahi mismo habria sido apostar; lo
+    honesto es medir los candidatos en paralelo durante unas fechas y
+    recien despues decidir con datos. Es la misma disciplina de "medir
+    antes de ajustar" que ya rige el resto del proyecto, aplicada a los
+    candidatos y no solo al modelo vigente.
+
+    - **xp_fresh**: el mismo calculo con `SHADOW_BLEND_MINUTES` en vez de
+      `BASELINE_BLEND_MINUTES`. Prueba la hipotesis de que el problema es
+      que las tasas por 90' siguen siendo ~77% del año pasado.
+    - **xp_ep_blend**: mitad modelo, mitad `ep_next` (la estimacion de la
+      propia FPL, que en GW4 ordeno mejor que todo lo demas: 0.611).
+      Prueba si conviene apoyarse en ella en vez de competirle.
+    """
+    fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
+    availability = _availability(players)
+
+    fresh = _base_scoring_rate(players, SHADOW_BLEND_MINUTES) * fixture_mult * availability
+    # `ep_next` viene vacio para algun jugador suelto; ahi la mezcla se
+    # queda con el modelo en vez de perder la fila.
+    ep_next = players["ep_next"].fillna(players["xp_next"])
+    ep_blend = (1 - SHADOW_EP_WEIGHT) * players["xp_next"] + SHADOW_EP_WEIGHT * ep_next
+
+    return {"xp_fresh": fresh.round(2), "xp_ep_blend": ep_blend.round(2)}
 
 
 def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEWEEKS) -> pd.DataFrame:

@@ -486,6 +486,28 @@ veces el mismo día:
   está pagando.
 - **Sesgo por posición**, solo entre quienes tuvieron minutos.
 
+Los seis predictores se miden **sobre las mismas filas**. Cada baseline
+se empezó a grabar en un momento distinto, y comparar el promedio de 4
+fechas del modelo contra el de 1 fecha de un baseline mide qué fechas
+fueron más fáciles, no quién ordena mejor.
+
+**Primera lectura real, con 4 fechas (septiembre 2026): el modelo sale
+último.** `ep_next` 0.611, `points_per_game` 0.594, `start_rate` 0.490,
+ownership 0.433, precio 0.399, `xp_next` **0.328**. Descomponiéndolo
+entre los jugadores que sí jugaron, todo el poder de ordenamiento viene
+de `start_rate` (0.367); el motor de scoring —xG/xA/clean sheet/DEFCON—
+mide **0.036**, y multiplicar la señal buena por ese término la degrada
+a 0.286. El sesgo, en cambio, es chico y uniforme entre posiciones, o sea
+que el problema es el orden y no el nivel.
+
+En vez de reaccionar a una sola fecha, se graban **predictores sombra**
+(`shadow_expected_points`): variantes candidatas del xP que no entran en
+ninguna decisión y solo se miden al lado del modelo. Hoy hay dos —
+`xp_fresh` (mezcla con la temporada anterior mucho más corta, para probar
+si el problema es que las tasas siguen siendo del año pasado) y
+`xp_ep_blend` (mitad modelo, mitad `ep_next`). Empiezan a grabarse en
+GW6, así que el ajuste va a salir de datos y no de una apuesta.
+
 Con menos de `MIN_GAMEWEEKS_FOR_BIAS_REPORT` (4) **fechas**, el reporte
 lo advierte explícitamente. El umbral se cuenta en fechas y no en filas
 a propósito: una fecha aporta ~480 observaciones, pero salen de los
