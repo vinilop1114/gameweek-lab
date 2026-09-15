@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-15 20:50 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-15 23:23 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,7 +8,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | Gibbs-White | Nott'm Forest | MID | £7.9m | 5.55 | 10.0 | 12% | 18.03 | Coventry City (casa) | Penales, Tiros libres |
+| **Capitán** | Gibbs-White | Nott'm Forest | MID | £8.0m | 5.55 | 10.0 | 12% | 18.03 | Coventry City (casa) | Penales, Tiros libres |
 | Vice | N.Williams | Nott'm Forest | DEF | £5.0m | 5.24 | 8.0 | 4% | 17.02 | Coventry City (casa) | — |
 | Titular | B.Fernandes | Man Utd | MID | £12.0m | 5.05 | 10.0 | 13% | 20.21 | Fulham (fuera) | Penales, Tiros libres, Córners |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 4.83 | 8.0 | 4% | 16.91 | Hull City (casa) | — |
@@ -32,7 +32,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.5m | 6.86 | 13.0 | 27% | 20.57 | Sunderland (casa) | Penales |
 | Vice | Guéhi | Man City | DEF | £6.0m | 5.85 | 9.0 | 9% | 17.54 | Sunderland (casa) | — |
-| Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 5.55 | 10.0 | 12% | 18.03 | Coventry City (casa) | Penales, Tiros libres |
+| Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 5.55 | 10.0 | 12% | 18.03 | Coventry City (casa) | Penales, Tiros libres |
 | Titular | Tarkowski | Everton | DEF | £6.1m | 5.29 | 6.0 | 3% | 14.56 | Ipswich Town (casa) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 5.24 | 8.0 | 4% | 17.02 | Coventry City (casa) | — |
 | Titular | B.Fernandes | Man Utd | MID | £12.0m | 5.05 | 10.0 | 13% | 20.21 | Fulham (fuera) | Penales, Tiros libres, Córners |
@@ -42,9 +42,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Donnarumma | Man City | GKP | £5.5m | 4.23 | 6.0 | 0% | 12.7 | Sunderland (casa) | — |
 | Titular | Barry | Everton | FWD | £5.6m | 4.1 | 10.0 | 11% | 11.29 | Ipswich Town (casa) | Penales |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 4.73 | Aston Villa (casa) | — |
-| Banco 2 | Yarmoliuk | Brentford | MID | £4.8m | 1.01 | 3.0 | 0% | 5.03 | Chelsea (casa) | — |
+| Banco 2 | Andrey Santos | Man Utd | MID | £4.8m | 1.02 | 3.0 | 0% | 4.1 | Fulham (fuera) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.64 | Leeds (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.71 | 2.0 | 2% | 2.12 | Crystal Palace (casa) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 2.28 | Man Utd (casa) | — |
 
 ## Mejores opciones de capitanía
 
@@ -52,9 +52,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.4% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.1% | Coventry City |
-| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.2% | Ipswich Town |
-| N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 8.5% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.3% | Coventry City |
+| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.3% | Ipswich Town |
+| N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 8.6% | Coventry City |
 | Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.4% | Sunderland |
 | B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 41.6% | Fulham |
 | Thiaw | Newcastle | DEF | 4.83 | 8.0 | 4% | 2.2% | Hull City |
@@ -63,7 +63,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| N.Williams | Nott'm Forest | DEF | £5.0m | 8.5% | 5.24 | 8.0 | 4% | Coventry City |
+| N.Williams | Nott'm Forest | DEF | £5.0m | 8.6% | 5.24 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 4.83 | 8.0 | 4% | Hull City |
 | Murillo | Nott'm Forest | DEF | £5.5m | 1.9% | 4.47 | 6.0 | 2% | Coventry City |
 | Mykolenko | Everton | DEF | £4.5m | 3.0% | 4.42 | 6.0 | 0% | Ipswich Town |
