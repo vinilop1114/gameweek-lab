@@ -299,21 +299,42 @@ def _ranking_power_section(complete: pd.DataFrame) -> list[str]:
         )
         return lines
 
+    # TODOS los predictores se miden sobre las MISMAS filas. Los baselines
+    # se empezaron a guardar despues que `xp_predicted`, asi que cada uno
+    # cubre distintas fechas; comparar el promedio de 4 fechas del modelo
+    # contra el de 1 fecha de un baseline no dice nada sobre cual ordena
+    # mejor, solo sobre que fechas fueron mas faciles de predecir.
+    common = complete.dropna(subset=list(available))
+    if len(common) <= 10:
+        lines.append("Todavia no hay filas con todos los predictores guardados a la vez.")
+        return lines
+
+    covered = ", ".join(f"GW{int(gw)}" for gw in sorted(common["gameweek"].unique()))
+    lines.append(f"Medido sobre {len(common)} filas con todos los predictores presentes ({covered}).")
+    lines.append("")
+
     scores = []
     for column, label in available.items():
-        subset = complete[[column, "actual_points"]].dropna()
-        if len(subset) > 10:
-            # Spearman = Pearson sobre los rangos. Se calcula así en vez
-            # de con method="spearman" porque esa vía exige scipy, una
-            # dependencia pesada para una transformación de una línea
-            # (mismo criterio que la Poisson en analysis.py).
-            score = subset[column].rank().corr(subset["actual_points"].rank())
-            scores.append((label, score))
+        # Spearman = Pearson sobre los rangos. Se calcula asi en vez de con
+        # method="spearman" porque esa via exige scipy, una dependencia
+        # pesada para una transformacion de una linea (mismo criterio que
+        # la Poisson en analysis.py).
+        scores.append((label, common[column].rank().corr(common["actual_points"].rank())))
 
     lines.append(f"{'Predictor':<38}{'Spearman':>10}")
     for label, score in sorted(scores, key=lambda item: item[1], reverse=True):
         marker = "  <-- el modelo" if label.startswith("xp_next") else ""
         lines.append(f"{label:<38}{score:>10.3f}{marker}")
+
+    # El modelo tiene historia mas larga que los baselines. Se muestra
+    # aparte y etiquetado como NO comparable, para no perder el dato ni
+    # mezclarlo con la tabla de arriba.
+    lines.append("")
+    lines.append("xp_next fecha por fecha (historia completa, NO comparable con la tabla de arriba):")
+    for gameweek, group in complete.groupby("gameweek"):
+        score = group["xp_predicted"].rank().corr(group["actual_points"].rank())
+        lines.append(f"   GW{int(gameweek)}: {score:.3f}  (n={len(group)})")
+
     lines.append(
         "\nSi un predictor trivial le gana al modelo de forma sostenida, la complejidad "
         "no se está pagando. Una fecha aislada no alcanza para concluirlo."
