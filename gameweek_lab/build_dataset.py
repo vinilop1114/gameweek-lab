@@ -119,19 +119,34 @@ def _set_piece_duties(players: pd.DataFrame) -> pd.Series:
     return labels.map(", ".join)
 
 
-def get_next_deadline() -> datetime | None:
-    """Fecha/hora límite del próximo gameweek, en UTC.
+def get_deadline_for_gameweek(gameweek: int) -> datetime | None:
+    """Fecha/hora límite de UNA fecha puntual, en UTC.
 
     La usa `evolve_base_squad` para decidir transferencias cerca del
     deadline y no apenas termina la fecha anterior — ver
     TRANSFER_DECISION_WINDOW_HOURS.
+
+    Reemplazó a un `get_next_deadline()` que devolvía "el deadline del
+    primer event sin terminar". El problema era que las dos mitades de la
+    decisión leían fuentes distintas que no cambian a la vez: qué fecha se
+    está decidiendo sale de los FIXTURES (`next_gameweek`, que salta
+    apenas termina el último partido) y el deadline salía de los EVENTS
+    (`finished`, que FPL marca bastante después). En esa ventana el modelo
+    creía estar decidiendo GW5 mientras miraba el deadline de GW4, ya
+    vencido: la resta daba negativo, el chequeo "¿faltan más de 3 horas?"
+    pasaba trivialmente, y la decisión de GW5 se tomaba **seis días antes**
+    — con la peor información de la semana, que es justo lo que la ventana
+    existe para evitar. Verificado en septiembre 2026 sobre el estado real.
+
+    Pedir el deadline de una fecha concreta hace que las dos mitades sean
+    consistentes por construcción: quien decide ya sabe para qué fecha
+    decide, así que pregunta por esa.
     """
     bootstrap = _load_raw("bootstrap-static")
-    upcoming = [e for e in bootstrap["events"] if not e["finished"]]
-    if not upcoming:
+    event = next((e for e in bootstrap["events"] if e["id"] == gameweek), None)
+    if event is None:
         return None
-    next_event = min(upcoming, key=lambda e: e["deadline_time"])
-    return datetime.fromisoformat(next_event["deadline_time"].replace("Z", "+00:00"))
+    return datetime.fromisoformat(event["deadline_time"].replace("Z", "+00:00"))
 
 
 def get_matches_played_by_team() -> dict[str, int]:

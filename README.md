@@ -235,7 +235,18 @@ del mismo cálculo:
      deadline* — sin esto, el primer freno dispararía la decisión apenas
      termina la fecha anterior: el lunes, con la peor información de la
      semana. Las lesiones se confirman en las conferencias de jueves y
-     viernes, y los precios de FPL se mueven a diario.
+     viernes, y los precios de FPL se mueven a diario. La ventana es un
+     intervalo cerrado: con el deadline ya vencido tampoco decide, porque
+     el equipo real está bloqueado en FPL y registrar ahí una
+     transferencia sería anotar un movimiento imposible de hacer.
+
+     El deadline se pide **para la fecha que se está decidiendo**
+     (`get_deadline_for_gameweek`), no "el próximo deadline". Qué fecha
+     se decide sale de los fixtures y salta apenas termina el último
+     partido; el deadline salía de los events, que FPL marca terminados
+     bastante después. En esa ventana el modelo miraba un deadline ya
+     vencido, la resta daba negativo, y la decisión se tomaba **seis días
+     antes** — verificado en GW5, septiembre 2026.
 
   `python scripts/run_squad.py --force` saltea la ventana (no el primer
   freno) para ver qué haría sin esperar al deadline.

@@ -15,7 +15,7 @@ from gameweek_lab.analysis import (
     effective_minutes,
     gameweek_expected_points,
 )
-from gameweek_lab.build_dataset import build_players_dataset, get_next_deadline, get_team_fixtures_horizon
+from gameweek_lab.build_dataset import build_players_dataset, get_deadline_for_gameweek, get_team_fixtures_horizon
 from gameweek_lab.config import DATA_PROCESSED_DIR
 from gameweek_lab.squad_builder import (
     MAX_PER_CLUB,
@@ -493,9 +493,16 @@ def preview_base_transfers(
         starters, bench = select_starting_xi(squad)
         return starters, bench, [f"GW{current_gw} ya ejecutado — el equipo Base ya incluye sus transferencias."]
 
-    free_transfers = min(
-        state["banked_free_transfers"] + _transfers_granted(current_gw), MAX_BANKED_TRANSFERS
+    # Se acreditan las transferencias de TODAS las fechas transcurridas
+    # desde la última evaluación, no solo la actual. Antes se otorgaba una
+    # sola: si el pipeline no llegaba a correr dentro de la ventana de una
+    # fecha (una caída del Action, por ejemplo), esa transferencia libre
+    # se perdía en la contabilidad aunque FPL sí la hubiera otorgado.
+    granted = sum(
+        _transfers_granted(gameweek)
+        for gameweek in range(state["last_evaluated_gameweek"] + 1, current_gw + 1)
     )
+    free_transfers = min(state["banked_free_transfers"] + granted, MAX_BANKED_TRANSFERS)
     squad, _, log = plan_transfers(players, squad, free_transfers, current_gw)
     starters, bench = select_starting_xi(squad)
     return starters, bench, log
@@ -558,7 +565,12 @@ def evolve_base_squad(
     current_gw = _current_gameweek(players)
     log = []
 
-    deadline = get_next_deadline()
+    # El deadline se pide para la fecha que se está decidiendo, no "el
+    # próximo": ver get_deadline_for_gameweek. La ventana es un intervalo
+    # cerrado, no solo un techo — con el deadline ya vencido el equipo
+    # real está bloqueado en FPL, así que decidir ahí sería aplicar sobre
+    # `my_team.csv` una transferencia que no se puede hacer en el juego.
+    deadline = get_deadline_for_gameweek(current_gw)
     if deadline is not None and not force:
         hours_left = (deadline - datetime.now(timezone.utc)).total_seconds() / 3600
         if hours_left > TRANSFER_DECISION_WINDOW_HOURS:
@@ -566,6 +578,13 @@ def evolve_base_squad(
                 f"Faltan {hours_left:.1f}h para el deadline de GW{current_gw} — se decide "
                 f"dentro de las últimas {TRANSFER_DECISION_WINDOW_HOURS}h, cuando ya se "
                 "conocen las lesiones reportadas."
+            )
+            starters, bench = select_starting_xi(squad)
+            return starters, bench, log
+        if hours_left < 0:
+            log.append(
+                f"El deadline de GW{current_gw} pasó hace {-hours_left:.1f}h — el equipo ya "
+                "está bloqueado en FPL. La transferencia queda acumulada para la próxima fecha."
             )
             starters, bench = select_starting_xi(squad)
             return starters, bench, log

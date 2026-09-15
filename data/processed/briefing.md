@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-15 16:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-15 18:41 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,9 +50,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.3% | Sunderland |
+| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.4% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 11.9% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.0% | Coventry City |
 | Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.2% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 8.5% | Coventry City |
 | Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.5% | Sunderland |
