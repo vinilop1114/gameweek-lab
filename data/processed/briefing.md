@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-16 10:47 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-16 16:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,10 +52,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.5% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.5% | Coventry City |
-| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.3% | Ipswich Town |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.6% | Coventry City |
+| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.4% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 8.6% | Coventry City |
-| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.4% | Sunderland |
+| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.3% | Sunderland |
 | B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 41.5% | Fulham |
 | Thiaw | Newcastle | DEF | 4.83 | 8.0 | 4% | 2.2% | Hull City |
 
@@ -70,7 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Enzo | Man City | MID | £6.9m | 3.4% | 4.38 | 8.0 | 9% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 4.2% | 4.34 | 6.0 | 2% | Sunderland |
 | Dewsbury-Hall | Everton | MID | £6.5m | 5.2% | 4.28 | 7.0 | 5% | Ipswich Town |
-| Donnarumma | Man City | GKP | £5.5m | 7.6% | 4.23 | 6.0 | 0% | Sunderland |
+| Donnarumma | Man City | GKP | £5.5m | 7.7% | 4.23 | 6.0 | 0% | Sunderland |
 
 ## Movimientos ya ejecutados en GW4
 
