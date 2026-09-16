@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-15 23:23 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-16 03:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,9 +42,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Donnarumma | Man City | GKP | £5.5m | 4.23 | 6.0 | 0% | 12.7 | Sunderland (casa) | — |
 | Titular | Barry | Everton | FWD | £5.6m | 4.1 | 10.0 | 11% | 11.29 | Ipswich Town (casa) | Penales |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 4.73 | Aston Villa (casa) | — |
-| Banco 2 | Andrey Santos | Man Utd | MID | £4.8m | 1.02 | 3.0 | 0% | 4.1 | Fulham (fuera) | — |
+| Banco 2 | Yarmoliuk | Brentford | MID | £4.8m | 1.01 | 3.0 | 0% | 5.03 | Chelsea (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.64 | Leeds (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 2.28 | Man Utd (casa) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.71 | 2.0 | 2% | 2.12 | Crystal Palace (casa) | — |
 
 ## Mejores opciones de capitanía
 
