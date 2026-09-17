@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-16 23:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-17 03:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,8 +43,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Barry | Everton | FWD | £5.6m | 4.1 | 10.0 | 11% | 11.29 | Ipswich Town (casa) | Penales |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 4.73 | Aston Villa (casa) | — |
 | Banco 2 | Yarmoliuk | Brentford | MID | £4.8m | 1.01 | 3.0 | 0% | 5.03 | Chelsea (casa) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.4m | 0.84 | 2.0 | 0% | 4.18 | Arsenal (casa) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.64 | Leeds (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.64 | Leeds (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.71 | 2.0 | 2% | 2.12 | Crystal Palace (casa) | — |
 
 ## Mejores opciones de capitanía
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.6% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 12.9% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 13.0% | Coventry City |
 | Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.5% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 8.7% | Coventry City |
 | Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.3% | Sunderland |
