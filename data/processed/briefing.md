@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-18 03:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-18 10:30 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -44,32 +44,32 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 4.73 | Aston Villa (casa) | — |
 | Banco 2 | Yarmoliuk | Brentford | MID | £4.8m | 1.01 | 3.0 | 0% | 5.03 | Chelsea (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.64 | Leeds (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 2.28 | Man Utd (casa) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.71 | 2.0 | 2% | 2.12 | Crystal Palace (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 72.9% | Sunderland |
+| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 73.0% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 14.3% | Coventry City |
-| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 13.9% | Ipswich Town |
-| N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 9.0% | Coventry City |
-| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.1% | Sunderland |
-| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 40.8% | Fulham |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 14.9% | Coventry City |
+| Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 14.1% | Ipswich Town |
+| N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 9.1% | Coventry City |
+| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 15.0% | Sunderland |
+| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 40.6% | Fulham |
 | Thiaw | Newcastle | DEF | 4.83 | 8.0 | 4% | 2.2% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| N.Williams | Nott'm Forest | DEF | £5.0m | 9.0% | 5.24 | 8.0 | 4% | Coventry City |
+| N.Williams | Nott'm Forest | DEF | £5.0m | 9.1% | 5.24 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 4.83 | 8.0 | 4% | Hull City |
-| Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.47 | 6.0 | 2% | Coventry City |
-| Mykolenko | Everton | DEF | £4.5m | 3.5% | 4.42 | 6.0 | 0% | Ipswich Town |
+| Murillo | Nott'm Forest | DEF | £5.5m | 2.2% | 4.47 | 6.0 | 2% | Coventry City |
+| Mykolenko | Everton | DEF | £4.5m | 3.6% | 4.42 | 6.0 | 0% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.4% | 4.38 | 8.0 | 9% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 4.2% | 4.34 | 6.0 | 2% | Sunderland |
-| Dewsbury-Hall | Everton | MID | £6.5m | 5.7% | 4.28 | 7.0 | 5% | Ipswich Town |
+| Dewsbury-Hall | Everton | MID | £6.5m | 5.9% | 4.28 | 7.0 | 5% | Ipswich Town |
 | Donnarumma | Man City | GKP | £5.5m | 7.8% | 4.23 | 6.0 | 0% | Sunderland |
 
 ## Movimientos ya ejecutados en GW4
