@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-18 15:00 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-18 15:46 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 73.2% | Sunderland |
+| Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 73.3% | Sunderland |
 | Guéhi | Man City | DEF | 5.85 | 9.0 | 9% | 18.6% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 16.0% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 5.55 | 10.0 | 12% | 16.3% | Coventry City |
 | Tarkowski | Everton | DEF | 5.29 | 6.0 | 3% | 14.5% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.24 | 8.0 | 4% | 9.4% | Coventry City |
-| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 14.9% | Sunderland |
-| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 40.2% | Fulham |
+| Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 14.8% | Sunderland |
+| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 40.1% | Fulham |
 | Thiaw | Newcastle | DEF | 4.83 | 8.0 | 4% | 2.2% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -66,11 +66,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.4% | 5.24 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 4.83 | 8.0 | 4% | Hull City |
 | Murillo | Nott'm Forest | DEF | £5.5m | 2.3% | 4.47 | 6.0 | 2% | Coventry City |
-| Mykolenko | Everton | DEF | £4.5m | 3.9% | 4.42 | 6.0 | 0% | Ipswich Town |
+| Mykolenko | Everton | DEF | £4.5m | 4.0% | 4.42 | 6.0 | 0% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 4.2% | 4.34 | 6.0 | 2% | Sunderland |
-| Dewsbury-Hall | Everton | MID | £6.5m | 6.3% | 4.28 | 7.0 | 5% | Ipswich Town |
-| Donnarumma | Man City | GKP | £5.5m | 7.9% | 4.23 | 6.0 | 0% | Sunderland |
+| Dewsbury-Hall | Everton | MID | £6.5m | 6.4% | 4.28 | 7.0 | 5% | Ipswich Town |
+| Donnarumma | Man City | GKP | £5.5m | 8.0% | 4.23 | 6.0 | 0% | Sunderland |
 
 ## Movimientos ya ejecutados en GW5
 
