@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-19 19:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-19 22:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -70,7 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.2% | 4.45 | 8.0 | 5% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
 | Botman | Newcastle | DEF | £5.0m | 0.7% | 4.35 | 6.0 | 2% | Hull City |
-| Anderson | Man City | MID | £6.3m | 4.2% | 4.33 | 6.0 | 2% | Sunderland |
+| Anderson | Man City | MID | £6.3m | 4.1% | 4.33 | 6.0 | 2% | Sunderland |
 
 ## Movimientos ya ejecutados en GW5
 
