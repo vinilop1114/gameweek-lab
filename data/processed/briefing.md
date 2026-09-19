@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-18 22:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-19 02:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -21,8 +21,8 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | João Pedro | Chelsea | FWD | £7.8m | 2.57 | 6.0 | 6% | 10.27 | Brentford (fuera) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 0.94 | 2.0 | 0% | 11.28 | Man City (fuera) | — |
 | Banco 2 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.94 | 6.0 | 1% | 9.7 | Arsenal (casa) | — |
-| Banco 3 | E.Le Fée | Sunderland | MID | £5.8m | 1.28 | 5.0 | 1% | 15.35 | Man City (fuera) | Córners |
-| Banco 4 | Hume | Sunderland | DEF | £4.4m | 0.9 | 2.0 | 0% | 10.82 | Man City (fuera) | — |
+| Banco 3 | E.Le Fée | Sunderland | MID | £5.7m | 1.28 | 5.0 | 1% | 15.35 | Man City (fuera) | Córners |
+| Banco 4 | Hume | Sunderland | DEF | £4.3m | 0.9 | 2.0 | 0% | 10.82 | Man City (fuera) | — |
 
 ## Equipo Wildcard
 
@@ -38,11 +38,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | B.Fernandes | Man Utd | MID | £12.0m | 5.05 | 10.0 | 13% | 20.2 | Fulham (fuera) | Penales, Tiros libres, Córners |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 4.83 | 8.0 | 4% | 16.92 | Hull City (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 4.73 | 10.0 | 12% | 18.92 | Fulham (fuera) | — |
-| Titular | Mykolenko | Everton | DEF | £4.5m | 4.42 | 6.0 | 0% | 12.17 | Ipswich Town (casa) | — |
+| Titular | Mykolenko | Everton | DEF | £4.6m | 4.42 | 6.0 | 0% | 12.17 | Ipswich Town (casa) | — |
 | Titular | Donnarumma | Man City | GKP | £5.5m | 4.23 | 6.0 | 0% | 12.7 | Sunderland (casa) | — |
 | Titular | Barry | Everton | FWD | £5.6m | 4.1 | 10.0 | 11% | 11.29 | Ipswich Town (casa) | Penales |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.29 | 2.0 | 0% | 4.73 | Aston Villa (casa) | — |
-| Banco 2 | Andrey Santos | Man Utd | MID | £4.8m | 1.02 | 3.0 | 0% | 4.09 | Fulham (fuera) | — |
+| Banco 2 | Yarmoliuk | Brentford | MID | £4.8m | 1.11 | 3.0 | 0% | 5.54 | Chelsea (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.63 | Leeds (fuera) | — |
 | Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.71 | 2.0 | 2% | 2.12 | Crystal Palace (casa) | — |
 
@@ -66,10 +66,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.1% | 5.24 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 4.83 | 8.0 | 4% | Hull City |
 | Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.48 | 6.0 | 2% | Coventry City |
-| Mykolenko | Everton | DEF | £4.5m | 4.2% | 4.42 | 6.0 | 0% | Ipswich Town |
+| Mykolenko | Everton | DEF | £4.6m | 4.2% | 4.42 | 6.0 | 0% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 4.2% | 4.33 | 6.0 | 2% | Sunderland |
-| Dewsbury-Hall | Everton | MID | £6.5m | 6.2% | 4.27 | 7.0 | 5% | Ipswich Town |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.2% | 4.27 | 7.0 | 5% | Ipswich Town |
 | Donnarumma | Man City | GKP | £5.5m | 7.8% | 4.23 | 6.0 | 0% | Sunderland |
 
 ## Movimientos ya ejecutados en GW5
