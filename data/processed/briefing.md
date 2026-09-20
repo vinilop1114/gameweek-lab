@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-20 15:22 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-20 20:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -10,18 +10,18 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Gibbs-White | Nott'm Forest | MID | £8.0m | 5.48 | 10.0 | 11% | 17.82 | Coventry City (casa) | Penales, Tiros libres |
 | Vice | N.Williams | Nott'm Forest | DEF | £5.0m | 5.26 | 8.0 | 4% | 17.11 | Coventry City (casa) | — |
-| Titular | B.Fernandes | Man Utd | MID | £12.0m | 5.05 | 10.0 | 13% | 20.19 | Fulham (fuera) | Penales, Tiros libres, Córners |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 5.01 | 8.0 | 4% | 17.54 | Hull City (casa) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.9m | 4.73 | 10.0 | 12% | 18.91 | Fulham (fuera) | — |
-| Titular | Enzo | Man City | MID | £6.9m | 4.38 | 8.0 | 9% | 13.13 | Sunderland (casa) | — |
+| Titular | B.Fernandes | Man Utd | MID | £12.0m | 5.0 | 10.0 | 13% | 19.98 | Fulham (fuera) | Penales, Tiros libres, Córners |
+| Titular | Mbeumo | Man Utd | MID | £7.9m | 4.71 | 10.0 | 12% | 18.84 | Fulham (fuera) | — |
+| Titular | Enzo | Man City | MID | £6.9m | 4.39 | 8.0 | 9% | 13.17 | Sunderland (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £5.8m | 4.31 | 8.0 | 8% | 18.67 | Brighton (fuera) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 3.85 | 9.0 | 10% | 11.56 | Crystal Palace (casa) | Penales |
 | Titular | Raya | Arsenal | GKP | £6.0m | 3.81 | 6.0 | 0% | 16.53 | Brighton (fuera) | — |
 | Titular | Thiago | Brentford | FWD | £7.8m | 2.95 | 6.0 | 6% | 14.73 | Chelsea (casa) | Penales |
 | Titular | João Pedro | Chelsea | FWD | £7.8m | 2.57 | 6.0 | 6% | 10.27 | Brentford (fuera) | — |
-| Banco 1 | Roefs | Sunderland | GKP | £4.9m | 0.92 | 2.0 | 0% | 11.03 | Man City (fuera) | — |
+| Banco 1 | Roefs | Sunderland | GKP | £4.9m | 0.92 | 2.0 | 0% | 11.01 | Man City (fuera) | — |
 | Banco 2 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.99 | 6.0 | 1% | 9.93 | Arsenal (casa) | — |
-| Banco 3 | E.Le Fée | Sunderland | MID | £5.7m | 1.27 | 5.0 | 1% | 15.27 | Man City (fuera) | Córners |
+| Banco 3 | E.Le Fée | Sunderland | MID | £5.7m | 1.27 | 5.0 | 1% | 15.3 | Man City (fuera) | Córners |
 | Banco 4 | Hume | Sunderland | DEF | £4.3m | 0.81 | 2.0 | 0% | 9.7 | Man City (fuera) | — |
 
 ## Equipo Wildcard
@@ -31,33 +31,33 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.6m | 6.98 | 13.0 | 28% | 20.94 | Sunderland (casa) | Penales |
-| Vice | Guéhi | Man City | DEF | £6.0m | 5.5 | 9.0 | 8% | 16.51 | Sunderland (casa) | — |
+| Vice | Guéhi | Man City | DEF | £6.0m | 5.55 | 9.0 | 8% | 16.66 | Sunderland (casa) | — |
 | Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 5.48 | 10.0 | 11% | 17.82 | Coventry City (casa) | Penales, Tiros libres |
 | Titular | Tarkowski | Everton | DEF | £6.1m | 5.43 | 6.0 | 3% | 14.95 | Ipswich Town (casa) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 5.26 | 8.0 | 4% | 17.11 | Coventry City (casa) | — |
+| Titular | Semenyo | Man City | MID | £8.4m | 5.04 | 8.0 | 8% | 15.11 | Sunderland (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 5.01 | 8.0 | 4% | 17.54 | Hull City (casa) | — |
-| Titular | Semenyo | Man City | MID | £8.4m | 5.0 | 8.0 | 7% | 15.01 | Sunderland (casa) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.9m | 4.73 | 10.0 | 12% | 18.91 | Fulham (fuera) | — |
 | Titular | Murillo | Nott'm Forest | DEF | £5.5m | 4.72 | 6.0 | 2% | 15.34 | Coventry City (casa) | — |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 4.45 | 8.0 | 5% | 12.22 | Ipswich Town (casa) | — |
+| Titular | Mbeumo | Man Utd | MID | £7.9m | 4.71 | 10.0 | 12% | 18.84 | Fulham (fuera) | — |
+| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 4.45 | 8.0 | 5% | 12.23 | Ipswich Town (casa) | — |
 | Titular | Pickford | Everton | GKP | £5.5m | 3.94 | 6.0 | 0% | 10.85 | Ipswich Town (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.16 | 2.0 | 0% | 4.26 | Aston Villa (casa) | — |
 | Banco 2 | Georginio | Brighton | FWD | £5.3m | 0.76 | 2.0 | 0% | 3.79 | Arsenal (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.75 | 2.0 | 0% | 3.26 | Leeds (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 2.28 | Man Utd (casa) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.63 | 2.0 | 2% | 1.89 | Crystal Palace (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 6.98 | 13.0 | 28% | 73.4% | Sunderland |
-| Guéhi | Man City | DEF | 5.5 | 9.0 | 8% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 15.9% | Coventry City |
-| Tarkowski | Everton | DEF | 5.43 | 6.0 | 3% | 14.8% | Ipswich Town |
+| Haaland | Man City | FWD | 6.98 | 13.0 | 28% | 73.5% | Sunderland |
+| Guéhi | Man City | DEF | 5.55 | 9.0 | 8% | 18.4% | Sunderland |
+| Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 15.8% | Coventry City |
+| Tarkowski | Everton | DEF | 5.43 | 6.0 | 3% | 15.1% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.26 | 8.0 | 4% | 9.0% | Coventry City |
-| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 39.7% | Fulham |
+| Semenyo | Man City | MID | 5.04 | 8.0 | 8% | 14.9% | Sunderland |
 | Thiaw | Newcastle | DEF | 5.01 | 8.0 | 4% | 2.2% | Hull City |
-| Semenyo | Man City | MID | 5.0 | 8.0 | 7% | 14.7% | Sunderland |
+| B.Fernandes | Man Utd | MID | 5.0 | 10.0 | 13% | 39.3% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -68,9 +68,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.72 | 6.0 | 2% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.45 | 8.0 | 5% | Ipswich Town |
 | Mykolenko | Everton | DEF | £4.6m | 4.2% | 4.45 | 6.0 | 0% | Ipswich Town |
-| Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
+| Enzo | Man City | MID | £6.9m | 3.5% | 4.39 | 8.0 | 9% | Sunderland |
 | Botman | Newcastle | DEF | £5.0m | 0.7% | 4.35 | 6.0 | 2% | Hull City |
-| Barry | Everton | FWD | £5.6m | 8.0% | 4.24 | 10.0 | 12% | Ipswich Town |
+| Barry | Everton | FWD | £5.6m | 8.1% | 4.24 | 10.0 | 12% | Ipswich Town |
 
 ## Movimientos ya ejecutados en GW5
 
