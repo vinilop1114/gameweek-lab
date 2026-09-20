@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-20 03:14 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-20 10:34 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 73.4% | Sunderland |
 | Guéhi | Man City | DEF | 5.89 | 9.0 | 9% | 18.5% | Sunderland |
-| Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 16.0% | Coventry City |
+| Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 15.9% | Coventry City |
 | Tarkowski | Everton | DEF | 5.44 | 6.0 | 3% | 14.5% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.27 | 8.0 | 4% | 9.1% | Coventry City |
 | Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 14.6% | Sunderland |
@@ -66,8 +66,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.1% | 5.27 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 5.02 | 8.0 | 4% | Hull City |
 | Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.72 | 6.0 | 2% | Coventry City |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.45 | 8.0 | 5% | Ipswich Town |
 | Mykolenko | Everton | DEF | £4.6m | 4.2% | 4.45 | 6.0 | 0% | Ipswich Town |
-| Dewsbury-Hall | Everton | MID | £6.6m | 6.2% | 4.45 | 8.0 | 5% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
 | Botman | Newcastle | DEF | £5.0m | 0.7% | 4.35 | 6.0 | 2% | Hull City |
 | Anderson | Man City | MID | £6.3m | 4.1% | 4.33 | 6.0 | 2% | Sunderland |
