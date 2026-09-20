@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-19 22:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-20 03:14 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -38,12 +38,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Semenyo | Man City | MID | £8.4m | 5.1 | 8.0 | 8% | 15.29 | Sunderland (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 5.02 | 8.0 | 4% | 17.55 | Hull City (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 4.73 | 10.0 | 12% | 18.92 | Fulham (fuera) | — |
-| Titular | Murillo | Nott'm Forest | DEF | £5.5m | 4.7 | 6.0 | 2% | 15.27 | Coventry City (casa) | — |
+| Titular | Murillo | Nott'm Forest | DEF | £5.5m | 4.72 | 6.0 | 2% | 15.35 | Coventry City (casa) | — |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 4.45 | 8.0 | 5% | 12.23 | Ipswich Town (casa) | — |
 | Titular | Pickford | Everton | GKP | £5.5m | 3.94 | 6.0 | 0% | 10.85 | Ipswich Town (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 1.16 | 2.0 | 0% | 4.26 | Aston Villa (casa) | — |
 | Banco 2 | Hughes | Crystal Palace | MID | £4.4m | 0.84 | 2.0 | 0% | 3.62 | Leeds (fuera) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.4m | 0.76 | 2.0 | 0% | 3.79 | Arsenal (casa) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.76 | 2.0 | 0% | 3.79 | Arsenal (casa) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.33 | 2.0 | 0% | 2.28 | Man Utd (casa) | — |
 
 ## Mejores opciones de capitanía
@@ -53,10 +53,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Haaland | Man City | FWD | 6.86 | 13.0 | 27% | 73.4% | Sunderland |
 | Guéhi | Man City | DEF | 5.89 | 9.0 | 9% | 18.5% | Sunderland |
 | Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 16.0% | Coventry City |
-| Tarkowski | Everton | DEF | 5.44 | 6.0 | 3% | 14.4% | Ipswich Town |
+| Tarkowski | Everton | DEF | 5.44 | 6.0 | 3% | 14.5% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.27 | 8.0 | 4% | 9.1% | Coventry City |
 | Semenyo | Man City | MID | 5.1 | 8.0 | 8% | 14.6% | Sunderland |
-| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 39.8% | Fulham |
+| B.Fernandes | Man Utd | MID | 5.05 | 10.0 | 13% | 39.7% | Fulham |
 | Thiaw | Newcastle | DEF | 5.02 | 8.0 | 4% | 2.2% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -65,7 +65,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | N.Williams | Nott'm Forest | DEF | £5.0m | 9.1% | 5.27 | 8.0 | 4% | Coventry City |
 | Thiaw | Newcastle | DEF | £5.0m | 2.2% | 5.02 | 8.0 | 4% | Hull City |
-| Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.7 | 6.0 | 2% | Coventry City |
+| Murillo | Nott'm Forest | DEF | £5.5m | 2.1% | 4.72 | 6.0 | 2% | Coventry City |
 | Mykolenko | Everton | DEF | £4.6m | 4.2% | 4.45 | 6.0 | 0% | Ipswich Town |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.2% | 4.45 | 8.0 | 5% | Ipswich Town |
 | Enzo | Man City | MID | £6.9m | 3.5% | 4.38 | 8.0 | 9% | Sunderland |
