@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-20 20:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-20 22:56 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -53,11 +53,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Haaland | Man City | FWD | 6.98 | 13.0 | 28% | 73.5% | Sunderland |
 | Guéhi | Man City | DEF | 5.55 | 9.0 | 8% | 18.4% | Sunderland |
 | Gibbs-White | Nott'm Forest | MID | 5.48 | 10.0 | 11% | 15.8% | Coventry City |
-| Tarkowski | Everton | DEF | 5.43 | 6.0 | 3% | 15.1% | Ipswich Town |
+| Tarkowski | Everton | DEF | 5.43 | 6.0 | 3% | 15.2% | Ipswich Town |
 | N.Williams | Nott'm Forest | DEF | 5.26 | 8.0 | 4% | 9.0% | Coventry City |
-| Semenyo | Man City | MID | 5.04 | 8.0 | 8% | 14.9% | Sunderland |
+| Semenyo | Man City | MID | 5.04 | 8.0 | 8% | 15.0% | Sunderland |
 | Thiaw | Newcastle | DEF | 5.01 | 8.0 | 4% | 2.2% | Hull City |
-| B.Fernandes | Man Utd | MID | 5.0 | 10.0 | 13% | 39.3% | Fulham |
+| B.Fernandes | Man Utd | MID | 5.0 | 10.0 | 13% | 39.2% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -78,28 +78,28 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Transferencias libres disponibles tras esa fecha: 1.
 
-## Repaso de GW4 (fecha cerrada)
+## Repaso de GW5 (fecha cerrada)
 
-Sesgo del modelo: -0.22 pts por jugador (sobrestimó en promedio). Error absoluto medio: 1.99 pts.
+Sesgo del modelo: +0.06 pts por jugador (subestimó en promedio). Error absoluto medio: 1.90 pts.
 
 Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | -0.64 | 162 |
-| FWD | +0.69 | 52 |
-| GKP | -0.93 | 55 |
-| MID | +0.07 | 215 |
+| DEF | -0.21 | 153 |
+| FWD | +0.57 | 46 |
+| GKP | -0.66 | 53 |
+| MID | +0.34 | 212 |
 
-Mejores puntajes reales de GW4:
+Mejores puntajes reales de GW5:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| Groß | Brighton | MID | 17 | 3.17 |
-| Bogle | Leeds | DEF | 15 | 5.31 |
-| Schade | Brentford | MID | 15 | 3.97 |
-| Raya | Arsenal | GKP | 14 | 4.04 |
-| Davis | Ipswich Town | DEF | 14 | 4.26 |
+| Semenyo | Man City | MID | 17 | 5.1 |
+| Brobbey | Sunderland | FWD | 17 | 0.79 |
+| Dasilva | Coventry City | DEF | 15 | 3.99 |
+| Groß | Brighton | MID | 14 | 1.79 |
+| Tarkowski | Everton | DEF | 14 | 5.29 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
