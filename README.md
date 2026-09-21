@@ -490,11 +490,18 @@ que "parece razonable".
 Dos pasos, gateados para no duplicar trabajo si el pipeline corre varias
 veces el mismo día:
 
-1. **`snapshot_predictions`**: antes de que se juegue cada fecha, graba
-   `xp_next` de cada jugador disponible en `data/processed/xp_calibration.csv`
-   (append, no se sobreescribe). Sin esto la proyección se pierde apenas
-   se refrescan los datos al día siguiente — `players_scored.csv` no
-   guarda historial, siempre muestra el estado actual.
+1. **`snapshot_predictions`**: graba `xp_next` de cada jugador
+   disponible en `data/processed/xp_calibration.csv`, y lo **refresca en
+   cada corrida hasta que pase el deadline**; después queda congelado.
+   Sin esto la proyección se pierde apenas se refrescan los datos al día
+   siguiente — `players_scored.csv` no guarda historial, siempre muestra
+   el estado actual.
+
+   Se refresca, y no se graba una sola vez, porque el modelo decide en
+   las últimas 3 horas antes del deadline: guardar la proyección de días
+   antes significaba calibrar contra un número que el sistema nunca usó.
+   También hacía que las fechas no fueran comparables — GW5 se grabó 4
+   días antes de su deadline y GW6, por el parate de selecciones, 19.
 2. **`record_actual_points`**: una vez que **todos los partidos de una
    fecha terminaron**, completa los puntos reales usando
    `/event/{id}/live/` — a diferencia de `event_points` en

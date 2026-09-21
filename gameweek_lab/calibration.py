@@ -5,10 +5,12 @@ vez de solo confiar en que la heurística "se siente bien".
 
 Dos pasos independientes, cada uno gateado para no duplicar trabajo:
 
-1. `snapshot_predictions()`: antes de que se juegue cada fecha, graba qué
-   proyectó el modelo para cada jugador. Sin esto la proyección se
-   pierde apenas se refrescan los datos al día siguiente —
-   `players_scored.csv` se sobreescribe, no guarda historial.
+1. `snapshot_predictions()`: graba qué proyecta el modelo para cada
+   jugador de la fecha que viene, y lo **refresca en cada corrida hasta
+   el deadline**. Sin esto la proyección se pierde apenas se refrescan
+   los datos al día siguiente — `players_scored.csv` se sobreescribe, no
+   guarda historial. Se refresca porque la decisión se toma sobre el
+   último dato previo al deadline, no sobre el de días antes.
 2. `record_actual_points()`: una vez que una fecha queda con resultados y
    bonus points ya asignados (todos sus partidos terminados),
    completa los puntos reales de esa fecha en el historial, usando
@@ -25,11 +27,13 @@ suficientes, es aparte.
 """
 
 import json
+from datetime import datetime, timezone
 
 import pandas as pd
 
 from gameweek_lab.config import DATA_PROCESSED_DIR, DATA_RAW_DIR
 from gameweek_lab.analysis import shadow_expected_points
+from gameweek_lab.build_dataset import get_deadline_for_gameweek
 from gameweek_lab.fetch import fetch_event_live
 
 CALIBRATION_PATH = DATA_PROCESSED_DIR / "xp_calibration.csv"
@@ -116,15 +120,46 @@ def _completed_gameweeks() -> set[int]:
 
 
 def snapshot_predictions(players: pd.DataFrame) -> str:
-    """Graba xp_next de cada jugador disponible para el próximo
-    gameweek. Una sola vez por fecha — si ya se grabó, no hace nada
-    (evita duplicar filas si el pipeline corre varias veces el mismo día).
+    """Graba la proyección de cada jugador disponible para el próximo
+    gameweek, **refrescándola en cada corrida hasta que pase el
+    deadline**. Después del deadline queda congelada.
+
+    Antes se grababa una sola vez, apenas `next_gameweek` cambiaba, y no
+    se volvía a tocar. Eso dejaba dos problemas:
+
+    1. **Se medía una predicción vieja, no la que el modelo usa.** Las
+       decisiones se toman en las últimas 3 horas antes del deadline (ver
+       `evolve_base_squad`); el snapshot se tomaba días antes. Se estaba
+       calibrando contra un número que el sistema nunca llegó a usar.
+    2. **Las fechas no eran comparables entre sí.** GW5 se grabó 4 días
+       antes de su deadline; GW6, por el parate de selecciones, se grabó
+       **19 días antes**. Medir las dos con la misma vara no tiene
+       sentido cuando una tuvo cinco veces más tiempo para desactualizarse.
+
+    Refrescar en cada corrida resuelve ambos y además es más robusto que
+    grabar solo dentro de la ventana del deadline: si una corrida falla,
+    queda la anterior en vez de perderse la fecha entera. Lo que se
+    conserva es siempre la última proyección **previa** al deadline, que
+    es exactamente la que el modelo va a usar para decidir.
+
+    Se congela en dos casos, y en ninguno se toca lo ya grabado: cuando
+    el deadline ya pasó (el equipo real está bloqueado, la predicción es
+    definitiva) y cuando la fecha ya tiene puntos reales cargados.
     """
     history = _load_history()
     next_gw = int(players["next_gameweek"].dropna().mode().iloc[0])
+    existing = history["gameweek"] == next_gw if not history.empty else pd.Series(dtype=bool)
 
-    if not history.empty and (history["gameweek"] == next_gw).any():
-        return f"GW{next_gw} ya tiene predicción grabada — sin cambios."
+    if existing.any():
+        if history.loc[existing, "actual_points"].notna().any():
+            return f"GW{next_gw} ya está cerrado con puntos reales — no se toca."
+        deadline = get_deadline_for_gameweek(next_gw)
+        if deadline is not None and datetime.now(timezone.utc) > deadline:
+            return f"GW{next_gw}: el deadline ya pasó — la predicción queda como estaba."
+        history = history[~existing]
+        accion = "actualizada"
+    else:
+        accion = "grabada"
 
     eligible = players[players["status"] == "a"].copy()
     snapshot = pd.DataFrame({
@@ -158,7 +193,7 @@ def snapshot_predictions(players: pd.DataFrame) -> str:
         snapshot[f"{name}_at_prediction"] = values.values
     history = pd.concat([history, snapshot], ignore_index=True)
     _save_history(history)
-    return f"GW{next_gw}: predicción grabada para {len(snapshot)} jugadores."
+    return f"GW{next_gw}: predicción {accion} para {len(snapshot)} jugadores."
 
 
 def record_actual_points() -> str:
