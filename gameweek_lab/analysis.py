@@ -524,8 +524,66 @@ def add_expected_points(players: pd.DataFrame) -> pd.DataFrame:
     # estadísticas igual proyecta bajo: no es que rinda mal, es que no
     # arranca seguido.
     players["start_rate"] = _start_rate(players).round(2)
-    players["xp_next"] = (base_rate * fixture_mult * _availability(players)).round(2)
+    # El motor propio sigue calculándose: alimenta el horizonte, el techo y
+    # la probabilidad de haul, y se mide fecha a fecha en la calibración.
+    # Lo que ya NO hace es ordenar las decisiones de la próxima fecha.
+    players["xp_model"] = (base_rate * fixture_mult * _availability(players)).round(2)
+    players["xp_next"] = _next_gameweek_ranking(players)
     return players
+
+
+def _next_gameweek_ranking(players: pd.DataFrame) -> pd.Series:
+    """`xp_next`: el número que ordena todo lo que decide sobre la PRÓXIMA
+    fecha — XI titular, capitanía, y el objetivo de los dos ILPs.
+
+    Desde septiembre 2026 es `ep_next`, la estimación que publica la propia
+    FPL, y no el motor de xP de este repo. La decisión salió de la
+    calibración con 5 fechas jugadas, no de una preferencia:
+
+    | Predictor | GW4 | GW5 | juntas (n=948) |
+    |---|---|---|---|
+    | ep_next | 0.611 | 0.640 | **0.625** |
+    | el motor propio | 0.328 | 0.381 | 0.353 |
+
+    Spearman contra los puntos reales, sobre las mismas filas. El margen
+    (+0.27) se repite casi idéntico en las dos fechas, así que no es una
+    fecha rara. Descomponiendo el motor propio entre los jugadores que sí
+    jugaron, **todo su poder de ordenamiento venía de `start_rate`**
+    (0.367); el componente de scoring —xG/xA, clean sheet, DEFCON— medía
+    0.036, o sea nada, y multiplicar la señal buena por él la degradaba.
+
+    Se barrió el peso de una mezcla entre ambos y la curva resultó
+    monótona hacia `ep_next` en las dos fechas: 0.353 con el modelo puro,
+    0.559 al 50%, 0.621 al 90%, 0.625 con `ep_next` solo. Agregar aunque
+    sea un 10% del motor propio **empeora** el orden. No hay un punto
+    intermedio que gane.
+
+    Lo único que superó a `ep_next` solo fue `ep_next × start_rate`
+    (0.634), consistente en ambas fechas y con una explicación mecánica
+    —`ep_next` parece no descontar del todo la rotación, que es justo lo
+    que el motor propio sí mide bien. Pero 0.009 de ventaja sobre dos
+    fechas entra cómodo en el ruido, así que queda como predictor sombra
+    hasta confirmarlo, en vez de adoptarse ya.
+
+    Solo se cae al motor propio si `ep_next` viene vacío. Un `ep_next` de
+    cero **se respeta**: FPL lo usa para marcar a quien no espera que
+    juegue, y esa es señal, no un hueco — parte de por qué ordena bien.
+
+    Dos costuras conocidas que esto abre:
+
+    - `xp_ceiling` y `haul_probability` se siguen construyendo desde la
+      distribución del motor propio, así que ya no son coherentes con
+      `xp_next`: un jugador puede tener `xp_next` alto y un techo
+      calculado sobre otra base. Se usan para capitanía con
+      `--stance chase` y para contenido, no para el orden principal.
+    - `xp_horizon` (4 fechas, lo que decide transferencias) sigue saliendo
+      del motor propio, porque `ep_next` solo existe para la próxima
+      fecha. **No hay medición del horizonte todavía**: el snapshot nunca
+      lo guardó. Se empezó a grabar ahora para poder responderlo; hasta
+      entonces, extrapolar el resultado de una fecha a cuatro sería
+      exactamente el salto que la calibración existe para evitar.
+    """
+    return players["ep_next"].fillna(players["xp_model"]).round(2)
 
 
 # Peso de la mezcla con la temporada anterior para la variante "fresca".
@@ -533,11 +591,11 @@ def add_expected_points(players: pd.DataFrame) -> pd.DataFrame:
 # GW4, con el jugador mediano en 270 minutos, el modelo actual le da 23%
 # de peso a esta temporada y esta variante le da 50%.
 SHADOW_BLEND_MINUTES = 270
-# Cuanto pesa `ep_next` en la variante mezclada. 0.5 es deliberadamente
-# el punto medio: la pregunta no es cual es el peso optimo (para eso
-# hacen falta muchas mas fechas) sino si mezclar le gana a cualquiera de
-# los dos por separado, que es lo que la tabla de ordenamiento contesta.
-SHADOW_EP_WEIGHT = 0.5
+# `xp_ep_blend` (mitad motor propio, mitad ep_next) se retiró al medirla:
+# quedó en 0.559 contra 0.625 de `ep_next` solo, peor en las dos fechas.
+# La mezcla resultó dominada y `ep_next` pasó a ser el modelo vigente
+# (ver _next_gameweek_ranking), así que seguir grabándola no contestaba
+# ninguna pregunta abierta.
 
 
 def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
@@ -558,23 +616,38 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
     antes de ajustar" que ya rige el resto del proyecto, aplicada a los
     candidatos y no solo al modelo vigente.
 
-    - **xp_fresh**: el mismo calculo con `SHADOW_BLEND_MINUTES` en vez de
-      `BASELINE_BLEND_MINUTES`. Prueba la hipotesis de que el problema es
+    - **xp_model**: el motor propio de este repo (xG/xA, clean sheet,
+      DEFCON, rotación). Era el modelo vigente hasta GW5; se sigue
+      midiendo porque es lo que habría que arreglar si alguna vez se
+      quiere dejar de depender de `ep_next`, y porque sin medirlo no hay
+      forma de saber si una mejora futura lo vuelve competitivo.
+    - **xp_fresh**: el motor propio con `SHADOW_BLEND_MINUTES` en vez de
+      `BASELINE_BLEND_MINUTES`. Prueba la hipótesis de que su problema es
       que las tasas por 90' siguen siendo ~77% del año pasado.
-    - **xp_ep_blend**: mitad modelo, mitad `ep_next` (la estimacion de la
-      propia FPL, que en GW4 ordeno mejor que todo lo demas: 0.611).
-      Prueba si conviene apoyarse en ella en vez de competirle.
+    - **ep_x_start_rate**: `ep_next` multiplicado por la tasa de
+      titularidad propia. Es el único candidato que le ganó a `ep_next`
+      solo (0.634 vs 0.625), consistente en GW4 y GW5, y con una
+      explicación mecánica: `ep_next` parece no descontar del todo la
+      rotación. La ventaja es chica para dos fechas, así que se mide en
+      vez de adoptarse.
+    - **ep_x_availability**: lo mismo pero por la disponibilidad completa
+      (rotación **y** lesión). Motivado por un caso concreto al adoptar
+      `ep_next`: João Pedro figuraba en duda con 75% de probabilidad de
+      jugar y aun así `ep_next` lo puso casi dos puntos por encima del
+      motor propio, que sí descuenta esa duda. Si `ep_next` ignora las
+      banderas de lesión, esta variante lo va a mostrar — y es el parche
+      más barato posible, porque la señal de lesión ya la tenemos.
     """
     fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
     availability = _availability(players)
 
     fresh = _base_scoring_rate(players, SHADOW_BLEND_MINUTES) * fixture_mult * availability
-    # `ep_next` viene vacio para algun jugador suelto; ahi la mezcla se
-    # queda con el modelo en vez de perder la fila.
-    ep_next = players["ep_next"].fillna(players["xp_next"])
-    ep_blend = (1 - SHADOW_EP_WEIGHT) * players["xp_next"] + SHADOW_EP_WEIGHT * ep_next
-
-    return {"xp_fresh": fresh.round(2), "xp_ep_blend": ep_blend.round(2)}
+    return {
+        "xp_model": players["xp_model"].round(2),
+        "xp_fresh": fresh.round(2),
+        "ep_x_start_rate": (players["xp_next"] * players["start_rate"]).round(2),
+        "ep_x_availability": (players["xp_next"] * availability).round(2),
+    }
 
 
 def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEWEEKS) -> pd.DataFrame:

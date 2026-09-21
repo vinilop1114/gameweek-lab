@@ -42,7 +42,30 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
 
 ## Cómo funciona el cálculo de xP
 
-`xp_next = base_rate × fixture_multiplier × playing_probability`
+**Desde GW6 (septiembre 2026), `xp_next` es `ep_next` — la estimación que
+publica la propia FPL — y no el motor de este repo.** No fue una
+preferencia: la calibración con 5 fechas midió Spearman 0.625 para
+`ep_next` contra 0.353 para el motor propio, sobre las mismas filas y con
+el mismo margen en las dos fechas. Descomponiendo el motor, **todo su
+poder de ordenamiento venía de `start_rate`** (0.367); el componente de
+scoring —xG/xA, clean sheet, DEFCON— medía 0.036, o sea nada, y
+multiplicar la señal buena por él la degradaba. Un barrido del peso de la
+mezcla dio una curva monótona hacia `ep_next`: agregar aunque sea un 10%
+del motor propio empeora el orden.
+
+`xp_next` ordena el XI titular, la capitanía y el objetivo de los dos
+ILPs. Lo que sigue describe el **motor propio**, que se calcula igual y
+se expone como `xp_model`: alimenta el horizonte a 4 fechas (que decide
+las transferencias), el techo y la probabilidad de haul, y se mide fecha
+a fecha como predictor sombra.
+
+Dos costuras que esto abre, documentadas a propósito: `xp_ceiling` ya no
+es coherente con `xp_next` (salen de fuentes distintas), y **el horizonte
+sigue sin medición** — `ep_next` solo existe para la próxima fecha, y el
+snapshot recién ahora empezó a guardar `xp_horizon` para poder
+responderlo.
+
+`xp_model = base_rate × fixture_multiplier × playing_probability`
 
 - **base_rate**: puntos esperados por 90 minutos, calculados desde
   estadísticas subyacentes — `expected_goals_per_90 × puntos_por_gol(posición)`

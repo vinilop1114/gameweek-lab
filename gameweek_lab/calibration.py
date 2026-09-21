@@ -37,7 +37,9 @@ CALIBRATION_COLUMNS = [
     "gameweek", "player_id", "web_name", "position", "team_name",
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
     "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
-    "xp_fresh_at_prediction", "xp_ep_blend_at_prediction",
+    "xp_horizon_at_prediction",
+    "xp_model_at_prediction", "xp_fresh_at_prediction",
+    "ep_x_start_rate_at_prediction", "ep_x_availability_at_prediction",
     "actual_points",
 ]
 # Predictores contra los que se compara el modelo, además de él mismo.
@@ -47,7 +49,11 @@ CALIBRATION_COLUMNS = [
 # natural; `points_per_game` es el predictor de una línea; y
 # `selected_by_percent` es el consenso del mercado.
 BASELINE_COLUMNS = {
-    "xp_predicted": "xp_next (el modelo)",
+    # `xp_predicted` es lo que el sistema usó EN ESA FECHA, no un modelo
+    # fijo: hasta GW5 fue el motor propio y desde GW6 es `ep_next` (ver
+    # _next_gameweek_ranking en analysis.py). Por eso el rótulo no nombra
+    # un modelo — nombrar uno haría que las fechas viejas mintieran.
+    "xp_predicted": "xp_next (lo que se usó esa fecha)",
     "ep_next_at_prediction": "ep_next (estimación de FPL)",
     "points_per_game_at_prediction": "points_per_game (temporada previa)",
     "selected_by_percent_at_prediction": "selected_by_percent (el mercado)",
@@ -56,8 +62,10 @@ BASELINE_COLUMNS = {
     # Variantes candidatas del propio modelo (ver shadow_expected_points en
     # analysis.py). No deciden nada: se miden al lado del modelo vigente
     # para que el ajuste de GW6 salga de datos y no de una apuesta.
-    "xp_fresh_at_prediction": "[sombra] xp con baseline corto",
-    "xp_ep_blend_at_prediction": "[sombra] xp mezclado con ep_next",
+    "xp_model_at_prediction": "[sombra] el motor propio (xG/xA/CS/DEFCON)",
+    "xp_fresh_at_prediction": "[sombra] motor propio con baseline corto",
+    "ep_x_start_rate_at_prediction": "[sombra] ep_next x start_rate",
+    "ep_x_availability_at_prediction": "[sombra] ep_next x disponibilidad",
 }
 # El umbral se cuenta en FECHAS, no en observaciones. Una fecha aporta
 # ~480 filas, pero no son 480 evidencias independientes: comparten los
@@ -135,6 +143,12 @@ def snapshot_predictions(players: pd.DataFrame) -> str:
         "points_per_game_at_prediction": eligible["points_per_game"],
         "ep_next_at_prediction": eligible["ep_next"],
         "start_rate_at_prediction": eligible["start_rate"],
+        # El horizonte a 4 fechas es lo que decide las TRANSFERENCIAS, y
+        # nunca se había grabado: por eso no hay forma de saber si ordena
+        # bien. Medirlo exige cruzarlo contra la suma de puntos reales de
+        # las 4 fechas siguientes, así que el dato tiene que empezar a
+        # acumularse antes de poder responder la pregunta.
+        "xp_horizon_at_prediction": eligible.get("xp_horizon"),
         "actual_points": pd.NA,
     })
     # Variantes candidatas: se graban junto a la prediccion real para poder
@@ -323,6 +337,12 @@ def _ranking_power_section(complete: pd.DataFrame) -> list[str]:
 
     covered = ", ".join(f"GW{int(gw)}" for gw in sorted(common["gameweek"].unique()))
     lines.append(f"Medido sobre {len(common)} filas con todos los predictores presentes ({covered}).")
+    lines.append(
+        "Ojo: `xp_next` cambió de motor en GW6. Hasta GW5 era el modelo propio de este "
+        "repo; desde GW6 es `ep_next`, porque ordenaba mucho mejor (0.625 vs 0.353). En "
+        "las fechas previas a GW6 las dos filas miden cosas distintas; desde GW6 miden lo "
+        "mismo y deberían coincidir."
+    )
     lines.append("")
 
     scores = []
@@ -335,7 +355,7 @@ def _ranking_power_section(complete: pd.DataFrame) -> list[str]:
 
     lines.append(f"{'Predictor':<38}{'Spearman':>10}")
     for label, score in sorted(scores, key=lambda item: item[1], reverse=True):
-        marker = "  <-- el modelo" if label.startswith("xp_next") else ""
+        marker = "  <-- lo que se usó" if label.startswith("xp_next") else ""
         lines.append(f"{label:<38}{score:>10.3f}{marker}")
 
     # El modelo tiene historia mas larga que los baselines. Se muestra

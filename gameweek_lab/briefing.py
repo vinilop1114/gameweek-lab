@@ -239,8 +239,14 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
         "",
         "## Cómo leer estos números",
         "",
-        f"- **xP**: puntos esperados del próximo gameweek. Ya descuenta rotación "
-        f"(qué tan seguido es titular) y lesión.",
+        "- **xP**: puntos esperados del próximo gameweek. Desde GW6 es `ep_next`, "
+        "la estimación que publica la propia FPL, y no el motor de este repo: medido "
+        "sobre GW4 y GW5 ordenaba mucho mejor (Spearman 0.625 contra 0.353), así que "
+        "se adoptó. Incluye bonus points, que el motor propio no modela. **Cuidado:** "
+        "no está claro que descuente del todo las lesiones reportadas, así que un "
+        "jugador en duda puede figurar más alto de lo que corresponde — chequear la "
+        "columna de estado antes de recomendarlo. El motor propio sigue disponible "
+        "como `xp_model` en `players_scored.csv`, para comparar.",
         f"- **Techo**: percentil 90 — \"en su 10% de mejores partidos saca al menos esto\". "
         "Para capitanía el promedio engaña: un arquero puede tener buen xP y 0% de haul.",
         "- **P(haul)**: probabilidad de hacer 10+ puntos. **Usar el orden, no el "
