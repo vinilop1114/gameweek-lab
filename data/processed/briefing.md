@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW5
 
-Generado automáticamente: 2026-09-20 22:56 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-21 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -16,7 +16,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Enzo | Man City | MID | £6.9m | 4.39 | 8.0 | 9% | 13.17 | Sunderland (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £5.8m | 4.31 | 8.0 | 8% | 18.67 | Brighton (fuera) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 3.85 | 9.0 | 10% | 11.56 | Crystal Palace (casa) | Penales |
-| Titular | Raya | Arsenal | GKP | £6.0m | 3.81 | 6.0 | 0% | 16.53 | Brighton (fuera) | — |
+| Titular | Raya | Arsenal | GKP | £6.1m | 3.81 | 6.0 | 0% | 16.53 | Brighton (fuera) | — |
 | Titular | Thiago | Brentford | FWD | £7.8m | 2.95 | 6.0 | 6% | 14.73 | Chelsea (casa) | Penales |
 | Titular | João Pedro | Chelsea | FWD | £7.8m | 2.57 | 6.0 | 6% | 10.27 | Brentford (fuera) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 0.92 | 2.0 | 0% | 11.01 | Man City (fuera) | — |
