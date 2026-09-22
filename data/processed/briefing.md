@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-22 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-22 10:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,10 +50,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 9.4 | 7.0 | 3% | 27.2% | Sunderland |
+| Groß | Brighton | MID | 9.4 | 7.0 | 3% | 27.4% | Sunderland |
 | Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.7% | Hull City |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.7% | Arsenal |
-| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.5% | Aston Villa |
+| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.6% | Aston Villa |
 | Haaland | Man City | FWD | 7.8 | 9.0 | 10% | 73.6% | Liverpool |
 | De Cuyper | Brighton | DEF | 7.6 | 8.0 | 5% | 27.1% | Sunderland |
 | Gvardiol | Man City | DEF | 7.4 | 6.0 | 2% | 26.5% | Liverpool |
@@ -69,8 +69,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Cunha | Man Utd | MID | £7.9m | 5.7% | 6.0 | 7.0 | 4% | Spurs |
 | Van Hecke | Spurs | DEF | £4.9m | 6.6% | 5.8 | 6.0 | 2% | Man Utd |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.0% | 5.8 | 6.0 | 2% | Nott'm Forest |
-| Barnes | Newcastle | MID | £6.1m | 5.3% | 5.6 | 8.0 | 6% | Coventry City |
-| Brobbey | Sunderland | FWD | £5.7m | 6.7% | 5.5 | 6.0 | 8% | Brighton |
+| Barnes | Newcastle | MID | £6.1m | 5.4% | 5.6 | 8.0 | 6% | Coventry City |
+| Brobbey | Sunderland | FWD | £5.7m | 6.8% | 5.5 | 6.0 | 8% | Brighton |
 
 ## Transferencia propuesta para esta fecha
 
