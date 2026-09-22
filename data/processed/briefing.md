@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-22 20:50 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-22 23:27 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,8 +50,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 27.6% | Sunderland |
-| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.8% | Hull City |
+| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 27.7% | Sunderland |
+| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.9% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.8% | Arsenal |
 | Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.7% | Aston Villa |
