@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-21 21:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-22 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,13 +8,13 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | B.Fernandes | Man Utd | MID | £12.0m | 7.2 | 10.0 | 13% | 18.32 | Spurs (casa) | Penales, Tiros libres, Córners |
+| **Capitán** | B.Fernandes | Man Utd | MID | £11.9m | 7.2 | 10.0 | 13% | 18.32 | Spurs (casa) | Penales, Tiros libres, Córners |
 | Vice | Gibbs-White | Nott'm Forest | MID | £8.0m | 6.5 | 8.0 | 7% | 16.45 | Crystal Palace (fuera) | Penales, Tiros libres |
 | Titular | Raya | Arsenal | GKP | £6.1m | 6.0 | 6.0 | 0% | 15.26 | Leeds (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 5.8 | 10.0 | 12% | 17.27 | Spurs (casa) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 5.2 | 6.0 | 1% | 11.56 | Arsenal (fuera) | Penales |
 | Titular | Calafiori | Arsenal | DEF | £5.8m | 5.0 | 12.0 | 12% | 17.23 | Leeds (casa) | — |
-| Titular | João Pedro | Chelsea | FWD | £7.8m | 4.9 | 6.0 | 6% | 9.42 | Bournemouth (casa) | — |
+| Titular | João Pedro | Chelsea | FWD | £7.7m | 4.9 | 6.0 | 6% | 9.42 | Bournemouth (casa) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 4.2 | 6.0 | 2% | 15.79 | Crystal Palace (fuera) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.0 | 9.0 | 10% | 19.12 | Brighton (casa) | Córners |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 2.8 | 8.0 | 4% | 16.29 | Coventry City (fuera) | — |
@@ -33,29 +33,29 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | **Capitán** | Groß | Brighton | MID | £5.8m | 9.4 | 7.0 | 3% | 8.3 | Sunderland (fuera) | Penales, Tiros libres, Córners |
 | Vice | Tarkowski | Everton | DEF | £6.1m | 9.2 | 6.0 | 3% | 13.59 | Hull City (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.6m | 9.0 | 6.0 | 1% | 12.46 | Arsenal (fuera) | — |
-| Titular | Schade | Brentford | MID | £6.1m | 9.0 | 7.0 | 3% | 14.81 | Aston Villa (fuera) | — |
+| Titular | Schade | Brentford | MID | £6.2m | 9.0 | 7.0 | 3% | 14.81 | Aston Villa (fuera) | — |
 | Titular | Haaland | Man City | FWD | £15.6m | 7.8 | 9.0 | 10% | 20.94 | Liverpool (fuera) | Penales |
 | Titular | De Cuyper | Brighton | DEF | £4.9m | 7.6 | 8.0 | 5% | 9.95 | Sunderland (fuera) | — |
 | Titular | Gvardiol | Man City | DEF | £5.7m | 7.4 | 6.0 | 2% | 12.56 | Liverpool (fuera) | — |
-| Titular | B.Fernandes | Man Utd | MID | £12.0m | 7.2 | 10.0 | 13% | 18.32 | Spurs (casa) | Penales, Tiros libres, Córners |
+| Titular | B.Fernandes | Man Utd | MID | £11.9m | 7.2 | 10.0 | 13% | 18.32 | Spurs (casa) | Penales, Tiros libres, Córners |
 | Titular | Cherki | Man City | MID | £7.8m | 6.8 | 7.0 | 3% | 12.28 | Liverpool (fuera) | Tiros libres, Córners |
-| Titular | Hall | Newcastle | DEF | £5.2m | 6.2 | 6.0 | 2% | 14.05 | Coventry City (fuera) | Tiros libres, Córners |
+| Titular | Hall | Newcastle | DEF | £5.3m | 6.2 | 6.0 | 2% | 14.05 | Coventry City (fuera) | Tiros libres, Córners |
 | Titular | Raya | Arsenal | GKP | £6.1m | 6.0 | 6.0 | 0% | 15.26 | Leeds (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.26 | Man Utd (fuera) | — |
-| Banco 2 | Nmecha | Leeds | FWD | £5.4m | 1.8 | 2.0 | 0% | 1.89 | Arsenal (fuera) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.3m | 1.2 | 5.0 | 0% | 3.41 | Sunderland (fuera) | — |
+| Banco 2 | Georginio | Brighton | FWD | £5.3m | 1.2 | 5.0 | 0% | 3.41 | Sunderland (fuera) | — |
+| Banco 3 | Muniz | Fulham | FWD | £5.4m | 0.6 | 2.0 | 1% | 2.05 | Ipswich Town (fuera) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.4m | 0.5 | 2.0 | 0% | 3.26 | Nott'm Forest (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 9.4 | 7.0 | 3% | 27.1% | Sunderland |
-| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.6% | Hull City |
+| Groß | Brighton | MID | 9.4 | 7.0 | 3% | 27.2% | Sunderland |
+| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.7% | Hull City |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.7% | Arsenal |
-| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.4% | Aston Villa |
+| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.5% | Aston Villa |
 | Haaland | Man City | FWD | 7.8 | 9.0 | 10% | 73.6% | Liverpool |
-| De Cuyper | Brighton | DEF | 7.6 | 8.0 | 5% | 27.0% | Sunderland |
+| De Cuyper | Brighton | DEF | 7.6 | 8.0 | 5% | 27.1% | Sunderland |
 | Gvardiol | Man City | DEF | 7.4 | 6.0 | 2% | 26.5% | Liverpool |
 | B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.8% | Spurs |
 
