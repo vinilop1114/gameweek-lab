@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-23 16:02 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-23 21:02 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -14,13 +14,13 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 5.8 | 10.0 | 12% | 17.27 | Spurs (casa) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 5.2 | 6.0 | 1% | 11.56 | Arsenal (fuera) | Penales |
 | Titular | Calafiori | Arsenal | DEF | £5.8m | 5.0 | 12.0 | 12% | 17.23 | Leeds (casa) | — |
-| Titular | João Pedro | Chelsea | FWD | £7.7m | 4.9 | 6.0 | 6% | 9.42 | Bournemouth (casa) | — |
 | Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 4.2 | 6.0 | 2% | 15.79 | Crystal Palace (fuera) | — |
+| Titular | João Pedro | Chelsea | FWD | £7.7m | 4.1 | 6.0 | 6% | 9.42 | Bournemouth (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.0 | 9.0 | 10% | 19.12 | Brighton (casa) | Córners |
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 3.2 | 6.0 | 1% | 8.93 | Sunderland (fuera) | — |
-| Titular | Thiaw | Newcastle | DEF | £5.0m | 2.8 | 8.0 | 4% | 16.29 | Coventry City (fuera) | — |
+| Titular | Enzo | Man City | MID | £6.9m | 3.0 | 7.0 | 3% | 13.17 | Liverpool (fuera) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 2.5 | 6.0 | 0% | 13.76 | Brighton (casa) | — |
-| Banco 2 | Enzo | Man City | MID | £6.9m | 2.6 | 7.0 | 3% | 13.17 | Liverpool (fuera) | — |
+| Banco 2 | Thiaw | Newcastle | DEF | £5.0m | 2.8 | 8.0 | 4% | 16.29 | Coventry City (fuera) | — |
 | Banco 3 | Thiago | Brentford | FWD | £7.8m | 2.5 | 6.0 | 6% | 16.2 | Aston Villa (fuera) | Penales |
 | Banco 4 | Hume | Sunderland | DEF | £4.3m | 2.0 | 6.0 | 2% | 12.12 | Brighton (casa) | — |
 
@@ -35,8 +35,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Haaland | Man City | FWD | £15.6m | 9.2 | 9.0 | 10% | 20.94 | Liverpool (fuera) | Penales |
 | Titular | Bogle | Leeds | DEF | £4.6m | 9.0 | 6.0 | 1% | 12.46 | Arsenal (fuera) | — |
 | Titular | Schade | Brentford | MID | £6.2m | 9.0 | 7.0 | 3% | 14.81 | Aston Villa (fuera) | — |
-| Titular | Isak | Liverpool | FWD | £9.1m | 7.8 | 6.0 | 2% | 8.75 | Man City (casa) | — |
 | Titular | Semenyo | Man City | MID | £8.4m | 7.8 | 7.0 | 2% | 15.11 | Liverpool (fuera) | — |
+| Titular | Isak | Liverpool | FWD | £9.1m | 7.8 | 6.0 | 2% | 8.75 | Man City (casa) | — |
 | Titular | Gvardiol | Man City | DEF | £5.7m | 7.0 | 6.0 | 2% | 12.56 | Liverpool (fuera) | — |
 | Titular | Hall | Newcastle | DEF | £5.3m | 7.0 | 6.0 | 2% | 14.05 | Coventry City (fuera) | Tiros libres, Córners |
 | Titular | Scott | Bournemouth | MID | £6.1m | 7.0 | 5.0 | 1% | 12.83 | Chelsea (fuera) | — |
@@ -50,14 +50,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 27.9% | Sunderland |
-| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.9% | Hull City |
+| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 28.0% | Sunderland |
+| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 16.0% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.9% | Arsenal |
 | Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.9% | Aston Villa |
-| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.5% | Liverpool |
 | Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.4% | Man City |
-| B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.7% | Spurs |
+| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.5% | Liverpool |
+| B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.6% | Spurs |
 
 ## Diferenciales (propiedad ≤ 10%)
 
