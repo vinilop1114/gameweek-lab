@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-23 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-23 10:43 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,22 +50,22 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 27.7% | Sunderland |
+| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 27.8% | Sunderland |
 | Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 15.9% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
-| Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.8% | Arsenal |
-| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.7% | Aston Villa |
-| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.4% | Liverpool |
-| Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.3% | Man City |
+| Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.9% | Arsenal |
+| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.8% | Aston Villa |
+| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.5% | Liverpool |
+| Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.4% | Man City |
 | B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.7% | Spurs |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.6m | 6.8% | 9.0 | 6.0 | 1% | Arsenal |
+| Bogle | Leeds | DEF | £4.6m | 6.9% | 9.0 | 6.0 | 1% | Arsenal |
 | Scott | Bournemouth | MID | £6.1m | 5.7% | 7.0 | 5.0 | 1% | Chelsea |
-| Barnes | Newcastle | MID | £6.1m | 5.4% | 6.5 | 8.0 | 6% | Coventry City |
+| Barnes | Newcastle | MID | £6.1m | 5.5% | 6.5 | 8.0 | 6% | Coventry City |
 | A.Becker | Liverpool | GKP | £5.5m | 3.9% | 6.2 | 6.0 | 0% | Man City |
 | Cunha | Man Utd | MID | £7.9m | 5.7% | 6.0 | 7.0 | 4% | Spurs |
 | Van Hecke | Spurs | DEF | £4.9m | 6.6% | 5.8 | 6.0 | 2% | Man Utd |
