@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-24 03:00 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-24 11:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -35,8 +35,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Haaland | Man City | FWD | £15.6m | 9.2 | 9.0 | 10% | 20.94 | Liverpool (fuera) | Penales |
 | Titular | Bogle | Leeds | DEF | £4.6m | 9.0 | 6.0 | 1% | 12.46 | Arsenal (fuera) | — |
 | Titular | Schade | Brentford | MID | £6.2m | 9.0 | 7.0 | 3% | 14.81 | Aston Villa (fuera) | — |
-| Titular | Semenyo | Man City | MID | £8.4m | 7.8 | 7.0 | 2% | 15.11 | Liverpool (fuera) | — |
 | Titular | Isak | Liverpool | FWD | £9.1m | 7.8 | 6.0 | 2% | 8.75 | Man City (casa) | — |
+| Titular | Semenyo | Man City | MID | £8.4m | 7.8 | 7.0 | 2% | 15.11 | Liverpool (fuera) | — |
 | Titular | Gvardiol | Man City | DEF | £5.7m | 7.0 | 6.0 | 2% | 12.56 | Liverpool (fuera) | — |
 | Titular | Hall | Newcastle | DEF | £5.3m | 7.0 | 6.0 | 2% | 14.05 | Coventry City (fuera) | Tiros libres, Córners |
 | Titular | Scott | Bournemouth | MID | £6.1m | 7.0 | 5.0 | 1% | 12.83 | Chelsea (fuera) | — |
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 28.0% | Sunderland |
+| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 28.1% | Sunderland |
 | Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 16.0% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.9% | Arsenal |
-| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 10.9% | Aston Villa |
+| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 11.0% | Aston Villa |
+| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.6% | Liverpool |
 | Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.4% | Man City |
-| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.5% | Liverpool |
 | B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.6% | Spurs |
 
 ## Diferenciales (propiedad ≤ 10%)
