@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-24 11:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-24 16:26 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -36,11 +36,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Bogle | Leeds | DEF | £4.6m | 9.0 | 6.0 | 1% | 12.46 | Arsenal (fuera) | — |
 | Titular | Schade | Brentford | MID | £6.2m | 9.0 | 7.0 | 3% | 14.81 | Aston Villa (fuera) | — |
 | Titular | Isak | Liverpool | FWD | £9.1m | 7.8 | 6.0 | 2% | 8.75 | Man City (casa) | — |
-| Titular | Semenyo | Man City | MID | £8.4m | 7.8 | 7.0 | 2% | 15.11 | Liverpool (fuera) | — |
+| Titular | B.Fernandes | Man Utd | MID | £11.9m | 7.2 | 10.0 | 13% | 18.32 | Spurs (casa) | Penales, Tiros libres, Córners |
 | Titular | Gvardiol | Man City | DEF | £5.7m | 7.0 | 6.0 | 2% | 12.56 | Liverpool (fuera) | — |
 | Titular | Hall | Newcastle | DEF | £5.3m | 7.0 | 6.0 | 2% | 14.05 | Coventry City (fuera) | Tiros libres, Córners |
 | Titular | Scott | Bournemouth | MID | £6.1m | 7.0 | 5.0 | 1% | 12.83 | Chelsea (fuera) | — |
-| Titular | Raya | Arsenal | GKP | £6.1m | 6.0 | 6.0 | 0% | 15.26 | Leeds (casa) | — |
+| Titular | A.Becker | Liverpool | GKP | £5.5m | 6.2 | 6.0 | 0% | 10.02 | Man City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.26 | Man Utd (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 2.5 | 6.0 | 2% | 9.31 | Fulham (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.5 | 2.0 | 0% | 3.26 | Nott'm Forest (casa) | — |
@@ -50,27 +50,27 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 28.1% | Sunderland |
-| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 16.0% | Hull City |
+| Groß | Brighton | MID | 11.2 | 7.0 | 3% | 28.2% | Sunderland |
+| Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 16.1% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
-| Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 6.9% | Arsenal |
+| Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 7.0% | Arsenal |
 | Schade | Brentford | MID | 9.0 | 7.0 | 3% | 11.0% | Aston Villa |
-| Semenyo | Man City | MID | 7.8 | 7.0 | 2% | 15.6% | Liverpool |
 | Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.4% | Man City |
 | B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.6% | Spurs |
+| Scott | Bournemouth | MID | 7.0 | 5.0 | 1% | 5.7% | Chelsea |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.6m | 6.9% | 9.0 | 6.0 | 1% | Arsenal |
+| Bogle | Leeds | DEF | £4.6m | 7.0% | 9.0 | 6.0 | 1% | Arsenal |
 | Scott | Bournemouth | MID | £6.1m | 5.7% | 7.0 | 5.0 | 1% | Chelsea |
 | Barnes | Newcastle | MID | £6.1m | 5.5% | 6.5 | 8.0 | 6% | Coventry City |
 | A.Becker | Liverpool | GKP | £5.5m | 4.0% | 6.2 | 6.0 | 0% | Man City |
 | Cunha | Man Utd | MID | £7.9m | 5.7% | 6.0 | 7.0 | 4% | Spurs |
 | Van Hecke | Spurs | DEF | £4.9m | 6.6% | 5.8 | 6.0 | 2% | Man Utd |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.0% | 5.8 | 6.0 | 2% | Nott'm Forest |
-| Brobbey | Sunderland | FWD | £5.7m | 7.0% | 5.5 | 6.0 | 8% | Brighton |
+| Brobbey | Sunderland | FWD | £5.7m | 7.1% | 5.5 | 6.0 | 8% | Brighton |
 
 ## Transferencia propuesta para esta fecha
 
