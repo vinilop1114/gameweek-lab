@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-09-24 21:06 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-09-25 03:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -54,7 +54,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Tarkowski | Everton | DEF | 9.2 | 6.0 | 3% | 16.1% | Hull City |
 | Haaland | Man City | FWD | 9.2 | 9.0 | 10% | 73.7% | Liverpool |
 | Bogle | Leeds | DEF | 9.0 | 6.0 | 1% | 7.0% | Arsenal |
-| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 11.0% | Aston Villa |
+| Schade | Brentford | MID | 9.0 | 7.0 | 3% | 11.1% | Aston Villa |
 | Isak | Liverpool | FWD | 7.8 | 6.0 | 2% | 22.4% | Man City |
 | B.Fernandes | Man Utd | MID | 7.2 | 10.0 | 13% | 38.6% | Spurs |
 | Scott | Bournemouth | MID | 7.0 | 5.0 | 1% | 5.7% | Chelsea |
@@ -70,7 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Cunha | Man Utd | MID | £7.9m | 5.7% | 6.0 | 7.0 | 4% | Spurs |
 | Van Hecke | Spurs | DEF | £4.9m | 6.6% | 5.8 | 6.0 | 2% | Man Utd |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.0% | 5.8 | 6.0 | 2% | Nott'm Forest |
-| Brobbey | Sunderland | FWD | £5.7m | 7.1% | 5.5 | 6.0 | 8% | Brighton |
+| Mykolenko | Everton | DEF | £4.6m | 4.2% | 5.2 | 6.0 | 0% | Hull City |
 
 ## Transferencia propuesta para esta fecha
 
