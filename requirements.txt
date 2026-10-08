@@ -1,3 +1,21 @@
-requests
-pandas
-pulp
+# Versiones FIJAS a propósito. Este pipeline corre solo, cada 3 horas, sin
+# tests que atajen una regresión: si `pip install` trae lo último que haya
+# publicado ese día, cualquier release puede romperlo sin que nadie haya
+# tocado el código.
+#
+# Pasó exactamente eso: PuLP 4.0.0 (octubre 2026) es una reescritura con
+# núcleo en Rust que eliminó `LpVariable(..., cat="Binary")` — las
+# variables ahora pertenecen al problema. El Action falló durante dos
+# semanas con `TypeError: LpVariable.__init__() got an unexpected keyword
+# argument 'cat'`, mientras en local seguía funcionando con pulp 3.3.2 ya
+# instalado. Nada en el repo había cambiado.
+#
+# Para subir una versión: cambiarla acá, correr el pipeline completo en un
+# venv limpio (run_fetch -> export_for_tableau -> run_trajectory_preview
+# -> run_calibration) y recién entonces commitear.
+requests==2.34.2
+pandas==3.0.3
+pulp==3.3.2
+# numpy entra como dependencia de pandas, pero `analysis.py` la importa
+# directo (la Poisson vectorizada), así que se fija explícitamente.
+numpy==2.5.1
