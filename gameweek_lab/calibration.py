@@ -43,6 +43,7 @@ CALIBRATION_COLUMNS = [
     "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
     "xp_horizon_at_prediction",
     "xp_model_at_prediction", "xp_fresh_at_prediction",
+    "ppg_shrunk_at_prediction", "ep_x_fixture_at_prediction",
     "ep_x_start_rate_at_prediction", "ep_x_availability_at_prediction",
     "actual_points",
 ]
@@ -54,12 +55,16 @@ CALIBRATION_COLUMNS = [
 # `selected_by_percent` es el consenso del mercado.
 BASELINE_COLUMNS = {
     # `xp_predicted` es lo que el sistema usó EN ESA FECHA, no un modelo
-    # fijo: hasta GW5 fue el motor propio y desde GW6 es `ep_next` (ver
+    # fijo: hasta GW5 fue el motor propio, en GW6 brevemente `ep_next`, y
+    # desde GW6 es `points_per_game × disponibilidad × fixture` (ver
     # _next_gameweek_ranking en analysis.py). Por eso el rótulo no nombra
     # un modelo — nombrar uno haría que las fechas viejas mintieran.
     "xp_predicted": "xp_next (lo que se usó esa fecha)",
     "ep_next_at_prediction": "ep_next (estimación de FPL)",
-    "points_per_game_at_prediction": "points_per_game (temporada previa)",
+    # `points_per_game` es de la temporada EN CURSO (FPL lo resetea), y
+    # desde GW6 es la base del modelo vigente — acá aparece crudo, sin el
+    # ajuste por disponibilidad ni por calendario que el modelo le aplica.
+    "points_per_game_at_prediction": "points_per_game (crudo, sin ajustes)",
     "selected_by_percent_at_prediction": "selected_by_percent (el mercado)",
     "start_rate_at_prediction": "start_rate (solo titularidad)",
     "now_cost_at_prediction": "now_cost (solo precio)",
@@ -68,6 +73,8 @@ BASELINE_COLUMNS = {
     # para que el ajuste de GW6 salga de datos y no de una apuesta.
     "xp_model_at_prediction": "[sombra] el motor propio (xG/xA/CS/DEFCON)",
     "xp_fresh_at_prediction": "[sombra] motor propio con baseline corto",
+    "ppg_shrunk_at_prediction": "[sombra] el vigente, con ppg suavizado",
+    "ep_x_fixture_at_prediction": "[sombra] ep_next x dificultad del rival",
     "ep_x_start_rate_at_prediction": "[sombra] ep_next x start_rate",
     "ep_x_availability_at_prediction": "[sombra] ep_next x disponibilidad",
 }

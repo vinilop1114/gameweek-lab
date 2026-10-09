@@ -42,16 +42,38 @@ my_team.example.csv       # plantilla de referencia (formato del archivo)
 
 ## Cómo funciona el cálculo de xP
 
-**Desde GW6 (septiembre 2026), `xp_next` es `ep_next` — la estimación que
-publica la propia FPL — y no el motor de este repo.** No fue una
-preferencia: la calibración con 5 fechas midió Spearman 0.625 para
-`ep_next` contra 0.353 para el motor propio, sobre las mismas filas y con
-el mismo margen en las dos fechas. Descomponiendo el motor, **todo su
-poder de ordenamiento venía de `start_rate`** (0.367); el componente de
-scoring —xG/xA, clean sheet, DEFCON— medía 0.036, o sea nada, y
-multiplicar la señal buena por él la degradaba. Un barrido del peso de la
-mezcla dio una curva monótona hacia `ep_next`: agregar aunque sea un 10%
-del motor propio empeora el orden.
+**Desde GW6, `xp_next = points_per_game × disponibilidad ×
+fixture_multiplier`**, y no el motor de este repo. Hubo dos cambios en
+tres días y cada uno salió de una medición o de un defecto encontrado:
+
+El motor propio midió Spearman **0.353** contra puntos reales, último
+entre todos los predictores guardados. Descompuesto entre quienes
+jugaron, **todo su poder de ordenamiento venía de `start_rate`** (0.367);
+el componente de scoring —xG/xA, clean sheet, DEFCON— medía 0.036, o sea
+nada. Se adoptó `ep_next` (0.625) en su lugar.
+
+Días después, revisando el briefing, apareció **qué es `ep_next` en
+realidad: es `form`** — coincide exacto en el 93.6% de los jugadores, y
+los 43 que difieren son justo los lesionados o dudosos. O sea el promedio
+de los últimos 30 días, sin ninguna noción del rival (su correlación con
+la dificultad del fixture es +0.17, cuando debería ser negativa). Eso lo
+rompe de dos formas: **se degenera tras un parate** —con tres semanas sin
+fútbol la ventana contiene uno o dos partidos, y Groß llegó al deadline
+de GW6 proyectando 15.5 porque eso fue lo que hizo en su último partido—
+y **no ve el calendario**, así que un defensa del Leeds proyectaba 10.0
+visitando al Arsenal.
+
+`points_per_game` es la misma familia de señal pero promediada sobre toda
+la temporada, así que el parate no la deforma. Y no es un downgrade
+medible: 0.605 contra 0.625, una diferencia que entra cómoda en el ruido
+de dos fechas. El multiplicador de fixture es el componente que a las dos
+les falta, y corrige los casos como Bogle (10.0 → 2.6).
+
+**Debilidad conocida de este cambio:** `points_per_game` no tiene ningún
+suavizado, mientras el motor propio sí lo tenía. Con 5 fechas jugadas, un
+arranque caliente pesa entero — Tarkowski llegó a GW6 como mejor capitán
+con un promedio de 8.6 sin ninguna regresión a la media. Se mide como
+sombra (`ppg_shrunk`).
 
 `xp_next` ordena el XI titular, la capitanía y el objetivo de los dos
 ILPs. Lo que sigue describe el **motor propio**, que se calcula igual y
@@ -59,11 +81,18 @@ se expone como `xp_model`: alimenta el horizonte a 4 fechas (que decide
 las transferencias), el techo y la probabilidad de haul, y se mide fecha
 a fecha como predictor sombra.
 
-Dos costuras que esto abre, documentadas a propósito: `xp_ceiling` ya no
-es coherente con `xp_next` (salen de fuentes distintas), y **el horizonte
-sigue sin medición** — `ep_next` solo existe para la próxima fecha, y el
-snapshot recién ahora empezó a guardar `xp_horizon` para poder
-responderlo.
+Dos costuras que esto abre, documentadas a propósito:
+
+- **`xp_ceiling` no es comparable con `xp_next`**: sale de la
+  distribución del motor propio, así que hay filas donde el percentil 90
+  queda por debajo del promedio, lo cual es imposible. Lo detectó una
+  revisión externa del briefing, con razón. Afecta a 6 de los 45
+  jugadores con xP > 4 (eran 37 de 75 cuando el xP venía de `ep_next`).
+  Mientras las escalas no se unifiquen, el briefing publica esas celdas
+  como "—" en vez de un número que se contradice con el de al lado.
+- **El horizonte sigue sin medición** — es lo que decide las
+  transferencias, y el snapshot recién empezó a guardar `xp_horizon` en
+  GW6 para poder responderlo.
 
 `xp_model = base_rate × fixture_multiplier × playing_probability`
 

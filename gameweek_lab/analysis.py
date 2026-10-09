@@ -536,54 +536,75 @@ def _next_gameweek_ranking(players: pd.DataFrame) -> pd.Series:
     """`xp_next`: el número que ordena todo lo que decide sobre la PRÓXIMA
     fecha — XI titular, capitanía, y el objetivo de los dos ILPs.
 
-    Desde septiembre 2026 es `ep_next`, la estimación que publica la propia
-    FPL, y no el motor de xP de este repo. La decisión salió de la
-    calibración con 5 fechas jugadas, no de una preferencia:
+    `points_per_game × disponibilidad × fixture_multiplier`.
 
-    | Predictor | GW4 | GW5 | juntas (n=948) |
-    |---|---|---|---|
-    | ep_next | 0.611 | 0.640 | **0.625** |
-    | el motor propio | 0.328 | 0.381 | 0.353 |
+    Tres fuentes distintas en tres meses, y cada cambio salió de una
+    medición o de un defecto encontrado, no de una preferencia:
 
-    Spearman contra los puntos reales, sobre las mismas filas. El margen
-    (+0.27) se repite casi idéntico en las dos fechas, así que no es una
-    fecha rara. Descomponiendo el motor propio entre los jugadores que sí
-    jugaron, **todo su poder de ordenamiento venía de `start_rate`**
-    (0.367); el componente de scoring —xG/xA, clean sheet, DEFCON— medía
-    0.036, o sea nada, y multiplicar la señal buena por él la degradaba.
+    1. Hasta GW5, el motor propio de este repo (xG/xA, clean sheet,
+       DEFCON). La calibración lo midió en Spearman 0.353 contra puntos
+       reales, último entre todos los predictores guardados. Descompuesto
+       entre quienes jugaron, **todo su poder de ordenamiento venía de
+       `start_rate`** (0.367); el componente de scoring medía 0.036.
+    2. En GW6 se adoptó `ep_next`, que midió 0.625 sobre GW4-GW5.
+    3. En GW6, antes del deadline, se descubrió **qué es `ep_next` en
+       realidad** y se reemplazó por esto.
 
-    Se barrió el peso de una mezcla entre ambos y la curva resultó
-    monótona hacia `ep_next` en las dos fechas: 0.353 con el modelo puro,
-    0.559 al 50%, 0.621 al 90%, 0.625 con `ep_next` solo. Agregar aunque
-    sea un 10% del motor propio **empeora** el orden. No hay un punto
-    intermedio que gane.
+    **`ep_next` es `form`.** Coincide exactamente en el 93.6% de los
+    jugadores, y los 43 que difieren son justo los lesionados o en duda
+    (Rice 2.6 vs 3.5 de form, Havertz 1.1 vs 1.5). O sea: el promedio de
+    puntos de los últimos 30 días, descontado por disponibilidad y **sin
+    ninguna noción del rival** — su correlación con la dificultad del
+    fixture es +0.17, cuando debería ser negativa.
 
-    Lo único que superó a `ep_next` solo fue `ep_next × start_rate`
-    (0.634), consistente en ambas fechas y con una explicación mecánica
-    —`ep_next` parece no descontar del todo la rotación, que es justo lo
-    que el motor propio sí mide bien. Pero 0.009 de ventaja sobre dos
-    fechas entra cómodo en el ruido, así que queda como predictor sombra
-    hasta confirmarlo, en vez de adoptarse ya.
+    Eso lo rompe de dos formas:
 
-    Solo se cae al motor propio si `ep_next` viene vacío. Un `ep_next` de
-    cero **se respeta**: FPL lo usa para marcar a quien no espera que
-    juegue, y esa es señal, no un hueco — parte de por qué ordena bien.
+    - **Se degenera tras un parate.** Con tres semanas sin fútbol, la
+      ventana de 30 días contiene uno o dos partidos. Groß metió 15.5 en
+      su último partido, así que llegó al deadline de GW6 proyectando
+      15.5 — no una estimación, un resultado puntual. Medido: GW4 y GW5
+      tenían desvío 2.04 y máximo ~9.3; GW6 llegó a desvío 2.39 y máximo
+      15.5, con la misma media. La cola derecha reventada.
+    - **No ve el calendario.** Bogle, defensa del Leeds, proyectaba 10.0
+      visitando al Arsenal (dificultad 5). El número no sabe contra quién
+      juega.
 
-    Dos costuras conocidas que esto abre:
+    `points_per_game` es la misma familia de señal —puntos ya anotados—
+    pero promediada sobre **toda la temporada**, así que el parate no la
+    deforma. Y no es un downgrade medible: dio 0.605 contra 0.625 de
+    `ep_next` en GW4-GW5, una diferencia de 0.02 que entra cómoda en el
+    ruido de dos fechas. Entre dos señales estadísticamente
+    indistinguibles, se elige la que no se desarma cuando el calendario
+    se interrumpe.
+
+    El multiplicador de fixture es el componente que a las dos les falta,
+    y es nuestro, ya validado: invierte el FDR de FPL y es lo único que
+    corrige casos como Bogle (10.0 → 2.6). Esta parte es razonamiento, no
+    medición — `ep_x_fixture` y las demás variantes se graban como
+    sombras para resolverlo con datos de GW6 en adelante.
+
+    La disponibilidad (`_availability`) convierte "puntos por partido
+    jugado" en "puntos por fecha": `points_per_game` es un promedio por
+    aparición, así que sin esto un suplente habitual con buen promedio
+    quedaría sobrevaluado.
+
+    Limitación heredada, igual que en `xp_model`: el multiplicador escala
+    también los puntos de aparición, que en realidad no dependen del
+    rival. Es un sesgo chico y conocido.
+
+    Dos costuras abiertas:
 
     - `xp_ceiling` y `haul_probability` se siguen construyendo desde la
-      distribución del motor propio, así que ya no son coherentes con
-      `xp_next`: un jugador puede tener `xp_next` alto y un techo
-      calculado sobre otra base. Se usan para capitanía con
-      `--stance chase` y para contenido, no para el orden principal.
+      distribución del motor propio, así que **no son comparables con
+      `xp_next`** — hay filas donde el percentil 90 queda por debajo del
+      promedio, lo cual es imposible y se ve mal en material publicable.
     - `xp_horizon` (4 fechas, lo que decide transferencias) sigue saliendo
-      del motor propio, porque `ep_next` solo existe para la próxima
-      fecha. **No hay medición del horizonte todavía**: el snapshot nunca
-      lo guardó. Se empezó a grabar ahora para poder responderlo; hasta
-      entonces, extrapolar el resultado de una fecha a cuatro sería
-      exactamente el salto que la calibración existe para evitar.
+      del motor propio y **sigue sin medición**; el snapshot empezó a
+      guardarlo en GW6 para poder responderlo.
     """
-    return players["ep_next"].fillna(players["xp_model"]).round(2)
+    points_per_game = players["points_per_game"].fillna(0)
+    fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
+    return (points_per_game * _availability(players) * fixture_mult).round(2)
 
 
 # Peso de la mezcla con la temporada anterior para la variante "fresca".
@@ -591,6 +612,11 @@ def _next_gameweek_ranking(players: pd.DataFrame) -> pd.Series:
 # GW4, con el jugador mediano en 270 minutos, el modelo actual le da 23%
 # de peso a esta temporada y esta variante le da 50%.
 SHADOW_BLEND_MINUTES = 270
+# Partidos de evidencia que "vale" el prior al suavizar points_per_game
+# hacia la mediana de su posición. Mismo espíritu que
+# START_RATE_PRIOR_WEIGHT: con 5 partidos jugados, un arranque caliente
+# pesa la mitad y no entero.
+SHADOW_PPG_PRIOR_MATCHES = 5
 # `xp_ep_blend` (mitad motor propio, mitad ep_next) se retiró al medirla:
 # quedó en 0.559 contra 0.625 de `ep_next` solo, peor en las dos fechas.
 # La mezcla resultó dominada y `ep_next` pasó a ser el modelo vigente
@@ -624,29 +650,59 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
     - **xp_fresh**: el motor propio con `SHADOW_BLEND_MINUTES` en vez de
       `BASELINE_BLEND_MINUTES`. Prueba la hipótesis de que su problema es
       que las tasas por 90' siguen siendo ~77% del año pasado.
-    - **ep_x_start_rate**: `ep_next` multiplicado por la tasa de
-      titularidad propia. Es el único candidato que le ganó a `ep_next`
-      solo (0.634 vs 0.625), consistente en GW4 y GW5, y con una
-      explicación mecánica: `ep_next` parece no descontar del todo la
-      rotación. La ventaja es chica para dos fechas, así que se mide en
-      vez de adoptarse.
-    - **ep_x_availability**: lo mismo pero por la disponibilidad completa
-      (rotación **y** lesión). Motivado por un caso concreto al adoptar
-      `ep_next`: João Pedro figuraba en duda con 75% de probabilidad de
-      jugar y aun así `ep_next` lo puso casi dos puntos por encima del
-      motor propio, que sí descuenta esa duda. Si `ep_next` ignora las
-      banderas de lesión, esta variante lo va a mostrar — y es el parche
-      más barato posible, porque la señal de lesión ya la tenemos.
+    - **ppg_shrunk**: el modelo vigente pero con `points_per_game`
+      suavizado hacia la mediana de su posición
+      (`SHADOW_PPG_PRIOR_MATCHES`). Es la debilidad conocida de haber
+      cambiado de señal: el motor propio tenía suavizado bayesiano y
+      `points_per_game` crudo no tiene ninguno, así que con pocas fechas
+      jugadas un arranque caliente pesa entero.
+    - **ep_x_fixture**: `ep_next` corregido por dificultad del rival. Es
+      la variante que más importa medir ahora: el calendario es lo único
+      que le faltaba a `ep_next`, y si eso lo arregla, la pregunta pasa a
+      ser form-vs-promedio-de-temporada y no "qué señal base usar".
+    - **ep_x_start_rate**: `ep_next` por la tasa de titularidad. Fue el
+      único candidato que le ganó a `ep_next` solo en GW4-GW5 (0.634 vs
+      0.625), consistente en ambas fechas.
+    - **ep_x_availability**: lo mismo pero por la disponibilidad completa.
+      Se descubrió después que `ep_next` **ya** descuenta las banderas de
+      lesión (los 43 jugadores donde difiere de `form` son exactamente
+      los dudosos), así que esta variante descuenta la lesión dos veces.
+      Se sigue grabando porque mide algo distinto igual: si descontar más
+      la rotación ayuda.
     """
     fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
     availability = _availability(players)
 
     fresh = _base_scoring_rate(players, SHADOW_BLEND_MINUTES) * fixture_mult * availability
+
+    # `points_per_game` suavizado hacia la mediana de su posición. El
+    # modelo vigente lo usa crudo, y con 5 fechas jugadas eso sobrevalúa
+    # a quien arrancó caliente: Tarkowski llegó al deadline de GW6 como
+    # mejor capitán con un ppg de 8.6 sostenido sobre 5 partidos, sin
+    # ninguna regresión a la media. El motor propio sí tenía suavizado
+    # bayesiano; al cambiar de señal se perdió, y esto mide cuánto costó.
+    matches = (players["minutes"].fillna(0) / 90).clip(lower=0)
+    ppg = players["points_per_game"].fillna(0)
+    played = players[players["minutes"].fillna(0) > 0]
+    position_median = players["position"].map(
+        played.groupby("position")["points_per_game"].median()
+    ).fillna(0)
+    ppg_shrunk = (
+        (ppg * matches + position_median * SHADOW_PPG_PRIOR_MATCHES)
+        / (matches + SHADOW_PPG_PRIOR_MATCHES)
+    )
+
     return {
         "xp_model": players["xp_model"].round(2),
         "xp_fresh": fresh.round(2),
-        "ep_x_start_rate": (players["xp_next"] * players["start_rate"]).round(2),
-        "ep_x_availability": (players["xp_next"] * availability).round(2),
+        # `ep_next` crudo ya se guarda como baseline. Lo que falta medir es
+        # si corregirlo por calendario lo salva: es lo único que le faltaba
+        # y lo que distingue a esta variante del modelo vigente, que usa el
+        # mismo multiplicador sobre `points_per_game` en vez de sobre form.
+        "ppg_shrunk": (ppg_shrunk * availability * fixture_mult).round(2),
+        "ep_x_fixture": (players["ep_next"].fillna(0) * fixture_mult).round(2),
+        "ep_x_start_rate": (players["ep_next"].fillna(0) * players["start_rate"]).round(2),
+        "ep_x_availability": (players["ep_next"].fillna(0) * availability).round(2),
     }
 
 

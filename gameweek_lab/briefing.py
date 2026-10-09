@@ -28,6 +28,24 @@ from gameweek_lab.config import DATA_PROCESSED_DIR
 BRIEFING_PATH = DATA_PROCESSED_DIR / "briefing.md"
 
 
+def _ceiling(row) -> str:
+    """El techo, o "—" cuando no es comparable con el xP de esa fila.
+
+    `xp_ceiling` sale de la distribución del motor propio (`xp_model`),
+    mientras `xp_next` es `points_per_game × disponibilidad × fixture`.
+    Son dos escalas distintas, así que hay filas donde el percentil 90
+    queda **por debajo** del promedio — matemáticamente imposible, y
+    directamente publicable si nadie lo mira. Pasó: un chat externo
+    revisó el briefing y lo marcó, con razón.
+
+    Mientras las dos escalas no se unifiquen, la fila se publica sin
+    techo en vez de con un número que se contradice con el de al lado.
+    Hoy afecta a 6 de los 45 jugadores con xP > 4 (eran 37 de 75 cuando
+    el xP venía de `ep_next`).
+    """
+    return "—" if row.xp_ceiling < row.xp_next else f"{row.xp_ceiling}"
+
+
 def _format_squad_table(starters: pd.DataFrame, bench: pd.DataFrame) -> str:
     lines = [
         "| Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |",
@@ -43,7 +61,7 @@ def _format_squad_table(starters: pd.DataFrame, bench: pd.DataFrame) -> str:
             set_pieces = p.set_piece_duties if p.set_piece_duties else "—"
             lines.append(
                 f"| {role} | {p.web_name} | {p.team_name} | {p.position} | £{p.now_cost}m | "
-                f"{p.xp_next} | {p.xp_ceiling} | {p.haul_probability:.0%} | {p.xp_horizon} | "
+                f"{p.xp_next} | {_ceiling(p)} | {p.haul_probability:.0%} | {p.xp_horizon} | "
                 f"{p.next_opponent} ({venue}) | {set_pieces} |"
             )
     return "\n".join(lines)
@@ -213,7 +231,7 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
     ]
     for c in captains.itertuples():
         sections.append(
-            f"| {c.web_name} | {c.team_name} | {c.position} | {c.xp_next} | {c.xp_ceiling} | "
+            f"| {c.web_name} | {c.team_name} | {c.position} | {c.xp_next} | {_ceiling(c)} | "
             f"{c.haul_probability:.0%} | {c.selected_by_percent}% | {c.next_opponent} |"
         )
 
@@ -227,7 +245,7 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
     for d in differentials.itertuples():
         sections.append(
             f"| {d.web_name} | {d.team_name} | {d.position} | £{d.now_cost}m | "
-            f"{d.selected_by_percent}% | {d.xp_next} | {d.xp_ceiling} | "
+            f"{d.selected_by_percent}% | {d.xp_next} | {_ceiling(d)} | "
             f"{d.haul_probability:.0%} | {d.next_opponent} |"
         )
 
@@ -247,8 +265,17 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
         "jugador en duda puede figurar más alto de lo que corresponde — chequear la "
         "columna de estado antes de recomendarlo. El motor propio sigue disponible "
         "como `xp_model` en `players_scored.csv`, para comparar.",
-        f"- **Techo**: percentil 90 — \"en su 10% de mejores partidos saca al menos esto\". "
-        "Para capitanía el promedio engaña: un arquero puede tener buen xP y 0% de haul.",
+        "- **Techo**: percentil 90 — \"en su 10% de mejores partidos saca al menos esto\". "
+        "**Sale de un modelo distinto al del xP** (la distribución del motor propio, "
+        "`xp_model`), así que los dos no están en la misma escala: sirve para comparar "
+        "techos entre jugadores, nunca para restarlo del xP. Cuando la incoherencia es "
+        "visible —percentil 90 por debajo del promedio, que es imposible— la celda sale "
+        "como \"—\" en vez de publicar un número que se contradice con el de al lado.",
+        "- **Para capitanía, ordená por xP y nada más.** La cinta duplica los puntos de "
+        "un jugador, así que maximizar puntos totales es exactamente duplicar el mayor "
+        "valor esperado: el techo y el P(haul) **no** entran en esa decisión. Importarían "
+        "solo si el objetivo fuera escalar en el rank de una liga, aceptando menos puntos "
+        "a cambio de más varianza.",
         "- **P(haul)**: probabilidad de hacer 10+ puntos. **Usar el orden, no el "
         "número.** Medido contra GW2, el ranking entre jugadores es correcto pero "
         "el nivel absoluto está subestimado 2-3 veces: sin bonus points en el "
