@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-09 00:57 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-09 09:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,11 +50,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Groß | Brighton | MID | 15.5 | 7.0 | 3% | 31.0% | Sunderland |
-| Schade | Brentford | MID | 12.0 | 8.0 | 6% | 12.9% | Aston Villa |
-| Tarkowski | Everton | DEF | 11.0 | 6.0 | 3% | 17.3% | Hull City |
-| Bogle | Leeds | DEF | 10.0 | 6.0 | 1% | 7.6% | Arsenal |
-| De Cuyper | Brighton | DEF | 8.5 | 8.0 | 5% | 28.7% | Sunderland |
+| Groß | Brighton | MID | 15.5 | 7.0 | 3% | 31.4% | Sunderland |
+| Schade | Brentford | MID | 12.0 | 8.0 | 6% | 13.2% | Aston Villa |
+| Tarkowski | Everton | DEF | 11.0 | 6.0 | 3% | 17.5% | Hull City |
+| Bogle | Leeds | DEF | 10.0 | 6.0 | 1% | 7.7% | Arsenal |
+| De Cuyper | Brighton | DEF | 8.5 | 8.0 | 5% | 28.9% | Sunderland |
 | A.Becker | Liverpool | GKP | 8.5 | 6.0 | 0% | 4.2% | Man City |
 | Virgil | Liverpool | DEF | 8.0 | 6.0 | 1% | 16.2% | Man City |
 | Haaland | Man City | FWD | 7.5 | 9.0 | 10% | 74.0% | Liverpool |
@@ -63,13 +63,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | £4.6m | 7.6% | 10.0 | 6.0 | 1% | Arsenal |
+| Bogle | Leeds | DEF | £4.6m | 7.7% | 10.0 | 6.0 | 1% | Arsenal |
 | A.Becker | Liverpool | GKP | £5.5m | 4.2% | 8.5 | 6.0 | 0% | Man City |
 | Branthwaite | Everton | DEF | £5.5m | 2.5% | 7.0 | 6.0 | 1% | Hull City |
 | Pickford | Everton | GKP | £5.5m | 9.2% | 7.0 | 6.0 | 0% | Hull City |
 | Buendía | Aston Villa | MID | £5.9m | 1.1% | 7.0 | 7.0 | 2% | Brentford |
 | Cunha | Man Utd | MID | £7.9m | 5.9% | 6.0 | 8.0 | 6% | Spurs |
-| Leno | Fulham | GKP | £4.5m | 3.5% | 6.0 | 6.0 | 0% | Ipswich Town |
+| Leno | Fulham | GKP | £4.5m | 3.6% | 6.0 | 6.0 | 0% | Ipswich Town |
 | Ampadu | Leeds | MID | £5.4m | 0.9% | 6.0 | 3.0 | 0% | Arsenal |
 
 ## Transferencia propuesta para esta fecha
