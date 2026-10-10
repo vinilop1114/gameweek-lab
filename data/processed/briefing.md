@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-09 22:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-10 04:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.1% | Hull City |
-| B.Fernandes | Man Utd | MID | 7.94 | 12.0 | 20% | 37.9% | Spurs |
-| Schade | Brentford | MID | 7.18 | 8.0 | 6% | 14.7% | Aston Villa |
-| Groß | Brighton | MID | 6.93 | 7.0 | 3% | 33.7% | Sunderland |
-| Hall | Newcastle | DEF | 6.75 | — | 2% | 19.7% | Coventry City |
+| Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.3% | Hull City |
+| B.Fernandes | Man Utd | MID | 7.94 | 12.0 | 20% | 37.8% | Spurs |
+| Schade | Brentford | MID | 7.18 | 8.0 | 6% | 15.1% | Aston Villa |
+| Groß | Brighton | MID | 6.93 | 7.0 | 3% | 34.4% | Sunderland |
+| Hall | Newcastle | DEF | 6.75 | — | 2% | 20.1% | Coventry City |
 | Pickford | Everton | GKP | 6.67 | — | 0% | 9.2% | Hull City |
-| João Pedro | Chelsea | FWD | 6.63 | — | 8% | 64.4% | Bournemouth |
+| João Pedro | Chelsea | FWD | 6.63 | — | 8% | 64.7% | Bournemouth |
 | Cunha | Man Utd | MID | 6.11 | 8.0 | 6% | 6.0% | Spurs |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -65,13 +65,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Pickford | Everton | GKP | £5.5m | 9.2% | 6.67 | — | 0% | Hull City |
 | Cunha | Man Utd | MID | £7.9m | 6.0% | 6.11 | 8.0 | 6% | Spurs |
-| Barnes | Newcastle | MID | £6.1m | 7.3% | 5.6 | 8.0 | 6% | Coventry City |
-| Mykolenko | Everton | DEF | £4.6m | 3.8% | 5.04 | 6.0 | 0% | Hull City |
+| Barnes | Newcastle | MID | £6.1m | 7.6% | 5.6 | 8.0 | 6% | Coventry City |
+| Mykolenko | Everton | DEF | £4.6m | 3.7% | 5.04 | 6.0 | 0% | Hull City |
 | Leno | Fulham | GKP | £4.5m | 3.8% | 4.8 | 6.0 | 0% | Ipswich Town |
 | Dewsbury-Hall | Everton | MID | £6.6m | 5.7% | 4.77 | 8.0 | 5% | Hull City |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.1% | 4.67 | 6.0 | 2% | Nott'm Forest |
-| King | Fulham | MID | £5.6m | 4.0% | 4.46 | 7.0 | 4% | Ipswich Town |
-| King | Fulham | MID | £5.6m | 4.0% | 4.46 | 6.0 | 0% | Ipswich Town |
+| King | Fulham | MID | £5.6m | 4.2% | 4.46 | 7.0 | 4% | Ipswich Town |
+| King | Fulham | MID | £5.6m | 4.2% | 4.46 | 6.0 | 0% | Ipswich Town |
 
 ## Transferencia propuesta para esta fecha
 
