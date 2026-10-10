@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-10 04:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-10 07:37 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -16,12 +16,12 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Calafiori | Arsenal | DEF | £5.9m | 4.58 | 8.0 | 8% | 15.8 | Leeds (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 3.49 | 8.0 | 4% | 16.29 | Coventry City (fuera) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.36 | 8.0 | 6% | 16.57 | Brighton (casa) | Córners |
+| Titular | Van Hecke | Spurs | DEF | £4.9m | 3.12 | 6.0 | 2% | 16.72 | Man Utd (fuera) | — |
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 2.71 | 6.0 | 1% | 9.93 | Sunderland (fuera) | — |
-| Titular | Thiago | Brentford | FWD | £7.8m | 1.97 | 10.0 | 12% | 17.67 | Aston Villa (fuera) | Penales |
-| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 1.85 | 6.0 | 1% | 7.9 | Crystal Palace (fuera) | — |
+| Titular | Shaw | Man Utd | DEF | £4.3m | 2.64 | 6.0 | 1% | 13.54 | Spurs (casa) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 2.11 | 6.0 | 0% | 11.93 | Brighton (casa) | — |
-| Banco 2 | Enzo | Man City | MID | £6.9m | 1.62 | 7.0 | 3% | 13.17 | Liverpool (fuera) | — |
-| Banco 3 | Hume | Sunderland | DEF | £4.3m | 1.62 | 6.0 | 1% | 10.51 | Brighton (casa) | — |
+| Banco 2 | Thiago | Brentford | FWD | £7.8m | 1.97 | 10.0 | 12% | 17.67 | Aston Villa (fuera) | Penales |
+| Banco 3 | Enzo | Man City | MID | £6.9m | 1.62 | 7.0 | 3% | 13.17 | Liverpool (fuera) | — |
 | Banco 4 | Calvert-Lewin | Leeds | FWD | £6.0m | 1.31 | 6.0 | 1% | 11.56 | Arsenal (fuera) | Penales |
 
 ## Equipo Wildcard
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.3% | Hull City |
-| B.Fernandes | Man Utd | MID | 7.94 | 12.0 | 20% | 37.8% | Spurs |
-| Schade | Brentford | MID | 7.18 | 8.0 | 6% | 15.1% | Aston Villa |
-| Groß | Brighton | MID | 6.93 | 7.0 | 3% | 34.4% | Sunderland |
-| Hall | Newcastle | DEF | 6.75 | — | 2% | 20.1% | Coventry City |
+| Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.5% | Hull City |
+| B.Fernandes | Man Utd | MID | 7.94 | 12.0 | 20% | 37.7% | Spurs |
+| Schade | Brentford | MID | 7.18 | 8.0 | 6% | 15.5% | Aston Villa |
+| Groß | Brighton | MID | 6.93 | 7.0 | 3% | 35.1% | Sunderland |
+| Hall | Newcastle | DEF | 6.75 | — | 2% | 20.5% | Coventry City |
 | Pickford | Everton | GKP | 6.67 | — | 0% | 9.2% | Hull City |
-| João Pedro | Chelsea | FWD | 6.63 | — | 8% | 64.7% | Bournemouth |
+| João Pedro | Chelsea | FWD | 6.63 | — | 8% | 65.0% | Bournemouth |
 | Cunha | Man Utd | MID | 6.11 | 8.0 | 6% | 6.0% | Spurs |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -65,32 +65,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Pickford | Everton | GKP | £5.5m | 9.2% | 6.67 | — | 0% | Hull City |
 | Cunha | Man Utd | MID | £7.9m | 6.0% | 6.11 | 8.0 | 6% | Spurs |
-| Barnes | Newcastle | MID | £6.1m | 7.6% | 5.6 | 8.0 | 6% | Coventry City |
-| Mykolenko | Everton | DEF | £4.6m | 3.7% | 5.04 | 6.0 | 0% | Hull City |
-| Leno | Fulham | GKP | £4.5m | 3.8% | 4.8 | 6.0 | 0% | Ipswich Town |
-| Dewsbury-Hall | Everton | MID | £6.6m | 5.7% | 4.77 | 8.0 | 5% | Hull City |
+| Barnes | Newcastle | MID | £6.1m | 7.9% | 5.6 | 8.0 | 6% | Coventry City |
+| Mykolenko | Everton | DEF | £4.6m | 3.6% | 5.04 | 6.0 | 0% | Hull City |
+| Leno | Fulham | GKP | £4.5m | 3.9% | 4.8 | 6.0 | 0% | Ipswich Town |
+| Dewsbury-Hall | Everton | MID | £6.6m | 5.6% | 4.77 | 8.0 | 5% | Hull City |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.1% | 4.67 | 6.0 | 2% | Nott'm Forest |
-| King | Fulham | MID | £5.6m | 4.2% | 4.46 | 7.0 | 4% | Ipswich Town |
-| King | Fulham | MID | £5.6m | 4.2% | 4.46 | 6.0 | 0% | Ipswich Town |
+| King | Fulham | MID | £5.6m | 4.4% | 4.46 | 7.0 | 4% | Ipswich Town |
+| King | Fulham | MID | £5.6m | 4.4% | 4.46 | 6.0 | 0% | Ipswich Town |
 
-## Transferencia propuesta para esta fecha
-
-Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+## Movimientos ya ejecutados en GW6
 
 - N.Williams → Van Hecke (+5.88 xP, transferencia libre, entra de titular)
 - Hume → Shaw (+2.36 xP, transferencia libre, entra de titular)
 
-Sale: Hume, N.Williams · Entra: Shaw, Van Hecke
-
-El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
-
-**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo evalúa reemplazos dentro de una misma posición y nunca financia un puesto vendiendo en otro ("bajo el arquero suplente para subir un defensor"), así que esa alternativa no fue descartada: no se evaluó. Al escribir, no lo presentes como el movimiento óptimo de la fecha.
-
-## Movimientos ya ejecutados en GW5
-
-- Sin cambios en GW5 — transferencia guardada (1 acumuladas para la próxima fecha).
-
-Transferencias libres disponibles tras esa fecha: 1.
+Transferencias libres disponibles tras esa fecha: 0.
 
 ## Repaso de GW5 (fecha cerrada)
 

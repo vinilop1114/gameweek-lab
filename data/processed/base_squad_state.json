@@ -1,8 +1,9 @@
 {
-  "last_evaluated_gameweek": 5,
-  "banked_free_transfers": 1,
-  "last_transfer_gameweek": 5,
+  "last_evaluated_gameweek": 6,
+  "banked_free_transfers": 0,
+  "last_transfer_gameweek": 6,
   "last_transfers": [
-    "Sin cambios en GW5 \u2014 transferencia guardada (1 acumuladas para la pr\u00f3xima fecha)."
+    "N.Williams \u2192 Van Hecke (+5.88 xP, transferencia libre, entra de titular)",
+    "Hume \u2192 Shaw (+2.36 xP, transferencia libre, entra de titular)"
   ]
 }
