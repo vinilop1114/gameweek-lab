@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-10 21:07 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-11 03:49 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -17,8 +17,8 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 3.79 | 6.0 | 1% | 10.37 | Sunderland (fuera) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 3.49 | 8.0 | 4% | 16.3 | Coventry City (fuera) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.1 | 8.0 | 6% | 16.48 | Brighton (casa) | Córners |
-| Titular | Shaw | Man Utd | DEF | £4.3m | 2.91 | 6.0 | 1% | 13.98 | Spurs (casa) | — |
-| Titular | Van Hecke | Spurs | DEF | £4.9m | 2.73 | 6.0 | 2% | 16.9 | Man Utd (fuera) | — |
+| Titular | Van Hecke | Spurs | DEF | £4.9m | 2.93 | 6.0 | 2% | 17.05 | Man Utd (fuera) | — |
+| Titular | Shaw | Man Utd | DEF | £4.3m | 2.91 | 6.0 | 1% | 13.97 | Spurs (casa) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 12.0 | Brighton (casa) | — |
 | Banco 2 | Thiago | Brentford | FWD | £7.8m | 2.27 | 10.0 | 11% | 17.24 | Aston Villa (fuera) | Penales |
 | Banco 3 | Enzo | Man City | MID | £6.9m | 1.62 | 7.0 | 3% | 13.18 | Liverpool (fuera) | — |
@@ -32,11 +32,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Tarkowski | Everton | DEF | £6.2m | 11.32 | — | 3% | 13.6 | Hull City (fuera) | — |
 | Vice | João Pedro | Chelsea | FWD | £7.7m | 7.43 | — | 8% | 14.21 | Bournemouth (casa) | — |
-| Titular | Cunha | Man Utd | MID | £7.9m | 7.14 | 8.0 | 6% | 13.51 | Spurs (casa) | — |
+| Titular | Cunha | Man Utd | MID | £7.9m | 7.14 | 8.0 | 6% | 13.5 | Spurs (casa) | — |
 | Titular | B.Fernandes | Man Utd | MID | £11.9m | 6.81 | 12.0 | 18% | 19.48 | Spurs (casa) | Penales, Tiros libres, Córners |
 | Titular | Hall | Newcastle | DEF | £5.3m | 6.75 | — | 2% | 14.06 | Coventry City (fuera) | Tiros libres, Córners |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 6.72 | 12.0 | 18% | 18.66 | Spurs (casa) | — |
-| Titular | Groß | Brighton | MID | £5.9m | 6.7 | 7.0 | 3% | 9.69 | Sunderland (fuera) | Penales, Tiros libres, Córners |
+| Titular | Groß | Brighton | MID | £6.0m | 6.7 | 7.0 | 3% | 9.69 | Sunderland (fuera) | Penales, Tiros libres, Córners |
 | Titular | Pickford | Everton | GKP | £5.5m | 6.67 | — | 0% | 9.86 | Hull City (fuera) | — |
 | Titular | De Cuyper | Brighton | DEF | £5.0m | 6.59 | 8.0 | 6% | 11.54 | Sunderland (fuera) | — |
 | Titular | Rogers | Chelsea | MID | £7.8m | 6.23 | 7.0 | 5% | 15.73 | Bournemouth (casa) | — |
@@ -44,19 +44,19 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.22 | Man Utd (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 1.97 | 6.0 | 2% | 9.72 | Fulham (casa) | — |
 | Banco 3 | Georginio | Brighton | FWD | £5.3m | 1.09 | 2.0 | 0% | 3.49 | Sunderland (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.06 | 2.0 | 0% | 1.71 | Arsenal (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.13 | 2.0 | 1% | 1.98 | Ipswich Town (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.2% | Hull City |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 67.2% | Bournemouth |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 67.3% | Bournemouth |
 | Cunha | Man Utd | MID | 7.14 | 8.0 | 6% | 6.1% | Spurs |
-| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 36.9% | Spurs |
+| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 36.8% | Spurs |
 | Hall | Newcastle | DEF | 6.75 | — | 2% | 20.8% | Coventry City |
 | Mbeumo | Man Utd | MID | 6.72 | 12.0 | 18% | 19.9% | Spurs |
-| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 36.6% | Sunderland |
+| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 36.8% | Sunderland |
 | Pickford | Everton | GKP | 6.67 | — | 0% | 9.1% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
