@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-11 03:49 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-11 12:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,12 +51,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Tarkowski | Everton | DEF | 11.32 | — | 3% | 18.2% | Hull City |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 67.3% | Bournemouth |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 67.5% | Bournemouth |
 | Cunha | Man Utd | MID | 7.14 | 8.0 | 6% | 6.1% | Spurs |
-| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 36.8% | Spurs |
+| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 36.6% | Spurs |
 | Hall | Newcastle | DEF | 6.75 | — | 2% | 20.8% | Coventry City |
 | Mbeumo | Man Utd | MID | 6.72 | 12.0 | 18% | 19.9% | Spurs |
-| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 36.8% | Sunderland |
+| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 36.9% | Sunderland |
 | Pickford | Everton | GKP | 6.67 | — | 0% | 9.1% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -69,8 +69,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Mykolenko | Everton | DEF | £4.6m | 3.5% | 5.04 | 6.0 | 0% | Hull City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 5.5% | 4.77 | 8.0 | 5% | Hull City |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.0% | 4.67 | 6.0 | 2% | Nott'm Forest |
-| Henderson | Chelsea | MID | £4.9m | 0.1% | 4.45 | — | 0% | Bournemouth |
-| Henderson | Chelsea | MID | £4.9m | 0.1% | 4.45 | — | 0% | Bournemouth |
+| Henderson | Chelsea | MID | £4.9m | 0.2% | 4.45 | — | 0% | Bournemouth |
+| Henderson | Chelsea | MID | £4.9m | 0.2% | 4.45 | — | 0% | Bournemouth |
 | Leno | Fulham | GKP | £4.5m | 4.0% | 4.4 | 6.0 | 0% | Ipswich Town |
 
 ## Movimientos ya ejecutados en GW6
