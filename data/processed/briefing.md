@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-12 00:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-12 10:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,12 +51,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Tarkowski | Everton | DEF | 10.15 | — | 3% | 18.3% | Hull City |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 68.4% | Bournemouth |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 68.6% | Bournemouth |
 | Cunha | Man Utd | MID | 7.14 | 8.0 | 6% | 6.3% | Spurs |
-| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 35.9% | Spurs |
+| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 35.7% | Spurs |
 | Hall | Newcastle | DEF | 6.75 | — | 2% | 20.9% | Coventry City |
 | Mbeumo | Man Utd | MID | 6.72 | 12.0 | 18% | 20.0% | Spurs |
-| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 37.9% | Sunderland |
+| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 38.1% | Sunderland |
 | Dewsbury-Hall | Everton | MID | 6.63 | 8.0 | 6% | 5.6% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
