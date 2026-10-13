@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW6
 
-Generado automáticamente: 2026-10-12 20:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-13 02:24 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -17,10 +17,10 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 3.79 | 6.0 | 1% | 10.36 | Sunderland (fuera) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.1 | 8.0 | 6% | 16.49 | Brighton (casa) | Córners |
 | Titular | Van Hecke | Spurs | DEF | £4.9m | 2.93 | 6.0 | 2% | 17.03 | Man Utd (fuera) | — |
-| Titular | Shaw | Man Utd | DEF | £4.3m | 2.91 | 6.0 | 1% | 13.95 | Spurs (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 2.88 | 8.0 | 4% | 16.24 | Coventry City (fuera) | — |
+| Titular | Thiago | Brentford | FWD | £7.8m | 2.27 | 10.0 | 11% | 17.25 | Aston Villa (fuera) | Penales |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 12.0 | Brighton (casa) | — |
-| Banco 2 | Thiago | Brentford | FWD | £7.8m | 2.27 | 10.0 | 11% | 17.25 | Aston Villa (fuera) | Penales |
+| Banco 2 | Shaw | Man Utd | DEF | £4.3m | 2.18 | 6.0 | 1% | 10.46 | Spurs (casa) | — |
 | Banco 3 | Enzo | Man City | MID | £6.9m | 1.67 | 7.0 | 2% | 13.3 | Liverpool (fuera) | — |
 | Banco 4 | Calvert-Lewin | Leeds | FWD | £6.0m | 1.21 | 6.0 | 1% | 11.28 | Arsenal (fuera) | Penales |
 
@@ -51,22 +51,22 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Tarkowski | Everton | DEF | 10.15 | — | 3% | 18.3% | Hull City |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 68.9% | Bournemouth |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 69.0% | Bournemouth |
 | Cunha | Man Utd | MID | 7.14 | 8.0 | 6% | 6.3% | Spurs |
-| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 35.4% | Spurs |
+| B.Fernandes | Man Utd | MID | 6.81 | 12.0 | 18% | 35.3% | Spurs |
 | Mbeumo | Man Utd | MID | 6.72 | 12.0 | 18% | 20.0% | Spurs |
-| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 38.5% | Sunderland |
-| Dewsbury-Hall | Everton | MID | 6.63 | 8.0 | 6% | 5.6% | Hull City |
-| De Cuyper | Brighton | DEF | 6.59 | 8.0 | 6% | 34.3% | Sunderland |
+| Groß | Brighton | MID | 6.7 | 7.0 | 3% | 38.7% | Sunderland |
+| Dewsbury-Hall | Everton | MID | 6.63 | 8.0 | 6% | 5.7% | Hull City |
+| De Cuyper | Brighton | DEF | 6.59 | 8.0 | 6% | 34.5% | Sunderland |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Cunha | Man Utd | MID | £7.9m | 6.3% | 7.14 | 8.0 | 6% | Spurs |
-| Dewsbury-Hall | Everton | MID | £6.6m | 5.6% | 6.63 | 8.0 | 6% | Hull City |
-| Pickford | Everton | GKP | £5.5m | 9.1% | 5.73 | 6.0 | 0% | Hull City |
-| Barnes | Newcastle | MID | £6.1m | 8.3% | 5.15 | 8.0 | 7% | Coventry City |
+| Dewsbury-Hall | Everton | MID | £6.6m | 5.7% | 6.63 | 8.0 | 6% | Hull City |
+| Pickford | Everton | GKP | £5.5m | 9.0% | 5.73 | 6.0 | 0% | Hull City |
+| Barnes | Newcastle | MID | £6.1m | 8.2% | 5.15 | 8.0 | 7% | Coventry City |
 | Mitchell | Crystal Palace | DEF | £4.5m | 6.0% | 4.59 | 6.0 | 2% | Nott'm Forest |
 | Mykolenko | Everton | DEF | £4.6m | 3.3% | 4.59 | 6.0 | 0% | Hull City |
 | Barry | Everton | FWD | £5.7m | 8.6% | 4.57 | 10.0 | 13% | Hull City |
