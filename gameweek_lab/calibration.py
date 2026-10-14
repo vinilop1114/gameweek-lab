@@ -381,9 +381,9 @@ def _ranking_power_section(complete: pd.DataFrame) -> list[str]:
     lines.append(f"Medido sobre {len(common)} filas con todos los predictores presentes ({covered}).")
     lines.append(
         "Ojo: `xp_next` cambió de motor en GW6. Hasta GW5 era el modelo propio de este "
-        "repo; desde GW6 es `ep_next`, porque ordenaba mucho mejor (0.625 vs 0.353). En "
-        "las fechas previas a GW6 las dos filas miden cosas distintas; desde GW6 miden lo "
-        "mismo y deberían coincidir."
+        "repo (0.353); desde GW6 es `points_per_game × disponibilidad × fixture`. Las "
+        "fechas previas a GW6 miden el motor viejo, así que esta fila no es una serie "
+        "homogénea."
     )
     lines.append("")
 
