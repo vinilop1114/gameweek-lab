@@ -42,8 +42,7 @@ CALIBRATION_COLUMNS = [
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
     "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
     "xp_horizon_at_prediction",
-    "xp_model_at_prediction", "xp_fresh_at_prediction",
-    "ppg_shrunk_at_prediction", "ep_x_fixture_at_prediction",
+    "xp_model_at_prediction", "ep_x_fixture_at_prediction",
     "ep_x_start_rate_at_prediction", "ep_x_availability_at_prediction",
     "actual_points",
 ]
@@ -71,9 +70,13 @@ BASELINE_COLUMNS = {
     # Variantes candidatas del propio modelo (ver shadow_expected_points en
     # analysis.py). No deciden nada: se miden al lado del modelo vigente
     # para que el ajuste de GW6 salga de datos y no de una apuesta.
+    # Al retirar una sombra hay que sacarla de ACÁ, no solo de
+    # `shadow_expected_points`: `available` la mantendría viva por las
+    # fechas viejas que sí la tienen, y entonces `common` —que exige
+    # todas las columnas presentes— descartaría cada fecha nueva.
+    # Retiradas tras GW6 con su pregunta contestada: `xp_fresh`,
+    # `ppg_shrunk` y `xp_ep_blend` (ver analysis.py).
     "xp_model_at_prediction": "[sombra] el motor propio (xG/xA/CS/DEFCON)",
-    "xp_fresh_at_prediction": "[sombra] motor propio con baseline corto",
-    "ppg_shrunk_at_prediction": "[sombra] el vigente, con ppg suavizado",
     "ep_x_fixture_at_prediction": "[sombra] ep_next x dificultad del rival",
     "ep_x_start_rate_at_prediction": "[sombra] ep_next x start_rate",
     "ep_x_availability_at_prediction": "[sombra] ep_next x disponibilidad",

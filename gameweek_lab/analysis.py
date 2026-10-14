@@ -113,7 +113,7 @@ CEILING_PERCENTILE = 0.90
 HAUL_THRESHOLD = 10
 
 
-def _base_scoring_rate(players: pd.DataFrame, blend_minutes: int | None = None) -> pd.Series:
+def _base_scoring_rate(players: pd.DataFrame) -> pd.Series:
     """Puntos esperados 'crudos' por 90 minutos, antes de ajustar por rival
     — calculados desde estadísticas subyacentes (goles/asistencias
     esperados, goles esperados en contra), no desde puntos ya anotados.
@@ -144,9 +144,9 @@ def _base_scoring_rate(players: pd.DataFrame, blend_minutes: int | None = None) 
     # minutos lleve jugados el jugador (ver `_blend_with_baseline`). FPL
     # resetea estos acumulados cada temporada, así que sin esto el modelo
     # se quedaría sin insumo en las primeras fechas.
-    expected_goals = _blend_with_baseline(players, "expected_goals_per_90", blend_minutes)
-    expected_assists = _blend_with_baseline(players, "expected_assists_per_90", blend_minutes)
-    expected_conceded = _blend_with_baseline(players, "expected_goals_conceded_per_90", blend_minutes)
+    expected_goals = _blend_with_baseline(players, "expected_goals_per_90")
+    expected_assists = _blend_with_baseline(players, "expected_assists_per_90")
+    expected_conceded = _blend_with_baseline(players, "expected_goals_conceded_per_90")
 
     attacking = expected_goals * goal_points + expected_assists * ASSIST_POINTS
     clean_sheet_probability = np.exp(-expected_conceded)
@@ -379,9 +379,7 @@ def effective_minutes(players: pd.DataFrame) -> pd.Series:
     return current + previous
 
 
-def _blend_with_baseline(
-    players: pd.DataFrame, column: str, blend_minutes: int | None = None
-) -> pd.Series:
+def _blend_with_baseline(players: pd.DataFrame, column: str) -> pd.Series:
     """Mezcla una tasa por 90' de la temporada en curso con la de la
     anterior, ponderando por minutos jugados.
 
@@ -393,7 +391,6 @@ def _blend_with_baseline(
     Sin baseline (o para un jugador que no figure en él — un debutante)
     devuelve la tasa actual tal cual.
     """
-    weight = BASELINE_BLEND_MINUTES if blend_minutes is None else blend_minutes
     current = players[column].fillna(0)
     baseline = _load_last_season_baseline()
     if baseline is None or column not in baseline.columns:
@@ -401,7 +398,10 @@ def _blend_with_baseline(
 
     previous = players["id"].map(dict(zip(baseline["player_id"], baseline[column])))
     minutes = players["minutes"].fillna(0)
-    blended = (current * minutes + previous * weight) / (minutes + weight)
+    blended = (
+        (current * minutes + previous * BASELINE_BLEND_MINUTES)
+        / (minutes + BASELINE_BLEND_MINUTES)
+    )
     return blended.fillna(current)
 
 
@@ -607,21 +607,26 @@ def _next_gameweek_ranking(players: pd.DataFrame) -> pd.Series:
     return (points_per_game * _availability(players) * fixture_mult).round(2)
 
 
-# Peso de la mezcla con la temporada anterior para la variante "fresca".
-# 270 minutos (~3 partidos) contra los 900 del modelo en produccion: en
-# GW4, con el jugador mediano en 270 minutos, el modelo actual le da 23%
-# de peso a esta temporada y esta variante le da 50%.
-SHADOW_BLEND_MINUTES = 270
-# Partidos de evidencia que "vale" el prior al suavizar points_per_game
-# hacia la mediana de su posición. Mismo espíritu que
-# START_RATE_PRIOR_WEIGHT: con 5 partidos jugados, un arranque caliente
-# pesa la mitad y no entero.
-SHADOW_PPG_PRIOR_MATCHES = 5
-# `xp_ep_blend` (mitad motor propio, mitad ep_next) se retiró al medirla:
-# quedó en 0.559 contra 0.625 de `ep_next` solo, peor en las dos fechas.
-# La mezcla resultó dominada y `ep_next` pasó a ser el modelo vigente
-# (ver _next_gameweek_ranking), así que seguir grabándola no contestaba
-# ninguna pregunta abierta.
+# SOMBRAS RETIRADAS. Cada una existía para contestar una pregunta; una
+# vez contestada, dejarla grabando solo agrega ruido a la tabla. Las
+# columnas ya grabadas se conservan en `xp_calibration.csv` — se deja de
+# escribirlas, no se borra la historia.
+#
+# - `xp_ep_blend` (mitad motor propio, mitad ep_next), retirada en GW6:
+#   0.559 contra 0.625 de `ep_next` solo, peor en las dos fechas. La
+#   mezcla quedó dominada; no había punto intermedio que ganara.
+# - `xp_fresh` (el motor propio con la mezcla al 270' en vez de 900'),
+#   retirada tras GW6: **0.363 contra 0.359 del motor sin tocar**. La
+#   hipótesis que motivó construirla —que el motor ordenaba mal porque
+#   sus tasas por 90' seguían siendo ~77% del año anterior— queda
+#   refutada. El problema del motor no son los insumos viejos.
+# - `ppg_shrunk` (el modelo vigente con points_per_game suavizado hacia
+#   la mediana de su posición), retirada tras GW6: **0.459 contra 0.627
+#   del crudo**, con un bootstrap de IC95% [-0.122, -0.219] que excluye
+#   el cero. Suavizar EMPEORA. La "debilidad conocida" que motivó medirla
+#   —que al cambiar de señal se perdió el suavizado bayesiano del motor
+#   propio— resultó no serlo: con pocas fechas, los arranques calientes
+#   son señal y no ruido.
 
 
 def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
@@ -647,15 +652,6 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
       midiendo porque es lo que habría que arreglar si alguna vez se
       quiere dejar de depender de `ep_next`, y porque sin medirlo no hay
       forma de saber si una mejora futura lo vuelve competitivo.
-    - **xp_fresh**: el motor propio con `SHADOW_BLEND_MINUTES` en vez de
-      `BASELINE_BLEND_MINUTES`. Prueba la hipótesis de que su problema es
-      que las tasas por 90' siguen siendo ~77% del año pasado.
-    - **ppg_shrunk**: el modelo vigente pero con `points_per_game`
-      suavizado hacia la mediana de su posición
-      (`SHADOW_PPG_PRIOR_MATCHES`). Es la debilidad conocida de haber
-      cambiado de señal: el motor propio tenía suavizado bayesiano y
-      `points_per_game` crudo no tiene ninguno, así que con pocas fechas
-      jugadas un arranque caliente pesa entero.
     - **ep_x_fixture**: `ep_next` corregido por dificultad del rival. Es
       la variante que más importa medir ahora: el calendario es lo único
       que le faltaba a `ep_next`, y si eso lo arregla, la pregunta pasa a
@@ -673,33 +669,12 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
     fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
     availability = _availability(players)
 
-    fresh = _base_scoring_rate(players, SHADOW_BLEND_MINUTES) * fixture_mult * availability
-
-    # `points_per_game` suavizado hacia la mediana de su posición. El
-    # modelo vigente lo usa crudo, y con 5 fechas jugadas eso sobrevalúa
-    # a quien arrancó caliente: Tarkowski llegó al deadline de GW6 como
-    # mejor capitán con un ppg de 8.6 sostenido sobre 5 partidos, sin
-    # ninguna regresión a la media. El motor propio sí tenía suavizado
-    # bayesiano; al cambiar de señal se perdió, y esto mide cuánto costó.
-    matches = (players["minutes"].fillna(0) / 90).clip(lower=0)
-    ppg = players["points_per_game"].fillna(0)
-    played = players[players["minutes"].fillna(0) > 0]
-    position_median = players["position"].map(
-        played.groupby("position")["points_per_game"].median()
-    ).fillna(0)
-    ppg_shrunk = (
-        (ppg * matches + position_median * SHADOW_PPG_PRIOR_MATCHES)
-        / (matches + SHADOW_PPG_PRIOR_MATCHES)
-    )
-
     return {
         "xp_model": players["xp_model"].round(2),
-        "xp_fresh": fresh.round(2),
         # `ep_next` crudo ya se guarda como baseline. Lo que falta medir es
         # si corregirlo por calendario lo salva: es lo único que le faltaba
         # y lo que distingue a esta variante del modelo vigente, que usa el
         # mismo multiplicador sobre `points_per_game` en vez de sobre form.
-        "ppg_shrunk": (ppg_shrunk * availability * fixture_mult).round(2),
         "ep_x_fixture": (players["ep_next"].fillna(0) * fixture_mult).round(2),
         "ep_x_start_rate": (players["ep_next"].fillna(0) * players["start_rate"]).round(2),
         "ep_x_availability": (players["ep_next"].fillna(0) * availability).round(2),
