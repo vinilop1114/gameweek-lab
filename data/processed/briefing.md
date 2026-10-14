@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-13 18:50 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-14 00:06 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -36,7 +36,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Semenyo | Man City | MID | £8.3m | 7.91 | 8.0 | 7% | 16.24 | Ipswich Town (casa) | — |
 | Titular | Guéhi | Man City | DEF | £6.0m | 7.71 | 9.0 | 8% | 17.84 | Ipswich Town (casa) | — |
 | Titular | João Pedro | Chelsea | FWD | £7.8m | 7.43 | — | 8% | 14.21 | Everton (fuera) | — |
-| Titular | Verbruggen | Brighton | GKP | £4.5m | 7.07 | — | 0% | 10.1 | Crystal Palace (casa) | — |
+| Titular | Verbruggen | Brighton | GKP | £4.6m | 7.07 | — | 0% | 10.1 | Crystal Palace (casa) | — |
 | Titular | Rogers | Chelsea | MID | £7.9m | 6.23 | 7.0 | 5% | 15.74 | Everton (fuera) | — |
 | Titular | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.45 | Coventry City (casa) | — |
 | Titular | Cunha | Man Utd | MID | £7.9m | 5.35 | 7.0 | 4% | 12.38 | Leeds (fuera) | — |
@@ -50,14 +50,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.1% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 39.2% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.1% | Crystal Palace |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.2% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 39.3% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.2% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 13.7% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
 | João Pedro | Chelsea | FWD | 7.43 | — | 8% | 69.5% | Everton |
-| Verbruggen | Brighton | GKP | 7.07 | — | 0% | 21.8% | Crystal Palace |
-| Cherki | Man City | MID | 6.64 | 10.0 | 11% | 31.5% | Ipswich Town |
+| Verbruggen | Brighton | GKP | 7.07 | — | 0% | 21.9% | Crystal Palace |
+| Cherki | Man City | MID | 6.64 | 10.0 | 11% | 31.6% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
