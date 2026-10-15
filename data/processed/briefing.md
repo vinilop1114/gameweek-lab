@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-15 10:48 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-15 16:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -44,27 +44,27 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.57 | Coventry City (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 0.49 | 2.0 | 0% | 8.9 | Man City (fuera) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.4m | 0.15 | 2.0 | 0% | 2.29 | Brighton (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.13 | 2.0 | 1% | 2.28 | Man Utd (casa) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.13 | 2.0 | 1% | 1.85 | Hull City (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.3% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 39.9% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.8% | Crystal Palace |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.4% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 40.0% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.9% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 13.8% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.0% | Everton |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.1% | Everton |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.0% | Crystal Palace |
-| Cherki | Man City | MID | 6.64 | 10.0 | 11% | 32.3% | Ipswich Town |
+| Cherki | Man City | MID | 6.64 | 10.0 | 11% | 32.5% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Donnarumma | Man City | GKP | £5.5m | 7.6% | 5.97 | 6.0 | 0% | Ipswich Town |
-| Van Hecke | Spurs | DEF | £4.9m | 6.3% | 5.86 | 8.0 | 5% | Coventry City |
+| Van Hecke | Spurs | DEF | £4.9m | 6.4% | 5.86 | 8.0 | 5% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.5% | 5.35 | 7.0 | 4% | Leeds |
