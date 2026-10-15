@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-14 23:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-15 03:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,8 +51,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.3% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 39.7% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.6% | Crystal Palace |
+| Groß | Brighton | MID | 8.93 | — | 5% | 39.8% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 35.7% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 13.8% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
 | João Pedro | Chelsea | FWD | 7.43 | — | 8% | 69.9% | Everton |
