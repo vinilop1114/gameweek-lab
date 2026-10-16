@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-16 20:28 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-16 23:14 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -11,10 +11,10 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | **Capitán** | João Pedro | Chelsea | FWD | £7.8m | 7.43 | — | 8% | 14.21 | Everton (fuera) | — |
 | Vice | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.45 | Coventry City (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.1m | 5.44 | 6.0 | 0% | 15.34 | Nott'm Forest (fuera) | — |
-| Titular | B.Fernandes | Man Utd | MID | £11.9m | 5.11 | 10.0 | 12% | 17.86 | Leeds (fuera) | Penales, Tiros libres, Córners |
+| Titular | B.Fernandes | Man Utd | MID | £11.8m | 5.11 | 10.0 | 12% | 17.86 | Leeds (fuera) | Penales, Tiros libres, Córners |
 | Titular | Calafiori | Arsenal | DEF | £5.9m | 5.09 | 9.0 | 9% | 18.12 | Nott'm Forest (fuera) | — |
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 5.05 | 6.0 | 2% | 10.36 | Crystal Palace (casa) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.9m | 5.04 | 10.0 | 11% | 17.1 | Leeds (fuera) | — |
+| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.04 | 10.0 | 11% | 17.1 | Leeds (fuera) | — |
 | Titular | Enzo | Man City | MID | £6.9m | 3.34 | 8.0 | 8% | 14.41 | Ipswich Town (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.1 | 8.0 | 6% | 15.22 | Bournemouth (fuera) | Córners |
 | Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 2.41 | 7.0 | 2% | 11.33 | Arsenal (casa) | Penales, Tiros libres |
@@ -30,9 +30,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | Haaland | Man City | FWD | £15.6m | 9.52 | 13.0 | 28% | 22.42 | Ipswich Town (casa) | Penales |
-| Vice | Groß | Brighton | MID | £6.0m | 8.93 | — | 5% | 9.69 | Crystal Palace (casa) | Penales, Tiros libres, Córners |
-| Titular | De Cuyper | Brighton | DEF | £5.1m | 8.78 | 9.0 | 9% | 11.54 | Crystal Palace (casa) | — |
+| **Capitán** | Haaland | Man City | FWD | £15.7m | 9.52 | 13.0 | 28% | 22.42 | Ipswich Town (casa) | Penales |
+| Vice | Groß | Brighton | MID | £6.1m | 8.93 | — | 5% | 9.69 | Crystal Palace (casa) | Penales, Tiros libres, Córners |
+| Titular | De Cuyper | Brighton | DEF | £5.2m | 8.78 | 9.0 | 9% | 11.54 | Crystal Palace (casa) | — |
 | Titular | Semenyo | Man City | MID | £8.3m | 7.91 | 8.0 | 7% | 16.24 | Ipswich Town (casa) | — |
 | Titular | Guéhi | Man City | DEF | £6.0m | 7.71 | 9.0 | 8% | 17.84 | Ipswich Town (casa) | — |
 | Titular | João Pedro | Chelsea | FWD | £7.8m | 7.43 | — | 8% | 14.21 | Everton (fuera) | — |
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.9% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 42.0% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 38.0% | Crystal Palace |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 76.0% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 42.5% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 38.3% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.3% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 71.3% | Everton |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 71.5% | Everton |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.2% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.5% | Crystal Palace |
 
@@ -70,7 +70,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.6% | 5.35 | 7.0 | 4% | Leeds |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.6% | 5.05 | 6.0 | 2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | £6.1m | 7.5% | 4.86 | 8.0 | 6% | Sunderland |
+| Tavernier | Bournemouth | MID | £6.1m | 7.6% | 4.86 | 8.0 | 6% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 3.9% | 4.61 | 6.0 | 2% | Ipswich Town |
 
 ## Transferencia propuesta para esta fecha
