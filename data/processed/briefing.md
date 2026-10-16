@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-16 16:01 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-16 20:28 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -16,8 +16,8 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 5.05 | 6.0 | 2% | 10.36 | Crystal Palace (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 5.04 | 10.0 | 11% | 17.1 | Leeds (fuera) | — |
 | Titular | Enzo | Man City | MID | £6.9m | 3.34 | 8.0 | 8% | 14.41 | Ipswich Town (casa) | — |
-| Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 3.21 | 7.0 | 3% | 15.1 | Arsenal (casa) | Penales, Tiros libres |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.1 | 8.0 | 6% | 15.22 | Bournemouth (fuera) | Córners |
+| Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 2.41 | 7.0 | 2% | 11.33 | Arsenal (casa) | Penales, Tiros libres |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 2.41 | 6.0 | 4% | 15.04 | Man Utd (casa) | Penales |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 11.07 | Bournemouth (fuera) | — |
 | Banco 2 | Thiaw | Newcastle | DEF | £5.0m | 2.16 | 6.0 | 2% | 14.98 | Aston Villa (casa) | — |
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.7% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 41.4% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 37.3% | Crystal Palace |
-| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.1% | Ipswich Town |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.9% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 42.0% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 38.0% | Crystal Palace |
+| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.3% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.9% | Everton |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 71.3% | Everton |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.2% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.5% | Crystal Palace |
 
@@ -65,21 +65,21 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Hinshelwood | Brighton | MID | £5.9m | 0.5% | 7.04 | — | 4% | Crystal Palace |
 | Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.97 | 6.0 | 0% | Ipswich Town |
-| Van Hecke | Spurs | DEF | £4.9m | 6.5% | 5.86 | 8.0 | 5% | Coventry City |
+| Van Hecke | Spurs | DEF | £4.9m | 6.6% | 5.86 | 8.0 | 5% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.6% | 5.35 | 7.0 | 4% | Leeds |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.6% | 5.05 | 6.0 | 2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | £6.1m | 7.4% | 4.86 | 8.0 | 6% | Sunderland |
+| Tavernier | Bournemouth | MID | £6.1m | 7.5% | 4.86 | 8.0 | 6% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 3.9% | 4.61 | 6.0 | 2% | Ipswich Town |
 
 ## Transferencia propuesta para esta fecha
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Shaw → Hume (+0.34 xP, transferencia libre, entra de banco)
+- Gibbs-White → Tavernier (+3.69 xP, transferencia libre, entra de titular)
 
-Sale: Shaw · Entra: Hume
+Sale: Gibbs-White · Entra: Tavernier
 
 El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
