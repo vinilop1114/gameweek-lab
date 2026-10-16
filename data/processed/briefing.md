@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-15 23:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-16 03:00 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,17 +42,17 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Raya | Arsenal | GKP | £6.1m | 5.44 | 6.0 | 0% | 15.34 | Nott'm Forest (fuera) | — |
 | Titular | Cunha | Man Utd | MID | £7.9m | 5.35 | 7.0 | 4% | 12.38 | Leeds (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.57 | Coventry City (casa) | — |
-| Banco 2 | Sessegnon | Fulham | DEF | £4.3m | 1.1 | 6.0 | 2% | 6.37 | Hull City (casa) | — |
+| Banco 2 | Hume | Sunderland | DEF | £4.3m | 1.5 | 6.0 | 1% | 10.17 | Bournemouth (fuera) | — |
 | Banco 3 | Diop | Ipswich Town | DEF | £4.0m | 0.49 | 2.0 | 0% | 8.9 | Man City (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.13 | 2.0 | 1% | 2.28 | Man Utd (casa) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.13 | 2.0 | 1% | 1.85 | Hull City (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.4% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 40.3% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 36.2% | Crystal Palace |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.5% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 40.4% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 36.3% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 13.9% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
 | João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.3% | Everton |
