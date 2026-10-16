@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-16 10:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-16 16:01 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.6% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 40.7% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 36.7% | Crystal Palace |
-| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.0% | Ipswich Town |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 75.7% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 41.4% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 37.3% | Crystal Palace |
+| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.1% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.6% | Everton |
-| Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.1% | Crystal Palace |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 70.9% | Everton |
+| Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.2% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.5% | Crystal Palace |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -64,13 +64,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Hinshelwood | Brighton | MID | £5.9m | 0.5% | 7.04 | — | 4% | Crystal Palace |
-| Donnarumma | Man City | GKP | £5.5m | 7.6% | 5.97 | 6.0 | 0% | Ipswich Town |
-| Van Hecke | Spurs | DEF | £4.9m | 6.4% | 5.86 | 8.0 | 5% | Coventry City |
+| Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.97 | 6.0 | 0% | Ipswich Town |
+| Van Hecke | Spurs | DEF | £4.9m | 6.5% | 5.86 | 8.0 | 5% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
-| Cunha | Man Utd | MID | £7.9m | 6.5% | 5.35 | 7.0 | 4% | Leeds |
+| Cunha | Man Utd | MID | £7.9m | 6.6% | 5.35 | 7.0 | 4% | Leeds |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.6% | 5.05 | 6.0 | 2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | £6.1m | 7.3% | 4.86 | 8.0 | 6% | Sunderland |
+| Tavernier | Bournemouth | MID | £6.1m | 7.4% | 4.86 | 8.0 | 6% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 3.9% | 4.61 | 6.0 | 2% | Ipswich Town |
 
 ## Transferencia propuesta para esta fecha
