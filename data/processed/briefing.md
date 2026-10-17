@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-17 20:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-17 22:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,13 +51,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 10.58 | 13.0 | 28% | 76.4% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 44.1% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 39.9% | Crystal Palace |
+| Groß | Brighton | MID | 8.93 | — | 5% | 44.2% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 40.0% | Crystal Palace |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.4% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.6% | Crystal Palace |
 | Guéhi | Man City | DEF | 6.83 | 8.0 | 7% | 18.0% | Ipswich Town |
 | João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.3% | Everton |
-| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 36.9% | Ipswich Town |
+| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.0% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -68,10 +68,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.8% | 5.35 | 7.0 | 4% | Leeds |
-| Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.23 | 6.0 | 0% | Ipswich Town |
+| Donnarumma | Man City | GKP | £5.5m | 7.8% | 5.23 | 6.0 | 0% | Ipswich Town |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.7% | 5.05 | 6.0 | 2% | Crystal Palace |
 | Leno | Fulham | GKP | £4.5m | 4.2% | 4.93 | 6.0 | 0% | Hull City |
-| Iwobi | Fulham | MID | £5.4m | 0.8% | 4.93 | 7.0 | 4% | Hull City |
+| Iwobi | Fulham | MID | £5.4m | 0.8% | 4.93 | 7.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW7
 
@@ -86,8 +86,8 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 | | xP en 4 fechas |
 |---|---|
 | Seguir con el Base, haciendo transferencias normales | 184.84 |
-| Jugar el Wildcard ahora | 195.6 |
-| **Ganancia** | **+10.76** |
+| Jugar el Wildcard ahora | 195.53 |
+| **Ganancia** | **+10.70** |
 | Umbral exigido en GW7 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
