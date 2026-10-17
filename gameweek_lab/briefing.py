@@ -184,6 +184,28 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
         "recomendación descansa sobre la parte más débil del sistema y todavía no tiene "
         "medición propia — la primera llega a mediados de noviembre.",
     ]
+    if r["recommend"]:
+        squad = r["wildcard_squad"].sort_values(
+            ["position", "xp_horizon"], ascending=[True, False]
+        )
+        lines += [
+            "",
+            "**El plantel a armar** (esto es lo que el modelo va a aplicar sobre "
+            "`my_team.csv` en la ventana del deadline, y lo que tenés que copiar en la "
+            "app). Al jugarse el chip, el plan de transferencias de más arriba **queda "
+            "sin efecto**: el Wildcard rehace los 15.",
+            "",
+            "| Pos | Jugador | Equipo | Precio | xP | xP 4GW |",
+            "|---|---|---|---|---|---|",
+        ]
+        for pl in squad.itertuples():
+            lines.append(
+                f"| {pl.position} | {pl.web_name} | {pl.team_name} | £{pl.now_cost}m | "
+                f"{pl.xp_next} | {pl.xp_horizon} |"
+            )
+        lines.append("")
+        lines.append(f"Costo total: £{squad['now_cost'].sum():.1f}m de £{r['budget']}m disponibles.")
+
     if r["base_log"]:
         lines += ["", "Lo que el Base haría sin el chip:", ""]
         lines += [f"- {line}" for line in r["base_log"]]

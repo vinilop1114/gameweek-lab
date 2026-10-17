@@ -174,3 +174,45 @@ def evaluate_wildcard(
         "wildcard_squad": wildcard_squad,
         "gameweeks_to_expiry": WILDCARD_EXPIRY_GAMEWEEK - current_gw,
     }
+
+
+def wildcard_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
+    """Si corresponde jugar el Wildcard ahora, devuelve `(plantel_nuevo,
+    log)`; si no, `None`.
+
+    Lo llama `evolve_base_squad` **después** de sus dos frenos (ventana
+    del deadline y una-vez-por-fecha) y **antes** de evaluar
+    transferencias, cortando ahí: un Wildcard rehace los 15, así que
+    evaluar transferencias encima no tendría sentido.
+
+    Ejecuta, igual que las transferencias, porque el flujo real es que
+    una persona copia en la app exactamente lo que el modelo decidió.
+    Dejarlo en "recomendación" obligaba a marcar el chip a mano y abría
+    el modo de falla asimétrico: si no lo marcabas, el briefing te lo
+    recomendaba para siempre.
+
+    Al jugarlo, las transferencias acumuladas se pierden: FPL da cambios
+    ilimitados esa fecha y arrancás de cero, con 1 libre en la siguiente.
+    """
+    if not chip_available("wildcard"):
+        return None
+
+    verdict = evaluate_wildcard(players, team_path)
+    if not verdict["recommend"]:
+        return None
+
+    squad = verdict["wildcard_squad"].copy()
+    # Comprados hoy: su precio de venta futuro se calcula desde acá.
+    squad["purchase_price"] = squad["now_cost"]
+
+    previous = set(load_my_team(team_path, players)["web_name"])
+    incoming = sorted(set(squad["web_name"]) - previous)
+    outgoing = sorted(previous - set(squad["web_name"]))
+    log = [
+        f"WILDCARD JUGADO en GW{verdict['gameweek']}: +{verdict['gain']:.2f} xP en "
+        f"{HORIZON_GAMEWEEKS} fechas sobre seguir con transferencias normales "
+        f"(umbral {verdict['threshold']}).",
+        f"Salen ({len(outgoing)}): {', '.join(outgoing)}",
+        f"Entran ({len(incoming)}): {', '.join(incoming)}",
+    ]
+    return squad, log

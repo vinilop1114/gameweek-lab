@@ -493,16 +493,7 @@ def preview_base_transfers(
         starters, bench = select_starting_xi(squad)
         return starters, bench, [f"GW{current_gw} ya ejecutado — el equipo Base ya incluye sus transferencias."]
 
-    # Se acreditan las transferencias de TODAS las fechas transcurridas
-    # desde la última evaluación, no solo la actual. Antes se otorgaba una
-    # sola: si el pipeline no llegaba a correr dentro de la ventana de una
-    # fecha (una caída del Action, por ejemplo), esa transferencia libre
-    # se perdía en la contabilidad aunque FPL sí la hubiera otorgado.
-    granted = sum(
-        _transfers_granted(gameweek)
-        for gameweek in range(state["last_evaluated_gameweek"] + 1, current_gw + 1)
-    )
-    free_transfers = min(state["banked_free_transfers"] + granted, MAX_BANKED_TRANSFERS)
+    free_transfers = _accrued_free_transfers(state, current_gw)
     squad, _, log = plan_transfers(players, squad, free_transfers, current_gw)
     starters, bench = select_starting_xi(squad)
     return starters, bench, log
@@ -520,6 +511,29 @@ def _transfers_granted(gameweek: int) -> int:
     doble que en la app real habría costado -4 puntos.
     """
     return 0 if gameweek <= 1 else 1
+
+
+def _accrued_free_transfers(state: dict, current_gw: int) -> int:
+    """Transferencias libres disponibles al entrar a `current_gw`.
+
+    Acredita las de TODAS las fechas transcurridas desde la última
+    evaluación, no solo la actual: si el pipeline no llegó a correr
+    dentro de la ventana de alguna fecha —una caída del Action, por
+    ejemplo— esa transferencia libre se perdería de la contabilidad
+    aunque FPL sí la hubiera otorgado.
+
+    Vive acá, y no copiado en cada función, porque ya se escapó una vez:
+    el arreglo original se aplicó a `preview_base_transfers` y no a
+    `evolve_base_squad`, así que la vista previa y el motor que de verdad
+    persiste el estado podían contar transferencias distintas — justo la
+    divergencia que extraer `plan_transfers` había venido a evitar.
+    """
+    last_evaluated = state["last_evaluated_gameweek"]
+    first_pending = current_gw if last_evaluated is None else last_evaluated + 1
+    granted = sum(
+        _transfers_granted(gameweek) for gameweek in range(first_pending, current_gw + 1)
+    )
+    return min(state["banked_free_transfers"] + granted, MAX_BANKED_TRANSFERS)
 
 
 def _current_gameweek(players: pd.DataFrame) -> int:
@@ -594,11 +608,26 @@ def evolve_base_squad(
         starters, bench = select_starting_xi(squad)
         return starters, bench, log
 
-    free_transfers = min(
-        state["banked_free_transfers"] + _transfers_granted(current_gw), MAX_BANKED_TRANSFERS
-    )
-    squad, free_transfers, plan_log = plan_transfers(players, squad, free_transfers, current_gw)
-    log.extend(plan_log)
+    # El chip se evalúa antes que las transferencias y corta el paso: un
+    # Wildcard rehace los 15, así que mover jugadores encima no tendría
+    # sentido. Import local para no crear un ciclo — chips.py necesita
+    # plan_transfers de este módulo.
+    from gameweek_lab.chips import wildcard_decision
+
+    chip = wildcard_decision(players, team_path)
+    if chip is not None:
+        squad, chip_log = chip
+        log.extend(chip_log)
+        # Las acumuladas se pierden: FPL da cambios ilimitados esa fecha
+        # y la siguiente arranca con 1 libre.
+        free_transfers = 0
+        state.setdefault("chips_used", []).append("wildcard")
+    else:
+        free_transfers = _accrued_free_transfers(state, current_gw)
+        squad, free_transfers, plan_log = plan_transfers(
+            players, squad, free_transfers, current_gw
+        )
+        log.extend(plan_log)
 
     save_my_team(squad, team_path)
     state["last_evaluated_gameweek"] = current_gw

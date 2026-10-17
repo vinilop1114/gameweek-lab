@@ -660,12 +660,19 @@ podrías usarlo después, y eso exige proyectar la temporada entera. Desde
 GW15 baja en rampa hasta cero en el vencimiento (deadline de GW19),
 porque un chip vencido vale 0.
 
-**Recomienda, no ejecuta.** Jugar un chip es manual en la app de FPL, y
-rehacer 15 jugadores de golpe sobre `my_team.csv` es demasiado
-irreversible para dispararlo desde un cron. Que lo hayas jugado se marca
-a mano en `chips_used`, dentro de `base_squad_state.json`: la API pública
-no expone qué chips usó un equipo, así que no hay forma de detectarlo —
-si no lo marcás, el briefing te lo va a seguir recomendando.
+**Lo ejecuta**, igual que las transferencias: reemplaza los 15 en
+`my_team.csv`, marca el chip en `chips_used` y pone las transferencias
+acumuladas en 0 (FPL da cambios ilimitados esa fecha y la siguiente
+arranca con 1 libre). El flujo real es que una persona copia en la app
+exactamente lo que el modelo decidió, así que dejarlo en "recomendación"
+obligaba a marcar el chip a mano y abría un modo de falla asimétrico: si
+te olvidabas de marcarlo, el briefing te lo recomendaba para siempre.
+
+Corre con **los mismos dos frenos que las transferencias** — solo dentro
+de las 3h antes del deadline y una vez por fecha — y se evalúa **antes**
+que ellas, cortando el paso: un Wildcard rehace los 15, así que mover
+jugadores encima no tendría sentido. El briefing publica el plantel
+completo a armar, que es lo que se copia en la app.
 
 **Limitación grande y declarada:** el horizonte sale de `xp_horizon`, que
 calcula el motor propio — el peor predictor de la tabla de calibración
