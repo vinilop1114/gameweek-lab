@@ -107,7 +107,9 @@ def _internal_clash_penalty(problem: pulp.LpProblem, pick: dict, available: pd.D
     return CLASH_PENALTY_XP * pulp.lpSum(clash_vars)
 
 
-def select_squad(players: pd.DataFrame) -> pd.DataFrame:
+def select_squad(
+    players: pd.DataFrame, xp_column: str = "xp_next", budget: float = BUDGET
+) -> pd.DataFrame:
     """Elige los 15 jugadores que maximizan el xP total, respetando
     presupuesto, composición de posiciones y máximo 3 por club. Los
     enfrentamientos internos están permitidos pero pagan su costo
@@ -115,7 +117,19 @@ def select_squad(players: pd.DataFrame) -> pd.DataFrame:
 
     Pensado como equipo base de la temporada: el presupuesto se reparte
     entre los 15, así que el banco también queda jugable (importa, porque
-    lo vas a sostener varias fechas, no solo esta).
+    lo vas a sostener varias fechas, no solo esta). Esa es la diferencia
+    con `select_wildcard_squad`, que vacía el banco a propósito porque
+    asume que se puede rearmar todo cada semana.
+
+    `xp_column` elige sobre qué se optimiza. Con el default (`xp_next`)
+    arma para la próxima fecha; con `xp_horizon`, para las próximas
+    cuatro — que es lo que corresponde cuando el plantel se va a sostener
+    varias semanas, como al evaluar un Wildcard (ver `chips.py`).
+
+    `budget` permite pasar el presupuesto REAL (valor de venta del
+    plantel actual) en vez de los £100m del arranque. Usar 100 para
+    evaluar un Wildcard a mitad de temporada inventaría plata que no
+    tenés, o la escondería si tu equipo ganó valor.
     """
     available = _eligible_players(players)
 
@@ -124,9 +138,9 @@ def select_squad(players: pd.DataFrame) -> pd.DataFrame:
 
     clash_penalty = _internal_clash_penalty(problem, pick, available)
     problem += (
-        pulp.lpSum(pick[i] * available.loc[i, "xp_next"] for i in available.index) - clash_penalty
+        pulp.lpSum(pick[i] * available.loc[i, xp_column] for i in available.index) - clash_penalty
     )
-    problem += pulp.lpSum(pick[i] * available.loc[i, "now_cost"] for i in available.index) <= BUDGET
+    problem += pulp.lpSum(pick[i] * available.loc[i, "now_cost"] for i in available.index) <= budget
 
     _add_position_quota_constraints(problem, pick, available)
     _add_club_limit_constraints(problem, pick, available)

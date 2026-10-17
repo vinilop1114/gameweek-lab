@@ -400,7 +400,7 @@ def _load_base_state() -> dict:
         return json.loads(BASE_STATE_PATH.read_text(encoding="utf-8"))
     # Antes de la primera evaluación: 0 transferencias acumuladas, para que
     # la primera fecha otorgue exactamente la 1 libre estándar de FPL.
-    return {"last_evaluated_gameweek": None, "banked_free_transfers": 0}
+    return {"last_evaluated_gameweek": None, "banked_free_transfers": 0, "chips_used": []}
 
 
 def _save_base_state(state: dict) -> None:

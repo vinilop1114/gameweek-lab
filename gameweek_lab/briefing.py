@@ -128,6 +128,68 @@ def _transfer_section(squads: pd.DataFrame, proposed_log: list[str]) -> list[str
     return lines
 
 
+def _chips_section(players: pd.DataFrame) -> list[str]:
+    """Qué dice el modelo sobre jugar el Wildcard, y por qué.
+
+    Existe porque hasta ahora el sistema no podía recomendar un chip, y
+    peor: el `squad_type = "Wildcard"` del CSV se leía como si lo
+    recomendara. Ese equipo es un techo teórico que vacía el banco a
+    propósito y aparece igual tenga o no sentido jugarlo — comparar
+    contra él infla la ganancia enormemente. Hoy, por ejemplo, su XI
+    proyecta ~29 xP más que el Base, mientras la comparación honesta
+    —contra el Base evolucionando con transferencias normales— da ~10.
+    """
+    from gameweek_lab.chips import (
+        WILDCARD_EXPIRY_GAMEWEEK, chip_available, evaluate_wildcard,
+    )
+
+    if not chip_available("wildcard"):
+        return ["", "## Chips", "", "Wildcard ya usado (según `chips_used` en el estado)."]
+
+    r = evaluate_wildcard(players)
+    veredicto = (
+        "**SÍ conviene jugarlo**" if r["recommend"]
+        else "**todavía no conviene jugarlo**"
+    )
+    lines = [
+        "",
+        "## Chips — Wildcard",
+        "",
+        f"Con los datos de hoy, {veredicto}.",
+        "",
+        f"| | xP en {HORIZON_GAMEWEEKS} fechas |",
+        "|---|---|",
+        f"| Seguir con el Base, haciendo transferencias normales | {r['base_points']} |",
+        f"| Jugar el Wildcard ahora | {r['wildcard_points']} |",
+        f"| **Ganancia** | **{r['gain']:+.2f}** |",
+        f"| Umbral exigido en GW{r['gameweek']} | {r['threshold']} |",
+        "",
+        "La comparación es contra el Base **evolucionando**, no contra el Base de hoy: "
+        "sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas "
+        "transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits "
+        "que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El "
+        "Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la "
+        "ganancia está subestimada a propósito.",
+        "",
+        f"Presupuesto usado para armarlo: £{r['budget']}m — el valor de venta real de tus "
+        "15, no los £100m del arranque.",
+        "",
+        f"Faltan **{r['gameweeks_to_expiry']} fechas** para que venza "
+        f"(deadline de GW{WILDCARD_EXPIRY_GAMEWEEK}). El umbral baja en rampa desde GW"
+        f"{r['gameweek'] if r['gameweek'] >= 15 else 15}: un chip vencido vale cero, así "
+        "que cerca del final conviene bajar el estándar de \"momento perfecto\".",
+        "",
+        "**Ojo al escribir sobre esto:** el horizonte a 4 fechas lo calcula el motor "
+        "propio, que la calibración mide como el peor predictor de la tabla. Esta "
+        "recomendación descansa sobre la parte más débil del sistema y todavía no tiene "
+        "medición propia — la primera llega a mediados de noviembre.",
+    ]
+    if r["base_log"]:
+        lines += ["", "Lo que el Base haría sin el chip:", ""]
+        lines += [f"- {line}" for line in r["base_log"]]
+    return lines
+
+
 def _last_gameweek_review() -> list[str]:
     """Repaso de la última fecha cerrada: qué tan bien le pegó el modelo.
 
@@ -251,6 +313,7 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
 
     _, _, proposed_log = preview_base_transfers(players)
     sections += _transfer_section(squads, proposed_log)
+    sections += _chips_section(players)
     sections += _last_gameweek_review()
 
     sections += [

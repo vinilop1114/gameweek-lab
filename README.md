@@ -626,6 +626,54 @@ real cuando de verdad llegue esa fecha — por eso es "el plan de hoy, si
 nada cambiara", no un compromiso. Es de solo lectura: nunca toca
 `my_team.csv` ni `base_squad_state.json`, son completamente independientes.
 
+## ¿Conviene jugar un chip? (`chips.py`)
+
+`evaluate_wildcard` compara **jugar el Wildcard ahora** contra **seguir
+con transferencias normales**, sobre las próximas 4 fechas, y publica el
+veredicto en el briefing.
+
+Lo que hace que la comparación sea honesta es contra qué se mide. El
+`squad_type = "Wildcard"` del CSV es un techo teórico: rearma desde cero
+cada corrida, vacía el banco a propósito y aparece igual tenga o no
+sentido jugarlo. Hoy su XI proyecta **~29 xP más** que el Base — parece
+un argumento demoledor y no lo es. Contra el Base **evolucionando con
+transferencias normales**, que es lo que realmente pasaría sin el chip,
+la ganancia es **~10 xP**. Acreditarle al chip lo que las transferencias
+consiguen gratis lo haría ver tres veces mejor de lo que es.
+
+Tres decisiones de diseño:
+
+- **El Wildcard se arma jugable y a horizonte**: `select_squad` con
+  `xp_column="xp_horizon"` reparte el presupuesto entre los 15, así que
+  el banco queda usable — vas a sostener ese plantel varias semanas.
+- **Presupuesto real**, el valor de venta de tus 15, no los £100m del
+  arranque. A mitad de temporada, usar 100 inventaría plata o la
+  escondería.
+- **Los hits se le descuentan al Base** (−4 cada uno). Si llega a donde
+  llega pagando hits, eso es parte de su costo y el chip se los ahorra.
+  El Wildcard, en cambio, se puntúa como plantel fijo, sin
+  transferencias posteriores: está subestimado a propósito.
+
+El umbral (`WILDCARD_MIN_GAIN = 15` xP) es un **juicio, no una
+derivación** — el costo real de usar el chip es la mejor fecha en que
+podrías usarlo después, y eso exige proyectar la temporada entera. Desde
+GW15 baja en rampa hasta cero en el vencimiento (deadline de GW19),
+porque un chip vencido vale 0.
+
+**Recomienda, no ejecuta.** Jugar un chip es manual en la app de FPL, y
+rehacer 15 jugadores de golpe sobre `my_team.csv` es demasiado
+irreversible para dispararlo desde un cron. Que lo hayas jugado se marca
+a mano en `chips_used`, dentro de `base_squad_state.json`: la API pública
+no expone qué chips usó un equipo, así que no hay forma de detectarlo —
+si no lo marcás, el briefing te lo va a seguir recomendando.
+
+**Limitación grande y declarada:** el horizonte sale de `xp_horizon`, que
+calcula el motor propio — el peor predictor de la tabla de calibración
+(0.359 contra 0.627 del modelo vigente). Esta recomendación descansa
+sobre la parte más débil del sistema, y el horizonte todavía no tiene
+medición propia: empezó a grabarse en GW6 y la primera lectura es de
+mediados de noviembre.
+
 ## Briefing para redactar posts
 
 `data/processed/briefing.md` — un resumen en Markdown que genera el mismo
