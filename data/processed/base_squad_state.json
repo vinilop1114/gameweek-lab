@@ -1,10 +1,9 @@
 {
-  "last_evaluated_gameweek": 6,
+  "last_evaluated_gameweek": 7,
   "banked_free_transfers": 0,
-  "last_transfer_gameweek": 6,
+  "last_transfer_gameweek": 7,
   "last_transfers": [
-    "N.Williams \u2192 Van Hecke (+5.88 xP, transferencia libre, entra de titular)",
-    "Hume \u2192 Shaw (+2.36 xP, transferencia libre, entra de titular)"
+    "Gibbs-White \u2192 Tavernier (+3.69 xP, transferencia libre, entra de titular)"
   ],
   "chips_used": []
 }

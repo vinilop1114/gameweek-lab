@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-17 03:57 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-17 07:29 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -15,9 +15,9 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Calafiori | Arsenal | DEF | £5.9m | 5.09 | 9.0 | 9% | 18.12 | Nott'm Forest (fuera) | — |
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 5.05 | 6.0 | 2% | 10.36 | Crystal Palace (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.8m | 5.04 | 10.0 | 11% | 17.1 | Leeds (fuera) | — |
+| Titular | Tavernier | Bournemouth | MID | £6.1m | 4.86 | 8.0 | 6% | 16.01 | Sunderland (casa) | Tiros libres, Córners |
 | Titular | Enzo | Man City | MID | £6.9m | 3.34 | 8.0 | 8% | 14.41 | Ipswich Town (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.1 | 8.0 | 6% | 15.22 | Bournemouth (fuera) | Córners |
-| Titular | Gibbs-White | Nott'm Forest | MID | £8.0m | 2.41 | 7.0 | 2% | 11.33 | Arsenal (casa) | Penales, Tiros libres |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 2.41 | 6.0 | 4% | 15.04 | Man Utd (casa) | Penales |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 11.07 | Bournemouth (fuera) | — |
 | Banco 2 | Thiaw | Newcastle | DEF | £5.0m | 2.16 | 6.0 | 2% | 14.98 | Aston Villa (casa) | — |
@@ -50,45 +50,32 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 76.1% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 42.8% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 38.6% | Crystal Palace |
-| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.4% | Ipswich Town |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 76.2% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 43.1% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 39.0% | Crystal Palace |
+| Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.5% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 71.7% | Everton |
+| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 71.9% | Everton |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.3% | Crystal Palace |
-| Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.5% | Crystal Palace |
+| Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.6% | Crystal Palace |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Hinshelwood | Brighton | MID | £5.9m | 0.5% | 7.04 | — | 4% | Crystal Palace |
+| Hinshelwood | Brighton | MID | £5.9m | 0.6% | 7.04 | — | 4% | Crystal Palace |
 | Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.97 | 6.0 | 0% | Ipswich Town |
 | Van Hecke | Spurs | DEF | £4.9m | 6.7% | 5.86 | 8.0 | 5% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.7% | 5.35 | 7.0 | 4% | Leeds |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.6% | 5.05 | 6.0 | 2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | £6.1m | 7.6% | 4.86 | 8.0 | 6% | Sunderland |
+| Tavernier | Bournemouth | MID | £6.1m | 7.7% | 4.86 | 8.0 | 6% | Sunderland |
 | Anderson | Man City | MID | £6.3m | 3.9% | 4.61 | 6.0 | 2% | Ipswich Town |
 
-## Transferencia propuesta para esta fecha
-
-Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+## Movimientos ya ejecutados en GW7
 
 - Gibbs-White → Tavernier (+3.69 xP, transferencia libre, entra de titular)
-
-Sale: Gibbs-White · Entra: Tavernier
-
-El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
-
-**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo evalúa reemplazos dentro de una misma posición y nunca financia un puesto vendiendo en otro ("bajo el arquero suplente para subir un defensor"), así que esa alternativa no fue descartada: no se evaluó. Al escribir, no lo presentes como el movimiento óptimo de la fecha.
-
-## Movimientos ya ejecutados en GW6
-
-- N.Williams → Van Hecke (+5.88 xP, transferencia libre, entra de titular)
-- Hume → Shaw (+2.36 xP, transferencia libre, entra de titular)
 
 Transferencias libres disponibles tras esa fecha: 0.
 
@@ -99,13 +86,13 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 | | xP en 4 fechas |
 |---|---|
 | Seguir con el Base, haciendo transferencias normales | 185.47 |
-| Jugar el Wildcard ahora | 196.73 |
-| **Ganancia** | **+11.26** |
+| Jugar el Wildcard ahora | 195.25 |
+| **Ganancia** | **+9.78** |
 | Umbral exigido en GW7 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
 
-Presupuesto usado para armarlo: £96.8m — el valor de venta real de tus 15, no los £100m del arranque.
+Presupuesto usado para armarlo: £94.9m — el valor de venta real de tus 15, no los £100m del arranque.
 
 Faltan **12 fechas** para que venza (deadline de GW19). El umbral baja en rampa desde GW15: un chip vencido vale cero, así que cerca del final conviene bajar el estándar de "momento perfecto".
 
@@ -113,7 +100,6 @@ Faltan **12 fechas** para que venza (deadline de GW19). El umbral baja en rampa 
 
 Lo que el Base haría sin el chip:
 
-- Gibbs-White → Tavernier (+3.69 xP, transferencia libre, entra de titular)
 - Shaw → Hume (+0.33 xP, transferencia libre, entra de banco)
 - Sin cambios en GW9 — transferencia guardada (1 acumuladas para la próxima fecha).
 - Sin cambios en GW10 — transferencia guardada (2 acumuladas para la próxima fecha).
