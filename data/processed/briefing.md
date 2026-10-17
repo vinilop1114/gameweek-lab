@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-17 09:32 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-17 12:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,7 +8,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | João Pedro | Chelsea | FWD | £7.8m | 7.43 | — | 8% | 14.21 | Everton (fuera) | — |
+| **Capitán** | João Pedro | Chelsea | FWD | £7.8m | 6.47 | — | 8% | 14.21 | Everton (fuera) | — |
 | Vice | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.45 | Coventry City (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.1m | 5.44 | 6.0 | 0% | 15.34 | Nott'm Forest (fuera) | — |
 | Titular | B.Fernandes | Man Utd | MID | £11.8m | 5.11 | 10.0 | 12% | 17.86 | Leeds (fuera) | Penales, Tiros libres, Córners |
@@ -35,37 +35,37 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | De Cuyper | Brighton | DEF | £5.2m | 8.78 | 9.0 | 9% | 11.54 | Crystal Palace (casa) | — |
 | Titular | Semenyo | Man City | MID | £8.3m | 7.91 | 8.0 | 7% | 16.24 | Ipswich Town (casa) | — |
 | Titular | Guéhi | Man City | DEF | £6.0m | 7.71 | 9.0 | 8% | 17.84 | Ipswich Town (casa) | — |
-| Titular | João Pedro | Chelsea | FWD | £7.8m | 7.43 | — | 8% | 14.21 | Everton (fuera) | — |
 | Titular | Hinshelwood | Brighton | MID | £5.9m | 7.04 | — | 4% | 4.99 | Crystal Palace (casa) | — |
-| Titular | Rogers | Chelsea | MID | £7.9m | 6.23 | 7.0 | 5% | 15.74 | Everton (fuera) | — |
+| Titular | João Pedro | Chelsea | FWD | £7.8m | 6.47 | — | 8% | 14.21 | Everton (fuera) | — |
 | Titular | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.45 | Coventry City (casa) | — |
 | Titular | Raya | Arsenal | GKP | £6.1m | 5.44 | 6.0 | 0% | 15.34 | Nott'm Forest (fuera) | — |
 | Titular | Cunha | Man Utd | MID | £7.9m | 5.35 | 7.0 | 4% | 12.38 | Leeds (fuera) | — |
+| Titular | Rogers | Chelsea | MID | £7.9m | 5.34 | 7.0 | 5% | 15.65 | Everton (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.57 | Coventry City (casa) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £4.0m | 0.49 | 2.0 | 0% | 8.9 | Man City (fuera) | — |
-| Banco 3 | Heaven | Man Utd | DEF | £4.3m | 0.22 | 2.0 | 0% | 3.04 | Leeds (fuera) | — |
+| Banco 2 | Hume | Sunderland | DEF | £4.3m | 1.5 | 6.0 | 1% | 10.17 | Bournemouth (fuera) | — |
+| Banco 3 | Diop | Ipswich Town | DEF | £4.0m | 0.49 | 2.0 | 0% | 8.9 | Man City (fuera) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.13 | 2.0 | 1% | 1.85 | Hull City (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 76.4% | Ipswich Town |
-| Groß | Brighton | MID | 8.93 | — | 5% | 43.8% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 39.6% | Crystal Palace |
+| Haaland | Man City | FWD | 9.52 | 13.0 | 28% | 76.3% | Ipswich Town |
+| Groß | Brighton | MID | 8.93 | — | 5% | 44.0% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.78 | 9.0 | 9% | 39.7% | Crystal Palace |
 | Semenyo | Man City | MID | 7.91 | 8.0 | 7% | 14.6% | Ipswich Town |
 | Guéhi | Man City | DEF | 7.71 | 9.0 | 8% | 18.0% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 7.43 | — | 8% | 72.2% | Everton |
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.4% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.6% | Crystal Palace |
+| Cherki | Man City | MID | 6.64 | 10.0 | 11% | 36.9% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Hinshelwood | Brighton | MID | £5.9m | 0.6% | 7.04 | — | 4% | Crystal Palace |
-| Donnarumma | Man City | GKP | £5.5m | 7.8% | 5.97 | 6.0 | 0% | Ipswich Town |
-| Van Hecke | Spurs | DEF | £4.9m | 6.8% | 5.86 | 8.0 | 5% | Coventry City |
+| Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.97 | 6.0 | 0% | Ipswich Town |
+| Van Hecke | Spurs | DEF | £4.9m | 6.9% | 5.86 | 8.0 | 5% | Coventry City |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | 8.0 | 6% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.6% | 5.48 | — | 0% | Crystal Palace |
 | Cunha | Man Utd | MID | £7.9m | 6.7% | 5.35 | 7.0 | 4% | Leeds |
@@ -85,8 +85,8 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
-| Seguir con el Base, haciendo transferencias normales | 185.47 |
-| Jugar el Wildcard ahora | 195.25 |
+| Seguir con el Base, haciendo transferencias normales | 185.46 |
+| Jugar el Wildcard ahora | 195.24 |
 | **Ganancia** | **+9.78** |
 | Umbral exigido en GW7 | 15.0 |
 
@@ -100,7 +100,7 @@ Faltan **12 fechas** para que venza (deadline de GW19). El umbral baja en rampa 
 
 Lo que el Base haría sin el chip:
 
-- Shaw → Hume (+0.33 xP, transferencia libre, entra de banco)
+- Shaw → Hume (+0.34 xP, transferencia libre, entra de banco)
 - Sin cambios en GW9 — transferencia guardada (1 acumuladas para la próxima fecha).
 - Sin cambios en GW10 — transferencia guardada (2 acumuladas para la próxima fecha).
 
@@ -138,7 +138,7 @@ Mejores puntajes reales de GW6:
 - **xP 4GW**: puntos esperados acumulados en las próximas 4 fechas.
 - **Balón parado**: quién patea penales/tiros libres/córners. Es contexto: el xP **no** lo suma aparte, porque el xG de FPL ya incluye los penales ejecutados.
 
-Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 540 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
+Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 585 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
 
 Es un filtro deliberado: con muestra chica las tasas por 90 minutos son ruido (hay jugadores con 1 minuto jugado y el "mejor xG90 de la liga"). Esos jugadores están excluidos de las tablas de arriba, pero **siguen apareciendo en `players_scored.csv`** con métricas irreales. Regla operativa: rankear siempre por `xp_next` o `xp_horizon`, nunca por las columnas per-90 del CSV crudo.
 
