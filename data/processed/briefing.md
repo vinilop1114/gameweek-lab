@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-18 02:54 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-18 07:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -56,7 +56,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Verbruggen | Brighton | GKP | 7.07 | — | 0% | 22.4% | Crystal Palace |
 | Hinshelwood | Brighton | MID | 7.04 | — | 4% | 0.6% | Crystal Palace |
 | Guéhi | Man City | DEF | 6.83 | 8.0 | 7% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.3% | Everton |
+| João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.4% | Everton |
 | Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.0% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -71,7 +71,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Donnarumma | Man City | GKP | £5.5m | 7.8% | 5.23 | 6.0 | 0% | Ipswich Town |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.7% | 5.05 | 6.0 | 2% | Crystal Palace |
 | Leno | Fulham | GKP | £4.5m | 4.2% | 4.93 | 6.0 | 0% | Hull City |
-| Iwobi | Fulham | MID | £5.4m | 0.8% | 4.93 | 7.0 | 3% | Hull City |
+| Iwobi | Fulham | MID | £5.4m | 0.9% | 4.93 | 7.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW7
 
