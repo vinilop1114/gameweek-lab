@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-18 20:02 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-18 22:44 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,8 +42,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Tavernier | Bournemouth | MID | £6.1m | 5.54 | 8.0 | 8% | 17.33 | Sunderland (casa) | Tiros libres, Córners |
 | Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 11% | 17.27 | Leeds (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.57 | Coventry City (casa) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 0.54 | 2.0 | 0% | 9.15 | Man City (fuera) | — |
-| Banco 3 | Heaven | Man Utd | DEF | £4.3m | 0.2 | 2.0 | 0% | 2.8 | Leeds (fuera) | — |
+| Banco 2 | Aina | Nott'm Forest | DEF | £4.3m | 0.66 | 6.0 | 0% | 8.15 | Arsenal (casa) | — |
+| Banco 3 | Diop | Ipswich Town | DEF | £3.9m | 0.54 | 2.0 | 0% | 9.15 | Man City (fuera) | — |
 | Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.11 | 2.0 | 1% | 2.1 | Man Utd (casa) | — |
 
 ## Mejores opciones de capitanía
@@ -51,13 +51,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 10.58 | 13.0 | 28% | 76.7% | Ipswich Town |
-| Groß | Brighton | MID | 8.64 | — | 5% | 44.7% | Crystal Palace |
+| Groß | Brighton | MID | 8.64 | — | 5% | 44.8% | Crystal Palace |
 | De Cuyper | Brighton | DEF | 8.62 | 9.0 | 9% | 40.4% | Crystal Palace |
 | Verbruggen | Brighton | GKP | 7.2 | — | 0% | 22.5% | Crystal Palace |
 | Guéhi | Man City | DEF | 6.83 | 8.0 | 7% | 17.9% | Ipswich Town |
 | João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.5% | Everton |
 | Gomez | Brighton | MID | 6.14 | 8.0 | 5% | 3.7% | Crystal Palace |
-| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.1% | Ipswich Town |
+| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.2% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -66,12 +66,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gomez | Brighton | MID | £5.0m | 3.7% | 6.14 | 8.0 | 5% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.7% | 6.14 | — | 0% | Crystal Palace |
 | Van Hecke | Spurs | DEF | £4.9m | 6.9% | 5.86 | 8.0 | 5% | Coventry City |
-| Tavernier | Bournemouth | MID | £6.1m | 8.3% | 5.54 | 8.0 | 8% | Sunderland |
+| Tavernier | Bournemouth | MID | £6.1m | 8.4% | 5.54 | 8.0 | 8% | Sunderland |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.7% | 5.47 | 6.0 | 2% | Crystal Palace |
 | Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.23 | 6.0 | 0% | Ipswich Town |
 | Ayari | Brighton | MID | £5.4m | 0.4% | 4.99 | 7.0 | 2% | Crystal Palace |
 | Evanilson | Bournemouth | FWD | £6.1m | 4.1% | 4.95 | 6.0 | 5% | Sunderland |
-| Leno | Fulham | GKP | £4.5m | 4.2% | 4.93 | 6.0 | 0% | Hull City |
+| Iwobi | Fulham | MID | £5.4m | 1.0% | 4.93 | 7.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW7
 
