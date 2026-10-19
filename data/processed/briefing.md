@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW7
 
-Generado automáticamente: 2026-10-19 03:07 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-19 12:02 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -13,11 +13,11 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.47 | Coventry City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.2m | 5.54 | 8.0 | 8% | 17.33 | Sunderland (casa) | Tiros libres, Córners |
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 5.47 | 6.0 | 2% | 10.59 | Crystal Palace (casa) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 11% | 17.27 | Leeds (fuera) | — |
+| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 12% | 17.34 | Leeds (fuera) | — |
 | Titular | Calafiori | Arsenal | DEF | £6.0m | 5.19 | 9.0 | 8% | 18.22 | Nott'm Forest (fuera) | — |
 | Titular | B.Fernandes | Man Utd | MID | £11.8m | 4.55 | 10.0 | 11% | 17.43 | Leeds (fuera) | Penales, Tiros libres, Córners |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.21 | 7.0 | 5% | 14.85 | Bournemouth (fuera) | Córners |
-| Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 2.86 | 6.0 | 4% | 15.28 | Man Utd (casa) | Penales |
+| Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 2.86 | 6.0 | 4% | 15.27 | Man Utd (casa) | Penales |
 | Titular | Enzo | Man City | MID | £6.9m | 2.68 | 8.0 | 9% | 13.67 | Ipswich Town (casa) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 10.62 | Bournemouth (fuera) | — |
 | Banco 2 | Thiaw | Newcastle | DEF | £5.0m | 1.98 | 6.0 | 2% | 15.0 | Aston Villa (casa) | — |
@@ -40,24 +40,24 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Van Hecke | Spurs | DEF | £4.9m | 5.86 | 8.0 | 5% | 18.47 | Coventry City (casa) | — |
 | Titular | Rogers | Chelsea | MID | £7.9m | 5.64 | 7.0 | 5% | 15.78 | Everton (fuera) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.2m | 5.54 | 8.0 | 8% | 17.33 | Sunderland (casa) | Tiros libres, Córners |
-| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 11% | 17.27 | Leeds (fuera) | — |
+| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 12% | 17.34 | Leeds (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.57 | Coventry City (casa) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 0.54 | 2.0 | 0% | 9.15 | Man City (fuera) | — |
-| Banco 3 | Heaven | Man Utd | DEF | £4.3m | 0.2 | 2.0 | 0% | 2.8 | Leeds (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.4m | 0.11 | 2.0 | 1% | 2.1 | Man Utd (casa) | — |
+| Banco 2 | Hume | Sunderland | DEF | £4.3m | 1.62 | 6.0 | 1% | 10.29 | Bournemouth (fuera) | — |
+| Banco 3 | Diop | Ipswich Town | DEF | £3.9m | 0.54 | 2.0 | 0% | 9.15 | Man City (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.4m | 0.12 | 2.0 | 1% | 1.7 | Hull City (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 10.58 | 13.0 | 28% | 76.7% | Ipswich Town |
-| Groß | Brighton | MID | 8.64 | — | 5% | 44.8% | Crystal Palace |
-| De Cuyper | Brighton | DEF | 8.62 | 9.0 | 9% | 40.5% | Crystal Palace |
+| Haaland | Man City | FWD | 10.58 | 13.0 | 28% | 76.8% | Ipswich Town |
+| Groß | Brighton | MID | 8.64 | — | 5% | 44.9% | Crystal Palace |
+| De Cuyper | Brighton | DEF | 8.62 | 9.0 | 9% | 40.6% | Crystal Palace |
 | Verbruggen | Brighton | GKP | 7.2 | — | 0% | 22.5% | Crystal Palace |
-| Guéhi | Man City | DEF | 6.83 | 8.0 | 7% | 17.9% | Ipswich Town |
-| João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.5% | Everton |
+| Guéhi | Man City | DEF | 6.83 | 8.0 | 7% | 17.8% | Ipswich Town |
+| João Pedro | Chelsea | FWD | 6.55 | — | 8% | 72.6% | Everton |
 | Gomez | Brighton | MID | 6.14 | 8.0 | 5% | 3.7% | Crystal Palace |
-| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.2% | Ipswich Town |
+| Cherki | Man City | MID | 6.08 | 10.0 | 10% | 37.3% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,13 +65,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Gomez | Brighton | MID | £5.0m | 3.7% | 6.14 | 8.0 | 5% | Crystal Palace |
 | Gomez | Brighton | MID | £5.0m | 3.7% | 6.14 | — | 0% | Crystal Palace |
-| Van Hecke | Spurs | DEF | £4.9m | 6.9% | 5.86 | 8.0 | 5% | Coventry City |
-| Tavernier | Bournemouth | MID | £6.2m | 8.5% | 5.54 | 8.0 | 8% | Sunderland |
+| Van Hecke | Spurs | DEF | £4.9m | 6.8% | 5.86 | 8.0 | 5% | Coventry City |
+| Tavernier | Bournemouth | MID | £6.2m | 8.6% | 5.54 | 8.0 | 8% | Sunderland |
 | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.7% | 5.47 | 6.0 | 2% | Crystal Palace |
 | Donnarumma | Man City | GKP | £5.5m | 7.7% | 5.23 | 6.0 | 0% | Ipswich Town |
 | Ayari | Brighton | MID | £5.4m | 0.4% | 4.99 | 7.0 | 2% | Crystal Palace |
-| Evanilson | Bournemouth | FWD | £6.1m | 4.1% | 4.95 | 6.0 | 5% | Sunderland |
-| Leno | Fulham | GKP | £4.5m | 4.2% | 4.93 | 6.0 | 0% | Hull City |
+| Evanilson | Bournemouth | FWD | £6.1m | 4.2% | 4.95 | 6.0 | 5% | Sunderland |
+| Iwobi | Fulham | MID | £5.4m | 1.0% | 4.93 | 7.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW7
 
@@ -85,9 +85,9 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
-| Seguir con el Base, haciendo transferencias normales | 185.66 |
-| Jugar el Wildcard ahora | 196.23 |
-| **Ganancia** | **+10.57** |
+| Seguir con el Base, haciendo transferencias normales | 185.74 |
+| Jugar el Wildcard ahora | 196.3 |
+| **Ganancia** | **+10.56** |
 | Umbral exigido en GW7 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
