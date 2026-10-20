@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-20 18:53 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-20 23:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -22,7 +22,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 1.93 | 6.0 | 0% | 10.62 | Leeds (casa) | — |
 | Banco 2 | Enzo | Man City | MID | £6.9m | 2.01 | 7.0 | 5% | 13.69 | Aston Villa (fuera) | — |
 | Banco 3 | Thiaw | Newcastle | DEF | £5.0m | 1.98 | 6.0 | 2% | 13.76 | Crystal Palace (fuera) | — |
-| Banco 4 | Shaw | Man Utd | DEF | £4.3m | 1.5 | 6.0 | 0% | 8.01 | Bournemouth (casa) | — |
+| Banco 4 | Shaw | Man Utd | DEF | £4.3m | 0.0 | 0.0 | 0% | 0.0 | Bournemouth (casa) | — |
 
 ## Equipo Wildcard
 
@@ -44,26 +44,26 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.19 | Chelsea (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.61 | 6.0 | 1% | 10.84 | Nott'm Forest (casa) | — |
 | Banco 3 | Aina | Nott'm Forest | DEF | £4.3m | 1.31 | 6.0 | 1% | 8.9 | Ipswich Town (fuera) | — |
-| Banco 4 | Georginio | Brighton | FWD | £5.3m | 0.56 | 2.0 | 0% | 3.19 | Liverpool (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.16 | 2.0 | 1% | 2.1 | Sunderland (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 72.8% | Spurs |
-| Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.7% | Aston Villa |
+| Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.8% | Aston Villa |
 | Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.0% | Spurs |
 | Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.0% | Hull City |
 | Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.4% | Spurs |
 | Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.1% | Sunderland |
 | Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.3% | Everton |
-| Mbeumo | Man Utd | MID | 5.45 | 10.0 | 12% | 20.3% | Bournemouth |
+| Mbeumo | Man Utd | MID | 5.45 | 10.0 | 12% | 20.4% | Bournemouth |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Neto | Chelsea | MID | £6.5m | 2.4% | 5.41 | 8.0 | 6% | Spurs |
+| Neto | Chelsea | MID | £6.5m | 2.5% | 5.41 | 8.0 | 6% | Spurs |
 | Lewis-Potter | Brentford | MID | £5.5m | 1.7% | 5.17 | 7.0 | 4% | Hull City |
 | Henderson | Chelsea | MID | £4.9m | 1.1% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.1% | 5.04 | — | 0% | Spurs |
@@ -77,9 +77,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Shaw → Hume (+0.39 xP, transferencia libre, entra de banco)
+- Shaw → Mazraoui (+0.80 xP, transferencia libre, entra de banco)
 
-Sale: Shaw · Entra: Hume
+Sale: Shaw · Entra: Mazraoui
 
 El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
@@ -97,9 +97,9 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
-| Seguir con el Base, haciendo transferencias normales | 188.24 |
+| Seguir con el Base, haciendo transferencias normales | 187.85 |
 | Jugar el Wildcard ahora | 197.66 |
-| **Ganancia** | **+9.42** |
+| **Ganancia** | **+9.82** |
 | Umbral exigido en GW8 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -112,7 +112,7 @@ Faltan **11 fechas** para que venza (deadline de GW19). El umbral baja en rampa 
 
 Lo que el Base haría sin el chip:
 
-- Shaw → Hume (+0.39 xP, transferencia libre, entra de banco)
+- Shaw → Mazraoui (+0.80 xP, transferencia libre, entra de banco)
 - Thiaw → Bogle (+2.51 xP, transferencia libre, entra de titular)
 - B.Fernandes → Saka (+2.45 xP, transferencia libre, entra de titular)
 - Sin cambios en GW11 — transferencia guardada (1 acumuladas para la próxima fecha).
