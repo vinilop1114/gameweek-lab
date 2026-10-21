@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-20 23:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-21 03:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,8 +43,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Iwobi | Fulham | MID | £5.4m | 4.93 | 7.0 | 3% | 11.45 | Coventry City (fuera) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.19 | Chelsea (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.61 | 6.0 | 1% | 10.84 | Nott'm Forest (casa) | — |
-| Banco 3 | Aina | Nott'm Forest | DEF | £4.3m | 1.31 | 6.0 | 1% | 8.9 | Ipswich Town (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.16 | 2.0 | 1% | 2.1 | Sunderland (fuera) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.56 | 2.0 | 0% | 3.19 | Liverpool (fuera) | — |
+| Banco 4 | Mazraoui | Man Utd | DEF | £4.3m | 0.31 | 2.0 | 0% | 2.66 | Bournemouth (casa) | — |
 
 ## Mejores opciones de capitanía
 
