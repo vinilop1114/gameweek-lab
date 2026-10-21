@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-21 16:33 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-21 21:13 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,18 +52,18 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 72.9% | Spurs |
 | Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.8% | Aston Villa |
-| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.1% | Spurs |
-| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.0% | Hull City |
-| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.4% | Spurs |
-| Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.1% | Sunderland |
-| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.3% | Everton |
+| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.2% | Spurs |
+| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.1% | Hull City |
+| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.5% | Spurs |
+| Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.2% | Sunderland |
+| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.4% | Everton |
 | Gibbs-White | Nott'm Forest | MID | 5.89 | 10.0 | 10% | 11.3% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Neto | Chelsea | MID | £6.5m | 2.5% | 5.41 | 8.0 | 6% | Spurs |
+| Neto | Chelsea | MID | £6.5m | 2.6% | 5.41 | 8.0 | 6% | Spurs |
 | Lewis-Potter | Brentford | MID | £5.5m | 1.7% | 5.17 | 7.0 | 4% | Hull City |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
@@ -97,9 +97,9 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
-| Seguir con el Base, haciendo transferencias normales | 187.85 |
+| Seguir con el Base, haciendo transferencias normales | 185.09 |
 | Jugar el Wildcard ahora | 197.66 |
-| **Ganancia** | **+9.82** |
+| **Ganancia** | **+12.57** |
 | Umbral exigido en GW8 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -114,8 +114,8 @@ Lo que el Base haría sin el chip:
 
 - Shaw → Mazraoui (+0.80 xP, transferencia libre, entra de banco)
 - Thiaw → Bogle (+2.51 xP, transferencia libre, entra de titular)
-- B.Fernandes → Saka (+2.45 xP, transferencia libre, entra de titular)
-- Sin cambios en GW11 — transferencia guardada (1 acumuladas para la próxima fecha).
+- Sin cambios en GW10 — transferencia guardada (1 acumuladas para la próxima fecha).
+- Sin cambios en GW11 — transferencia guardada (2 acumuladas para la próxima fecha).
 
 ## Repaso de GW7 (fecha cerrada)
 
