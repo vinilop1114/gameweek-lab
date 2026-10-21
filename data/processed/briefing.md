@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-21 03:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-21 11:06 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 72.8% | Spurs |
 | Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.8% | Aston Villa |
-| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.0% | Spurs |
+| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.1% | Spurs |
 | Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.0% | Hull City |
 | Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.4% | Spurs |
 | Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.1% | Sunderland |
@@ -71,7 +71,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Leno | Fulham | GKP | £4.5m | 4.3% | 4.93 | 6.0 | 0% | Coventry City |
 | Ajer | Brentford | DEF | £4.5m | 4.0% | 4.6 | 6.0 | 1% | Hull City |
 | Castagne | Fulham | DEF | £4.5m | 1.2% | 4.51 | 8.0 | 3% | Coventry City |
-| Kelleher | Brentford | GKP | £5.0m | 6.0% | 4.48 | 6.0 | 0% | Hull City |
+| Kelleher | Brentford | GKP | £5.0m | 6.1% | 4.48 | 6.0 | 0% | Hull City |
 
 ## Transferencia propuesta para esta fecha
 
