@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-21 21:13 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-22 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -13,7 +13,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 12% | 15.77 | Bournemouth (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £6.0m | 5.19 | 9.0 | 8% | 18.23 | Everton (casa) | — |
 | Titular | B.Fernandes | Man Utd | MID | £11.8m | 4.55 | 10.0 | 11% | 15.85 | Bournemouth (casa) | Penales, Tiros libres, Córners |
-| Titular | Calvert-Lewin | Leeds | FWD | £6.0m | 4.29 | 6.0 | 9% | 15.27 | Sunderland (fuera) | Penales |
+| Titular | Calvert-Lewin | Leeds | FWD | £6.1m | 4.29 | 6.0 | 9% | 15.27 | Sunderland (fuera) | Penales |
 | Titular | Tavernier | Bournemouth | MID | £6.2m | 3.69 | 7.0 | 4% | 17.34 | Man Utd (fuera) | Tiros libres, Córners |
 | Titular | Thiago | Brentford | FWD | £7.8m | 3.43 | 10.0 | 17% | 17.3 | Hull City (fuera) | Penales |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 3.21 | 7.0 | 5% | 14.85 | Leeds (casa) | Córners |
@@ -51,7 +51,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 72.9% | Spurs |
-| Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.8% | Aston Villa |
+| Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.9% | Aston Villa |
 | Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.2% | Spurs |
 | Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.1% | Hull City |
 | Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.5% | Spurs |
@@ -64,7 +64,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
 | Neto | Chelsea | MID | £6.5m | 2.6% | 5.41 | 8.0 | 6% | Spurs |
-| Lewis-Potter | Brentford | MID | £5.5m | 1.7% | 5.17 | 7.0 | 4% | Hull City |
+| Lewis-Potter | Brentford | MID | £5.5m | 1.8% | 5.17 | 7.0 | 4% | Hull City |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
 | Iwobi | Fulham | MID | £5.4m | 1.1% | 4.93 | 7.0 | 3% | Coventry City |
