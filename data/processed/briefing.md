@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-22 03:10 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-22 11:06 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,20 +50,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 72.9% | Spurs |
+| João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 73.0% | Spurs |
 | Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 76.9% | Aston Villa |
-| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.2% | Spurs |
+| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.3% | Spurs |
 | Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.1% | Hull City |
-| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.5% | Spurs |
+| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 26.6% | Spurs |
 | Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.2% | Sunderland |
-| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.4% | Everton |
-| Gibbs-White | Nott'm Forest | MID | 5.89 | 10.0 | 10% | 11.3% | Ipswich Town |
+| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.5% | Everton |
+| Gibbs-White | Nott'm Forest | MID | 5.89 | 10.0 | 10% | 11.4% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Neto | Chelsea | MID | £6.5m | 2.6% | 5.41 | 8.0 | 6% | Spurs |
+| Neto | Chelsea | MID | £6.5m | 2.7% | 5.41 | 8.0 | 6% | Spurs |
 | Lewis-Potter | Brentford | MID | £5.5m | 1.8% | 5.17 | 7.0 | 4% | Hull City |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
