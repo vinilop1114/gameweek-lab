@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-22 21:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-23 03:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -10,7 +10,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | João Pedro | Chelsea | FWD | £7.9m | 8.74 | 10.0 | 13% | 14.22 | Spurs (casa) | — |
 | Vice | Raya | Arsenal | GKP | £6.1m | 5.94 | 6.0 | 0% | 15.31 | Everton (casa) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.8m | 5.45 | 10.0 | 12% | 15.77 | Bournemouth (casa) | — |
+| Titular | Mbeumo | Man Utd | MID | £7.9m | 5.45 | 10.0 | 12% | 15.77 | Bournemouth (casa) | — |
 | Titular | Calafiori | Arsenal | DEF | £6.0m | 5.19 | 9.0 | 8% | 18.23 | Everton (casa) | — |
 | Titular | B.Fernandes | Man Utd | MID | £11.8m | 4.55 | 10.0 | 11% | 15.85 | Bournemouth (casa) | Penales, Tiros libres, Córners |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.1m | 4.29 | 6.0 | 9% | 15.27 | Sunderland (fuera) | Penales |
@@ -34,7 +34,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Vice | Haaland | Man City | FWD | £15.7m | 7.94 | 10.0 | 18% | 22.71 | Aston Villa (fuera) | Penales |
 | Titular | Rogers | Chelsea | MID | £8.0m | 7.52 | 8.0 | 8% | 15.78 | Spurs (casa) | — |
 | Titular | Schade | Brentford | MID | £6.2m | 6.47 | 8.0 | 10% | 14.89 | Hull City (fuera) | — |
-| Titular | Palmer | Chelsea | MID | £9.7m | 6.1 | 10.0 | 11% | 15.26 | Spurs (casa) | Penales |
+| Titular | Palmer | Chelsea | MID | £9.8m | 6.1 | 10.0 | 11% | 15.26 | Spurs (casa) | Penales |
 | Titular | Bogle | Leeds | DEF | £4.7m | 5.98 | 8.0 | 5% | 16.51 | Sunderland (fuera) | — |
 | Titular | Raya | Arsenal | GKP | £6.1m | 5.94 | 6.0 | 0% | 15.31 | Everton (casa) | — |
 | Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 5.89 | 10.0 | 10% | 15.1 | Ipswich Town (fuera) | Penales, Tiros libres |
@@ -52,18 +52,18 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | João Pedro | Chelsea | FWD | 8.74 | 10.0 | 13% | 73.1% | Spurs |
 | Haaland | Man City | FWD | 7.94 | 10.0 | 18% | 77.0% | Aston Villa |
-| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.5% | Spurs |
-| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.2% | Hull City |
-| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 27.0% | Spurs |
-| Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.3% | Sunderland |
-| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.6% | Everton |
+| Rogers | Chelsea | MID | 7.52 | 8.0 | 8% | 48.6% | Spurs |
+| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 14.3% | Hull City |
+| Palmer | Chelsea | MID | 6.1 | 10.0 | 11% | 27.2% | Spurs |
+| Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.4% | Sunderland |
+| Raya | Arsenal | GKP | 5.94 | 6.0 | 0% | 44.7% | Everton |
 | Gibbs-White | Nott'm Forest | MID | 5.89 | 10.0 | 10% | 11.5% | Ipswich Town |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Neto | Chelsea | MID | £6.5m | 2.8% | 5.41 | 8.0 | 6% | Spurs |
+| Neto | Chelsea | MID | £6.5m | 2.9% | 5.41 | 8.0 | 6% | Spurs |
 | Lewis-Potter | Brentford | MID | £5.5m | 1.8% | 5.17 | 7.0 | 4% | Hull City |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.2% | 5.04 | — | 0% | Spurs |
@@ -104,7 +104,7 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
 
-Presupuesto usado para armarlo: £95.0m — el valor de venta real de tus 15, no los £100m del arranque.
+Presupuesto usado para armarlo: £95.1m — el valor de venta real de tus 15, no los £100m del arranque.
 
 Faltan **11 fechas** para que venza (deadline de GW19). El umbral baja en rampa desde GW15: un chip vencido vale cero, así que cerca del final conviene bajar el estándar de "momento perfecto".
 
