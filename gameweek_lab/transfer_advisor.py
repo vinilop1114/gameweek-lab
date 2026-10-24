@@ -616,12 +616,14 @@ def evolve_base_squad(
 
     chip = wildcard_decision(players, team_path)
     if chip is not None:
-        squad, chip_log = chip
+        squad, chip_log, chip_token = chip
         log.extend(chip_log)
         # Las acumuladas se pierden: FPL da cambios ilimitados esa fecha
         # y la siguiente arranca con 1 libre.
         free_transfers = 0
-        state.setdefault("chips_used", []).append("wildcard")
+        # El token lleva la mitad de temporada: son dos chips distintos y
+        # gastar el de la primera no consume el de la segunda.
+        state.setdefault("chips_used", []).append(chip_token)
     else:
         free_transfers = _accrued_free_transfers(state, current_gw)
         squad, free_transfers, plan_log = plan_transfers(

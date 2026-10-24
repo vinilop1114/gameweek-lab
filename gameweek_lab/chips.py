@@ -45,39 +45,72 @@ from gameweek_lab.transfer_advisor import (
 # transferencias normales consiguen gratis, así que lo que queda es
 # incremental, y un chip es de un solo uso.
 WILDCARD_MIN_GAIN = 15.0
-# Desde esta fecha el umbral baja en rampa hasta cero en el vencimiento.
-# Un chip vencido vale 0, así que cerca del final conviene bajar el
-# estándar de "momento perfecto" — la regla ya estaba escrita a mano en
-# docs/chips-strategy.md y acá se vuelve ejecutable.
-WILDCARD_RAMP_START_GAMEWEEK = 15
-# El primer set de chips expira en el deadline de GW19 (2 enero 2027).
-WILDCARD_EXPIRY_GAMEWEEK = 19
+# Cuántas fechas antes del vencimiento empieza a bajar el umbral.
+WILDCARD_RAMP_GAMEWEEKS = 4
+# **Hay DOS sets de chips, uno por mitad de temporada.** El primero vence
+# en el deadline de GW19 (2 enero 2027) y el segundo al cerrar la
+# temporada. Un chip sin usar no se acumula: se pierde.
+FIRST_HALF_LAST_GAMEWEEK = 19
+SEASON_LAST_GAMEWEEK = 38
 
 CHIP_STATE_KEY = "chips_used"
 
 
-def chip_available(chip: str = "wildcard") -> bool:
-    """Si el chip sigue disponible, según `chips_used` en el estado.
+def season_half(gameweek: int) -> int:
+    """1 o 2 según la mitad de temporada a la que pertenece la fecha."""
+    return 1 if gameweek <= FIRST_HALF_LAST_GAMEWEEK else 2
 
-    **Lo marca una persona, no el sistema.** Jugar un chip es una acción
-    manual en la app de FPL y la API pública no expone qué chips usó un
-    equipo, así que no hay forma de detectarlo. Si lo jugaste, agregalo a
-    `chips_used` en `data/processed/base_squad_state.json`; si no, el
-    briefing va a seguir recomendándotelo para siempre.
+
+def chip_expiry_gameweek(gameweek: int) -> int:
+    """Última fecha en que se puede usar el chip del set vigente."""
+    return FIRST_HALF_LAST_GAMEWEEK if season_half(gameweek) == 1 else SEASON_LAST_GAMEWEEK
+
+
+def chip_token(chip: str, gameweek: int) -> str:
+    """Cómo se guarda en el estado: `wildcard:1` / `wildcard:2`."""
+    return f"{chip}:{season_half(gameweek)}"
+
+
+def chip_available(chip: str, gameweek: int) -> bool:
+    """Si queda el chip **del set de esta mitad**.
+
+    El estado guarda tokens tipo `wildcard:1` / `wildcard:2`, porque son
+    dos chips distintos: haber jugado el de la primera mitad no consume
+    el de la segunda. La primera versión guardaba solo `"wildcard"` en
+    una lista plana, así que usarlo en diciembre bloqueaba para siempre
+    el de enero a junio — el chip de la segunda mitad quedaba muerto sin
+    que nada lo avisara.
+
+    **Lo marca el modelo al jugarlo** (ver `wildcard_decision`), no una
+    persona. Si alguna vez hay que corregirlo a mano, es
+    `chips_used` en `data/processed/base_squad_state.json`.
+
+    Un token sin sufijo se interpreta como del primer set, por si quedó
+    alguno escrito por la versión anterior.
     """
-    return chip not in _load_base_state().get(CHIP_STATE_KEY, [])
+    used = _load_base_state().get(CHIP_STATE_KEY, [])
+    legacy = chip in used and season_half(gameweek) == 1
+    return not legacy and chip_token(chip, gameweek) not in used
 
 
 def wildcard_threshold(gameweek: int) -> float:
-    """Umbral de ganancia exigido en `gameweek`, con la rampa de
-    vencimiento aplicada."""
-    if gameweek >= WILDCARD_EXPIRY_GAMEWEEK:
+    """Ganancia exigida en `gameweek`, con la rampa de vencimiento del
+    set vigente.
+
+    La rampa se mide contra el vencimiento de **esta** mitad, no contra
+    un número fijo. Antes el vencimiento estaba cableado en GW19, así que
+    desde GW20 el umbral quedaba en 0 **para el resto de la temporada**:
+    el chip de la segunda mitad se habría jugado en la primera fecha con
+    cualquier ganancia positiva, cuando todavía faltaban 18 fechas para
+    que venciera. Justo lo contrario de lo que la rampa busca.
+    """
+    expiry = chip_expiry_gameweek(gameweek)
+    if gameweek >= expiry:
         return 0.0
-    if gameweek < WILDCARD_RAMP_START_GAMEWEEK:
+    ramp_start = expiry - WILDCARD_RAMP_GAMEWEEKS
+    if gameweek < ramp_start:
         return WILDCARD_MIN_GAIN
-    span = WILDCARD_EXPIRY_GAMEWEEK - WILDCARD_RAMP_START_GAMEWEEK
-    remaining = WILDCARD_EXPIRY_GAMEWEEK - gameweek
-    return round(WILDCARD_MIN_GAIN * remaining / span, 2)
+    return round(WILDCARD_MIN_GAIN * (expiry - gameweek) / WILDCARD_RAMP_GAMEWEEKS, 2)
 
 
 def _week_xi_points(squad: pd.DataFrame, weekly_by_id: dict, week: int) -> float:
@@ -172,13 +205,17 @@ def evaluate_wildcard(
         "recommend": gain >= threshold,
         "base_log": base_log,
         "wildcard_squad": wildcard_squad,
-        "gameweeks_to_expiry": WILDCARD_EXPIRY_GAMEWEEK - current_gw,
+        "gameweeks_to_expiry": chip_expiry_gameweek(current_gw) - current_gw,
+        "season_half": season_half(current_gw),
+        "expiry_gameweek": chip_expiry_gameweek(current_gw),
     }
 
 
 def wildcard_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
     """Si corresponde jugar el Wildcard ahora, devuelve `(plantel_nuevo,
-    log)`; si no, `None`.
+    log, token)`; si no, `None`. El token es lo que se guarda en
+    `chips_used` — lleva la mitad de temporada, porque son dos chips
+    distintos.
 
     Lo llama `evolve_base_squad` **después** de sus dos frenos (ventana
     del deadline y una-vez-por-fecha) y **antes** de evaluar
@@ -194,7 +231,8 @@ def wildcard_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
     Al jugarlo, las transferencias acumuladas se pierden: FPL da cambios
     ilimitados esa fecha y arrancás de cero, con 1 libre en la siguiente.
     """
-    if not chip_available("wildcard"):
+    current_gw = _current_gameweek(players)
+    if not chip_available("wildcard", current_gw):
         return None
 
     verdict = evaluate_wildcard(players, team_path)
@@ -209,10 +247,10 @@ def wildcard_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
     incoming = sorted(set(squad["web_name"]) - previous)
     outgoing = sorted(previous - set(squad["web_name"]))
     log = [
-        f"WILDCARD JUGADO en GW{verdict['gameweek']}: +{verdict['gain']:.2f} xP en "
+        f"WILDCARD (set {verdict['season_half']}) JUGADO en GW{verdict['gameweek']}: +{verdict['gain']:.2f} xP en "
         f"{HORIZON_GAMEWEEKS} fechas sobre seguir con transferencias normales "
         f"(umbral {verdict['threshold']}).",
         f"Salen ({len(outgoing)}): {', '.join(outgoing)}",
         f"Entran ({len(incoming)}): {', '.join(incoming)}",
     ]
-    return squad, log
+    return squad, log, chip_token("wildcard", current_gw)

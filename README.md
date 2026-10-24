@@ -656,9 +656,22 @@ Tres decisiones de diseño:
 
 El umbral (`WILDCARD_MIN_GAIN = 15` xP) es un **juicio, no una
 derivación** — el costo real de usar el chip es la mejor fecha en que
-podrías usarlo después, y eso exige proyectar la temporada entera. Desde
-GW15 baja en rampa hasta cero en el vencimiento (deadline de GW19),
-porque un chip vencido vale 0.
+podrías usarlo después, y eso exige proyectar la temporada entera.
+
+**Hay dos sets de chips, uno por mitad de temporada**, y el modelo los
+trata como dos chips distintos: `chips_used` guarda tokens
+`wildcard:1` / `wildcard:2`, así que gastar el de la primera mitad no
+consume el de la segunda. El umbral baja en rampa en las **últimas 4
+fechas de cada set** —hasta cero en GW19 para el primero y en GW38 para
+el segundo— porque un chip sin usar no se acumula: se pierde.
+
+Las dos primeras versiones de esto estaban mal, y de formas que se
+cancelaban mal entre sí: `chips_used` era una lista plana, así que usar
+el Wildcard en diciembre mataba el de enero a junio sin avisar; y el
+vencimiento estaba cableado en GW19, así que desde GW20 el umbral quedaba
+en 0 **por el resto de la temporada** y el chip del segundo set se habría
+jugado en la primera fecha con cualquier ganancia positiva, faltando 18
+fechas para que venciera.
 
 **Lo ejecuta**, igual que las transferencias: reemplaza los 15 en
 `my_team.csv`, marca el chip en `chips_used` y pone las transferencias

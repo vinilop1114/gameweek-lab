@@ -139,12 +139,18 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
     proyecta ~29 xP más que el Base, mientras la comparación honesta
     —contra el Base evolucionando con transferencias normales— da ~10.
     """
-    from gameweek_lab.chips import (
-        WILDCARD_EXPIRY_GAMEWEEK, chip_available, evaluate_wildcard,
-    )
+    from gameweek_lab.chips import chip_available, evaluate_wildcard, season_half
+    from gameweek_lab.transfer_advisor import _current_gameweek
 
-    if not chip_available("wildcard"):
-        return ["", "## Chips", "", "Wildcard ya usado (según `chips_used` en el estado)."]
+    current_gw = _current_gameweek(players)
+    half = season_half(current_gw)
+    if not chip_available("wildcard", current_gw):
+        return [
+            "", "## Chips", "",
+            f"El Wildcard del set {half} ya se jugó. **Hay dos sets, uno por mitad de "
+            "temporada**, así que el de la otra mitad sigue intacto — este aviso es solo "
+            "sobre el de ahora.",
+        ]
 
     r = evaluate_wildcard(players)
     veredicto = (
@@ -174,10 +180,11 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
         f"Presupuesto usado para armarlo: £{r['budget']}m — el valor de venta real de tus "
         "15, no los £100m del arranque.",
         "",
-        f"Faltan **{r['gameweeks_to_expiry']} fechas** para que venza "
-        f"(deadline de GW{WILDCARD_EXPIRY_GAMEWEEK}). El umbral baja en rampa desde GW"
-        f"{r['gameweek'] if r['gameweek'] >= 15 else 15}: un chip vencido vale cero, así "
-        "que cerca del final conviene bajar el estándar de \"momento perfecto\".",
+        f"Este es el Wildcard del **set {r['season_half']}** (hay dos, uno por mitad de "
+        f"temporada). Faltan **{r['gameweeks_to_expiry']} fechas** para que venza, en "
+        f"GW{r['expiry_gameweek']}. El umbral baja en rampa en las últimas 4 fechas del "
+        "set: un chip sin usar no se acumula, se pierde, así que cerca del cierre "
+        "conviene bajar el estándar de \"momento perfecto\".",
         "",
         "**Ojo al escribir sobre esto:** el horizonte a 4 fechas lo calcula el motor "
         "propio, que la calibración mide como el peor predictor de la tabla. Esta "
