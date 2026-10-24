@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-24 20:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-24 22:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -53,7 +53,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.6% | Aston Villa |
 | Rogers | Chelsea | MID | 6.73 | 8.0 | 8% | 49.9% | Spurs |
 | Schade | Brentford | MID | 6.47 | 8.0 | 10% | 15.1% | Hull City |
-| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 73.5% | Spurs |
+| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 73.4% | Spurs |
 | Raya | Arsenal | GKP | 6.04 | — | 0% | 45.5% | Everton |
 | Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.9% | Sunderland |
 | Gabriel | Arsenal | DEF | 5.88 | 8.0 | 6% | 21.3% | Everton |
