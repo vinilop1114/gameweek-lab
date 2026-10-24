@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-23 23:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-24 03:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -37,14 +37,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Palmer | Chelsea | MID | £9.8m | 6.1 | 10.0 | 11% | 15.26 | Spurs (casa) | Penales |
 | Titular | Bogle | Leeds | DEF | £4.7m | 5.98 | 8.0 | 5% | 16.51 | Sunderland (fuera) | — |
 | Titular | Raya | Arsenal | GKP | £6.2m | 5.94 | 6.0 | 0% | 15.31 | Everton (casa) | — |
+| Titular | Gibbs-White | Nott'm Forest | MID | £7.9m | 5.48 | 10.0 | 11% | 15.73 | Ipswich Town (fuera) | Penales, Tiros libres |
 | Titular | Calafiori | Arsenal | DEF | £6.0m | 5.19 | 9.0 | 8% | 18.22 | Everton (casa) | — |
 | Titular | Lewis-Potter | Brentford | MID | £5.5m | 5.17 | 7.0 | 4% | 11.78 | Hull City (fuera) | Tiros libres |
-| Titular | Guéhi | Man City | DEF | £6.0m | 5.13 | 8.0 | 4% | 17.43 | Aston Villa (fuera) | — |
-| Titular | N.Williams | Nott'm Forest | DEF | £5.0m | 5.09 | 9.0 | 6% | 16.22 | Ipswich Town (fuera) | — |
+| Titular | Ajer | Brentford | DEF | £4.5m | 4.6 | 6.0 | 1% | 12.71 | Hull City (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.19 | Chelsea (fuera) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.53 | 6.0 | 1% | 10.98 | Nott'm Forest (casa) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.21 | 2.0 | 0% | 2.49 | Newcastle (casa) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.16 | 2.0 | 1% | 2.1 | Sunderland (fuera) | — |
+| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.53 | 6.0 | 1% | 10.99 | Nott'm Forest (casa) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.56 | 2.0 | 0% | 3.19 | Liverpool (fuera) | — |
+| Banco 4 | Mazraoui | Man Utd | DEF | £4.3m | 0.31 | 2.0 | 0% | 2.66 | Bournemouth (casa) | — |
 
 ## Mejores opciones de capitanía
 
@@ -65,13 +65,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Neto | Chelsea | MID | £6.6m | 3.5% | 5.41 | 8.0 | 6% | Spurs |
 | Lewis-Potter | Brentford | MID | £5.5m | 1.9% | 5.17 | 7.0 | 4% | Hull City |
-| N.Williams | Nott'm Forest | DEF | £5.0m | 6.2% | 5.09 | 9.0 | 6% | Ipswich Town |
 | Henderson | Chelsea | MID | £4.9m | 1.4% | 5.04 | — | 0% | Spurs |
 | Henderson | Chelsea | MID | £4.9m | 1.4% | 5.04 | — | 0% | Spurs |
-| Iwobi | Fulham | MID | £5.4m | 1.4% | 4.93 | 7.0 | 3% | Coventry City |
 | Leno | Fulham | GKP | £4.5m | 4.5% | 4.93 | 6.0 | 0% | Coventry City |
+| Iwobi | Fulham | MID | £5.4m | 1.4% | 4.93 | 7.0 | 3% | Coventry City |
 | Ajer | Brentford | DEF | £4.5m | 4.2% | 4.6 | 6.0 | 1% | Hull City |
 | Castagne | Fulham | DEF | £4.5m | 1.2% | 4.51 | 8.0 | 3% | Coventry City |
+| Kelleher | Brentford | GKP | £5.0m | 6.2% | 4.48 | 6.0 | 0% | Hull City |
 
 ## Movimientos ya ejecutados en GW8
 
@@ -86,8 +86,8 @@ Con los datos de hoy, **todavía no conviene jugarlo**.
 | | xP en 4 fechas |
 |---|---|
 | Seguir con el Base, haciendo transferencias normales | 183.26 |
-| Jugar el Wildcard ahora | 192.62 |
-| **Ganancia** | **+9.36** |
+| Jugar el Wildcard ahora | 193.83 |
+| **Ganancia** | **+10.57** |
 | Umbral exigido en GW8 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -100,7 +100,7 @@ Faltan **11 fechas** para que venza (deadline de GW19). El umbral baja en rampa 
 
 Lo que el Base haría sin el chip:
 
-- Shaw → Diop (+0.33 xP, transferencia libre, entra de banco)
+- Shaw → Diop (+0.34 xP, transferencia libre, entra de banco)
 - Thiaw → Bogle (+2.53 xP, transferencia libre, entra de titular)
 - Sin cambios en GW11 — transferencia guardada (1 acumuladas para la próxima fecha).
 
