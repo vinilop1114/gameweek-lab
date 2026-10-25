@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-25 03:04 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-25 10:39 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,20 +43,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Bassey | Fulham | DEF | £4.5m | 4.91 | 6.0 | 2% | 12.5 | Coventry City (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Chelsea (fuera) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.53 | 6.0 | 1% | 11.02 | Nott'm Forest (casa) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.56 | 2.0 | 0% | 3.18 | Liverpool (fuera) | — |
+| Banco 3 | Nmecha | Leeds | FWD | £5.3m | 0.16 | 2.0 | 1% | 2.1 | Sunderland (fuera) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.11 | 2.0 | 1% | 1.23 | Coventry City (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.6% | Aston Villa |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.7% | Aston Villa |
 | Rogers | Chelsea | MID | 6.73 | 8.0 | 8% | 49.9% | Spurs |
-| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 15.1% | Hull City |
-| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 73.3% | Spurs |
-| Raya | Arsenal | GKP | 6.04 | — | 0% | 45.5% | Everton |
+| Schade | Brentford | MID | 6.47 | 8.0 | 10% | 15.2% | Hull City |
+| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 73.1% | Spurs |
+| Raya | Arsenal | GKP | 6.04 | — | 0% | 45.6% | Everton |
 | Bogle | Leeds | DEF | 5.98 | 8.0 | 5% | 10.9% | Sunderland |
-| Gabriel | Arsenal | DEF | 5.97 | 8.0 | 6% | 21.3% | Everton |
+| Gabriel | Arsenal | DEF | 5.97 | 8.0 | 6% | 21.4% | Everton |
 | Leno | Fulham | GKP | 5.6 | 6.0 | 0% | 4.5% | Coventry City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -67,7 +67,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Lewis-Potter | Brentford | MID | £5.5m | 1.9% | 5.17 | 7.0 | 4% | Hull City |
 | Neto | Chelsea | MID | £6.6m | 3.7% | 5.16 | 8.0 | 6% | Spurs |
 | Castagne | Fulham | DEF | £4.5m | 1.2% | 4.94 | 8.0 | 4% | Coventry City |
-| Bassey | Fulham | DEF | £4.5m | 1.1% | 4.91 | 6.0 | 2% | Coventry City |
+| Bassey | Fulham | DEF | £4.5m | 1.2% | 4.91 | 6.0 | 2% | Coventry City |
 | Iwobi | Fulham | MID | £5.4m | 1.4% | 4.85 | 7.0 | 4% | Coventry City |
 | Ajer | Brentford | DEF | £4.5m | 4.2% | 4.6 | 6.0 | 1% | Hull City |
 | Kelleher | Brentford | GKP | £5.0m | 6.2% | 4.48 | 6.0 | 0% | Hull City |
