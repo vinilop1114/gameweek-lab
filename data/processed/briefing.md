@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW8
 
-Generado automáticamente: 2026-10-25 23:00 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-26 03:03 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -21,7 +21,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | F.Kadıoğlu | Brighton | DEF | £4.4m | 1.81 | 6.0 | 0% | 8.05 | Liverpool (fuera) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 2.81 | 6.0 | 0% | 10.8 | Leeds (casa) | — |
 | Banco 2 | Thiaw | Newcastle | DEF | £5.0m | 1.74 | 6.0 | 2% | 12.73 | Crystal Palace (fuera) | — |
-| Banco 3 | Barry | Everton | FWD | £5.7m | 1.05 | 6.0 | 1% | 12.46 | Arsenal (fuera) | Penales |
+| Banco 3 | Barry | Everton | FWD | £5.6m | 1.05 | 6.0 | 1% | 12.46 | Arsenal (fuera) | Penales |
 | Banco 4 | Shaw | Man Utd | DEF | £4.2m | 0.0 | 0.0 | 0% | 0.0 | Bournemouth (casa) | — |
 
 ## Equipo Wildcard
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.8% | Aston Villa |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.9% | Aston Villa |
 | Rogers | Chelsea | MID | 6.73 | 8.0 | 8% | 50.0% | Spurs |
-| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 72.0% | Spurs |
-| Raya | Arsenal | GKP | 6.04 | — | 0% | 45.6% | Everton |
+| João Pedro | Chelsea | FWD | 6.05 | 9.0 | 9% | 71.9% | Spurs |
+| Raya | Arsenal | GKP | 6.04 | — | 0% | 45.7% | Everton |
 | Schade | Brentford | MID | 5.98 | 8.0 | 10% | 15.1% | Hull City |
-| Gabriel | Arsenal | DEF | 5.97 | 8.0 | 6% | 21.9% | Everton |
+| Gabriel | Arsenal | DEF | 5.97 | 8.0 | 6% | 22.0% | Everton |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.0% | Sunderland |
 | Leno | Fulham | GKP | 5.6 | 6.0 | 0% | 4.5% | Coventry City |
 
@@ -92,7 +92,7 @@ Con los datos de hoy, **SÍ conviene jugarlo**.
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
 
-Presupuesto usado para armarlo: £94.8m — el valor de venta real de tus 15, no los £100m del arranque.
+Presupuesto usado para armarlo: £94.7m — el valor de venta real de tus 15, no los £100m del arranque.
 
 Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan **11 fechas** para que venza, en GW19. El umbral baja en rampa en las últimas 4 fechas del set: un chip sin usar no se acumula, se pierde, así que cerca del cierre conviene bajar el estándar de "momento perfecto".
 
@@ -118,7 +118,7 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 | MID | Schade | Brentford | £6.2m | 5.98 | 15.02 |
 | MID | E.Le Fée | Sunderland | £5.7m | 3.23 | 14.83 |
 
-Costo total: £94.7m de £94.8m disponibles.
+Costo total: £94.7m de £94.7m disponibles.
 
 Lo que el Base haría sin el chip:
 
