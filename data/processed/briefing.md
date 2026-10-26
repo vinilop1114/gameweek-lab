@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-26 12:12 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-26 20:17 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,25 +50,25 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 77.9% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 16.9% | Leeds |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.0% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.3% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.5% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.4% | Newcastle |
-| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.0% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.0% | Leeds |
-| Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.8% | Crystal Palace |
-| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.0% | Fulham |
+| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.1% | Bournemouth |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.2% | Leeds |
+| Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.9% | Crystal Palace |
+| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.1% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 7.2% | 6.27 | 8.0 | 5% | Crystal Palace |
-| Evanilson | Bournemouth | FWD | £6.2m | 7.0% | 5.07 | 6.0 | 5% | Leeds |
-| Tonali | Spurs | MID | £5.3m | 1.8% | 4.71 | 6.0 | 1% | Crystal Palace |
-| McGinn | Aston Villa | MID | £5.4m | 3.0% | 4.6 | 7.0 | 4% | Fulham |
+| Van Hecke | Spurs | DEF | £4.9m | 7.3% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Evanilson | Bournemouth | FWD | £6.2m | 7.2% | 5.07 | 6.0 | 5% | Leeds |
+| Tonali | Spurs | MID | £5.3m | 1.9% | 4.71 | 6.0 | 1% | Crystal Palace |
+| McGinn | Aston Villa | MID | £5.4m | 3.1% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
-| E.Le Fée | Sunderland | MID | £5.7m | 2.9% | 4.3 | 8.0 | 8% | Coventry City |
+| E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.3 | 8.0 | 8% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.0% | 4.23 | 7.0 | 3% | Newcastle |
 | Leno | Fulham | GKP | £4.5m | 4.5% | 4.2 | 6.0 | 0% | Aston Villa |
 
