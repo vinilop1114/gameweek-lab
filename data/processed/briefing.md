@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-26 20:17 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-27 00:13 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -9,7 +9,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Van Hecke | Spurs | DEF | £4.9m | 6.27 | 8.0 | 5% | 20.19 | Crystal Palace (casa) | — |
-| Vice | Tavernier | Bournemouth | MID | £6.3m | 6.04 | 8.0 | 9% | 19.31 | Leeds (casa) | Tiros libres, Córners |
+| Vice | Tavernier | Bournemouth | MID | £6.4m | 6.04 | 8.0 | 9% | 19.31 | Leeds (casa) | Tiros libres, Córners |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.3 | 8.0 | 8% | 16.07 | Coventry City (fuera) | Córners |
 | Titular | Raya | Arsenal | GKP | £6.2m | 4.03 | 6.0 | 0% | 14.1 | Liverpool (fuera) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 3.35 | 7.0 | 6% | 15.57 | Chelsea (fuera) | — |
@@ -32,9 +32,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.7m | 7.87 | 10.0 | 18% | 18.9 | Brighton (casa) | Penales |
 | Vice | Van Hecke | Spurs | DEF | £4.9m | 6.27 | 8.0 | 5% | 20.19 | Crystal Palace (casa) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.3m | 6.04 | 8.0 | 9% | 19.31 | Leeds (casa) | Tiros libres, Córners |
+| Titular | Tavernier | Bournemouth | MID | £6.4m | 6.04 | 8.0 | 9% | 19.31 | Leeds (casa) | Tiros libres, Córners |
 | Titular | Tarkowski | Everton | DEF | £6.2m | 5.94 | 6.0 | 1% | 16.41 | Newcastle (fuera) | — |
-| Titular | Bogle | Leeds | DEF | £4.7m | 5.82 | 8.0 | 5% | 18.05 | Bournemouth (fuera) | — |
+| Titular | Bogle | Leeds | DEF | £4.8m | 5.82 | 8.0 | 5% | 18.05 | Bournemouth (fuera) | — |
 | Titular | Evanilson | Bournemouth | FWD | £6.2m | 5.07 | 6.0 | 5% | 15.37 | Leeds (casa) | — |
 | Titular | Tonali | Spurs | MID | £5.3m | 4.71 | 6.0 | 1% | 13.6 | Crystal Palace (casa) | — |
 | Titular | McGinn | Aston Villa | MID | £5.4m | 4.6 | 7.0 | 4% | 12.71 | Fulham (casa) | Córners |
@@ -51,11 +51,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.0% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.3% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.5% | Leeds |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.4% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.7% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.4% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.1% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.2% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.3% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.9% | Crystal Palace |
 | McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.1% | Fulham |
 
@@ -63,8 +63,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 7.3% | 6.27 | 8.0 | 5% | Crystal Palace |
-| Evanilson | Bournemouth | FWD | £6.2m | 7.2% | 5.07 | 6.0 | 5% | Leeds |
+| Van Hecke | Spurs | DEF | £4.9m | 7.4% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Evanilson | Bournemouth | FWD | £6.2m | 7.3% | 5.07 | 6.0 | 5% | Leeds |
 | Tonali | Spurs | MID | £5.3m | 1.9% | 4.71 | 6.0 | 1% | Crystal Palace |
 | McGinn | Aston Villa | MID | £5.4m | 3.1% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
@@ -92,13 +92,13 @@ Transferencias libres disponibles tras esa fecha: 0.
 
 ## Chips — Wildcard
 
-Con los datos de hoy, **SÍ conviene jugarlo**.
+Con los datos de hoy, **todavía no conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
 | Seguir con el Base, haciendo transferencias normales | 181.42 |
-| Jugar el Wildcard ahora | 197.88 |
-| **Ganancia** | **+16.46** |
+| Jugar el Wildcard ahora | 195.63 |
+| **Ganancia** | **+14.20** |
 | Umbral exigido en GW9 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -108,28 +108,6 @@ Presupuesto usado para armarlo: £94.7m — el valor de venta real de tus 15, no
 Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan **10 fechas** para que venza, en GW19. El umbral baja en rampa en las últimas 4 fechas del set: un chip sin usar no se acumula, se pierde, así que cerca del cierre conviene bajar el estándar de "momento perfecto".
 
 **Ojo al escribir sobre esto:** el horizonte a 4 fechas lo calcula el motor propio, que la calibración mide como el peor predictor de la tabla. Esta recomendación descansa sobre la parte más débil del sistema y todavía no tiene medición propia — la primera llega a mediados de noviembre.
-
-**El plantel a armar** (esto es lo que el modelo va a aplicar sobre `my_team.csv` en la ventana del deadline, y lo que tenés que copiar en la app). Al jugarse el chip, el plan de transferencias de más arriba **queda sin efecto**: el Wildcard rehace los 15.
-
-| Pos | Jugador | Equipo | Precio | xP | xP 4GW |
-|---|---|---|---|---|---|
-| DEF | Van Hecke | Spurs | £4.9m | 6.27 | 20.19 |
-| DEF | Gabriel | Arsenal | £7.9m | 3.98 | 18.35 |
-| DEF | Bogle | Leeds | £4.7m | 5.82 | 18.05 |
-| DEF | Mukiele | Sunderland | £5.4m | 3.33 | 16.68 |
-| DEF | Richards | Crystal Palace | £4.9m | 2.69 | 16.56 |
-| FWD | Haaland | Man City | £15.7m | 7.87 | 18.9 |
-| FWD | Calvert-Lewin | Leeds | £6.1m | 4.04 | 16.19 |
-| FWD | Evanilson | Bournemouth | £6.2m | 5.07 | 15.37 |
-| GKP | Raya | Arsenal | £6.2m | 4.03 | 14.1 |
-| GKP | Petrović | Bournemouth | £4.5m | 2.8 | 13.19 |
-| MID | Tavernier | Bournemouth | £6.3m | 6.04 | 19.31 |
-| MID | E.Le Fée | Sunderland | £5.7m | 4.3 | 16.07 |
-| MID | Tonali | Spurs | £5.3m | 4.71 | 13.6 |
-| MID | Yeremy | Crystal Palace | £5.5m | 2.56 | 13.54 |
-| MID | McGinn | Aston Villa | £5.4m | 4.6 | 12.71 |
-
-Costo total: £94.7m de £94.7m disponibles.
 
 Lo que el Base haría sin el chip:
 
