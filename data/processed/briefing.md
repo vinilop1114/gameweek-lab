@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-27 08:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-27 15:06 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -14,14 +14,14 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Raya | Arsenal | GKP | £6.2m | 4.03 | 6.0 | 0% | 14.1 | Liverpool (fuera) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 3.35 | 7.0 | 6% | 15.57 | Chelsea (fuera) | — |
 | Titular | Barry | Everton | FWD | £5.6m | 3.15 | 6.0 | 8% | 13.59 | Newcastle (fuera) | Penales |
-| Titular | João Pedro | Chelsea | FWD | £7.9m | 3.02 | 6.0 | 3% | 9.02 | Man Utd (casa) | — |
 | Titular | Thiago | Brentford | FWD | £7.8m | 2.87 | 9.0 | 10% | 14.52 | Nott'm Forest (casa) | Penales |
 | Titular | B.Fernandes | Man Utd | MID | £11.7m | 2.8 | 7.0 | 5% | 14.63 | Chelsea (fuera) | Penales, Tiros libres, Córners |
 | Titular | Calafiori | Arsenal | DEF | £6.0m | 2.13 | 6.0 | 3% | 11.5 | Liverpool (fuera) | — |
+| Titular | Enzo | Man City | MID | £6.9m | 1.99 | 7.0 | 5% | 11.7 | Brighton (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 1.74 | 6.0 | 2% | 11.57 | Everton (casa) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 3.75 | 6.0 | 0% | 11.7 | Coventry City (fuera) | — |
-| Banco 2 | Enzo | Man City | MID | £6.9m | 1.99 | 7.0 | 5% | 11.7 | Brighton (casa) | — |
-| Banco 3 | F.Kadıoğlu | Brighton | DEF | £4.4m | 0.9 | 2.0 | 0% | 8.86 | Man City (fuera) | — |
+| Banco 2 | F.Kadıoğlu | Brighton | DEF | £4.4m | 0.9 | 2.0 | 0% | 8.86 | Man City (fuera) | — |
+| Banco 3 | João Pedro | Chelsea | FWD | £7.9m | 0.0 | 0.0 | 0% | 0.0 | Man Utd (casa) | — |
 | Banco 4 | Shaw | Man Utd | DEF | £4.2m | 0.0 | 0.0 | 0% | 0.0 | Chelsea (fuera) | — |
 
 ## Equipo Wildcard
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.0% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.4% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.9% | Leeds |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.1% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.5% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 18.2% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.4% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.1% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.3% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.5% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.9% | Crystal Palace |
 | McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.1% | Fulham |
 
@@ -63,8 +63,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 7.4% | 6.27 | 8.0 | 5% | Crystal Palace |
-| Evanilson | Bournemouth | FWD | £6.2m | 7.3% | 5.07 | 6.0 | 5% | Leeds |
+| Van Hecke | Spurs | DEF | £4.9m | 7.5% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Evanilson | Bournemouth | FWD | £6.2m | 7.5% | 5.07 | 6.0 | 5% | Leeds |
 | Tonali | Spurs | MID | £5.3m | 1.9% | 4.71 | 6.0 | 1% | Crystal Palace |
 | McGinn | Aston Villa | MID | £5.4m | 3.1% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
@@ -76,9 +76,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Calafiori → Bogle (+6.37 xP, transferencia libre, entra de titular)
+- Calafiori → Bogle (+6.54 xP, transferencia libre, entra de titular)
+- João Pedro → Calvert-Lewin (+6.04 xP, HIT -4 aplicado, entra de titular)
 
-Sale: Calafiori · Entra: Bogle
+Sale: Calafiori, João Pedro · Entra: Bogle, Calvert-Lewin
 
 El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
@@ -92,13 +93,13 @@ Transferencias libres disponibles tras esa fecha: 0.
 
 ## Chips — Wildcard
 
-Con los datos de hoy, **todavía no conviene jugarlo**.
+Con los datos de hoy, **SÍ conviene jugarlo**.
 
 | | xP en 4 fechas |
 |---|---|
-| Seguir con el Base, haciendo transferencias normales | 181.42 |
+| Seguir con el Base, haciendo transferencias normales | 180.42 |
 | Jugar el Wildcard ahora | 195.63 |
-| **Ganancia** | **+14.20** |
+| **Ganancia** | **+15.20** |
 | Umbral exigido en GW9 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -109,12 +110,35 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 
 **Ojo al escribir sobre esto:** el horizonte a 4 fechas lo calcula el motor propio, que la calibración mide como el peor predictor de la tabla. Esta recomendación descansa sobre la parte más débil del sistema y todavía no tiene medición propia — la primera llega a mediados de noviembre.
 
+**El plantel a armar** (esto es lo que el modelo va a aplicar sobre `my_team.csv` en la ventana del deadline, y lo que tenés que copiar en la app). Al jugarse el chip, el plan de transferencias de más arriba **queda sin efecto**: el Wildcard rehace los 15.
+
+| Pos | Jugador | Equipo | Precio | xP | xP 4GW |
+|---|---|---|---|---|---|
+| DEF | Van Hecke | Spurs | £4.9m | 6.27 | 20.19 |
+| DEF | Gabriel | Arsenal | £7.9m | 3.98 | 18.35 |
+| DEF | Bogle | Leeds | £4.8m | 5.82 | 18.05 |
+| DEF | Mukiele | Sunderland | £5.4m | 3.33 | 16.68 |
+| DEF | Tarkowski | Everton | £6.2m | 5.94 | 16.41 |
+| FWD | Calvert-Lewin | Leeds | £6.1m | 4.04 | 16.19 |
+| FWD | Evanilson | Bournemouth | £6.2m | 5.07 | 15.37 |
+| FWD | Thiago | Brentford | £7.8m | 2.87 | 14.52 |
+| GKP | Raya | Arsenal | £6.2m | 4.03 | 14.1 |
+| GKP | Petrović | Bournemouth | £4.5m | 2.8 | 13.19 |
+| MID | Tavernier | Bournemouth | £6.4m | 6.04 | 19.31 |
+| MID | E.Le Fée | Sunderland | £5.7m | 4.3 | 16.07 |
+| MID | Mbeumo | Man Utd | £7.9m | 3.35 | 15.57 |
+| MID | Rogers | Chelsea | £8.0m | 3.37 | 14.16 |
+| MID | Tonali | Spurs | £5.3m | 4.71 | 13.6 |
+
+Costo total: £93.3m de £94.7m disponibles.
+
 Lo que el Base haría sin el chip:
 
-- Calafiori → Bogle (+6.37 xP, transferencia libre, entra de titular)
-- João Pedro → Calvert-Lewin (+5.84 xP, transferencia libre, entra de titular)
+- Calafiori → Bogle (+6.54 xP, transferencia libre, entra de titular)
+- João Pedro → Calvert-Lewin (+6.04 xP, HIT -4 aplicado, entra de titular)
 - F.Kadıoğlu → Cash (+2.24 xP, transferencia libre, entra de titular)
 - Shaw → Hume (+1.53 xP, transferencia libre, entra de titular)
+- Thiaw → Richards (+3.92 xP, transferencia libre, entra de titular)
 
 ## Repaso de GW8 (fecha cerrada)
 
