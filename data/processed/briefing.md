@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-27 00:13 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-27 08:36 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.0% | Brighton |
 | Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 7.4% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.7% | Leeds |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 17.9% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.4% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.1% | Bournemouth |
 | Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 7.3% | Leeds |
