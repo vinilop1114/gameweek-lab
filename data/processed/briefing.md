@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-29 17:59 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-29 22:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,27 +50,27 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.3% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.2% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 20.5% | Leeds |
-| Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.5% | Newcastle |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.4% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.4% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 20.9% | Leeds |
+| Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.6% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.2% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 9.9% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 10.2% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.9% | Crystal Palace |
-| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.2% | Fulham |
+| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.3% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 8.2% | 6.27 | 8.0 | 5% | Crystal Palace |
-| Evanilson | Bournemouth | FWD | £6.2m | 9.9% | 5.07 | 6.0 | 5% | Leeds |
+| Van Hecke | Spurs | DEF | £4.9m | 8.4% | 6.27 | 8.0 | 5% | Crystal Palace |
 | Tonali | Spurs | MID | £5.3m | 1.9% | 4.71 | 6.0 | 1% | Crystal Palace |
-| McGinn | Aston Villa | MID | £5.4m | 3.2% | 4.6 | 7.0 | 4% | Fulham |
+| McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.3 | 8.0 | 8% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.0% | 4.23 | 7.0 | 3% | Newcastle |
 | Leno | Fulham | GKP | £4.5m | 4.5% | 4.2 | 6.0 | 0% | Aston Villa |
+| Justin | Leeds | DEF | £4.5m | 2.3% | 4.14 | 6.0 | 2% | Bournemouth |
 
 ## Transferencia propuesta para esta fecha
 
@@ -98,8 +98,8 @@ Con los datos de hoy, **SÍ conviene jugarlo**.
 | | xP en 4 fechas |
 |---|---|
 | Seguir con el Base, haciendo transferencias normales | 180.42 |
-| Jugar el Wildcard ahora | 195.63 |
-| **Ganancia** | **+15.20** |
+| Jugar el Wildcard ahora | 195.97 |
+| **Ganancia** | **+15.54** |
 | Umbral exigido en GW9 | 15.0 |
 
 La comparación es contra el Base **evolucionando**, no contra el Base de hoy: sin el chip igual harías transferencias, y acreditarle al Wildcard lo que esas transferencias consiguen gratis lo haría ver mucho mejor de lo que es. Los hits que el Base pagaría en el camino se le descuentan a él (−4 cada uno). El Wildcard se mide como plantel fijo, sin transferencias posteriores, así que la ganancia está subestimada a propósito.
@@ -117,7 +117,7 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 | DEF | Van Hecke | Spurs | £4.9m | 6.27 | 20.19 |
 | DEF | Gabriel | Arsenal | £7.9m | 3.98 | 18.35 |
 | DEF | Bogle | Leeds | £4.8m | 5.82 | 18.05 |
-| DEF | Mukiele | Sunderland | £5.4m | 3.33 | 16.68 |
+| DEF | Richards | Crystal Palace | £4.9m | 2.69 | 16.56 |
 | DEF | Tarkowski | Everton | £6.2m | 5.94 | 16.41 |
 | FWD | Calvert-Lewin | Leeds | £6.1m | 4.04 | 16.19 |
 | FWD | Evanilson | Bournemouth | £6.2m | 5.07 | 15.37 |
@@ -128,9 +128,9 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 | MID | E.Le Fée | Sunderland | £5.7m | 4.3 | 16.07 |
 | MID | Mbeumo | Man Utd | £7.9m | 3.35 | 15.57 |
 | MID | Rogers | Chelsea | £8.0m | 3.37 | 14.16 |
-| MID | Tonali | Spurs | £5.3m | 4.71 | 13.6 |
+| MID | Dewsbury-Hall | Everton | £6.6m | 4.23 | 13.36 |
 
-Costo total: £93.3m de £94.6m disponibles.
+Costo total: £94.1m de £94.6m disponibles.
 
 Lo que el Base haría sin el chip:
 
