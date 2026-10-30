@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-29 22:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-30 04:14 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -16,7 +16,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Barry | Everton | FWD | £5.6m | 3.15 | 6.0 | 8% | 13.59 | Newcastle (fuera) | Penales |
 | Titular | Thiago | Brentford | FWD | £7.8m | 2.87 | 9.0 | 10% | 14.52 | Nott'm Forest (casa) | Penales |
 | Titular | B.Fernandes | Man Utd | MID | £11.7m | 2.8 | 7.0 | 5% | 14.63 | Chelsea (fuera) | Penales, Tiros libres, Córners |
-| Titular | Calafiori | Arsenal | DEF | £6.0m | 2.13 | 6.0 | 3% | 11.5 | Liverpool (fuera) | — |
+| Titular | Calafiori | Arsenal | DEF | £5.9m | 2.13 | 6.0 | 3% | 11.5 | Liverpool (fuera) | — |
 | Titular | Enzo | Man City | MID | £6.9m | 1.99 | 7.0 | 5% | 11.7 | Brighton (casa) | — |
 | Titular | Thiaw | Newcastle | DEF | £5.0m | 1.74 | 6.0 | 2% | 11.57 | Everton (casa) | — |
 | Banco 1 | Roefs | Sunderland | GKP | £4.9m | 3.75 | 6.0 | 0% | 11.7 | Coventry City (fuera) | — |
@@ -35,7 +35,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Tavernier | Bournemouth | MID | £6.4m | 6.04 | 8.0 | 9% | 19.31 | Leeds (casa) | Tiros libres, Córners |
 | Titular | Tarkowski | Everton | DEF | £6.2m | 5.94 | 6.0 | 1% | 16.41 | Newcastle (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.82 | 8.0 | 5% | 18.05 | Bournemouth (fuera) | — |
-| Titular | Evanilson | Bournemouth | FWD | £6.2m | 5.07 | 6.0 | 5% | 15.37 | Leeds (casa) | — |
+| Titular | Evanilson | Bournemouth | FWD | £6.3m | 5.07 | 6.0 | 5% | 15.37 | Leeds (casa) | — |
 | Titular | Tonali | Spurs | MID | £5.3m | 4.71 | 6.0 | 1% | 13.6 | Crystal Palace (casa) | — |
 | Titular | McGinn | Aston Villa | MID | £5.4m | 4.6 | 7.0 | 4% | 12.71 | Fulham (casa) | Córners |
 | Titular | Schade | Brentford | MID | £6.2m | 4.48 | 8.0 | 6% | 12.52 | Nott'm Forest (casa) | — |
@@ -51,20 +51,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.4% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.4% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 20.9% | Leeds |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.5% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 21.1% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.6% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.2% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 10.2% | Leeds |
-| Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 1.9% | Crystal Palace |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 10.4% | Leeds |
+| Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 2.0% | Crystal Palace |
 | McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.3% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 8.4% | 6.27 | 8.0 | 5% | Crystal Palace |
-| Tonali | Spurs | MID | £5.3m | 1.9% | 4.71 | 6.0 | 1% | Crystal Palace |
+| Van Hecke | Spurs | DEF | £4.9m | 8.5% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Tonali | Spurs | MID | £5.3m | 2.0% | 4.71 | 6.0 | 1% | Crystal Palace |
 | McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.3 | 8.0 | 8% | Coventry City |
@@ -120,7 +120,7 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 | DEF | Richards | Crystal Palace | £4.9m | 2.69 | 16.56 |
 | DEF | Tarkowski | Everton | £6.2m | 5.94 | 16.41 |
 | FWD | Calvert-Lewin | Leeds | £6.1m | 4.04 | 16.19 |
-| FWD | Evanilson | Bournemouth | £6.2m | 5.07 | 15.37 |
+| FWD | Evanilson | Bournemouth | £6.3m | 5.07 | 15.37 |
 | FWD | Thiago | Brentford | £7.8m | 2.87 | 14.52 |
 | GKP | Raya | Arsenal | £6.2m | 4.03 | 14.1 |
 | GKP | Petrović | Bournemouth | £4.5m | 2.8 | 13.19 |
@@ -130,7 +130,7 @@ Este es el Wildcard del **set 1** (hay dos, uno por mitad de temporada). Faltan 
 | MID | Rogers | Chelsea | £8.0m | 3.37 | 14.16 |
 | MID | Dewsbury-Hall | Everton | £6.6m | 4.23 | 13.36 |
 
-Costo total: £94.1m de £94.6m disponibles.
+Costo total: £94.2m de £94.6m disponibles.
 
 Lo que el Base haría sin el chip:
 
