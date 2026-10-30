@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-30 12:05 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-30 19:49 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,33 +43,33 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Raya | Arsenal | GKP | £6.2m | 4.03 | 6.0 | 0% | 14.1 | Liverpool (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 4.17 | Crystal Palace (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 2.04 | 6.0 | 1% | 11.03 | Hull City (fuera) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.22 | 2.0 | 0% | 3.29 | Man City (fuera) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.19 | 2.0 | 0% | 2.49 | Spurs (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.19 | 2.0 | 0% | 2.49 | Spurs (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.08 | 2.0 | 0% | 1.12 | Aston Villa (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.5% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.7% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 21.8% | Leeds |
-| Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.6% | Newcastle |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.6% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 9.3% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 23.3% | Leeds |
+| Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.8% | Newcastle |
 | Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.3% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 11.0% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 12.2% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 2.0% | Crystal Palace |
-| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.3% | Fulham |
+| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.4% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 8.7% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Van Hecke | Spurs | DEF | £4.9m | 9.3% | 6.27 | 8.0 | 5% | Crystal Palace |
 | Tonali | Spurs | MID | £5.3m | 2.0% | 4.71 | 6.0 | 1% | Crystal Palace |
-| McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.6 | 7.0 | 4% | Fulham |
-| Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
+| McGinn | Aston Villa | MID | £5.4m | 3.4% | 4.6 | 7.0 | 4% | Fulham |
+| Xhaka | Sunderland | MID | £5.4m | 2.9% | 4.38 | 5.0 | 1% | Coventry City |
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.3 | 8.0 | 8% | Coventry City |
-| Dewsbury-Hall | Everton | MID | £6.6m | 6.0% | 4.23 | 7.0 | 3% | Newcastle |
-| Leno | Fulham | GKP | £4.5m | 4.5% | 4.2 | 6.0 | 0% | Aston Villa |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.23 | 7.0 | 3% | Newcastle |
+| Leno | Fulham | GKP | £4.5m | 4.4% | 4.2 | 6.0 | 0% | Aston Villa |
 | Justin | Leeds | DEF | £4.5m | 2.3% | 4.14 | 6.0 | 2% | Bournemouth |
 
 ## Transferencia propuesta para esta fecha
@@ -136,9 +136,9 @@ Lo que el Base haría sin el chip:
 
 - Calafiori → Bogle (+6.54 xP, transferencia libre, entra de titular)
 - João Pedro → Calvert-Lewin (+6.04 xP, HIT -4 aplicado, entra de titular)
-- F.Kadıoğlu → Cash (+2.24 xP, transferencia libre, entra de titular)
-- Shaw → Hume (+1.53 xP, transferencia libre, entra de titular)
-- Thiaw → Richards (+3.92 xP, transferencia libre, entra de titular)
+- F.Kadıoğlu → Cash (+2.22 xP, transferencia libre, entra de titular)
+- Shaw → Hume (+1.51 xP, transferencia libre, entra de titular)
+- Thiaw → Richards (+3.90 xP, transferencia libre, entra de titular)
 
 ## Repaso de GW8 (fecha cerrada)
 
