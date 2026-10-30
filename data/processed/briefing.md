@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-30 04:14 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-30 12:05 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,12 +50,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.4% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.5% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 21.1% | Leeds |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.5% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 8.7% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 21.8% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.6% | Newcastle |
-| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.2% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 10.4% | Leeds |
+| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.3% | Bournemouth |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 11.0% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 2.0% | Crystal Palace |
 | McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.3% | Fulham |
 
@@ -63,7 +63,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 8.5% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Van Hecke | Spurs | DEF | £4.9m | 8.7% | 6.27 | 8.0 | 5% | Crystal Palace |
 | Tonali | Spurs | MID | £5.3m | 2.0% | 4.71 | 6.0 | 1% | Crystal Palace |
 | McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 3.0% | 4.38 | 5.0 | 1% | Coventry City |
