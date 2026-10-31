@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-10-31 00:20 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-10-31 06:23 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,22 +50,22 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.7% | Brighton |
-| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 9.6% | Crystal Palace |
-| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 24.1% | Leeds |
+| Haaland | Man City | FWD | 7.87 | 10.0 | 18% | 78.8% | Brighton |
+| Van Hecke | Spurs | DEF | 6.27 | 8.0 | 5% | 9.9% | Crystal Palace |
+| Tavernier | Bournemouth | MID | 6.04 | 8.0 | 9% | 24.8% | Leeds |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.9% | Newcastle |
-| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.3% | Bournemouth |
-| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 12.9% | Leeds |
+| Bogle | Leeds | DEF | 5.82 | 8.0 | 5% | 11.4% | Bournemouth |
+| Evanilson | Bournemouth | FWD | 5.07 | 6.0 | 5% | 13.5% | Leeds |
 | Tonali | Spurs | MID | 4.71 | 6.0 | 1% | 2.0% | Crystal Palace |
-| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.4% | Fulham |
+| McGinn | Aston Villa | MID | 4.6 | 7.0 | 4% | 3.5% | Fulham |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | £4.9m | 9.6% | 6.27 | 8.0 | 5% | Crystal Palace |
+| Van Hecke | Spurs | DEF | £4.9m | 9.9% | 6.27 | 8.0 | 5% | Crystal Palace |
 | Tonali | Spurs | MID | £5.3m | 2.0% | 4.71 | 6.0 | 1% | Crystal Palace |
-| McGinn | Aston Villa | MID | £5.4m | 3.4% | 4.6 | 7.0 | 4% | Fulham |
+| McGinn | Aston Villa | MID | £5.4m | 3.5% | 4.6 | 7.0 | 4% | Fulham |
 | Xhaka | Sunderland | MID | £5.4m | 2.9% | 4.38 | 5.0 | 1% | Coventry City |
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.3 | 8.0 | 8% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.23 | 7.0 | 3% | Newcastle |
