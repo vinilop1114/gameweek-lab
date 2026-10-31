@@ -1,9 +1,13 @@
 {
-  "last_evaluated_gameweek": 8,
+  "last_evaluated_gameweek": 9,
   "banked_free_transfers": 0,
-  "last_transfer_gameweek": 8,
+  "last_transfer_gameweek": 9,
   "last_transfers": [
-    "Calvert-Lewin \u2192 Barry (+2.79 xP, transferencia libre, entra de banco)"
+    "WILDCARD (set 1) JUGADO en GW9: +15.54 xP en 4 fechas sobre seguir con transferencias normales (umbral 15.0).",
+    "Salen (9): B.Fernandes, Barry, Calafiori, Enzo, F.Kad\u0131o\u011flu, Jo\u00e3o Pedro, Roefs, Shaw, Thiaw",
+    "Entran (9): Bogle, Calvert-Lewin, Dewsbury-Hall, Evanilson, Gabriel, Petrovi\u0107, Richards, Rogers, Tarkowski"
   ],
-  "chips_used": []
+  "chips_used": [
+    "wildcard:1"
+  ]
 }
