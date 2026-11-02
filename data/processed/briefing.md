@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-11-02 00:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-02 10:30 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -15,8 +15,8 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.38 | 8.0 | 5% | 17.89 | Bournemouth (fuera) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.95 | 8.0 | 10% | 16.78 | Coventry City (fuera) | Córners |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 4.23 | 7.0 | 3% | 13.36 | Newcastle (fuera) | — |
-| Titular | Raya | Arsenal | GKP | £6.2m | 3.96 | 6.0 | 0% | 13.97 | Liverpool (fuera) | — |
-| Titular | Gabriel | Arsenal | DEF | £8.0m | 3.95 | 6.0 | 3% | 18.21 | Liverpool (fuera) | — |
+| Titular | Raya | Arsenal | GKP | £6.2m | 3.96 | 6.0 | 0% | 14.0 | Liverpool (fuera) | — |
+| Titular | Gabriel | Arsenal | DEF | £8.0m | 3.95 | 6.0 | 3% | 18.24 | Liverpool (fuera) | — |
 | Titular | Calvert-Lewin | Leeds | FWD | £6.1m | 3.79 | 6.0 | 8% | 16.19 | Bournemouth (fuera) | Penales |
 | Titular | Rogers | Chelsea | MID | £8.1m | 3.7 | 7.0 | 2% | 14.57 | Man Utd (casa) | — |
 | Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 3.1 | 6.0 | 0% | 13.34 | Leeds (casa) | — |
@@ -44,17 +44,17 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Crystal Palace (casa) | — |
 | Banco 2 | Hume | Sunderland | DEF | £4.2m | 2.59 | 6.0 | 2% | 12.05 | Coventry City (fuera) | — |
 | Banco 3 | Diop | Ipswich Town | DEF | £3.9m | 2.11 | 6.0 | 2% | 11.58 | Hull City (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.13 | — | 1% | 1.93 | Bournemouth (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.08 | — | 0% | 1.04 | Aston Villa (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | 7.72 | 9.0 | 8% | 10.4% | Crystal Palace |
+| Van Hecke | Spurs | DEF | 7.72 | 9.0 | 8% | 10.6% | Crystal Palace |
 | Haaland | Man City | FWD | 7.32 | 10.0 | 17% | 78.9% | Brighton |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.9% | Newcastle |
-| Tavernier | Bournemouth | MID | 5.7 | 8.0 | 8% | 26.7% | Leeds |
-| Evanilson | Bournemouth | FWD | 5.47 | 6.0 | 6% | 16.6% | Leeds |
+| Tavernier | Bournemouth | MID | 5.7 | 8.0 | 8% | 26.9% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.47 | 6.0 | 6% | 16.9% | Leeds |
 | Bogle | Leeds | DEF | 5.38 | 8.0 | 5% | 11.4% | Bournemouth |
 | E.Le Fée | Sunderland | MID | 4.95 | 8.0 | 10% | 2.7% | Coventry City |
 | Tonali | Spurs | MID | 4.61 | 6.0 | 1% | 2.0% | Crystal Palace |
@@ -66,8 +66,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | E.Le Fée | Sunderland | MID | £5.7m | 2.7% | 4.95 | 8.0 | 10% | Coventry City |
 | Tonali | Spurs | MID | £5.3m | 2.0% | 4.61 | 6.0 | 1% | Crystal Palace |
 | Xhaka | Sunderland | MID | £5.4m | 2.9% | 4.53 | 5.0 | 1% | Coventry City |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.2% | 4.23 | 7.0 | 3% | Newcastle |
 | McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.23 | 8.0 | 5% | Fulham |
-| Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.23 | 7.0 | 3% | Newcastle |
 | Van de Ven | Spurs | DEF | £5.0m | 3.9% | 4.2 | 6.0 | 4% | Crystal Palace |
 | Barnes | Newcastle | MID | £6.1m | 7.5% | 4.04 | 7.0 | 4% | Everton |
 | Leno | Fulham | GKP | £4.5m | 4.4% | 4.0 | 6.0 | 0% | Aston Villa |
