@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW9
 
-Generado automáticamente: 2026-11-01 19:20 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-02 00:11 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,11 +50,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Van Hecke | Spurs | DEF | 7.72 | 9.0 | 8% | 10.3% | Crystal Palace |
+| Van Hecke | Spurs | DEF | 7.72 | 9.0 | 8% | 10.4% | Crystal Palace |
 | Haaland | Man City | FWD | 7.32 | 10.0 | 17% | 78.9% | Brighton |
 | Tarkowski | Everton | DEF | 5.94 | 6.0 | 1% | 18.9% | Newcastle |
-| Tavernier | Bournemouth | MID | 5.7 | 8.0 | 8% | 26.5% | Leeds |
-| Evanilson | Bournemouth | FWD | 5.47 | 6.0 | 6% | 16.4% | Leeds |
+| Tavernier | Bournemouth | MID | 5.7 | 8.0 | 8% | 26.7% | Leeds |
+| Evanilson | Bournemouth | FWD | 5.47 | 6.0 | 6% | 16.6% | Leeds |
 | Bogle | Leeds | DEF | 5.38 | 8.0 | 5% | 11.4% | Bournemouth |
 | E.Le Fée | Sunderland | MID | 4.95 | 8.0 | 10% | 2.7% | Coventry City |
 | Tonali | Spurs | MID | 4.61 | 6.0 | 1% | 2.0% | Crystal Palace |
@@ -66,7 +66,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | E.Le Fée | Sunderland | MID | £5.7m | 2.7% | 4.95 | 8.0 | 10% | Coventry City |
 | Tonali | Spurs | MID | £5.3m | 2.0% | 4.61 | 6.0 | 1% | Crystal Palace |
 | Xhaka | Sunderland | MID | £5.4m | 2.9% | 4.53 | 5.0 | 1% | Coventry City |
-| McGinn | Aston Villa | MID | £5.4m | 3.4% | 4.23 | 8.0 | 5% | Fulham |
+| McGinn | Aston Villa | MID | £5.4m | 3.3% | 4.23 | 8.0 | 5% | Fulham |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.1% | 4.23 | 7.0 | 3% | Newcastle |
 | Van de Ven | Spurs | DEF | £5.0m | 3.9% | 4.2 | 6.0 | 4% | Crystal Palace |
 | Barnes | Newcastle | MID | £6.1m | 7.5% | 4.04 | 7.0 | 4% | Everton |
