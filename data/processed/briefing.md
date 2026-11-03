@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-03 13:34 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-03 20:45 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,8 +42,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.38 | Crystal Palace (fuera) | — |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
-| Banco 2 | Georginio | Brighton | FWD | £5.3m | 0.57 | 2.0 | 0% | 3.36 | Brentford (casa) | — |
-| Banco 3 | I.Sangaré | Nott'm Forest | MID | £4.7m | 0.25 | 2.0 | 0% | 2.94 | Man City (casa) | — |
+| Banco 2 | Andrey Santos | Man Utd | MID | £4.7m | 0.69 | 3.0 | 0% | 4.87 | Aston Villa (casa) | — |
+| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.57 | 2.0 | 0% | 3.36 | Brentford (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.12 | Liverpool (casa) | — |
 
 ## Mejores opciones de capitanía
@@ -52,12 +52,12 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.0% | Nott'm Forest |
 | Raya | Arsenal | GKP | 7.93 | — | 0% | 46.6% | Hull City |
-| Tarkowski | Everton | DEF | 7.93 | — | 2% | 18.9% | Coventry City |
+| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.0% | Coventry City |
 | Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.5% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 27.5% | Ipswich Town |
-| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 17.8% | Ipswich Town |
-| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.3% | Hull City |
-| Konsa | Arsenal | DEF | 6.67 | — | 3% | 22.9% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 27.6% | Ipswich Town |
+| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.0% | Ipswich Town |
+| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.4% | Hull City |
+| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.0% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
