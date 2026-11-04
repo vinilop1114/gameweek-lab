@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-04 01:01 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-04 19:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -31,8 +31,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.8m | 9.75 | 13.0 | 26% | 20.46 | Nott'm Forest (fuera) | Penales |
-| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
+| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
+| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
 | Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
@@ -42,7 +42,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.38 | Crystal Palace (fuera) | — |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
-| Banco 2 | I.Sangaré | Nott'm Forest | MID | £4.7m | 0.25 | 2.0 | 0% | 2.94 | Man City (casa) | — |
+| Banco 2 | Yarmoliuk | Brentford | MID | £4.7m | 0.79 | 3.0 | 0% | 5.18 | Brighton (fuera) | — |
 | Banco 3 | Nmecha | Leeds | FWD | £5.3m | 0.13 | — | 1% | 1.48 | Spurs (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.12 | Liverpool (casa) | — |
 
@@ -51,13 +51,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.0% | Nott'm Forest |
+| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.7% | Hull City |
 | Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.0% | Coventry City |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.6% | Hull City |
-| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.5% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 27.7% | Ipswich Town |
-| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.1% | Ipswich Town |
-| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.5% | Hull City |
-| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.1% | Hull City |
+| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.6% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 27.9% | Ipswich Town |
+| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.4% | Ipswich Town |
+| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.6% | Hull City |
+| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.2% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -68,9 +68,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gakpo | Liverpool | MID | £7.1m | 6.9% | 5.15 | 8.0 | 8% | Crystal Palace |
 | A.Becker | Liverpool | GKP | £5.5m | 4.1% | 4.97 | 6.0 | 0% | Crystal Palace |
 | Mykolenko | Everton | DEF | £4.6m | 2.4% | 4.94 | 6.0 | 0% | Coventry City |
-| Barry | Everton | FWD | £5.6m | 7.6% | 4.82 | 10.0 | 14% | Coventry City |
+| Barry | Everton | FWD | £5.6m | 7.7% | 4.82 | 10.0 | 14% | Coventry City |
 | Hill | Bournemouth | DEF | £5.5m | 2.6% | 4.76 | 6.0 | 1% | Ipswich Town |
-| White | Arsenal | DEF | £5.4m | 4.7% | 4.68 | 6.0 | 3% | Hull City |
+| White | Arsenal | DEF | £5.4m | 4.6% | 4.68 | 6.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW9
 
