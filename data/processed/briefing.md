@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-05 10:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-05 19:27 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -18,7 +18,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.55 | 7.0 | 5% | 18.54 | Sunderland (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.38 | 8.0 | 5% | 13.76 | Spurs (casa) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 4.58 | 10.0 | 11% | 16.8 | Aston Villa (casa) | — |
-| Titular | Calvert-Lewin | Leeds | FWD | £6.1m | 3.79 | 6.0 | 8% | 12.45 | Spurs (casa) | Penales |
+| Titular | Calvert-Lewin | Leeds | FWD | £6.1m | 2.84 | 6.0 | 6% | 9.34 | Spurs (casa) | Penales |
 | Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 4.13 | 6.0 | 0% | 12.32 | Ipswich Town (fuera) | — |
 | Banco 2 | E.Le Fée | Sunderland | MID | £5.7m | 2.48 | 7.0 | 3% | 12.91 | Chelsea (casa) | Córners |
 | Banco 3 | Thiago | Brentford | FWD | £7.8m | 2.38 | 6.0 | 5% | 14.32 | Brighton (fuera) | Penales |
@@ -31,8 +31,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.8m | 9.75 | 13.0 | 26% | 20.46 | Nott'm Forest (fuera) | Penales |
-| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
-| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
+| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
 | Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
@@ -42,22 +42,22 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.38 | Crystal Palace (fuera) | — |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
-| Banco 2 | Georginio | Brighton | FWD | £5.3m | 0.57 | 2.0 | 0% | 3.36 | Brentford (casa) | — |
-| Banco 3 | I.Sangaré | Nott'm Forest | MID | £4.7m | 0.25 | 2.0 | 0% | 2.94 | Man City (casa) | — |
+| Banco 2 | Yarmoliuk | Brentford | MID | £4.7m | 0.79 | 3.0 | 0% | 5.18 | Brighton (fuera) | — |
+| Banco 3 | Nmecha | Leeds | FWD | £5.3m | 0.13 | — | 1% | 1.48 | Spurs (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.12 | Liverpool (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.0% | Nott'm Forest |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.7% | Hull City |
-| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.0% | Coventry City |
-| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.7% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 28.1% | Ipswich Town |
-| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.6% | Ipswich Town |
-| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.6% | Hull City |
-| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.3% | Hull City |
+| Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.1% | Nott'm Forest |
+| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.8% | Hull City |
+| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.1% | Coventry City |
+| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.8% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 28.3% | Ipswich Town |
+| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.9% | Ipswich Town |
+| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.7% | Hull City |
+| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.4% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,12 +65,24 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.3% | 5.67 | 8.0 | 5% | Coventry City |
 | Pickford | Everton | GKP | £5.5m | 8.5% | 5.33 | 6.0 | 0% | Coventry City |
-| Gakpo | Liverpool | MID | £7.1m | 6.9% | 5.15 | 8.0 | 8% | Crystal Palace |
+| Gakpo | Liverpool | MID | £7.1m | 7.0% | 5.15 | 8.0 | 8% | Crystal Palace |
 | A.Becker | Liverpool | GKP | £5.5m | 4.1% | 4.97 | 6.0 | 0% | Crystal Palace |
 | Mykolenko | Everton | DEF | £4.6m | 2.4% | 4.94 | 6.0 | 0% | Coventry City |
-| Barry | Everton | FWD | £5.6m | 7.7% | 4.82 | 10.0 | 14% | Coventry City |
+| Barry | Everton | FWD | £5.6m | 7.8% | 4.82 | 10.0 | 14% | Coventry City |
 | Hill | Bournemouth | DEF | £5.5m | 2.6% | 4.76 | 6.0 | 1% | Ipswich Town |
 | White | Arsenal | DEF | £5.4m | 4.6% | 4.68 | 6.0 | 3% | Hull City |
+
+## Transferencia propuesta para esta fecha
+
+Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+
+- Calvert-Lewin → Barry (+2.61 xP, transferencia libre, entra de titular)
+
+Sale: Calvert-Lewin · Entra: Barry
+
+El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
+
+**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo evalúa reemplazos dentro de una misma posición y nunca financia un puesto vendiendo en otro ("bajo el arquero suplente para subir un defensor"), así que esa alternativa no fue descartada: no se evaluó. Al escribir, no lo presentes como el movimiento óptimo de la fecha.
 
 ## Movimientos ya ejecutados en GW9
 
