@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-05 01:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-05 10:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -31,8 +31,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.8m | 9.75 | 13.0 | 26% | 20.46 | Nott'm Forest (fuera) | Penales |
-| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
+| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
+| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
 | Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
@@ -51,13 +51,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.0% | Nott'm Forest |
-| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.0% | Coventry City |
 | Raya | Arsenal | GKP | 7.93 | — | 0% | 46.7% | Hull City |
-| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.6% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 28.0% | Ipswich Town |
-| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.5% | Ipswich Town |
+| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.0% | Coventry City |
+| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.7% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 28.1% | Ipswich Town |
+| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 18.6% | Ipswich Town |
 | Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.6% | Hull City |
-| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.2% | Hull City |
+| Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.3% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
 
