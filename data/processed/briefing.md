@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-06 01:20 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-06 10:21 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -31,8 +31,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.8m | 9.75 | 13.0 | 26% | 20.46 | Nott'm Forest (fuera) | Penales |
-| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
-| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
+| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
 | Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
@@ -42,7 +42,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.38 | Crystal Palace (fuera) | — |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
-| Banco 2 | Yarmoliuk | Brentford | MID | £4.7m | 0.79 | 3.0 | 0% | 5.18 | Brighton (fuera) | — |
+| Banco 2 | Andrey Santos | Man Utd | MID | £4.7m | 0.69 | 3.0 | 0% | 4.87 | Aston Villa (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.12 | Liverpool (casa) | — |
 | Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.08 | — | 0% | 1.04 | Newcastle (casa) | — |
 
@@ -51,25 +51,25 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.1% | Nott'm Forest |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.8% | Hull City |
-| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.1% | Coventry City |
-| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 24.9% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 28.6% | Ipswich Town |
-| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 19.3% | Ipswich Town |
-| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 12.8% | Hull City |
-| De Cuyper | Brighton | DEF | 6.18 | 8.0 | 6% | 45.5% | Brentford |
+| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.2% | Coventry City |
+| Raya | Arsenal | GKP | 7.93 | — | 0% | 46.9% | Hull City |
+| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 25.0% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 29.0% | Ipswich Town |
+| Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 19.9% | Ipswich Town |
+| Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 13.0% | Hull City |
+| De Cuyper | Brighton | DEF | 6.18 | 8.0 | 6% | 45.8% | Brentford |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Dewsbury-Hall | Everton | MID | £6.6m | 6.3% | 5.67 | 8.0 | 5% | Coventry City |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.4% | 5.67 | 8.0 | 5% | Coventry City |
 | Pickford | Everton | GKP | £5.5m | 8.5% | 5.33 | 6.0 | 0% | Coventry City |
 | Gakpo | Liverpool | MID | £7.1m | 7.0% | 5.15 | 8.0 | 8% | Crystal Palace |
 | A.Becker | Liverpool | GKP | £5.5m | 4.1% | 4.97 | 6.0 | 0% | Crystal Palace |
 | Mykolenko | Everton | DEF | £4.6m | 2.4% | 4.94 | 6.0 | 0% | Coventry City |
-| Barry | Everton | FWD | £5.6m | 7.9% | 4.82 | 10.0 | 14% | Coventry City |
-| Hill | Bournemouth | DEF | £5.6m | 2.6% | 4.76 | 6.0 | 1% | Ipswich Town |
+| Barry | Everton | FWD | £5.6m | 8.1% | 4.82 | 10.0 | 14% | Coventry City |
+| Hill | Bournemouth | DEF | £5.6m | 2.7% | 4.76 | 6.0 | 1% | Ipswich Town |
 | White | Arsenal | DEF | £5.4m | 4.6% | 4.68 | 6.0 | 3% | Hull City |
 
 ## Transferencia propuesta para esta fecha
