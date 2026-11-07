@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-07 00:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-07 09:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -11,10 +11,10 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | **Capitán** | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
 | Vice | Gabriel | Arsenal | DEF | £8.1m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.54 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.67 | Coventry City (casa) | — |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.71 | Coventry City (casa) | — |
 | Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
-| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 17% | 14.22 | Coventry City (casa) | Penales |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.54 | Coventry City (casa) | — |
+| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 13.74 | Coventry City (casa) | Penales |
+| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.46 | Coventry City (casa) | — |
 | Titular | Van Hecke | Spurs | DEF | £5.0m | 5.79 | 8.0 | 5% | 21.37 | Leeds (fuera) | — |
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.55 | 7.0 | 5% | 18.55 | Sunderland (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.38 | 8.0 | 5% | 13.76 | Spurs (casa) | — |
@@ -34,11 +34,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.1m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.54 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.67 | Coventry City (casa) | — |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.71 | Coventry City (casa) | — |
 | Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
 | Titular | Rice | Arsenal | MID | £7.5m | 6.74 | 7.0 | 3% | 13.01 | Hull City (casa) | Tiros libres, Córners |
-| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 17% | 14.22 | Coventry City (casa) | Penales |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.54 | Coventry City (casa) | — |
+| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 13.74 | Coventry City (casa) | Penales |
+| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.46 | Coventry City (casa) | — |
 | Titular | De Cuyper | Brighton | DEF | £5.4m | 6.18 | 8.0 | 6% | 14.67 | Brentford (casa) | — |
 | Titular | Van Hecke | Spurs | DEF | £5.0m | 5.79 | 8.0 | 5% | 21.37 | Leeds (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
@@ -63,7 +63,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Barry | Everton | FWD | £5.7m | 9.0% | 6.24 | 10.0 | 17% | Coventry City |
+| Barry | Everton | FWD | £5.7m | 9.2% | 6.24 | 10.0 | 15% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.7% | 6.2 | 8.0 | 5% | Coventry City |
 | Mykolenko | Everton | DEF | £4.6m | 2.5% | 5.57 | 6.0 | 1% | Coventry City |
 | Pickford | Everton | GKP | £5.5m | 8.5% | 5.2 | 6.0 | 0% | Coventry City |
