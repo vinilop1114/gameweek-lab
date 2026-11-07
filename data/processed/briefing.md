@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-06 18:50 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-07 00:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -9,15 +9,15 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
-| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
-| Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
+| Vice | Gabriel | Arsenal | DEF | £8.1m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
+| Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.54 | Ipswich Town (fuera) | Tiros libres, Córners |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.67 | Coventry City (casa) | — |
+| Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
+| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 17% | 14.22 | Coventry City (casa) | Penales |
+| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.54 | Coventry City (casa) | — |
 | Titular | Van Hecke | Spurs | DEF | £5.0m | 5.79 | 8.0 | 5% | 21.37 | Leeds (fuera) | — |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
-| Titular | Rogers | Chelsea | MID | £8.2m | 5.55 | 7.0 | 5% | 18.54 | Sunderland (fuera) | — |
+| Titular | Rogers | Chelsea | MID | £8.2m | 5.55 | 7.0 | 5% | 18.55 | Sunderland (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.38 | 8.0 | 5% | 13.76 | Spurs (casa) | — |
-| Titular | Barry | Everton | FWD | £5.6m | 4.82 | 10.0 | 14% | 13.27 | Coventry City (casa) | Penales |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 4.58 | 10.0 | 11% | 16.8 | Aston Villa (casa) | — |
 | Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 4.13 | 6.0 | 0% | 12.32 | Ipswich Town (fuera) | — |
 | Banco 2 | E.Le Fée | Sunderland | MID | £5.7m | 2.48 | 7.0 | 3% | 12.91 | Chelsea (casa) | Córners |
@@ -31,20 +31,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **Capitán** | Haaland | Man City | FWD | £15.8m | 9.75 | 13.0 | 26% | 20.46 | Nott'm Forest (fuera) | Penales |
-| Vice | Tarkowski | Everton | DEF | £6.2m | 7.93 | — | 2% | 15.0 | Coventry City (casa) | — |
-| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
-| Titular | Gabriel | Arsenal | DEF | £8.0m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.53 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Evanilson | Bournemouth | FWD | £6.4m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
-| Titular | Rice | Arsenal | MID | £7.4m | 6.74 | 7.0 | 3% | 13.01 | Hull City (casa) | Tiros libres, Córners |
+| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 14.0 | Hull City (casa) | — |
+| Titular | Gabriel | Arsenal | DEF | £8.1m | 7.89 | 9.0 | 10% | 18.24 | Hull City (casa) | — |
+| Titular | Tavernier | Bournemouth | MID | £6.6m | 7.6 | 11.0 | 14% | 17.54 | Ipswich Town (fuera) | Tiros libres, Córners |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 14.67 | Coventry City (casa) | — |
+| Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.3 | 9.0 | 9% | 14.4 | Ipswich Town (fuera) | — |
+| Titular | Rice | Arsenal | MID | £7.5m | 6.74 | 7.0 | 3% | 13.01 | Hull City (casa) | Tiros libres, Córners |
+| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 17% | 14.22 | Coventry City (casa) | Penales |
+| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.54 | Coventry City (casa) | — |
 | Titular | De Cuyper | Brighton | DEF | £5.4m | 6.18 | 8.0 | 6% | 14.67 | Brentford (casa) | — |
 | Titular | Van Hecke | Spurs | DEF | £5.0m | 5.79 | 8.0 | 5% | 21.37 | Leeds (fuera) | — |
-| Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.38 | Crystal Palace (fuera) | — |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 5.67 | 8.0 | 5% | 12.36 | Coventry City (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.87 | Leeds (fuera) | — |
-| Banco 2 | Andrey Santos | Man Utd | MID | £4.7m | 0.69 | 3.0 | 0% | 4.87 | Aston Villa (casa) | — |
-| Banco 3 | Georginio | Brighton | FWD | £5.3m | 0.57 | 2.0 | 0% | 3.36 | Brentford (casa) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.12 | Liverpool (casa) | — |
+| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.58 | 6.0 | 1% | 11.58 | Bournemouth (casa) | — |
+| Banco 3 | Yarmoliuk | Brentford | MID | £4.7m | 0.79 | 3.0 | 0% | 5.18 | Brighton (fuera) | — |
+| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.13 | Liverpool (casa) | — |
 
 ## Mejores opciones de capitanía
 
@@ -52,9 +52,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.75 | 13.0 | 26% | 79.2% | Nott'm Forest |
 | Raya | Arsenal | GKP | 7.93 | — | 0% | 47.2% | Hull City |
-| Tarkowski | Everton | DEF | 7.93 | — | 2% | 19.6% | Coventry City |
-| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 25.6% | Hull City |
-| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 30.6% | Ipswich Town |
+| Gabriel | Arsenal | DEF | 7.89 | 9.0 | 10% | 25.4% | Hull City |
+| Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 30.5% | Ipswich Town |
+| Tarkowski | Everton | DEF | 7.4 | — | 2% | 19.5% | Coventry City |
 | Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 22.0% | Ipswich Town |
 | Rice | Arsenal | MID | 6.74 | 7.0 | 3% | 13.5% | Hull City |
 | Konsa | Arsenal | DEF | 6.67 | — | 3% | 23.4% | Hull City |
@@ -63,13 +63,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Dewsbury-Hall | Everton | MID | £6.6m | 6.7% | 5.67 | 8.0 | 5% | Coventry City |
-| Pickford | Everton | GKP | £5.5m | 8.6% | 5.33 | 6.0 | 0% | Coventry City |
-| Gakpo | Liverpool | MID | £7.1m | 7.2% | 5.15 | 8.0 | 8% | Crystal Palace |
+| Barry | Everton | FWD | £5.7m | 9.0% | 6.24 | 10.0 | 17% | Coventry City |
+| Dewsbury-Hall | Everton | MID | £6.6m | 6.7% | 6.2 | 8.0 | 5% | Coventry City |
+| Mykolenko | Everton | DEF | £4.6m | 2.5% | 5.57 | 6.0 | 1% | Coventry City |
+| Pickford | Everton | GKP | £5.5m | 8.5% | 5.2 | 6.0 | 0% | Coventry City |
+| Gakpo | Liverpool | MID | £7.1m | 7.1% | 5.15 | 8.0 | 8% | Crystal Palace |
 | A.Becker | Liverpool | GKP | £5.5m | 4.1% | 4.97 | 6.0 | 0% | Crystal Palace |
-| Mykolenko | Everton | DEF | £4.6m | 2.5% | 4.94 | 6.0 | 0% | Coventry City |
-| Barry | Everton | FWD | £5.6m | 8.9% | 4.82 | 10.0 | 14% | Coventry City |
-| Hill | Bournemouth | DEF | £5.6m | 2.8% | 4.76 | 6.0 | 1% | Ipswich Town |
+| Hill | Bournemouth | DEF | £5.6m | 2.7% | 4.76 | 6.0 | 1% | Ipswich Town |
 | White | Arsenal | DEF | £5.4m | 4.5% | 4.68 | 6.0 | 3% | Hull City |
 
 ## Movimientos ya ejecutados en GW10
@@ -116,7 +116,7 @@ Mejores puntajes reales de GW9:
 - **xP 4GW**: puntos esperados acumulados en las próximas 4 fechas.
 - **Balón parado**: quién patea penales/tiros libres/córners. Es contexto: el xP **no** lo suma aparte, porque el xG de FPL ya incluye los penales ejecutados.
 
-Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 810 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
+Todos los jugadores listados superan los 900 minutos de **evidencia acumulada** (los de esta temporada más los de la anterior). Ojo con el matiz al escribir: al arrancar la temporada casi todos esos minutos son del año pasado — hoy nadie lleva más de 900 minutos jugados en esta temporada, así que **no** se puede afirmar que alguien "superó los 900 minutos".
 
 Es un filtro deliberado: con muestra chica las tasas por 90 minutos son ruido (hay jugadores con 1 minuto jugado y el "mejor xG90 de la liga"). Esos jugadores están excluidos de las tablas de arriba, pero **siguen apareciendo en `players_scored.csv`** con métricas irreales. Regla operativa: rankear siempre por `xp_next` o `xp_horizon`, nunca por las columnas per-90 del CSV crudo.
 
