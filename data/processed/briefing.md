@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-08 04:15 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-08 12:42 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,7 +43,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Virgil | Liverpool | DEF | £6.4m | 5.73 | 8.0 | 4% | 20.43 | Crystal Palace (fuera) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.61 | Leeds (fuera) | — |
 | Banco 2 | Yarmoliuk | Brentford | MID | £4.7m | 0.79 | 3.0 | 0% | 5.19 | Brighton (fuera) | — |
-| Banco 3 | Andrey Santos | Man Utd | MID | £4.7m | 0.69 | 3.0 | 0% | 4.88 | Aston Villa (casa) | — |
+| Banco 3 | I.Sangaré | Nott'm Forest | MID | £4.7m | 0.23 | 2.0 | 0% | 2.8 | Man City (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.12 | 2.0 | 0% | 2.13 | Liverpool (casa) | — |
 
 ## Mejores opciones de capitanía
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 79.2% | Nott'm Forest |
 | Gabriel | Arsenal | DEF | 8.18 | 9.0 | 10% | 25.6% | Hull City |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 47.2% | Hull City |
+| Raya | Arsenal | GKP | 7.93 | — | 0% | 47.3% | Hull City |
 | Tavernier | Bournemouth | MID | 7.6 | 11.0 | 14% | 30.8% | Ipswich Town |
 | Tarkowski | Everton | DEF | 7.4 | — | 2% | 19.5% | Coventry City |
 | Evanilson | Bournemouth | FWD | 7.3 | 9.0 | 9% | 22.2% | Ipswich Town |
@@ -63,7 +63,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Barry | Everton | FWD | £5.7m | 9.7% | 6.24 | 10.0 | 15% | Coventry City |
+| Barry | Everton | FWD | £5.7m | 9.8% | 6.24 | 10.0 | 15% | Coventry City |
 | Dewsbury-Hall | Everton | MID | £6.6m | 6.8% | 6.2 | 8.0 | 5% | Coventry City |
 | Mykolenko | Everton | DEF | £4.6m | 2.5% | 5.57 | 6.0 | 1% | Coventry City |
 | Pickford | Everton | GKP | £5.5m | 8.5% | 5.2 | 6.0 | 0% | Coventry City |
