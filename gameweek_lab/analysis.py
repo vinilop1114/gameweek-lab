@@ -652,6 +652,10 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
       midiendo porque es lo que habría que arreglar si alguna vez se
       quiere dejar de depender de `ep_next`, y porque sin medirlo no hay
       forma de saber si una mejora futura lo vuelve competitivo.
+    - **xp_horizon_model**: el horizonte como se calculaba antes, con el
+      motor propio de base. Se mide contra la suma real de 4 fechas, igual
+      que el nuevo (ver `_horizon_base_rate` para la medición que motivó
+      el cambio).
     - **ep_x_fixture**: `ep_next` corregido por dificultad del rival. Es
       la variante que más importa medir ahora: el calendario es lo único
       que le faltaba a `ep_next`, y si eso lo arregla, la pregunta pasa a
@@ -669,8 +673,17 @@ def shadow_expected_points(players: pd.DataFrame) -> dict[str, pd.Series]:
     fixture_mult = _fixture_multiplier(players["next_fixture_difficulty"])
     availability = _availability(players)
 
+    # El horizonte viejo (motor propio) pasa a sombra: la medición que lo
+    # destronó salió de dos ventanas de 4 fechas, y conviene confirmarla
+    # con las que vienen antes de dar el tema por cerrado.
+    old_horizon = (
+        _base_scoring_rate(players)
+        * players["xp_horizon"].div(_horizon_base_rate(players).replace(0, pd.NA))
+    ).fillna(0)
+
     return {
         "xp_model": players["xp_model"].round(2),
+        "xp_horizon_model": old_horizon.round(2),
         # `ep_next` crudo ya se guarda como baseline. Lo que falta medir es
         # si corregirlo por calendario lo salva: es lo único que le faltaba
         # y lo que distingue a esta variante del modelo vigente, que usa el
@@ -707,6 +720,39 @@ def add_horizon_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GA
     return players
 
 
+def _horizon_base_rate(players: pd.DataFrame) -> pd.Series:
+    """La tasa base del horizonte: `points_per_game`, la misma señal que
+    ordena la próxima fecha (ver `_next_gameweek_ranking`).
+
+    Antes era `_base_scoring_rate` —el motor propio de xG/xA— y la
+    medición lo dejó sin discusión. Con dos ventanas completas de 4
+    fechas (GW6-GW9 y GW7-GW10, 791 observaciones), ordenando la **suma
+    real** de esas 4 fechas:
+
+    | Predictor | Spearman |
+    |---|---|
+    | `xp_next`, que es de UNA sola fecha | **0.728** |
+    | `points_per_game` crudo | 0.710 |
+    | `ep_next` | 0.687 |
+    | **`xp_horizon` con el motor propio** | **0.497** |
+
+    El modelo de una fecha predecía la suma de cuatro mejor que el
+    horizonte dedicado a eso, por +0.229 con IC95% [+0.185, +0.280].
+    Sumar multiplicadores de fixture sobre cuatro fechas no rescataba la
+    señal de base: arrastraba su debilidad y la multiplicaba por cuatro.
+
+    Esto importa más de lo que parece, porque `xp_horizon` es lo que
+    decide **las transferencias y el Wildcard** — las dos decisiones más
+    caras del sistema se tomaban sobre la peor señal disponible mientras
+    la mejor estaba al lado sin usarse.
+
+    Efecto secundario deseado: la primera fecha del horizonte ahora
+    coincide con `xp_next` por construcción. Antes salían de fuentes
+    distintas, que era una de las costuras documentadas.
+    """
+    return players["points_per_game"].fillna(0)
+
+
 def gameweek_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEWEEKS) -> pd.DataFrame:
     """El mismo xP del horizonte, pero **desglosado fecha por fecha** en vez
     de sumado. Devuelve un DataFrame con el índice de `players` y una
@@ -728,7 +774,7 @@ def gameweek_expected_points(players: pd.DataFrame, horizon: int = HORIZON_GAMEW
     fixtures["multiplier"] = _fixture_multiplier(fixtures["difficulty"])
     first_gw = fixtures["gameweek"].min()
 
-    base_rate = _base_scoring_rate(players)
+    base_rate = _horizon_base_rate(players)
     start_rate = _start_rate(players)
     prob_next = start_rate * _playing_probability(players)
     later_availability = start_rate * (

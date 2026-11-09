@@ -42,7 +42,8 @@ CALIBRATION_COLUMNS = [
     "xp_predicted", "now_cost_at_prediction", "selected_by_percent_at_prediction",
     "points_per_game_at_prediction", "ep_next_at_prediction", "start_rate_at_prediction",
     "xp_horizon_at_prediction",
-    "xp_model_at_prediction", "ep_x_fixture_at_prediction",
+    "xp_model_at_prediction", "xp_horizon_model_at_prediction",
+    "ep_x_fixture_at_prediction",
     "ep_x_start_rate_at_prediction", "ep_x_availability_at_prediction",
     "actual_points",
 ]
@@ -77,6 +78,7 @@ BASELINE_COLUMNS = {
     # Retiradas tras GW6 con su pregunta contestada: `xp_fresh`,
     # `ppg_shrunk` y `xp_ep_blend` (ver analysis.py).
     "xp_model_at_prediction": "[sombra] el motor propio (xG/xA/CS/DEFCON)",
+    "xp_horizon_model_at_prediction": "[sombra] el horizonte viejo (motor propio)",
     "ep_x_fixture_at_prediction": "[sombra] ep_next x dificultad del rival",
     "ep_x_start_rate_at_prediction": "[sombra] ep_next x start_rate",
     "ep_x_availability_at_prediction": "[sombra] ep_next x disponibilidad",
