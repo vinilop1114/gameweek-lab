@@ -1,0 +1,585 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Gameweek Lab//Deadlines//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FPL - The Gameweek Lab
+X-WR-CALDESC:Generado 20261109T055153Z desde la API de FPL. Regenerar con s
+ cripts/export_calendar.py cuando FPL mueva un deadline.
+BEGIN:VEVENT
+UID:gw11@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261121T030000Z
+DTEND:20261121T033000Z
+SUMMARY:FPL GW11 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW11: Sat 21 Nov 05:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 05:00 de tu manana\, asi que el modelo decide entre las 02:00 y las 05:
+ 00 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 1: Triple Captai
+ n\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW11 - deadline 05:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw12@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261127T170000Z
+DTEND:20261127T173000Z
+SUMMARY:FPL GW12 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW12: Fri 27 Nov 12:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:30 a 12:30.\n\nUmbral de chips completo: solo se j
+ uegan si la ganancia es clara.\nChips sin usar del set 1: Triple Captain\,
+  Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW12 - deadline 12:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw13@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261201T170000Z
+DTEND:20261201T173000Z
+SUMMARY:FPL GW13 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW13: Tue 01 Dec 12:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:30 a 12:30.\n\nUmbral de chips completo: solo se j
+ uegan si la ganancia es clara.\nChips sin usar del set 1: Triple Captain\,
+  Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW13 - deadline 12:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw14@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261205T030000Z
+DTEND:20261205T033000Z
+SUMMARY:FPL GW14 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW14: Sat 05 Dec 05:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 05:00 de tu manana\, asi que el modelo decide entre las 02:00 y las 05:
+ 00 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 1: Triple Captai
+ n\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW14 - deadline 05:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw15@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261212T030000Z
+DTEND:20261212T033000Z
+SUMMARY:FPL GW15 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW15: Sat 12 Dec 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 100% (quedan 
+ 4 fechas del set 1). Cuanto mas cerca del cierre\, menos exigente.\nChips 
+ sin usar del set 1: Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW15 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw16@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261219T030000Z
+DTEND:20261219T033000Z
+SUMMARY:FPL GW16 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW16: Sat 19 Dec 05:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 05:00 de tu manana\, asi que el modelo decide entre las 02:00 y las 05:
+ 00 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 75% (quedan 3
+  fechas del set 1). Cuanto mas cerca del cierre\, menos exigente.\nChips s
+ in usar del set 1: Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW16 - deadline 05:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw17@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261226T030000Z
+DTEND:20261226T033000Z
+SUMMARY:FPL GW17 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW17: Sat 26 Dec 05:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 05:00 de tu manana\, asi que el modelo decide entre las 02:00 y las 05:
+ 00 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 50% (quedan 2
+  fechas del set 1). Cuanto mas cerca del cierre\, menos exigente.\nChips s
+ in usar del set 1: Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW17 - deadline 05:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw18@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20261229T163000Z
+DTEND:20261229T170000Z
+SUMMARY:FPL GW18 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW18: Tue 29 Dec 12:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:00 a 12:00.\n\nUmbral de chips al 25% (quedan 1 fe
+ chas del set 1). Cuanto mas cerca del cierre\, menos exigente.\nChips sin 
+ usar del set 1: Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW18 - deadline 12:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw19@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270101T170000Z
+DTEND:20270101T173000Z
+SUMMARY:FPL GW19 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW19: Fri 01 Jan 12:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:30 a 12:30.\n\nUMBRAL EN CERO: ultima fecha del se
+ t 1. El modelo juega cualquier chip que quede sin usar. Lo que no se juegu
+ e hoy se pierde.\nChips sin usar del set 1: Triple Captain\, Bench Boost\,
+  Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW19 - deadline 12:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw20@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270105T163000Z
+DTEND:20270105T170000Z
+SUMMARY:FPL GW20 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW20: Tue 05 Jan 12:00 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:00 a 12:00.\n\nUmbral de chips completo: solo se j
+ uegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tripl
+ e Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW20 - deadline 12:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw21@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270116T030000Z
+DTEND:20270116T033000Z
+SUMMARY:FPL GW21 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW21: Sat 16 Jan 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW21 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw22@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270123T030000Z
+DTEND:20270123T033000Z
+SUMMARY:FPL GW22 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW22: Sat 23 Jan 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW22 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw23@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270130T030000Z
+DTEND:20270130T033000Z
+SUMMARY:FPL GW23 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW23: Sat 30 Jan 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW23 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw24@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270206T030000Z
+DTEND:20270206T033000Z
+SUMMARY:FPL GW24 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW24: Sat 06 Feb 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW24 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw25@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270210T170000Z
+DTEND:20270210T173000Z
+SUMMARY:FPL GW25 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW25: Wed 10 Feb 12:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:30 a 12:30.\n\nUmbral de chips completo: solo se j
+ uegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tripl
+ e Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW25 - deadline 12:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw26@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270220T030000Z
+DTEND:20270220T033000Z
+SUMMARY:FPL GW26 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW26: Sat 20 Feb 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW26 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw27@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270227T030000Z
+DTEND:20270227T033000Z
+SUMMARY:FPL GW27 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW27: Sat 27 Feb 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW27 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw28@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270303T170000Z
+DTEND:20270303T173000Z
+SUMMARY:FPL GW28 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW28: Wed 03 Mar 12:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl modelo ya decid
+ io: su ventana es de 09:30 a 12:30.\n\nUmbral de chips completo: solo se j
+ uegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tripl
+ e Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW28 - deadline 12:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw29@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270313T030000Z
+DTEND:20270313T033000Z
+SUMMARY:FPL GW29 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW29: Sat 13 Mar 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW29 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw30@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270320T030000Z
+DTEND:20270320T033000Z
+SUMMARY:FPL GW30 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW30: Sat 20 Mar 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW30 - deadline 07:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw31@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270410T030000Z
+DTEND:20270410T033000Z
+SUMMARY:FPL GW31 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW31: Sat 10 Apr 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW31 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw32@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270417T030000Z
+DTEND:20270417T033000Z
+SUMMARY:FPL GW32 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW32: Sat 17 Apr 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW32 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw33@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270424T030000Z
+DTEND:20270424T033000Z
+SUMMARY:FPL GW33 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW33: Sat 24 Apr 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips completo: solo s
+ e juegan si la ganancia es clara.\nChips sin usar del set 2: Wildcard\, Tr
+ iple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW33 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw34@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270501T030000Z
+DTEND:20270501T033000Z
+SUMMARY:FPL GW34 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW34: Sat 01 May 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 100% (quedan 
+ 4 fechas del set 2). Cuanto mas cerca del cierre\, menos exigente.\nChips 
+ sin usar del set 2: Wildcard\, Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW34 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw35@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270508T030000Z
+DTEND:20270508T033000Z
+SUMMARY:FPL GW35 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW35: Sat 08 May 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 75% (quedan 3
+  fechas del set 2). Cuanto mas cerca del cierre\, menos exigente.\nChips s
+ in usar del set 2: Wildcard\, Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW35 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw36@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270515T030000Z
+DTEND:20270515T033000Z
+SUMMARY:FPL GW36 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW36: Sat 15 May 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 50% (quedan 2
+  fechas del set 2). Cuanto mas cerca del cierre\, menos exigente.\nChips s
+ in usar del set 2: Wildcard\, Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW36 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw37@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270523T030000Z
+DTEND:20270523T033000Z
+SUMMARY:FPL GW37 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW37: Sun 23 May 06:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 06:30 de tu manana\, asi que el modelo decide entre las 03:30 y las 06:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUmbral de chips al 25% (quedan 1
+  fechas del set 2). Cuanto mas cerca del cierre\, menos exigente.\nChips s
+ in usar del set 2: Wildcard\, Triple Captain\, Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW37 - deadline 06:30
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gw38@gameweek-lab
+DTSTAMP:20261109T055153Z
+SEQUENCE:144351
+DTSTART:20270530T030000Z
+DTEND:20270530T033000Z
+SUMMARY:FPL GW38 - replicar lo que decidio el modelo
+DESCRIPTION:Deadline GW38: Sun 30 May 07:30 (hora local).\n\nQue hacer: abr
+ ir data/processed/briefing.md y replicar en la app lo que diga\, transfere
+ ncias y chips. El modelo decide\; aca solo se copia.\n\nEl deadline es a l
+ as 07:30 de tu manana\, asi que el modelo decide entre las 04:30 y las 07:
+ 30 mientras dormis. Si la ganancia de algun chip esta cerca de su umbral\,
+  aplicalo a mano antes de ir a dormir.\n\nUMBRAL EN CERO: ultima fecha del
+  set 2. El modelo juega cualquier chip que quede sin usar. Lo que no se ju
+ egue hoy se pierde.\nChips sin usar del set 2: Wildcard\, Triple Captain\,
+  Bench Boost\, Free Hit.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:FPL GW38 - deadline 07:30
+END:VALARM
+END:VEVENT
+END:VCALENDAR

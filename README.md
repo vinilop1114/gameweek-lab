@@ -726,6 +726,34 @@ sobre la parte más débil del sistema, y el horizonte todavía no tiene
 medición propia: empezó a grabarse en GW6 y la primera lectura es de
 mediados de noviembre.
 
+## Calendario de recordatorios (`scripts/export_calendar.py`)
+
+Genera `data/processed/fpl_deadlines.ics` para importar en cualquier
+calendario: un recordatorio por fecha, con qué revisar y qué está en
+juego.
+
+Se genera **desde la API**, no a mano, porque los deadlines se mueven
+(partidos postergados, cambios de TV) y un calendario escrito a mano
+queda desfasado en silencio — que es justo lo que había pasado.
+
+Dos detalles que no son cosméticos:
+
+- **La hora del aviso no es la del deadline.** El modelo decide en las 3h
+  previas, y en UTC-6 varios deadlines caen entre las 02:00 y las 07:30
+  locales: GW15, GW16 y GW17 se deciden de madrugada. Para esos, el aviso
+  se manda a las 21:00 de la noche anterior, cuando todavía se puede
+  actuar; para los que caen en horario razonable, 90 minutos antes, que
+  es cuando el modelo ya decidió.
+- **El UID es estable por fecha** (`gw11@gameweek-lab`), sin la data del
+  deadline. Si FPL mueve GW11, al re-importar el cliente **actualiza** ese
+  evento en vez de dejar dos avisos para la misma fecha. `SEQUENCE` sube
+  en cada generación para que acepte la versión nueva.
+
+```bash
+python scripts/export_calendar.py                  # zona UTC-6
+python scripts/export_calendar.py --utc-offset -5  # otra zona
+```
+
 ## Briefing para redactar posts
 
 `data/processed/briefing.md` — un resumen en Markdown que genera el mismo

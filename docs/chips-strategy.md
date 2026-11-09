@@ -8,7 +8,9 @@ reglas capturan la mayor parte del valor sin fingir precisión:
 ## Recordatorio estructural (2026/27)
 
 - Hay **dos sets de chips** (uno por mitad de temporada). El primer set
-  **expira en el deadline de GW19** (13:30 GMT, sáb 2 enero 2027) — un chip
+  **expira en el deadline de GW19** (18:30 UTC, vie 1 enero 2027 — dato
+  tomado de la API, no de memoria: esta línea decía "13:30 GMT, sáb 2 de
+  enero", un día tarde) — un chip
   del primer set sin usar se pierde, no se acumula.
 - Corolario: hacia GW15-18, bajá el estándar de "momento perfecto". Un chip
   usado en un momento decente vale más que un chip vencido.
