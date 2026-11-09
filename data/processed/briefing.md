@@ -1,6 +1,6 @@
-# The Gameweek Lab — Briefing GW10
+# The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-09 05:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-09 10:52 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -8,21 +8,21 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | Gabriel | Arsenal | DEF | £8.1m | 8.18 | 9.0 | 10% | 22.5 | Hull City (casa) | — |
-| Vice | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 21.81 | Hull City (casa) | — |
-| Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.7 | 10.0 | 10% | 23.11 | Ipswich Town (fuera) | — |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 20.36 | Coventry City (casa) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.7m | 7.26 | 11.0 | 14% | 21.78 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 17.16 | Coventry City (casa) | Penales |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 17.04 | Coventry City (casa) | — |
-| Titular | Van Hecke | Spurs | DEF | £5.1m | 5.6 | 8.0 | 4% | 26.13 | Leeds (fuera) | — |
-| Titular | Bogle | Leeds | DEF | £4.8m | 5.49 | 8.0 | 5% | 18.32 | Spurs (casa) | — |
-| Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 24.06 | Sunderland (fuera) | — |
-| Titular | Mbeumo | Man Utd | MID | £7.9m | 4.32 | 10.0 | 10% | 15.83 | Aston Villa (casa) | — |
-| Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 4.0 | 6.0 | 0% | 12.0 | Ipswich Town (fuera) | — |
-| Banco 2 | E.Le Fée | Sunderland | MID | £5.7m | 2.93 | 7.0 | 3% | 14.66 | Chelsea (casa) | Córners |
-| Banco 3 | Richards | Crystal Palace | DEF | £4.9m | 1.69 | 6.0 | 0% | 10.14 | Liverpool (casa) | — |
-| Banco 4 | Thiago | Brentford | FWD | £7.8m | 0.0 | 0.0 | 0% | 0.0 | Brighton (fuera) | Penales |
+| **Capitán** | Van Hecke | Spurs | DEF | £5.1m | 7.47 | 8.0 | 8% | 24.26 | Ipswich Town (casa) | — |
+| Vice | Gabriel | Arsenal | DEF | £8.1m | 6.14 | 8.0 | 6% | 20.45 | Newcastle (fuera) | — |
+| Titular | Raya | Arsenal | GKP | £6.2m | 5.95 | 6.0 | 0% | 19.83 | Newcastle (fuera) | — |
+| Titular | Evanilson | Bournemouth | FWD | £6.5m | 5.78 | 6.0 | 6% | 23.11 | Nott'm Forest (casa) | — |
+| Titular | Tavernier | Bournemouth | MID | £6.7m | 5.44 | 8.0 | 9% | 21.78 | Nott'm Forest (casa) | Tiros libres, Córners |
+| Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
+| Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.4 | 8.0 | 6% | 16.12 | Aston Villa (fuera) | Córners |
+| Titular | Tarkowski | Everton | DEF | £6.2m | 3.7 | 6.0 | 1% | 20.36 | Brentford (fuera) | — |
+| Titular | Bogle | Leeds | DEF | £4.8m | 3.66 | 6.0 | 2% | 20.15 | Chelsea (fuera) | — |
+| Titular | Richards | Crystal Palace | DEF | £4.9m | 3.38 | 6.0 | 2% | 10.98 | Coventry City (fuera) | — |
+| Titular | Barry | Everton | FWD | £5.7m | 3.12 | 6.0 | 5% | 17.16 | Brentford (fuera) | Penales |
+| Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 3.0 | 6.0 | 0% | 12.0 | Nott'm Forest (casa) | — |
+| Banco 2 | Dewsbury-Hall | Everton | MID | £6.6m | 3.1 | 7.0 | 2% | 17.04 | Brentford (fuera) | — |
+| Banco 3 | Mbeumo | Man Utd | MID | £7.9m | 2.88 | 7.0 | 5% | 17.27 | Liverpool (fuera) | — |
+| Banco 4 | Thiago | Brentford | FWD | £7.8m | 0.0 | 0.0 | 0% | 0.0 | Everton (casa) | Penales |
 
 ## Equipo Wildcard
 
@@ -30,47 +30,61 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Rol | Jugador | Equipo | Pos | Precio | xP | Techo | P(haul) | xP 4GW | Próximo rival | Balón parado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Capitán** | Haaland | Man City | FWD | £15.8m | 9.01 | 10.0 | 26% | 27.02 | Nott'm Forest (fuera) | Penales |
-| Vice | Gabriel | Arsenal | DEF | £8.1m | 8.18 | 9.0 | 10% | 22.5 | Hull City (casa) | — |
-| Titular | Raya | Arsenal | GKP | £6.2m | 7.93 | — | 0% | 21.81 | Hull City (casa) | — |
-| Titular | Evanilson | Bournemouth | FWD | £6.5m | 7.7 | 10.0 | 10% | 23.11 | Ipswich Town (fuera) | — |
-| Titular | Tarkowski | Everton | DEF | £6.2m | 7.4 | — | 2% | 20.36 | Coventry City (casa) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.7m | 7.26 | 11.0 | 14% | 21.78 | Ipswich Town (fuera) | Tiros libres, Córners |
-| Titular | Konsa | Arsenal | DEF | £4.8m | 6.99 | — | 3% | 19.21 | Hull City (casa) | — |
-| Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 17.16 | Coventry City (casa) | Penales |
-| Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 17.04 | Coventry City (casa) | — |
-| Titular | De Cuyper | Brighton | DEF | £5.5m | 6.12 | 8.0 | 6% | 24.47 | Brentford (casa) | — |
-| Titular | Groß | Brighton | MID | £6.3m | 5.77 | 7.0 | 4% | 23.09 | Brentford (casa) | Penales, Tiros libres, Córners |
-| Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Leeds (fuera) | — |
-| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 0.83 | 2.0 | 0% | 4.14 | Chelsea (casa) | — |
-| Banco 3 | Andrey Santos | Man Utd | MID | £4.7m | 0.65 | 3.0 | 0% | 2.37 | Aston Villa (casa) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.11 | 2.0 | 0% | 0.67 | Liverpool (casa) | — |
+| **Capitán** | Haaland | Man City | FWD | £15.8m | 9.01 | 10.0 | 26% | 22.52 | Fulham (casa) | Penales |
+| Vice | De Cuyper | Brighton | DEF | £5.5m | 8.16 | 11.0 | 10% | 26.51 | Hull City (fuera) | — |
+| Titular | Groß | Brighton | MID | £6.3m | 7.7 | 8.0 | 7% | 25.01 | Hull City (fuera) | Penales, Tiros libres, Córners |
+| Titular | Verbruggen | Brighton | GKP | £4.6m | 7.6 | — | 0% | 24.7 | Hull City (fuera) | — |
+| Titular | Van Hecke | Spurs | DEF | £5.1m | 7.47 | 8.0 | 8% | 24.26 | Ipswich Town (casa) | — |
+| Titular | Gabriel | Arsenal | DEF | £8.1m | 6.14 | 8.0 | 6% | 20.45 | Newcastle (fuera) | — |
+| Titular | Evanilson | Bournemouth | FWD | £6.5m | 5.78 | 6.0 | 6% | 23.11 | Nott'm Forest (casa) | — |
+| Titular | Tavernier | Bournemouth | MID | £6.7m | 5.44 | 8.0 | 9% | 21.78 | Nott'm Forest (casa) | Tiros libres, Córners |
+| Titular | Konsa | Arsenal | DEF | £4.8m | 5.24 | 6.0 | 2% | 17.46 | Newcastle (fuera) | — |
+| Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
+| Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
+| Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
+| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 1.24 | 2.0 | 0% | 4.56 | Aston Villa (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.14 | 2.0 | 1% | 0.79 | Chelsea (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 79.0% | Nott'm Forest |
-| Gabriel | Arsenal | DEF | 8.18 | 9.0 | 10% | 25.9% | Hull City |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 47.4% | Hull City |
-| Evanilson | Bournemouth | FWD | 7.7 | 10.0 | 10% | 23.0% | Ipswich Town |
-| Tarkowski | Everton | DEF | 7.4 | — | 2% | 19.4% | Coventry City |
-| Tavernier | Bournemouth | MID | 7.26 | 11.0 | 14% | 31.0% | Ipswich Town |
-| Konsa | Arsenal | DEF | 6.99 | — | 3% | 24.1% | Hull City |
-| Rice | Arsenal | MID | 6.49 | 7.0 | 3% | 13.6% | Hull City |
+| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 79.0% | Fulham |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.4% | Hull City |
+| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 47.8% | Hull City |
+| Verbruggen | Brighton | GKP | 7.6 | — | 0% | 23.8% | Hull City |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.2% | Ipswich Town |
+| Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 25.9% | Newcastle |
+| Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.2% | Hull City |
+| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.4% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Dewsbury-Hall | Everton | MID | £6.6m | 7.0% | 6.2 | 8.0 | 5% | Coventry City |
-| Mykolenko | Everton | DEF | £4.6m | 2.5% | 5.57 | 6.0 | 1% | Coventry City |
-| Wirtz | Liverpool | MID | £7.2m | 5.3% | 5.54 | 8.0 | 8% | Crystal Palace |
-| Pickford | Everton | GKP | £5.5m | 8.5% | 5.2 | 6.0 | 0% | Coventry City |
-| Muharemović | Leeds | DEF | £5.1m | 6.3% | 5.13 | 6.0 | 2% | Spurs |
-| Scott | Bournemouth | MID | £5.9m | 2.1% | 5.05 | 6.0 | 2% | Ipswich Town |
-| A.Becker | Liverpool | GKP | £5.5m | 4.1% | 5.01 | 6.0 | 0% | Crystal Palace |
-| Gakpo | Liverpool | MID | £7.1m | 7.1% | 4.98 | 8.0 | 7% | Crystal Palace |
+| Gomez | Brighton | MID | £5.0m | 4.2% | 6.08 | 8.0 | 5% | Hull City |
+| Gomez | Brighton | MID | £5.0m | 4.2% | 6.08 | — | 0% | Hull City |
+| Ayari | Brighton | MID | £5.5m | 2.2% | 5.27 | 7.0 | 3% | Hull City |
+| McGinn | Aston Villa | MID | £5.4m | 3.4% | 4.96 | 8.0 | 7% | Sunderland |
+| Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
+| E.Le Fée | Sunderland | MID | £5.7m | 2.7% | 4.4 | 8.0 | 6% | Aston Villa |
+| Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
+| Ndiaye | Man City | MID | £5.8m | 5.5% | 4.34 | 8.0 | 6% | Fulham |
+| Mitchell | Crystal Palace | DEF | £4.5m | 4.7% | 4.32 | 8.0 | 3% | Coventry City |
+
+## Transferencia propuesta para esta fecha
+
+Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
+
+- Thiago → Brobbey (+3.20 xP, transferencia libre, entra de banco)
+- Dewsbury-Hall → Groß (+7.67 xP, HIT -4 aplicado, entra de titular)
+
+Sale: Dewsbury-Hall, Thiago · Entra: Brobbey, Groß
+
+El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
+
+**Es el mejor cambio de a uno, no el mejor plan posible.** El modelo evalúa reemplazos dentro de una misma posición y nunca financia un puesto vendiendo en otro ("bajo el arquero suplente para subir un defensor"), así que esa alternativa no fue descartada: no se evaluó. Al escribir, no lo presentes como el movimiento óptimo de la fecha.
 
 ## Movimientos ya ejecutados en GW10
 
@@ -84,9 +98,9 @@ Set **1** (hay dos, uno por mitad de temporada; el que no se usa se pierde). El 
 
 | Chip | Ganancia | Umbral | ¿Jugar? | Qué aplicar |
 |---|---|---|---|---|
-| Triple Captain | +8.18 | 9.0 | no | Capitán triple: Gabriel (Arsenal) vs Hull City. |
-| Bench Boost | +8.62 | 14.0 | no | Banco: Petrović 4.0, E.Le Fée 2.93, Richards 1.69, Thiago 0.0 |
-| Free Hit | +6.70 | 18.0 | no | XI de una fecha: Haaland, Gabriel, Raya, Evanilson, Tarkowski, … |
+| Triple Captain | +7.47 | 9.0 | no | Capitán triple: Van Hecke (Spurs) vs Ipswich Town. |
+| Bench Boost | +8.98 | 14.0 | no | Banco: Petrović 3.0, Dewsbury-Hall 3.1, Mbeumo 2.88, Thiago 0.0 |
+| Free Hit | +18.38 | 18.0 | **SÍ** | XI de una fecha: Haaland, De Cuyper, Groß, Verbruggen, Van Hecke, … |
 
 Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.
 

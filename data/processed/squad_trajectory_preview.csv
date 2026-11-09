@@ -1,16 +1,16 @@
-position,GW10,GW11,GW12,GW13
+position,GW11,GW12,GW13,GW14
 DEF,Gabriel,Gabriel,Gabriel,Gabriel
 MID,Tavernier,Tavernier,Tavernier,Tavernier
 DEF,Bogle,Bogle,Bogle,Bogle
-GKP,Raya,Raya,Raya,Raya
-DEF,Tarkowski,Tarkowski,Tarkowski,De Cuyper
-MID,Mbeumo,Groß,Groß,Groß
+GKP,Raya,Raya,Verbruggen,Verbruggen
+DEF,Tarkowski,De Cuyper,De Cuyper,De Cuyper
+MID,Mbeumo,Mbeumo,Mbeumo,Mbeumo
 FWD,Evanilson,Evanilson,Evanilson,Evanilson
 MID,Rogers,Rogers,Rogers,Rogers
 DEF,Van Hecke,Van Hecke,Van Hecke,Van Hecke
-MID,Dewsbury-Hall,Dewsbury-Hall,Dewsbury-Hall,Dewsbury-Hall
+MID,Groß,Groß,Groß,Groß
 MID,E.Le Fée,E.Le Fée,E.Le Fée,E.Le Fée
-FWD,Thiago,Brobbey,Brobbey,Brobbey
-DEF,Richards,Richards,Konsa,Konsa
+FWD,Brobbey,Brobbey,Brobbey,Brobbey
+DEF,Richards,Richards,Richards,Konsa
 GKP,Petrović,Petrović,Petrović,Petrović
 FWD,Barry,Barry,Barry,Barry
