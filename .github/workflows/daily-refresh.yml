@@ -47,6 +47,15 @@ jobs:
         run: python scripts/run_calibration.py
         continue-on-error: true
 
+      # Regenera el .ics de deadlines. Importa que corra solo: FPL mueve
+      # deadlines por postergaciones y cambios de TV, y el UID estable por
+      # fecha hace que al re-importar se ACTUALICE el evento en vez de
+      # duplicarlo. El offset es el de la zona del usuario (UTC-6) y solo
+      # afecta las horas locales del texto: el evento va en UTC.
+      - name: Regenerar el calendario de deadlines
+        run: python scripts/export_calendar.py --utc-offset -6
+        continue-on-error: true
+
       - name: Commitear y subir los CSVs actualizados
         run: |
           git config user.name "github-actions[bot]"

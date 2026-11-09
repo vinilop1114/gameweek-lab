@@ -120,6 +120,16 @@ def _nota_umbral(gameweek: int) -> str:
     )
 
 
+def _sin_sellos(ics: str) -> str:
+    """El .ics sin las líneas que cambian solas en cada generación, para
+    poder comparar si cambió algo de fondo."""
+    return "\r\n".join(
+        line
+        for line in ics.split("\r\n")
+        if not line.startswith(("DTSTAMP:", "SEQUENCE:", "X-WR-CALDESC:"))
+    )
+
+
 def build_calendar(utc_offset_hours: float) -> str:
     local = timezone(timedelta(hours=utc_offset_hours))
     bootstrap = json.loads(
@@ -223,8 +233,22 @@ if __name__ == "__main__":
 
     CALENDAR_PATH.parent.mkdir(parents=True, exist_ok=True)
     ics = build_calendar(args.utc_offset)
+    eventos = ics.count("BEGIN:VEVENT")
+
+    # Solo se reescribe si cambió algo REAL. `DTSTAMP` y `SEQUENCE` llevan
+    # la hora de generación, así que sin esta comparación el archivo salía
+    # distinto en cada corrida y el Action commiteaba ocho veces por día un
+    # calendario idéntico. Comparar ignorándolos deja además la semántica
+    # correcta: `SEQUENCE` sube solo cuando el contenido cambió de verdad,
+    # que es justo lo que un cliente de calendario espera.
+    if CALENDAR_PATH.exists() and _sin_sellos(
+        CALENDAR_PATH.read_bytes().decode("utf-8")
+    ) == _sin_sellos(ics):
+        print(f"{CALENDAR_PATH} sin cambios ({eventos} recordatorios) — no se reescribe.")
+        raise SystemExit(0)
+
     CALENDAR_PATH.write_text(ics, encoding="utf-8", newline="")
     print(
         f"Guardado {CALENDAR_PATH} "
-        f"({ics.count('BEGIN:VEVENT')} recordatorios, zona UTC{args.utc_offset:+g})"
+        f"({eventos} recordatorios, zona UTC{args.utc_offset:+g})"
     )

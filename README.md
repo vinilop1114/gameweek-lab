@@ -759,6 +759,14 @@ python scripts/export_calendar.py                  # zona UTC-6
 python scripts/export_calendar.py --utc-offset -5  # otra zona
 ```
 
+Lo regenera el Action en cada corrida, así que si FPL mueve un deadline el
+archivo se actualiza solo. **Solo reescribe cuando cambió algo real**:
+`DTSTAMP` y `SEQUENCE` llevan la hora de generación, así que sin esa
+comparación el Action habría commiteado ocho veces por día un calendario
+idéntico. De paso deja la semántica correcta — `SEQUENCE` sube únicamente
+cuando el contenido cambió, que es lo que un cliente de calendario espera
+para aceptar una actualización.
+
 ## Briefing para redactar posts
 
 `data/processed/briefing.md` — un resumen en Markdown que genera el mismo
