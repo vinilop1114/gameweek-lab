@@ -26,7 +26,12 @@ ejecuta.
 import pandas as pd
 
 from gameweek_lab.analysis import HORIZON_GAMEWEEKS, gameweek_expected_points
-from gameweek_lab.squad_builder import _best_xi_total, select_squad
+from gameweek_lab.squad_builder import (
+    _best_xi_total,
+    select_squad,
+    select_starting_xi,
+    select_wildcard_squad,
+)
 from gameweek_lab.transfer_advisor import (
     MAX_BANKED_TRANSFERS,
     _current_gameweek,
@@ -45,6 +50,22 @@ from gameweek_lab.transfer_advisor import (
 # transferencias normales consiguen gratis, así que lo que queda es
 # incremental, y un chip es de un solo uso.
 WILDCARD_MIN_GAIN = 15.0
+# Umbrales de los chips de UNA fecha. Los tres son juicios, igual que el
+# del Wildcard: el costo real de gastar un chip es la mejor fecha en que
+# podrías gastarlo después, y ponerle número a eso exige proyectar la
+# temporada entera. Se eligieron mirando la distribución real de cada
+# ganancia — ver `evaluate_one_week_chips` — y la rampa de vencimiento
+# los baja igual que al Wildcard, porque un chip sin usar se pierde.
+#
+# Triple Captain: la ganancia es una copia extra del capitán, así que el
+# umbral es directamente "cuánto tiene que proyectar el capitán".
+TRIPLE_CAPTAIN_MIN_GAIN = 9.0
+# Bench Boost: la ganancia son los 4 del banco. Con banco normal suma
+# ~6-8, así que el umbral apunta a una fecha con banco cargado o doble.
+BENCH_BOOST_MIN_GAIN = 14.0
+# Free Hit: rehace el equipo por UNA fecha y después vuelve todo atrás.
+# Compite con el Wildcard, que es permanente, así que exige más.
+FREE_HIT_MIN_GAIN = 18.0
 # Cuántas fechas antes del vencimiento empieza a bajar el umbral.
 WILDCARD_RAMP_GAMEWEEKS = 4
 # **Hay DOS sets de chips, uno por mitad de temporada.** El primero vence
@@ -254,3 +275,106 @@ def wildcard_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
         f"Entran ({len(incoming)}): {', '.join(incoming)}",
     ]
     return squad, log, chip_token("wildcard", current_gw)
+
+
+ONE_WEEK_CHIPS = {
+    "triple_captain": TRIPLE_CAPTAIN_MIN_GAIN,
+    "bench_boost": BENCH_BOOST_MIN_GAIN,
+    "free_hit": FREE_HIT_MIN_GAIN,
+}
+
+
+def _squad_budget(squad: pd.DataFrame) -> float:
+    return round(sum(_sell_price(r.now_cost, r.purchase_price) for r in squad.itertuples()), 1)
+
+
+def evaluate_one_week_chips(players: pd.DataFrame, team_path: str = "my_team.csv") -> list[dict]:
+    """Los tres chips que valen por UNA fecha: Triple Captain, Bench
+    Boost y Free Hit.
+
+    A diferencia del Wildcard, ninguno cambia el plantel de forma
+    permanente, así que **ninguno toca `my_team.csv`**. Lo que hacen es
+    marcarse como usados y publicar qué aplicar en la app:
+
+    - **Triple Captain**: el capitán puntúa ×3 en vez de ×2, así que la
+      ganancia es una copia extra de él. Se mide sobre el XI ya elegido,
+      no sobre el plantel: la cinta solo puede ir a un titular.
+    - **Bench Boost**: puntúan los 4 del banco. La ganancia es la suma de
+      sus xP — nada más, porque el XI no cambia.
+    - **Free Hit**: rehace el equipo por una fecha y **vuelve atrás** a la
+      siguiente. Como el banco no se sostiene, el plantel correcto es el
+      de `select_wildcard_squad` (banco mínimo, XI máximo) y no el de
+      `select_squad`: es exactamente el ejercicio teórico que este repo
+      venía calculando desde el principio sin tener dónde usarlo.
+
+    La ganancia de los tres se mide con `xp_next`, que es la señal
+    medida para una fecha (Spearman 0.633 sobre GW6-GW10), y no con el
+    horizonte: estos chips no tienen efecto más allá de su fecha.
+    """
+    squad = load_my_team(team_path, players)
+    starters, bench = select_starting_xi(squad)
+    current_gw = _current_gameweek(players)
+    threshold_scale = wildcard_threshold(current_gw) / WILDCARD_MIN_GAIN
+
+    captain = starters.nlargest(1, "xp_next").iloc[0]
+    free_hit_starters, _ = select_wildcard_squad(players, budget=_squad_budget(squad))
+
+    gains = {
+        "triple_captain": (
+            round(float(captain.xp_next), 2),
+            f"Capitán triple: {captain.web_name} ({captain.team_name}) vs {captain.next_opponent}.",
+        ),
+        "bench_boost": (
+            round(float(bench["xp_next"].sum()), 2),
+            "Banco: " + ", ".join(f"{b.web_name} {b.xp_next}" for b in bench.itertuples()),
+        ),
+        "free_hit": (
+            round(float(free_hit_starters["xp_next"].sum() - starters["xp_next"].sum()), 2),
+            "XI de una fecha: "
+            + ", ".join(free_hit_starters.nlargest(5, "xp_next")["web_name"])
+            + ", …",
+        ),
+    }
+
+    results = []
+    for chip, base_threshold in ONE_WEEK_CHIPS.items():
+        if not chip_available(chip, current_gw):
+            continue
+        gain, detail = gains[chip]
+        # La rampa de vencimiento se aplica en proporción, igual que al
+        # Wildcard: cada chip tiene su propio umbral base, pero todos
+        # pierden exigencia a la misma velocidad cerca del cierre del set.
+        threshold = round(base_threshold * threshold_scale, 2)
+        results.append({
+            "chip": chip,
+            "gain": gain,
+            "threshold": threshold,
+            "recommend": gain >= threshold,
+            "detail": detail,
+            "squad": free_hit_starters if chip == "free_hit" else None,
+        })
+    return results
+
+
+def one_week_chip_decision(players: pd.DataFrame, team_path: str = "my_team.csv"):
+    """El mejor chip de una fecha que supere su umbral, o `None`.
+
+    Devuelve `(log, token)`. **No devuelve plantel**: ninguno de los tres
+    cambia `my_team.csv`. Si más de uno califica se elige el de mayor
+    ganancia relativa a su umbral — jugar dos en la misma fecha es legal
+    en FPL pero gastar dos de golpe rara vez es lo mejor, y el que quede
+    sigue disponible la semana siguiente.
+    """
+    current_gw = _current_gameweek(players)
+    candidates = [c for c in evaluate_one_week_chips(players, team_path) if c["recommend"]]
+    if not candidates:
+        return None
+    best = max(candidates, key=lambda c: c["gain"] / max(c["threshold"], 0.01))
+    nombre = best["chip"].replace("_", " ").upper()
+    log = [
+        f"{nombre} (set {season_half(current_gw)}) JUGADO en GW{current_gw}: "
+        f"+{best['gain']:.2f} xP (umbral {best['threshold']}).",
+        best["detail"],
+        "No cambia el plantel — se activa el chip en la app y nada más.",
+    ]
+    return log, chip_token(best["chip"], current_gw)

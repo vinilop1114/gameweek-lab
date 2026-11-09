@@ -139,27 +139,57 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
     proyecta ~29 xP más que el Base, mientras la comparación honesta
     —contra el Base evolucionando con transferencias normales— da ~10.
     """
-    from gameweek_lab.chips import chip_available, evaluate_wildcard, season_half
+    from gameweek_lab.chips import (
+        chip_available, evaluate_one_week_chips, evaluate_wildcard, season_half,
+    )
     from gameweek_lab.transfer_advisor import _current_gameweek
 
     current_gw = _current_gameweek(players)
     half = season_half(current_gw)
+    lines = [
+        "",
+        "## Chips",
+        "",
+        f"Set **{half}** (hay dos, uno por mitad de temporada; el que no se usa se "
+        "pierde). El modelo decide los cuatro y los marca al jugarlos — acá solo hay "
+        "que replicarlos en la app.",
+        "",
+        "| Chip | Ganancia | Umbral | ¿Jugar? | Qué aplicar |",
+        "|---|---|---|---|---|",
+    ]
+    for c in evaluate_one_week_chips(players):
+        nombre = c["chip"].replace("_", " ").title()
+        marca = "**SÍ**" if c["recommend"] else "no"
+        lines.append(
+            f"| {nombre} | {c['gain']:+.2f} | {c['threshold']} | {marca} | {c['detail']} |"
+        )
+    for chip in ("triple_captain", "bench_boost", "free_hit"):
+        if not chip_available(chip, current_gw):
+            lines.append(f"| {chip.replace('_',' ').title()} | — | — | ya usado | — |")
+
+    lines += [
+        "",
+        "Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se "
+        "activan en la app y nada más. Free Hit es la excepción parcial — rehace el "
+        "equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco "
+        "toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.",
+    ]
+
     if not chip_available("wildcard", current_gw):
-        return [
-            "", "## Chips", "",
-            f"El Wildcard del set {half} ya se jugó. **Hay dos sets, uno por mitad de "
-            "temporada**, así que el de la otra mitad sigue intacto — este aviso es solo "
-            "sobre el de ahora.",
+        lines += [
+            "",
+            f"**Wildcard del set {half}: ya jugado.** El de la otra mitad sigue intacto.",
         ]
+        return lines
 
     r = evaluate_wildcard(players)
+    lines += [""]
     veredicto = (
         "**SÍ conviene jugarlo**" if r["recommend"]
         else "**todavía no conviene jugarlo**"
     )
-    lines = [
-        "",
-        "## Chips — Wildcard",
+    lines += [
+        "### Wildcard",
         "",
         f"Con los datos de hoy, {veredicto}.",
         "",

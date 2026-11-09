@@ -612,9 +612,11 @@ def evolve_base_squad(
     # Wildcard rehace los 15, así que mover jugadores encima no tendría
     # sentido. Import local para no crear un ciclo — chips.py necesita
     # plan_transfers de este módulo.
-    from gameweek_lab.chips import wildcard_decision
+    from gameweek_lab.chips import one_week_chip_decision, wildcard_decision
 
     chip = wildcard_decision(players, team_path)
+    one_week = None if chip is not None else one_week_chip_decision(players, team_path)
+
     if chip is not None:
         squad, chip_log, chip_token = chip
         log.extend(chip_log)
@@ -624,12 +626,27 @@ def evolve_base_squad(
         # El token lleva la mitad de temporada: son dos chips distintos y
         # gastar el de la primera no consume el de la segunda.
         state.setdefault("chips_used", []).append(chip_token)
+    elif one_week is not None and one_week[1].startswith("free_hit"):
+        # Free Hit no toca `my_team.csv`: el plantel se rehace por una
+        # fecha y vuelve atrás a la siguiente. Las transferencias de esa
+        # fecha se desperdiciarían —el equipo revierte igual— así que no
+        # se hacen, y la libre queda acumulada.
+        chip_log, chip_token = one_week
+        log.extend(chip_log)
+        free_transfers = _accrued_free_transfers(state, current_gw)
+        state.setdefault("chips_used", []).append(chip_token)
     else:
         free_transfers = _accrued_free_transfers(state, current_gw)
         squad, free_transfers, plan_log = plan_transfers(
             players, squad, free_transfers, current_gw
         )
         log.extend(plan_log)
+        # Triple Captain y Bench Boost SÍ conviven con transferencias
+        # normales: no cambian el plantel, solo cómo puntúa esa fecha.
+        if one_week is not None:
+            chip_log, chip_token = one_week
+            log.extend(chip_log)
+            state.setdefault("chips_used", []).append(chip_token)
 
     save_my_team(squad, team_path)
     state["last_evaluated_gameweek"] = current_gw

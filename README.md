@@ -626,7 +626,39 @@ real cuando de verdad llegue esa fecha — por eso es "el plan de hoy, si
 nada cambiara", no un compromiso. Es de solo lectura: nunca toca
 `my_team.csv` ni `base_squad_state.json`, son completamente independientes.
 
-## ¿Conviene jugar un chip? (`chips.py`)
+## Los chips (`chips.py`)
+
+**El modelo decide los cuatro y los marca al jugarlos.** No queda ninguna
+decisión de chips en manos de una persona: el briefing publica qué
+aplicar y eso se replica en la app.
+
+Cada chip tiene su mecánica, y eso cambia qué se mide y qué se toca:
+
+| Chip | Ganancia | ¿Toca `my_team.csv`? | ¿Convive con transferencias? |
+|---|---|---|---|
+| **Wildcard** | el plantel nuevo contra el Base evolucionando, a 4 fechas | **sí**, reemplaza los 15 | no, las reemplaza |
+| **Triple Captain** | una copia extra del capitán, 1 fecha | no | sí |
+| **Bench Boost** | la suma de los 4 del banco, 1 fecha | no | sí |
+| **Free Hit** | el mejor XI de esa fecha contra el tuyo | **no**, el equipo vuelve atrás | no, se desperdiciarían |
+
+Dos detalles que salen de la mecánica, no de una preferencia:
+
+- **Free Hit usa `select_wildcard_squad`, no `select_squad`.** Como el
+  equipo revierte a la fecha siguiente, el banco no se sostiene y no
+  importa: el plantel correcto es el de banco mínimo y XI máximo. Es
+  exactamente el ejercicio teórico que este repo venía calculando desde
+  el principio sin tener dónde usarlo.
+- **Los tres de una fecha se miden con `xp_next`**, no con el horizonte:
+  no tienen efecto más allá de su fecha.
+
+Los umbrales (`TRIPLE_CAPTAIN_MIN_GAIN = 9`, `BENCH_BOOST_MIN_GAIN = 14`,
+`FREE_HIT_MIN_GAIN = 18`, `WILDCARD_MIN_GAIN = 15`) son **juicios, no
+derivaciones** — el costo real de gastar un chip es la mejor fecha en que
+podrías gastarlo después, y ponerle número a eso exige proyectar la
+temporada entera. La rampa de vencimiento los baja a todos en proporción
+en las últimas 4 fechas de cada set.
+
+### El Wildcard, en detalle
 
 `evaluate_wildcard` compara **jugar el Wildcard ahora** contra **seguir
 con transferencias normales**, sobre las próximas 4 fechas, y publica el

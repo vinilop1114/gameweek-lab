@@ -347,8 +347,10 @@ def _first_valid_sub(missing, starters: pd.DataFrame, bench: pd.DataFrame) -> st
     return None
 
 
-def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Arma plantel + 11 titulares asumiendo que se puede usar Wildcard
+def select_wildcard_squad(
+    players: pd.DataFrame, budget: float = BUDGET
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Arma plantel + 11 titulares asumiendo que se puede rearmar todo
     todas las fechas: como el banco nunca se sostiene más de una semana,
     no vale la pena pagar por profundidad ahí. Gasta lo mínimo posible en
     los 4 suplentes y vuelca casi todo el presupuesto a los titulares.
@@ -383,7 +385,7 @@ def select_wildcard_squad(players: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
         - pulp.lpSum(in_squad[i] * available.loc[i, "now_cost"] for i in available.index)
     )
 
-    problem += pulp.lpSum(in_squad[i] * available.loc[i, "now_cost"] for i in available.index) <= BUDGET
+    problem += pulp.lpSum(in_squad[i] * available.loc[i, "now_cost"] for i in available.index) <= budget
     _add_position_quota_constraints(problem, in_squad, available)
     _add_club_limit_constraints(problem, in_squad, available)
 

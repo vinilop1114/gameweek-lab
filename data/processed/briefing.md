@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-09 05:28 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-09 05:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -80,7 +80,17 @@ Transferencias libres disponibles tras esa fecha: 0.
 
 ## Chips
 
-El Wildcard del set 1 ya se jugó. **Hay dos sets, uno por mitad de temporada**, así que el de la otra mitad sigue intacto — este aviso es solo sobre el de ahora.
+Set **1** (hay dos, uno por mitad de temporada; el que no se usa se pierde). El modelo decide los cuatro y los marca al jugarlos — acá solo hay que replicarlos en la app.
+
+| Chip | Ganancia | Umbral | ¿Jugar? | Qué aplicar |
+|---|---|---|---|---|
+| Triple Captain | +8.18 | 9.0 | no | Capitán triple: Gabriel (Arsenal) vs Hull City. |
+| Bench Boost | +8.62 | 14.0 | no | Banco: Petrović 4.0, E.Le Fée 2.93, Richards 1.69, Thiago 0.0 |
+| Free Hit | +6.70 | 18.0 | no | XI de una fecha: Haaland, Gabriel, Raya, Evanilson, Tarkowski, … |
+
+Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.
+
+**Wildcard del set 1: ya jugado.** El de la otra mitad sigue intacto.
 
 ## Repaso de GW10 (fecha cerrada)
 
