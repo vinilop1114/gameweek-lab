@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW10
 
-Generado automáticamente: 2026-11-08 19:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-09 00:29 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -15,11 +15,11 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Tavernier | Bournemouth | MID | £6.7m | 7.26 | 11.0 | 14% | 17.78 | Ipswich Town (fuera) | Tiros libres, Córners |
 | Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 13.74 | Coventry City (casa) | Penales |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.47 | Coventry City (casa) | — |
-| Titular | Van Hecke | Spurs | DEF | £5.0m | 5.6 | 8.0 | 4% | 21.2 | Leeds (fuera) | — |
+| Titular | Van Hecke | Spurs | DEF | £5.1m | 5.6 | 8.0 | 4% | 21.2 | Leeds (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 5.49 | 8.0 | 5% | 13.97 | Spurs (casa) | — |
-| Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 18.64 | Sunderland (fuera) | — |
+| Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 18.42 | Sunderland (fuera) | — |
 | Titular | Mbeumo | Man Utd | MID | £7.9m | 4.32 | 10.0 | 10% | 16.78 | Aston Villa (casa) | — |
-| Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 4.0 | 6.0 | 0% | 12.34 | Ipswich Town (fuera) | — |
+| Banco 1 | Petrović | Bournemouth | GKP | £4.5m | 4.0 | 6.0 | 0% | 12.32 | Ipswich Town (fuera) | — |
 | Banco 2 | E.Le Fée | Sunderland | MID | £5.7m | 2.93 | 7.0 | 3% | 13.39 | Chelsea (casa) | Córners |
 | Banco 3 | Richards | Crystal Palace | DEF | £4.9m | 1.69 | 6.0 | 0% | 14.96 | Liverpool (casa) | — |
 | Banco 4 | Thiago | Brentford | FWD | £7.8m | 0.0 | 0.0 | 0% | 0.0 | Brighton (fuera) | Penales |
@@ -39,24 +39,24 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Konsa | Arsenal | DEF | £4.8m | 6.99 | — | 3% | 12.41 | Hull City (casa) | — |
 | Titular | Barry | Everton | FWD | £5.7m | 6.24 | 10.0 | 15% | 13.74 | Coventry City (casa) | Penales |
 | Titular | Dewsbury-Hall | Everton | MID | £6.6m | 6.2 | 8.0 | 5% | 12.47 | Coventry City (casa) | — |
-| Titular | De Cuyper | Brighton | DEF | £5.4m | 6.12 | 8.0 | 6% | 15.38 | Brentford (casa) | — |
-| Titular | Groß | Brighton | MID | £6.3m | 5.77 | 7.0 | 4% | 13.07 | Brentford (casa) | Penales, Tiros libres, Córners |
+| Titular | De Cuyper | Brighton | DEF | £5.5m | 6.12 | 8.0 | 6% | 15.41 | Brentford (casa) | — |
+| Titular | Groß | Brighton | MID | £6.3m | 5.77 | 7.0 | 4% | 13.08 | Brentford (casa) | Penales, Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 3.61 | Leeds (fuera) | — |
-| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 0.83 | 2.0 | 0% | 4.02 | Chelsea (casa) | — |
-| Banco 3 | Andrey Santos | Man Utd | MID | £4.7m | 0.65 | 3.0 | 0% | 4.56 | Aston Villa (casa) | — |
+| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 0.83 | 2.0 | 0% | 4.01 | Chelsea (casa) | — |
+| Banco 3 | Andrey Santos | Man Utd | MID | £4.7m | 0.65 | 3.0 | 0% | 4.55 | Aston Villa (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.11 | 2.0 | 0% | 1.99 | Liverpool (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 79.1% | Nott'm Forest |
+| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 79.0% | Nott'm Forest |
 | Gabriel | Arsenal | DEF | 8.18 | 9.0 | 10% | 25.8% | Hull City |
-| Raya | Arsenal | GKP | 7.93 | — | 0% | 47.3% | Hull City |
-| Evanilson | Bournemouth | FWD | 7.7 | 10.0 | 10% | 22.8% | Ipswich Town |
+| Raya | Arsenal | GKP | 7.93 | — | 0% | 47.4% | Hull City |
+| Evanilson | Bournemouth | FWD | 7.7 | 10.0 | 10% | 23.0% | Ipswich Town |
 | Tarkowski | Everton | DEF | 7.4 | — | 2% | 19.4% | Coventry City |
-| Tavernier | Bournemouth | MID | 7.26 | 11.0 | 14% | 30.9% | Ipswich Town |
-| Konsa | Arsenal | DEF | 6.99 | — | 3% | 24.0% | Hull City |
+| Tavernier | Bournemouth | MID | 7.26 | 11.0 | 14% | 31.0% | Ipswich Town |
+| Konsa | Arsenal | DEF | 6.99 | — | 3% | 24.1% | Hull City |
 | Rice | Arsenal | MID | 6.49 | 7.0 | 3% | 13.6% | Hull City |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -65,7 +65,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Dewsbury-Hall | Everton | MID | £6.6m | 7.0% | 6.2 | 8.0 | 5% | Coventry City |
 | Mykolenko | Everton | DEF | £4.6m | 2.5% | 5.57 | 6.0 | 1% | Coventry City |
-| Wirtz | Liverpool | MID | £7.2m | 5.2% | 5.54 | 8.0 | 8% | Crystal Palace |
+| Wirtz | Liverpool | MID | £7.2m | 5.3% | 5.54 | 8.0 | 8% | Crystal Palace |
 | Pickford | Everton | GKP | £5.5m | 8.5% | 5.2 | 6.0 | 0% | Coventry City |
 | Muharemović | Leeds | DEF | £5.1m | 6.3% | 5.13 | 6.0 | 2% | Spurs |
 | Scott | Bournemouth | MID | £5.9m | 2.1% | 5.05 | 6.0 | 2% | Ipswich Town |
@@ -82,7 +82,7 @@ Transferencias libres disponibles tras esa fecha: 0.
 
 El Wildcard del set 1 ya se jugó. **Hay dos sets, uno por mitad de temporada**, así que el de la otra mitad sigue intacto — este aviso es solo sobre el de ahora.
 
-## Repaso de GW9 (fecha cerrada)
+## Repaso de GW10 (fecha cerrada)
 
 Sesgo del modelo: +0.44 pts por jugador (subestimó en promedio). Error absoluto medio: 1.37 pts.
 
@@ -90,20 +90,20 @@ Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | +0.41 | 152 |
-| FWD | +0.72 | 47 |
-| GKP | +0.18 | 57 |
-| MID | +0.47 | 215 |
+| DEF | +0.16 | 154 |
+| FWD | +0.94 | 48 |
+| GKP | +0.04 | 58 |
+| MID | +0.64 | 214 |
 
-Mejores puntajes reales de GW9:
+Mejores puntajes reales de GW10:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| Van Hecke | Spurs | DEF | 15 | 6.27 |
-| McBurnie | Hull City | FWD | 12 | 3.62 |
-| Verbruggen | Brighton | GKP | 11 | 1.67 |
-| Fofana | Chelsea | DEF | 11 | 0.68 |
-| Konsa | Arsenal | DEF | 10 | 3.01 |
+| Barry | Everton | FWD | 16 | 4.82 |
+| Alysson | Aston Villa | MID | 16 | 0.32 |
+| Wirtz | Liverpool | MID | 13 | 4.42 |
+| Delap | Nott'm Forest | FWD | 13 | 0.86 |
+| Vuskovic | Brighton | DEF | 12 | 5.83 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
