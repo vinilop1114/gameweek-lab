@@ -37,13 +37,15 @@ from gameweek_lab.config import DATA_PROCESSED_DIR, DATA_RAW_DIR  # noqa: E402
 from gameweek_lab.transfer_advisor import TRANSFER_DECISION_WINDOW_HOURS  # noqa: E402
 
 CALENDAR_PATH = DATA_PROCESSED_DIR / "fpl_deadlines.ics"
-# Debajo de esta hora local el deadline cae de madrugada, y el aviso se
-# manda la noche anterior: el modelo va a decidir mientras uno duerme.
-EARLY_LOCAL_HOUR = 9
-NIGHT_BEFORE_HOUR = 21
-# Para los deadlines en horario razonable, cuanto antes avisar. 90 minutos
-# deja al Action correr dentro de su ventana y todavia da tiempo a copiar.
-LEAD_MINUTES = 90
+# El evento va en la hora EXACTA del deadline, y los avisos son alarmas
+# del evento. Una version anterior corria el evento a la hora en que
+# convenia avisar; eso ponia el recordatorio en el calendario pero dejaba
+# el deadline real invisible, que es el dato que uno quiere ver.
+EVENT_MINUTES = 30
+# Dos alarmas por evento: una con un dia de anticipacion para ver venir la
+# fecha, y otra a 3 horas, que es cuando se abre la ventana de decision
+# del modelo (TRANSFER_DECISION_WINDOW_HOURS).
+ALARM_TRIGGERS = ("-P1D", f"-PT{TRANSFER_DECISION_WINDOW_HOURS}H")
 
 CHIP_NAMES = {
     "wildcard": "Wildcard",
@@ -151,30 +153,25 @@ def build_calendar(utc_offset_hours: float) -> str:
         gameweek = event["id"]
         deadline_local = deadline.astimezone(local)
         ventana_inicio = deadline_local - timedelta(hours=TRANSFER_DECISION_WINDOW_HOURS)
+        madrugada = deadline_local.hour < 9
 
-        if deadline_local.hour < EARLY_LOCAL_HOUR:
-            aviso_local = (deadline_local - timedelta(days=1)).replace(
-                hour=NIGHT_BEFORE_HOUR, minute=0, second=0, microsecond=0
-            )
-            porque = (
-                f"El deadline es a las {deadline_local:%H:%M} de tu manana, asi que el "
-                f"modelo decide entre las {ventana_inicio:%H:%M} y las "
-                f"{deadline_local:%H:%M} mientras dormis. Si la ganancia de algun chip "
-                "esta cerca de su umbral, aplicalo a mano antes de ir a dormir."
-            )
-        else:
-            aviso_local = deadline_local - timedelta(minutes=LEAD_MINUTES)
-            porque = (
-                f"El modelo ya decidio: su ventana es de "
-                f"{ventana_inicio:%H:%M} a {deadline_local:%H:%M}."
-            )
+        nota_horario = (
+            f"Ojo: el modelo decide entre las {ventana_inicio:%H:%M} y las "
+            f"{deadline_local:%H:%M} de tu manana, asi que la alarma de 3 horas va a "
+            "sonar de madrugada. La de 24 horas es la util: si la ganancia de algun "
+            "chip esta cerca de su umbral, conviene aplicarlo a mano con tiempo."
+            if madrugada
+            else f"El modelo decide entre las {ventana_inicio:%H:%M} y las "
+            f"{deadline_local:%H:%M}, asi que a 3 horas puede no haber decidido "
+            "todavia: el Action corre cada 3 horas."
+        )
 
-        aviso_utc = aviso_local.astimezone(timezone.utc)
         descripcion = _escape(
-            f"Deadline GW{gameweek}: {deadline_local:%a %d %b %H:%M} (hora local).\n\n"
+            f"Deadline GW{gameweek}: {deadline_local:%a %d %b %H:%M} (hora local).\n"
+            "Avisos: 24 horas antes y 3 horas antes.\n\n"
             "Que hacer: abrir data/processed/briefing.md y replicar en la app lo que "
             "diga, transferencias y chips. El modelo decide; aca solo se copia.\n\n"
-            f"{porque}\n\n"
+            f"{nota_horario}\n\n"
             f"{_nota_umbral(gameweek)}\n"
             f"Chips sin usar del set {season_half(gameweek)}: "
             f"{_chips_sin_usar(season_half(gameweek))}."
@@ -191,17 +188,24 @@ def build_calendar(utc_offset_hours: float) -> str:
             # SEQUENCE sube en cada generación para que el cliente acepte
             # la versión nueva como posterior a la que ya tenía.
             f"SEQUENCE:{sequence}",
-            f"DTSTART:{aviso_utc:%Y%m%dT%H%M%SZ}",
-            f"DTEND:{(aviso_utc + timedelta(minutes=30)):%Y%m%dT%H%M%SZ}",
-            f"SUMMARY:FPL GW{gameweek} - replicar lo que decidio el modelo",
+            f"DTSTART:{deadline:%Y%m%dT%H%M%SZ}",
+            f"DTEND:{(deadline + timedelta(minutes=EVENT_MINUTES)):%Y%m%dT%H%M%SZ}",
+            f"SUMMARY:Deadline FPL GW{gameweek}",
             f"DESCRIPTION:{descripcion}",
-            "BEGIN:VALARM",
-            "TRIGGER:-PT15M",
-            "ACTION:DISPLAY",
-            f"DESCRIPTION:FPL GW{gameweek} - deadline {deadline_local:%H:%M}",
-            "END:VALARM",
-            "END:VEVENT",
         ]
+        for trigger in ALARM_TRIGGERS:
+            cuanto = "24 horas" if trigger == "-P1D" else f"{TRANSFER_DECISION_WINDOW_HOURS} horas"
+            lines += [
+                "BEGIN:VALARM",
+                f"TRIGGER:{trigger}",
+                "ACTION:DISPLAY",
+                f"DESCRIPTION:" + _escape(
+                    f"FPL GW{gameweek}: faltan {cuanto} para el deadline "
+                    f"({deadline_local:%a %d %b %H:%M}). Revisar briefing.md."
+                ),
+                "END:VALARM",
+            ]
+        lines.append("END:VEVENT")
 
     lines.append("END:VCALENDAR")
     return "\r\n".join(_fold(line) for line in lines) + "\r\n"

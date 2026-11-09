@@ -738,16 +738,21 @@ queda desfasado en silencio — que es justo lo que había pasado.
 
 Dos detalles que no son cosméticos:
 
-- **La hora del aviso no es la del deadline.** El modelo decide en las 3h
-  previas, y en UTC-6 varios deadlines caen entre las 02:00 y las 07:30
-  locales: GW15, GW16 y GW17 se deciden de madrugada. Para esos, el aviso
-  se manda a las 21:00 de la noche anterior, cuando todavía se puede
-  actuar; para los que caen en horario razonable, 90 minutos antes, que
-  es cuando el modelo ya decidió.
+- **El evento cae en la hora exacta del deadline**, y los avisos son dos
+  alarmas del evento: una a **24 horas** y otra a **3 horas**. Una versión
+  anterior corría el evento a la hora en que convenía avisar, lo cual
+  ponía el recordatorio en el calendario pero dejaba el deadline real
+  invisible — justo el dato que uno quiere ver al abrir el día.
 - **El UID es estable por fecha** (`gw11@gameweek-lab`), sin la data del
   deadline. Si FPL mueve GW11, al re-importar el cliente **actualiza** ese
   evento en vez de dejar dos avisos para la misma fecha. `SEQUENCE` sube
   en cada generación para que acepte la versión nueva.
+
+La alarma de 3 horas coincide con la apertura de la ventana de decisión
+(`TRANSFER_DECISION_WINDOW_HOURS`), así que es la última llamada — pero el
+Action corre cada 3 horas, así que puede que en ese momento todavía no
+haya decidido. La descripción de cada evento lo aclara, y en los deadlines
+de madrugada avisa que esa alarma va a sonar a las 02:00.
 
 ```bash
 python scripts/export_calendar.py                  # zona UTC-6
