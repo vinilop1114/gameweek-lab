@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-09 21:53 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-10 05:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -57,7 +57,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.4% | Ipswich Town |
 | Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.0% | Newcastle |
 | Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.2% | Hull City |
-| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.4% | Newcastle |
+| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.5% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
