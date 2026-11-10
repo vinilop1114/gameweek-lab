@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-10 05:51 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-10 14:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,7 +52,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.9% | Fulham |
 | De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.6% | Hull City |
-| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 47.9% | Hull City |
+| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.0% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 23.9% | Hull City |
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.4% | Ipswich Town |
 | Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.0% | Newcastle |
@@ -77,10 +77,10 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 Todavía **no está aplicada**: la decisión definitiva se toma en las últimas horas antes del deadline, cuando ya se conocen las lesiones. Esta es la propuesta con los datos de hoy, publicada para poder preparar contenido con anticipación — puede cambiar si aparece una lesión.
 
-- Thiago → Brobbey (+3.20 xP, transferencia libre, entra de banco)
-- Dewsbury-Hall → Groß (+7.67 xP, HIT -4 aplicado, entra de titular)
+- Thiago → Calvert-Lewin (+2.56 xP, transferencia libre, entra de banco)
+- Mbeumo → Groß (+7.50 xP, HIT -4 aplicado, entra de titular)
 
-Sale: Dewsbury-Hall, Thiago · Entra: Brobbey, Groß
+Sale: Mbeumo, Thiago · Entra: Calvert-Lewin, Groß
 
 El equipo con el cambio ya aplicado está en `squad_recommendations.csv` bajo `squad_type = "Base proyectado"`.
 
