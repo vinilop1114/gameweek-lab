@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-11 21:42 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-12 05:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -51,7 +51,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.9% | Fulham |
-| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.7% | Hull City |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.8% | Hull City |
 | Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.0% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 23.9% | Hull City |
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.6% | Ipswich Town |
