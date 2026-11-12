@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-12 05:38 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-12 14:34 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -52,23 +52,23 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.9% | Fulham |
 | De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.8% | Hull City |
-| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.0% | Hull City |
-| Verbruggen | Brighton | GKP | 7.6 | — | 0% | 23.9% | Hull City |
+| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.1% | Hull City |
+| Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.0% | Hull City |
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.6% | Ipswich Town |
 | Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.1% | Newcastle |
-| Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.2% | Hull City |
+| Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.3% | Hull City |
 | Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.5% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Gomez | Brighton | MID | £5.0m | 4.2% | 6.08 | 8.0 | 5% | Hull City |
-| Gomez | Brighton | MID | £5.0m | 4.2% | 6.08 | — | 0% | Hull City |
+| Gomez | Brighton | MID | £5.0m | 4.3% | 6.08 | 8.0 | 5% | Hull City |
+| Gomez | Brighton | MID | £5.0m | 4.3% | 6.08 | — | 0% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.3% | 5.27 | 7.0 | 3% | Hull City |
 | McGinn | Aston Villa | MID | £5.4m | 3.6% | 4.96 | 8.0 | 7% | Sunderland |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
-| E.Le Fée | Sunderland | MID | £5.7m | 2.7% | 4.4 | 8.0 | 6% | Aston Villa |
+| E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.4 | 8.0 | 6% | Aston Villa |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
 | Ndiaye | Man City | MID | £5.8m | 5.4% | 4.34 | 8.0 | 6% | Fulham |
 | Mitchell | Crystal Palace | DEF | £4.5m | 4.7% | 4.32 | 8.0 | 3% | Coventry City |
