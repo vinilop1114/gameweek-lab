@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-13 04:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-13 13:52 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -14,7 +14,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Titular | Evanilson | Bournemouth | FWD | £6.5m | 5.78 | 6.0 | 6% | 23.11 | Nott'm Forest (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.7m | 5.44 | 8.0 | 9% | 21.78 | Nott'm Forest (casa) | Tiros libres, Córners |
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
-| Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.4 | 8.0 | 6% | 16.12 | Aston Villa (fuera) | Córners |
+| Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.4 | 8.0 | 6% | 16.12 | Aston Villa (fuera) | Penales, Córners |
 | Titular | Tarkowski | Everton | DEF | £6.2m | 3.7 | 6.0 | 1% | 20.36 | Brentford (fuera) | — |
 | Titular | Bogle | Leeds | DEF | £4.8m | 3.66 | 6.0 | 2% | 20.15 | Chelsea (fuera) | — |
 | Titular | Richards | Crystal Palace | DEF | £4.9m | 3.38 | 6.0 | 2% | 10.98 | Coventry City (fuera) | — |
@@ -43,8 +43,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
-| Banco 3 | Delap | Nott'm Forest | FWD | £5.3m | 1.41 | 6.0 | 2% | 7.03 | Bournemouth (fuera) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.05 | — | 0% | 0.47 | Man City (fuera) | — |
 
 ## Mejores opciones de capitanía
 
@@ -71,7 +71,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.4 | 8.0 | 6% | Aston Villa |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
 | Ndiaye | Man City | MID | £5.8m | 5.4% | 4.34 | 8.0 | 6% | Fulham |
-| Mitchell | Crystal Palace | DEF | £4.5m | 4.7% | 4.32 | 8.0 | 3% | Coventry City |
+| Mitchell | Crystal Palace | DEF | £4.5m | 4.6% | 4.32 | 8.0 | 3% | Coventry City |
 
 ## Transferencia propuesta para esta fecha
 
