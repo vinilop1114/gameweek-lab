@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-13 13:52 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-13 21:09 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,19 +43,19 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
-| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.05 | — | 0% | 0.47 | Man City (fuera) | — |
+| Banco 3 | Delap | Nott'm Forest | FWD | £5.3m | 1.41 | 6.0 | 2% | 7.03 | Bournemouth (fuera) | — |
+| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.9% | Fulham |
-| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.8% | Hull City |
+| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.8% | Fulham |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.9% | Hull City |
 | Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.1% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.0% | Hull City |
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.7% | Ipswich Town |
-| Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.1% | Newcastle |
+| Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.2% | Newcastle |
 | Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.3% | Hull City |
 | Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.5% | Newcastle |
 
