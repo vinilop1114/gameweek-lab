@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-14 04:49 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-14 12:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,9 +42,9 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
-| Banco 3 | Delap | Nott'm Forest | FWD | £5.3m | 1.41 | 6.0 | 2% | 7.03 | Bournemouth (fuera) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 1.24 | 2.0 | 0% | 4.56 | Aston Villa (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.14 | 2.0 | 1% | 0.79 | Chelsea (fuera) | — |
 
 ## Mejores opciones de capitanía
 
@@ -54,7 +54,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 47.9% | Hull City |
 | Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.1% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.0% | Hull City |
-| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.7% | Ipswich Town |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 14.8% | Ipswich Town |
 | Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.2% | Newcastle |
 | Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.3% | Hull City |
 | Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.6% | Newcastle |
