@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-15 18:27 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-16 00:42 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,8 +43,8 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
 | Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
-| Banco 3 | Delap | Nott'm Forest | FWD | £5.3m | 1.41 | 6.0 | 2% | 7.03 | Bournemouth (fuera) | — |
-| Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.05 | — | 0% | 0.47 | Man City (fuera) | — |
 
 ## Mejores opciones de capitanía
 
@@ -66,7 +66,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gomez | Brighton | MID | £5.0m | 4.3% | 6.08 | 8.0 | 5% | Hull City |
 | Gomez | Brighton | MID | £5.0m | 4.3% | 6.08 | — | 0% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.4% | 5.27 | 7.0 | 3% | Hull City |
-| McGinn | Aston Villa | MID | £5.4m | 3.6% | 4.96 | 8.0 | 7% | Sunderland |
+| McGinn | Aston Villa | MID | £5.4m | 3.7% | 4.96 | 8.0 | 7% | Sunderland |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
 | E.Le Fée | Sunderland | MID | £5.7m | 2.8% | 4.4 | 8.0 | 6% | Aston Villa |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
