@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-20 10:52 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-20 19:35 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,33 +42,33 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £4.0m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
-| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 1.24 | 2.0 | 0% | 4.56 | Aston Villa (fuera) | — |
+| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
-| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.05 | — | 0% | 0.47 | Man City (fuera) | — |
+| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.14 | 2.0 | 1% | 0.79 | Chelsea (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
 | Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.8% | Fulham |
-| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 48.6% | Hull City |
-| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.6% | Hull City |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 48.9% | Hull City |
+| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 48.8% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.1% | Hull City |
-| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 16.0% | Ipswich Town |
-| Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.4% | Newcastle |
-| Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.4% | Hull City |
-| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.6% | Newcastle |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 16.6% | Ipswich Town |
+| Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.5% | Newcastle |
+| Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.5% | Hull City |
+| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.7% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Gomez | Brighton | MID | £5.1m | 4.4% | 6.08 | 8.0 | 5% | Hull City |
-| Gomez | Brighton | MID | £5.1m | 4.4% | 6.08 | — | 0% | Hull City |
+| Gomez | Brighton | MID | £5.1m | 4.5% | 6.08 | 8.0 | 5% | Hull City |
+| Gomez | Brighton | MID | £5.1m | 4.5% | 6.08 | — | 0% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.5% | 5.27 | 7.0 | 3% | Hull City |
-| McGinn | Aston Villa | MID | £5.5m | 4.2% | 4.96 | 8.0 | 7% | Sunderland |
+| McGinn | Aston Villa | MID | £5.5m | 4.4% | 4.96 | 8.0 | 7% | Sunderland |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
-| E.Le Fée | Sunderland | MID | £5.7m | 2.9% | 4.4 | 8.0 | 6% | Aston Villa |
+| E.Le Fée | Sunderland | MID | £5.7m | 3.0% | 4.4 | 8.0 | 6% | Aston Villa |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
 | Ndiaye | Man City | MID | £5.8m | 5.4% | 4.34 | 8.0 | 6% | Fulham |
 | Mitchell | Crystal Palace | DEF | £4.4m | 4.6% | 4.32 | 8.0 | 3% | Coventry City |
