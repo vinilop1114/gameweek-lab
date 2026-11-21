@@ -843,7 +843,14 @@ def top_differentials(players: pd.DataFrame, ownership_max: float = 10.0, top_n:
         (players["selected_by_percent"] <= ownership_max)
         & (effective_minutes(players) >= MIN_MINUTES_FOR_RANKING)
     ]
-    columns = ["web_name", "team_name", "position", "now_cost", "selected_by_percent", "xp_next", "next_opponent"]
+    # `id` va primero porque quien consuma esto necesita una llave única:
+    # `web_name` NO lo es — hay 18 nombres repetidos en el dataset (tres
+    # Wilson, tres Phillips, dos Gomez...). Cruzar por nombre duplica filas
+    # y, peor, mezcla datos de jugadores distintos en una sola.
+    columns = [
+        "id", "web_name", "team_name", "position", "now_cost",
+        "selected_by_percent", "xp_next", "next_opponent",
+    ]
     return candidates.sort_values("xp_next", ascending=False).head(top_n)[columns]
 
 

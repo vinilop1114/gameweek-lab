@@ -767,6 +767,26 @@ idéntico. De paso deja la semántica correcta — `SEQUENCE` sube únicamente
 cuando el contenido cambió, que es lo que un cliente de calendario espera
 para aceptar una actualización.
 
+## Dos trampas del briefing, documentadas porque ya morderon
+
+**`web_name` no es una llave.** El dataset tiene **18 nombres repetidos**
+(tres Wilson, tres Phillips, dos Gomez, dos Palmer...). La tabla de
+diferenciales cruzaba el techo y el haul por nombre, así que Diego Gómez
+(MID del Brighton) salía dos veces y la segunda fila mostraba **su xP con
+el techo y el haul de Joe Gomez** (DEF del Liverpool). No era un duplicado
+cosmético: era una fila con datos de dos jugadores distintos, lista para
+publicarse. Todo cruce usa `id`.
+
+**La vista previa tiene que consultar los chips.** `preview_base_transfers`
+proponía transferencias sin saber nada de chips, y con un Free Hit
+recomendado el briefing mostraba las dos cosas a la vez — incluido un hit
+de −4 — sobre una fecha en la que el plantel revierte igual. Aplicar ambas
+costaba 4 puntos a cambio de nada. Ahora consulta los chips **antes**, en
+el mismo orden que `evolve_base_squad`: con Wildcard el proyectado es el
+plantel nuevo; con Free Hit no hay transferencias y la libre se acumula;
+con Triple Captain o Bench Boost sí conviven, porque no cambian el
+plantel.
+
 ## Briefing para redactar posts
 
 `data/processed/briefing.md` — un resumen en Markdown que genera el mismo

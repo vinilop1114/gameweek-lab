@@ -321,9 +321,16 @@ def build_briefing(players: pd.DataFrame, squads: pd.DataFrame) -> str:
     differentials = top_differentials(players, top_n=8)
     # top_differentials no trae techo/haul; se cruzan acá para no
     # duplicar la lógica de filtrado que ya vive en analysis.py.
+    #
+    # Se cruza por `id`, NUNCA por `web_name`: el dataset tiene 18 nombres
+    # repetidos. Cruzando por nombre, Diego Gómez (MID del Brighton, 6.08
+    # de xP) salía dos veces en la tabla de diferenciales, y la segunda
+    # fila mostraba su xP con el techo y el haul de Joe Gomez (DEF del
+    # Liverpool). No era un duplicado cosmético: era una fila con datos de
+    # dos jugadores distintos.
     differentials = differentials.merge(
-        players[["web_name", "xp_ceiling", "haul_probability", "start_rate", "set_piece_duties"]],
-        on="web_name", how="left",
+        players[["id", "xp_ceiling", "haul_probability", "start_rate", "set_piece_duties"]],
+        on="id", how="left",
     )
 
     sections = [

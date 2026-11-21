@@ -493,9 +493,39 @@ def preview_base_transfers(
         starters, bench = select_starting_xi(squad)
         return starters, bench, [f"GW{current_gw} ya ejecutado — el equipo Base ya incluye sus transferencias."]
 
+    # Los chips se consultan ANTES de proponer transferencias, igual que en
+    # `evolve_base_squad`, porque hay dos que las vuelven irrelevantes y la
+    # vista previa no puede decir lo contrario de lo que el motor va a
+    # hacer. Pasó: con un Free Hit recomendado, el briefing proponía dos
+    # transferencias —una con hit de -4— sobre una fecha en la que el
+    # plantel revierte igual. Aplicar las dos cosas costaba 4 puntos a
+    # cambio de nada.
+    from gameweek_lab.chips import one_week_chip_decision, wildcard_decision
+
+    chip = wildcard_decision(players, team_path)
+    if chip is not None:
+        chip_squad, chip_log, _ = chip
+        starters, bench = select_starting_xi(chip_squad)
+        return starters, bench, chip_log + [
+            "Las transferencias quedan sin efecto: el Wildcard rehace los 15."
+        ]
+
+    one_week = one_week_chip_decision(players, team_path)
+    if one_week is not None and one_week[1].startswith("free_hit"):
+        starters, bench = select_starting_xi(squad)
+        return starters, bench, one_week[0] + [
+            "Sin transferencias esta fecha: con Free Hit el plantel revierte, así que "
+            "gastarlas (y mucho menos pagar un hit) no compra nada. La libre queda "
+            "acumulada.",
+        ]
+
     free_transfers = _accrued_free_transfers(state, current_gw)
     squad, _, log = plan_transfers(players, squad, free_transfers, current_gw)
     starters, bench = select_starting_xi(squad)
+    # Triple Captain y Bench Boost SÍ conviven con transferencias: no
+    # cambian el plantel, solo cómo puntúa la fecha.
+    if one_week is not None:
+        log = log + one_week[0]
     return starters, bench, log
 
 
