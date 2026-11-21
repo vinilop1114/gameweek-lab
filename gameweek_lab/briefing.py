@@ -167,6 +167,44 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
         if not chip_available(chip, current_gw):
             lines.append(f"| {chip.replace('_',' ').title()} | — | — | ya usado | — |")
 
+    # Si un chip de una fecha califica, hay que publicar QUE aplicar. Para
+    # el Free Hit eso son 15 jugadores: la tabla de arriba solo cabe cinco
+    # nombres, y recomendar el chip sin el plantel deja la decisión a
+    # medias — fue lo primero que se notó al usarlo.
+    for c in evaluate_one_week_chips(players):
+        if not c["recommend"] or c["starters"] is None:
+            continue
+        titulares, banco = c["starters"], c["bench"]
+        costo = titulares["now_cost"].sum() + banco["now_cost"].sum()
+        lines += [
+            "",
+            "### El equipo del Free Hit",
+            "",
+            "**Vale solo para esta fecha: en la siguiente el plantel vuelve al que "
+            "tenés hoy**, así que no hay que preocuparse por el banco ni por el precio "
+            "de reventa. Por eso gasta lo mínimo en los suplentes.",
+            "",
+            "| Rol | Pos | Jugador | Equipo | Precio | xP | Rival |",
+            "|---|---|---|---|---|---|---|",
+        ]
+        for rol, equipo in (("Titular", titulares.sort_values("xp_next", ascending=False)),
+                            ("Banco", banco)):
+            for pl in equipo.itertuples():
+                lines.append(
+                    f"| {rol} | {pl.position} | {pl.web_name} | {pl.team_name} | "
+                    f"£{pl.now_cost}m | {pl.xp_next} | {pl.next_opponent} |"
+                )
+        capitan = titulares.nlargest(1, "xp_next").iloc[0]
+        lines += [
+            "",
+            f"Costo total £{costo:.1f}m. Capitán: **{capitan.web_name}** "
+            f"({capitan.xp_next} xP vs {capitan.next_opponent}).",
+            "",
+            "En la app: activar Free Hit **antes** de hacer los cambios, y después armar "
+            "estos 15. Sin Free Hit activo, los cambios se cobrarían como transferencias "
+            "normales.",
+        ]
+
     lines += [
         "",
         "Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se "

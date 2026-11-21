@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-21 05:00 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-21 05:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -86,7 +86,33 @@ Set **1** (hay dos, uno por mitad de temporada; el que no se usa se pierde). El 
 |---|---|---|---|---|
 | Triple Captain | +7.47 | 9.0 | no | Capitán triple: Van Hecke (Spurs) vs Ipswich Town. |
 | Bench Boost | +8.98 | 14.0 | no | Banco: Petrović 3.0, Dewsbury-Hall 3.1, Mbeumo 2.88, Thiago 0.0 |
-| Free Hit | +18.18 | 18.0 | **SÍ** | XI de una fecha: Haaland, De Cuyper, Groß, Verbruggen, Van Hecke, … |
+| Free Hit | +18.18 | 18.0 | **SÍ** | XI de una fecha: 72.4 xP contra 54.2 del tuyo. El plantel completo va abajo. |
+
+### El equipo del Free Hit
+
+**Vale solo para esta fecha: en la siguiente el plantel vuelve al que tenés hoy**, así que no hay que preocuparse por el banco ni por el precio de reventa. Por eso gasta lo mínimo en los suplentes.
+
+| Rol | Pos | Jugador | Equipo | Precio | xP | Rival |
+|---|---|---|---|---|---|---|
+| Titular | FWD | Haaland | Man City | £15.8m | 9.01 | Fulham |
+| Titular | DEF | De Cuyper | Brighton | £5.5m | 8.16 | Hull City |
+| Titular | MID | Groß | Brighton | £6.3m | 7.7 | Hull City |
+| Titular | GKP | Verbruggen | Brighton | £4.7m | 7.6 | Hull City |
+| Titular | DEF | Van Hecke | Spurs | £5.1m | 7.47 | Ipswich Town |
+| Titular | DEF | Gabriel | Arsenal | £8.1m | 6.14 | Newcastle |
+| Titular | FWD | Evanilson | Bournemouth | £6.5m | 5.78 | Nott'm Forest |
+| Titular | MID | Tavernier | Bournemouth | £6.7m | 5.44 | Nott'm Forest |
+| Titular | DEF | Konsa | Arsenal | £4.9m | 5.24 | Newcastle |
+| Titular | MID | McGinn | Aston Villa | £5.5m | 4.96 | Sunderland |
+| Titular | MID | Rice | Arsenal | £7.5m | 4.87 | Newcastle |
+| Banco | GKP | Dubravka | Spurs | £3.9m | 0.0 | Ipswich Town |
+| Banco | DEF | Diop | Ipswich Town | £3.9m | 1.55 | Spurs |
+| Banco | MID | Hughes | Crystal Palace | £4.3m | 0.22 | Coventry City |
+| Banco | FWD | Muniz | Fulham | £5.3m | 0.05 | Man City |
+
+Costo total £94.0m. Capitán: **Haaland** (9.01 xP vs Fulham).
+
+En la app: activar Free Hit **antes** de hacer los cambios, y después armar estos 15. Sin Free Hit activo, los cambios se cobrarían como transferencias normales.
 
 Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.
 

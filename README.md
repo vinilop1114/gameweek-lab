@@ -648,6 +648,12 @@ Dos detalles que salen de la mecánica, no de una preferencia:
   importa: el plantel correcto es el de banco mínimo y XI máximo. Es
   exactamente el ejercicio teórico que este repo venía calculando desde
   el principio sin tener dónde usarlo.
+- **Cuando califica, el briefing publica los 15**, con rol, precio,
+  capitán, costo total y el recordatorio de activar el chip antes de
+  tocar el equipo. Al principio solo mostraba cinco nombres cortados con
+  "…": recomendaba el chip sin decir qué armar, que es media decisión.
+  Hacen falta los 15 y no solo el XI, porque con Free Hit igual hay que
+  llenar el plantel dentro del presupuesto aunque el banco no puntúe.
 - **Los tres de una fecha se miden con `xp_next`**, no con el horizonte:
   no tienen efecto más allá de su fecha.
 

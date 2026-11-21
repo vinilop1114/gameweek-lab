@@ -317,7 +317,14 @@ def evaluate_one_week_chips(players: pd.DataFrame, team_path: str = "my_team.csv
     threshold_scale = wildcard_threshold(current_gw) / WILDCARD_MIN_GAIN
 
     captain = starters.nlargest(1, "xp_next").iloc[0]
-    free_hit_starters, _ = select_wildcard_squad(players, budget=_squad_budget(squad))
+    # Hacen falta los 15, no solo el XI: con Free Hit igual tenés que
+    # llenar el plantel completo dentro del presupuesto, aunque el banco
+    # no puntúe. Una versión anterior descartaba el banco y publicaba
+    # cinco nombres cortados con "...", así que el chip se recomendaba sin
+    # decir qué equipo armar.
+    free_hit_starters, free_hit_bench = select_wildcard_squad(
+        players, budget=_squad_budget(squad)
+    )
 
     gains = {
         "triple_captain": (
@@ -330,9 +337,8 @@ def evaluate_one_week_chips(players: pd.DataFrame, team_path: str = "my_team.csv
         ),
         "free_hit": (
             round(float(free_hit_starters["xp_next"].sum() - starters["xp_next"].sum()), 2),
-            "XI de una fecha: "
-            + ", ".join(free_hit_starters.nlargest(5, "xp_next")["web_name"])
-            + ", …",
+            f"XI de una fecha: {free_hit_starters['xp_next'].sum():.1f} xP contra "
+            f"{starters['xp_next'].sum():.1f} del tuyo. El plantel completo va abajo.",
         ),
     }
 
@@ -351,7 +357,8 @@ def evaluate_one_week_chips(players: pd.DataFrame, team_path: str = "my_team.csv
             "threshold": threshold,
             "recommend": gain >= threshold,
             "detail": detail,
-            "squad": free_hit_starters if chip == "free_hit" else None,
+            "starters": free_hit_starters if chip == "free_hit" else None,
+            "bench": free_hit_bench if chip == "free_hit" else None,
         })
     return results
 
