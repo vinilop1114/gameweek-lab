@@ -1,11 +1,14 @@
 {
-  "last_evaluated_gameweek": 10,
-  "banked_free_transfers": 0,
-  "last_transfer_gameweek": 10,
+  "last_evaluated_gameweek": 11,
+  "banked_free_transfers": 1,
+  "last_transfer_gameweek": 11,
   "last_transfers": [
-    "Calvert-Lewin \u2192 Barry (+2.61 xP, transferencia libre, entra de titular)"
+    "FREE HIT (set 1) JUGADO en GW11: +18.18 xP (umbral 18.0).",
+    "XI de una fecha: 72.4 xP contra 54.2 del tuyo. El plantel completo va abajo.",
+    "No cambia el plantel \u2014 se activa el chip en la app y nada m\u00e1s."
   ],
   "chips_used": [
-    "wildcard:1"
+    "wildcard:1",
+    "free_hit:1"
   ]
 }

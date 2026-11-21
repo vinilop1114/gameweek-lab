@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-21 05:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-21 10:31 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,22 +42,22 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Rogers | Chelsea | MID | £8.2m | 5.15 | 7.0 | 5% | 22.34 | Leeds (casa) | — |
 | Titular | Cherki | Man City | MID | £7.9m | 5.07 | 9.0 | 10% | 12.67 | Fulham (casa) | Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £3.9m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
-| Banco 2 | Diop | Ipswich Town | DEF | £3.9m | 1.55 | 6.0 | 1% | 6.71 | Spurs (fuera) | — |
+| Banco 2 | O'Nien | Sunderland | DEF | £3.9m | 1.24 | 2.0 | 0% | 4.56 | Aston Villa (fuera) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.22 | 2.0 | 0% | 0.72 | Coventry City (fuera) | — |
-| Banco 4 | Nmecha | Leeds | FWD | £5.3m | 0.14 | 2.0 | 1% | 0.79 | Chelsea (fuera) | — |
+| Banco 4 | Muniz | Fulham | FWD | £5.3m | 0.05 | — | 0% | 0.47 | Man City (fuera) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.8% | Fulham |
-| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 49.2% | Hull City |
-| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 49.0% | Hull City |
+| Haaland | Man City | FWD | 9.01 | 10.0 | 26% | 78.9% | Fulham |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 49.7% | Hull City |
+| Groß | Brighton | MID | 7.7 | 8.0 | 7% | 49.3% | Hull City |
 | Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.2% | Hull City |
-| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 17.2% | Ipswich Town |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 17.9% | Ipswich Town |
 | Gabriel | Arsenal | DEF | 6.14 | 8.0 | 6% | 26.6% | Newcastle |
 | Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.6% | Hull City |
-| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.7% | Newcastle |
+| Raya | Arsenal | GKP | 5.95 | 6.0 | 0% | 47.8% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,18 +65,20 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Gomez | Brighton | MID | £5.1m | 4.6% | 6.08 | 8.0 | 5% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.5% | 5.27 | 7.0 | 3% | Hull City |
-| McGinn | Aston Villa | MID | £5.5m | 4.6% | 4.96 | 8.0 | 7% | Sunderland |
+| McGinn | Aston Villa | MID | £5.5m | 4.9% | 4.96 | 8.0 | 7% | Sunderland |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
 | E.Le Fée | Sunderland | MID | £5.7m | 3.0% | 4.4 | 8.0 | 6% | Aston Villa |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
-| Ndiaye | Man City | MID | £5.8m | 5.4% | 4.34 | 8.0 | 6% | Fulham |
-| Mitchell | Crystal Palace | DEF | £4.4m | 4.6% | 4.32 | 8.0 | 3% | Coventry City |
+| Ndiaye | Man City | MID | £5.8m | 5.3% | 4.34 | 8.0 | 6% | Fulham |
+| Mitchell | Crystal Palace | DEF | £4.4m | 4.5% | 4.32 | 8.0 | 3% | Coventry City |
 
-## Movimientos ya ejecutados en GW10
+## Movimientos ya ejecutados en GW11
 
-- Calvert-Lewin → Barry (+2.61 xP, transferencia libre, entra de titular)
+- FREE HIT (set 1) JUGADO en GW11: +18.18 xP (umbral 18.0).
+- XI de una fecha: 72.4 xP contra 54.2 del tuyo. El plantel completo va abajo.
+- No cambia el plantel — se activa el chip en la app y nada más.
 
-Transferencias libres disponibles tras esa fecha: 0.
+Transferencias libres disponibles tras esa fecha: 1.
 
 ## Chips
 
@@ -86,33 +88,7 @@ Set **1** (hay dos, uno por mitad de temporada; el que no se usa se pierde). El 
 |---|---|---|---|---|
 | Triple Captain | +7.47 | 9.0 | no | Capitán triple: Van Hecke (Spurs) vs Ipswich Town. |
 | Bench Boost | +8.98 | 14.0 | no | Banco: Petrović 3.0, Dewsbury-Hall 3.1, Mbeumo 2.88, Thiago 0.0 |
-| Free Hit | +18.18 | 18.0 | **SÍ** | XI de una fecha: 72.4 xP contra 54.2 del tuyo. El plantel completo va abajo. |
-
-### El equipo del Free Hit
-
-**Vale solo para esta fecha: en la siguiente el plantel vuelve al que tenés hoy**, así que no hay que preocuparse por el banco ni por el precio de reventa. Por eso gasta lo mínimo en los suplentes.
-
-| Rol | Pos | Jugador | Equipo | Precio | xP | Rival |
-|---|---|---|---|---|---|---|
-| Titular | FWD | Haaland | Man City | £15.8m | 9.01 | Fulham |
-| Titular | DEF | De Cuyper | Brighton | £5.5m | 8.16 | Hull City |
-| Titular | MID | Groß | Brighton | £6.3m | 7.7 | Hull City |
-| Titular | GKP | Verbruggen | Brighton | £4.7m | 7.6 | Hull City |
-| Titular | DEF | Van Hecke | Spurs | £5.1m | 7.47 | Ipswich Town |
-| Titular | DEF | Gabriel | Arsenal | £8.1m | 6.14 | Newcastle |
-| Titular | FWD | Evanilson | Bournemouth | £6.5m | 5.78 | Nott'm Forest |
-| Titular | MID | Tavernier | Bournemouth | £6.7m | 5.44 | Nott'm Forest |
-| Titular | DEF | Konsa | Arsenal | £4.9m | 5.24 | Newcastle |
-| Titular | MID | McGinn | Aston Villa | £5.5m | 4.96 | Sunderland |
-| Titular | MID | Rice | Arsenal | £7.5m | 4.87 | Newcastle |
-| Banco | GKP | Dubravka | Spurs | £3.9m | 0.0 | Ipswich Town |
-| Banco | DEF | Diop | Ipswich Town | £3.9m | 1.55 | Spurs |
-| Banco | MID | Hughes | Crystal Palace | £4.3m | 0.22 | Coventry City |
-| Banco | FWD | Muniz | Fulham | £5.3m | 0.05 | Man City |
-
-Costo total £94.0m. Capitán: **Haaland** (9.01 xP vs Fulham).
-
-En la app: activar Free Hit **antes** de hacer los cambios, y después armar estos 15. Sin Free Hit activo, los cambios se cobrarían como transferencias normales.
+| Free Hit | — | — | ya usado | — |
 
 Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.
 
