@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-22 00:55 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-22 10:40 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -42,7 +42,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Konsa | Arsenal | DEF | £4.9m | 4.88 | 6.0 | 2% | 16.28 | Newcastle (fuera) | — |
 | Titular | Guéhi | Man City | DEF | £5.9m | 4.75 | 8.0 | 6% | 11.87 | Fulham (casa) | — |
 | Banco 1 | Dubravka | Spurs | GKP | £3.9m | 0.0 | 2.0 | 0% | 0.0 | Ipswich Town (casa) | — |
-| Banco 2 | Andrey Santos | Man Utd | MID | £4.7m | 0.43 | 2.0 | 0% | 2.59 | Liverpool (fuera) | — |
+| Banco 2 | Yarmoliuk | Brentford | MID | £4.7m | 1.06 | 3.0 | 0% | 3.53 | Everton (casa) | — |
 | Banco 3 | Hughes | Crystal Palace | MID | £4.3m | 0.21 | 2.0 | 0% | 0.68 | Coventry City (fuera) | — |
 | Banco 4 | Nmecha | Leeds | FWD | £5.2m | 0.14 | 2.0 | 1% | 0.74 | Chelsea (fuera) | — |
 
@@ -50,13 +50,13 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 78.6% | Fulham |
-| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 49.8% | Hull City |
+| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 78.5% | Fulham |
+| De Cuyper | Brighton | DEF | 8.16 | 11.0 | 10% | 49.9% | Hull City |
 | Groß | Brighton | MID | 7.7 | 8.0 | 7% | 49.4% | Hull City |
-| Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.3% | Hull City |
+| Verbruggen | Brighton | GKP | 7.6 | — | 0% | 24.4% | Hull City |
 | Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 18.4% | Ipswich Town |
 | Gomez | Brighton | MID | 6.08 | 8.0 | 5% | 4.7% | Hull City |
-| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 26.3% | Nott'm Forest |
+| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 26.4% | Nott'm Forest |
 | Gabriel | Arsenal | DEF | 5.7 | 8.0 | 5% | 26.7% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
@@ -66,7 +66,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Gomez | Brighton | MID | £5.1m | 4.7% | 6.08 | 8.0 | 5% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.5% | 5.27 | 7.0 | 3% | Hull City |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.94 | 6.0 | 1% | Hull City |
-| Hill | Bournemouth | DEF | £5.6m | 3.5% | 4.43 | 6.0 | 1% | Nott'm Forest |
+| Hill | Bournemouth | DEF | £5.6m | 3.6% | 4.43 | 6.0 | 1% | Nott'm Forest |
 | Boscagli | Brighton | DEF | £4.5m | 0.7% | 4.37 | 6.0 | 1% | Hull City |
 | Anderson | Man City | MID | £6.2m | 3.5% | 4.34 | 6.0 | 2% | Fulham |
 | McGinn | Aston Villa | MID | £5.5m | 4.9% | 4.33 | 8.0 | 6% | Sunderland |
