@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-23 01:22 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-23 11:44 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -50,14 +50,14 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 78.2% | Fulham |
+| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 78.1% | Fulham |
 | Vuskovic | Brighton | DEF | 7.87 | — | 5% | 11.5% | Hull City |
-| De Cuyper | Brighton | DEF | 7.61 | 11.0 | 10% | 49.9% | Hull City |
-| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 18.7% | Ipswich Town |
+| De Cuyper | Brighton | DEF | 7.61 | 11.0 | 10% | 50.0% | Hull City |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 18.8% | Ipswich Town |
 | Groß | Brighton | MID | 7.46 | 8.0 | 7% | 49.5% | Hull City |
 | Verbruggen | Brighton | GKP | 7.2 | — | 0% | 24.5% | Hull City |
 | Gomez | Brighton | MID | 5.89 | 8.0 | 6% | 4.7% | Hull City |
-| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 26.8% | Nott'm Forest |
+| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 26.9% | Nott'm Forest |
 
 ## Diferenciales (propiedad ≤ 10%)
 
@@ -65,7 +65,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 |---|---|---|---|---|---|---|---|---|
 | Gomez | Brighton | MID | £5.1m | 4.7% | 5.89 | 8.0 | 6% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.5% | 5.16 | 7.0 | 4% | Hull City |
-| Wirtz | Liverpool | MID | £7.4m | 8.2% | 5.0 | 8.0 | 6% | Man Utd |
+| Wirtz | Liverpool | MID | £7.4m | 8.5% | 5.0 | 8.0 | 6% | Man Utd |
 | Boscagli | Brighton | DEF | £4.5m | 0.8% | 4.67 | 6.0 | 1% | Hull City |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.58 | 6.0 | 1% | Hull City |
 | Hill | Bournemouth | DEF | £5.6m | 3.9% | 4.43 | 6.0 | 1% | Nott'm Forest |
