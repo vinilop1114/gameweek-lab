@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW11
 
-Generado automáticamente: 2026-11-23 23:20 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-24 08:16 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -11,7 +11,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | **Capitán** | Van Hecke | Spurs | DEF | £5.2m | 7.47 | 8.0 | 8% | 24.29 | Ipswich Town (casa) | — |
 | Vice | Evanilson | Bournemouth | FWD | £6.6m | 5.8 | 6.0 | 7% | 23.2 | Nott'm Forest (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.1m | 5.7 | 8.0 | 5% | 18.99 | Newcastle (fuera) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.7m | 5.66 | 8.0 | 9% | 22.62 | Nott'm Forest (casa) | Tiros libres, Córners |
+| Titular | Tavernier | Bournemouth | MID | £6.8m | 5.66 | 8.0 | 9% | 22.62 | Nott'm Forest (casa) | Tiros libres, Córners |
 | Titular | Rogers | Chelsea | MID | £8.3m | 5.16 | 7.0 | 5% | 22.35 | Leeds (casa) | — |
 | Titular | E.Le Fée | Sunderland | MID | £5.7m | 4.31 | 8.0 | 6% | 15.82 | Aston Villa (fuera) | Penales, Córners |
 | Titular | Bogle | Leeds | DEF | £4.8m | 3.55 | 6.0 | 2% | 19.52 | Chelsea (fuera) | — |
@@ -37,7 +37,7 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Verbruggen | Brighton | GKP | £4.7m | 7.2 | — | 0% | 23.4 | Hull City (fuera) | — |
 | Titular | Evanilson | Bournemouth | FWD | £6.6m | 5.8 | 6.0 | 7% | 23.2 | Nott'm Forest (casa) | — |
 | Titular | Gabriel | Arsenal | DEF | £8.1m | 5.7 | 8.0 | 5% | 18.99 | Newcastle (fuera) | — |
-| Titular | Tavernier | Bournemouth | MID | £6.7m | 5.66 | 8.0 | 9% | 22.62 | Nott'm Forest (casa) | Tiros libres, Córners |
+| Titular | Tavernier | Bournemouth | MID | £6.8m | 5.66 | 8.0 | 9% | 22.62 | Nott'm Forest (casa) | Tiros libres, Córners |
 | Titular | Rogers | Chelsea | MID | £8.3m | 5.16 | 7.0 | 5% | 22.35 | Leeds (casa) | — |
 | Titular | Wirtz | Liverpool | MID | £7.4m | 5.0 | 8.0 | 6% | 20.01 | Man Utd (casa) | — |
 | Titular | Konsa | Arsenal | DEF | £4.9m | 4.88 | 6.0 | 2% | 16.28 | Newcastle (fuera) | — |
@@ -50,27 +50,27 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 77.9% | Fulham |
+| Haaland | Man City | FWD | 8.38 | 11.0 | 26% | 77.8% | Fulham |
 | Vuskovic | Brighton | DEF | 7.87 | — | 5% | 11.6% | Hull City |
-| De Cuyper | Brighton | DEF | 7.61 | 11.0 | 10% | 50.0% | Hull City |
-| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 19.1% | Ipswich Town |
+| De Cuyper | Brighton | DEF | 7.61 | 11.0 | 10% | 50.1% | Hull City |
+| Van Hecke | Spurs | DEF | 7.47 | 8.0 | 8% | 19.2% | Ipswich Town |
 | Groß | Brighton | MID | 7.46 | 8.0 | 7% | 49.5% | Hull City |
 | Verbruggen | Brighton | GKP | 7.2 | — | 0% | 24.6% | Hull City |
-| Gomez | Brighton | MID | 5.89 | 8.0 | 6% | 4.7% | Hull City |
-| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 27.1% | Nott'm Forest |
+| Gomez | Brighton | MID | 5.89 | 8.0 | 6% | 4.6% | Hull City |
+| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 27.2% | Nott'm Forest |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Gomez | Brighton | MID | £5.1m | 4.7% | 5.89 | 8.0 | 6% | Hull City |
+| Gomez | Brighton | MID | £5.1m | 4.6% | 5.89 | 8.0 | 6% | Hull City |
 | Ayari | Brighton | MID | £5.5m | 2.4% | 5.16 | 7.0 | 4% | Hull City |
-| Wirtz | Liverpool | MID | £7.4m | 9.2% | 5.0 | 8.0 | 6% | Man Utd |
+| Wirtz | Liverpool | MID | £7.4m | 9.4% | 5.0 | 8.0 | 6% | Man Utd |
 | Boscagli | Brighton | DEF | £4.5m | 0.8% | 4.67 | 6.0 | 1% | Hull City |
 | Dunk | Brighton | DEF | £4.5m | 1.5% | 4.58 | 6.0 | 1% | Hull City |
-| Hill | Bournemouth | DEF | £5.6m | 4.1% | 4.43 | 6.0 | 1% | Nott'm Forest |
+| Hill | Bournemouth | DEF | £5.6m | 4.2% | 4.43 | 6.0 | 1% | Nott'm Forest |
+| Lewis-Potter | Brentford | MID | £5.5m | 1.8% | 4.34 | 7.0 | 3% | Everton |
 | Anderson | Man City | MID | £6.2m | 3.6% | 4.34 | 6.0 | 2% | Fulham |
-| Lewis-Potter | Brentford | MID | £5.5m | 1.7% | 4.34 | 7.0 | 3% | Everton |
 
 ## Movimientos ya ejecutados en GW11
 
@@ -94,28 +94,28 @@ Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se 
 
 **Wildcard del set 1: ya jugado.** El de la otra mitad sigue intacto.
 
-## Repaso de GW10 (fecha cerrada)
+## Repaso de GW11 (fecha cerrada)
 
-Sesgo del modelo: +0.44 pts por jugador (subestimó en promedio). Error absoluto medio: 1.37 pts.
+Sesgo del modelo: +0.54 pts por jugador (subestimó en promedio). Error absoluto medio: 1.63 pts.
 
 Sesgo por posición (positivo = el modelo se quedó corto):
 
 | Posición | Sesgo | Jugadores |
 |---|---|---|
-| DEF | +0.16 | 154 |
-| FWD | +0.94 | 48 |
-| GKP | +0.04 | 58 |
-| MID | +0.64 | 214 |
+| DEF | +0.21 | 154 |
+| FWD | +0.82 | 48 |
+| GKP | +0.21 | 58 |
+| MID | +0.79 | 220 |
 
-Mejores puntajes reales de GW10:
+Mejores puntajes reales de GW11:
 
 | Jugador | Equipo | Pos | Puntos reales | xP previsto |
 |---|---|---|---|---|
-| Barry | Everton | FWD | 16 | 4.82 |
-| Alysson | Aston Villa | MID | 16 | 0.32 |
-| Wirtz | Liverpool | MID | 13 | 4.42 |
-| Delap | Nott'm Forest | FWD | 13 | 0.86 |
-| Vuskovic | Brighton | DEF | 12 | 5.83 |
+| Lewis-Potter | Brentford | MID | 16 | 3.35 |
+| Okafor | Leeds | MID | 15 | 1.17 |
+| Wirtz | Liverpool | MID | 14 | 4.16 |
+| Hill | Bournemouth | DEF | 14 | 3.61 |
+| McBurnie | Hull City | FWD | 13 | 2.32 |
 
 **Ojo al usar esto:** el modelo no estima bonus points, así que subestimar es su sesgo esperado — sobre todo en mediocampistas y defensores, que son quienes más bonus reciben. Con pocas fechas acumuladas todavía es un vistazo, no una tendencia.
 
