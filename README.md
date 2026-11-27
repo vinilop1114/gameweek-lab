@@ -641,6 +641,15 @@ Cada chip tiene su mecánica, y eso cambia qué se mide y qué se toca:
 | **Bench Boost** | la suma de los 4 del banco, 1 fecha | no | sí |
 | **Free Hit** | el mejor XI de esa fecha contra el tuyo | **no**, el equipo vuelve atrás | no, se desperdiciarían |
 
+**Los chips se comen la transferencia libre de su fecha** — Wildcard y
+Free Hit por igual. FPL no la acumula. Esto estuvo mal escrito y costó
+puntos: la primera versión dejaba la libre acumulada tras un Free Hit, así
+que el modelo entró a GW12 contando 2 cuando la app mostraba 1, y ejecutó
+dos transferencias marcando las dos como gratis. Fue un supuesto mío
+escrito como si fuera una regla del juego, sin validarlo. Al corregirlo y
+rehacer la decisión, el modelo hizo los mismos dos cambios **pero
+evaluando el hit**: +7.08 proyectado contra 4 de costo, neto +3.08.
+
 Dos detalles que salen de la mecánica, no de una preferencia:
 
 - **Free Hit usa `select_wildcard_squad`, no `select_squad`.** Como el

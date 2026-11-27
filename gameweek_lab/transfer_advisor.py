@@ -515,8 +515,9 @@ def preview_base_transfers(
         starters, bench = select_starting_xi(squad)
         return starters, bench, one_week[0] + [
             "Sin transferencias esta fecha: con Free Hit el plantel revierte, así que "
-            "gastarlas (y mucho menos pagar un hit) no compra nada. La libre queda "
-            "acumulada.",
+            "gastarlas (y mucho menos pagar un hit) no compra nada. La libre de esta "
+            "fecha **se pierde**, no se acumula — FPL no la guarda, igual que con el "
+            "Wildcard.",
         ]
 
     free_transfers = _accrued_free_transfers(state, current_gw)
@@ -659,11 +660,18 @@ def evolve_base_squad(
     elif one_week is not None and one_week[1].startswith("free_hit"):
         # Free Hit no toca `my_team.csv`: el plantel se rehace por una
         # fecha y vuelve atrás a la siguiente. Las transferencias de esa
-        # fecha se desperdiciarían —el equipo revierte igual— así que no
-        # se hacen, y la libre queda acumulada.
+        # fecha no se hacen —el equipo revierte igual— pero **se pierden
+        # igual que con el Wildcard**: FPL no las acumula.
+        #
+        # Esto estaba mal y costó puntos. La versión anterior las dejaba
+        # acumuladas, así que tras jugar el Free Hit en GW11 el modelo
+        # entró a GW12 creyendo tener 2 libres cuando la app mostraba 1, y
+        # ejecutó dos transferencias marcando ambas como gratis. Nunca se
+        # validó contra el juego: fue un supuesto mío escrito como si
+        # fuera una regla.
         chip_log, chip_token = one_week
         log.extend(chip_log)
-        free_transfers = _accrued_free_transfers(state, current_gw)
+        free_transfers = 0
         state.setdefault("chips_used", []).append(chip_token)
     else:
         free_transfers = _accrued_free_transfers(state, current_gw)

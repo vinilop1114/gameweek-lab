@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW12
 
-Generado automáticamente: 2026-11-27 16:04 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-27 17:20 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -43,41 +43,43 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | Titular | Groß | Brighton | MID | £6.3m | 5.6 | 7.0 | 4% | 22.39 | Newcastle (casa) | Penales, Tiros libres, Córners |
 | Banco 1 | Dubravka | Spurs | GKP | £3.9m | 0.0 | 2.0 | 0% | 0.0 | Sunderland (fuera) | — |
 | Banco 2 | Slater | Hull City | MID | £4.5m | 3.07 | — | 0% | 9.22 | Crystal Palace (fuera) | — |
-| Banco 3 | Muniz | Fulham | FWD | £5.3m | 0.33 | 2.0 | 1% | 1.33 | Bournemouth (casa) | — |
+| Banco 3 | Delap | Nott'm Forest | FWD | £5.3m | 1.37 | 6.0 | 2% | 7.52 | Chelsea (casa) | — |
 | Banco 4 | Hughes | Crystal Palace | MID | £4.3m | 0.21 | 2.0 | 0% | 0.62 | Hull City (casa) | — |
 
 ## Mejores opciones de capitanía
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | 7.1 | 9.0 | 8% | 12.7% | Coventry City |
+| Bogle | Leeds | DEF | 7.1 | 9.0 | 8% | 12.9% | Coventry City |
 | Rogers | Chelsea | MID | 6.88 | 8.0 | 8% | 54.5% | Nott'm Forest |
-| Tzolakis | Hull City | GKP | 6.64 | — | 0% | 14.2% | Crystal Palace |
-| Muharemović | Leeds | DEF | 6.51 | — | 3% | 9.2% | Coventry City |
-| Vuskovic | Brighton | DEF | 5.9 | 6.0 | 3% | 12.2% | Newcastle |
-| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 28.5% | Fulham |
+| Tzolakis | Hull City | GKP | 6.64 | — | 0% | 14.3% | Crystal Palace |
+| Muharemović | Leeds | DEF | 6.51 | — | 3% | 9.5% | Coventry City |
+| Vuskovic | Brighton | DEF | 5.9 | 6.0 | 3% | 12.3% | Newcastle |
+| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 28.6% | Fulham |
 | Justin | Leeds | DEF | 5.74 | 8.0 | 3% | 2.9% | Coventry City |
-| De Cuyper | Brighton | DEF | 5.71 | 8.0 | 6% | 51.0% | Newcastle |
+| De Cuyper | Brighton | DEF | 5.71 | 8.0 | 6% | 51.1% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Muharemović | Leeds | DEF | £5.2m | 9.2% | 6.51 | — | 3% | Coventry City |
+| Muharemović | Leeds | DEF | £5.2m | 9.5% | 6.51 | — | 3% | Coventry City |
 | Justin | Leeds | DEF | £4.5m | 2.9% | 5.74 | 8.0 | 3% | Coventry City |
-| McBurnie | Hull City | FWD | £5.5m | 2.3% | 5.65 | 6.0 | 2% | Crystal Palace |
-| Trafford | Leeds | GKP | £5.1m | 9.5% | 4.9 | 6.0 | 0% | Coventry City |
+| McBurnie | Hull City | FWD | £5.5m | 2.4% | 5.65 | 6.0 | 2% | Crystal Palace |
+| Trafford | Leeds | GKP | £5.1m | 9.7% | 4.9 | 6.0 | 0% | Coventry City |
 | Ampadu | Leeds | MID | £5.3m | 0.7% | 4.55 | 5.0 | 1% | Coventry City |
-| Hill | Bournemouth | DEF | £5.7m | 5.5% | 4.43 | 6.0 | 1% | Fulham |
+| Hill | Bournemouth | DEF | £5.7m | 5.7% | 4.43 | 6.0 | 1% | Fulham |
 | Gomez | Brighton | MID | £5.1m | 4.6% | 4.42 | 7.0 | 4% | Newcastle |
-| Lewis-Potter | Brentford | MID | £5.5m | 2.1% | 4.34 | 7.0 | 3% | Man Utd |
+| Lewis-Potter | Brentford | MID | £5.5m | 2.2% | 4.34 | 7.0 | 3% | Man Utd |
 
 ## Movimientos ya ejecutados en GW12
 
 - Tarkowski → Vuskovic (+13.52 xP, transferencia libre, entra de titular)
-- Raya → Verbruggen (+7.08 xP, transferencia libre, entra de titular)
+- Raya → Verbruggen (+7.08 xP, HIT -4 aplicado, entra de titular)
 
 Transferencias libres disponibles tras esa fecha: 0.
+
+**Por qué pagó 4 puntos.** El modelo solo acepta un hit si el cambio gana más de 4.0 + 2.0 puntos proyectados en 4 fechas: pagar puntos ciertos por una proyección exige margen, no empate técnico. Acá proyecta +7.08, así que el neto es **+3.08**.
 
 ## Chips
 
@@ -89,7 +91,7 @@ Set **1** (hay dos, uno por mitad de temporada; el que no se usa se pierde). El 
 | Bench Boost | +9.21 | 14.0 | no | Banco: Petrović 3.3, Barry 2.98, Dewsbury-Hall 2.93, Thiago 0.0 |
 | Free Hit | — | — | ya usado | — |
 
-Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.
+Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se activan en la app y nada más. Free Hit es la excepción parcial — rehace el equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco toca `my_team.csv`; **la transferencia libre de esa fecha se pierde**, no se acumula, igual que con el Wildcard.
 
 **Wildcard del set 1: ya jugado.** El de la otra mitad sigue intacto.
 

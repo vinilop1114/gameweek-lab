@@ -22,7 +22,12 @@ from gameweek_lab.analysis import (
     top_differentials,
 )
 from gameweek_lab.calibration import _load_history
-from gameweek_lab.transfer_advisor import _load_base_state, preview_base_transfers
+from gameweek_lab.transfer_advisor import (
+    HIT_COST,
+    HIT_UNCERTAINTY_MARGIN,
+    _load_base_state,
+    preview_base_transfers,
+)
 from gameweek_lab.config import DATA_PROCESSED_DIR
 
 BRIEFING_PATH = DATA_PROCESSED_DIR / "briefing.md"
@@ -125,6 +130,24 @@ def _transfer_section(squads: pd.DataFrame, proposed_log: list[str]) -> list[str
             "",
             f"Transferencias libres disponibles tras esa fecha: {state.get('banked_free_transfers', 0)}.",
         ]
+        # Un hit es lo más contable de una fecha: el modelo pagó puntos
+        # ciertos por una proyección. Sin el neto y la regla, la línea de
+        # arriba dice "HIT -4" y deja al lector sin saber si fue sensato.
+        hits = [line for line in applied if "HIT" in line]
+        if hits:
+            ganancia = sum(
+                float(line.split("+")[1].split(" ")[0])
+                for line in hits if "+" in line
+            )
+            lines += [
+                "",
+                f"**Por qué pagó {4 * len(hits)} puntos.** El modelo solo acepta un hit "
+                f"si el cambio gana más de {HIT_COST} + {HIT_UNCERTAINTY_MARGIN} puntos "
+                f"proyectados en {HORIZON_GAMEWEEKS} fechas: pagar puntos ciertos por una "
+                f"proyección exige margen, no empate técnico. "
+                f"Acá proyecta +{ganancia:.2f}, así que el neto es "
+                f"**{ganancia - 4 * len(hits):+.2f}**.",
+            ]
     return lines
 
 
@@ -210,7 +233,8 @@ def _chips_section(players: pd.DataFrame) -> list[str]:
         "Los tres de arriba valen por **una sola fecha** y **no cambian el plantel**: se "
         "activan en la app y nada más. Free Hit es la excepción parcial — rehace el "
         "equipo por esa fecha y vuelve atrás a la siguiente, así que el modelo tampoco "
-        "toca `my_team.csv` y además no gasta la transferencia libre, que se desperdiciaría.",
+        "toca `my_team.csv`; **la transferencia libre de esa fecha se pierde**, no se "
+        "acumula, igual que con el Wildcard.",
     ]
 
     if not chip_available("wildcard", current_gw):
