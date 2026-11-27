@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW12
 
-Generado automáticamente: 2026-11-26 20:53 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-27 03:27 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
@@ -22,7 +22,7 @@ El equipo real, el que se sostiene fecha a fecha con transferencias normales.
 | Banco 1 | Raya | Arsenal | GKP | £6.2m | 1.82 | 6.0 | 0% | 9.09 | Man City (casa) | — |
 | Banco 2 | Dewsbury-Hall | Everton | MID | £6.7m | 2.93 | 6.0 | 1% | 16.1 | Liverpool (casa) | — |
 | Banco 3 | Tarkowski | Everton | DEF | £6.2m | 0.0 | 0.0 | 0% | 0.0 | Liverpool (casa) | — |
-| Banco 4 | Thiago | Brentford | FWD | £7.8m | 0.0 | 0.0 | 0% | 0.0 | Man Utd (fuera) | Penales |
+| Banco 4 | Thiago | Brentford | FWD | £7.7m | 0.0 | 0.0 | 0% | 0.0 | Man Utd (fuera) | Penales |
 
 ## Equipo Wildcard
 
@@ -33,11 +33,11 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 | **Capitán** | Bogle | Leeds | DEF | £4.8m | 7.1 | 9.0 | 8% | 19.52 | Coventry City (casa) | — |
 | Vice | Rogers | Chelsea | MID | £8.3m | 6.88 | 8.0 | 8% | 18.91 | Nott'm Forest (fuera) | — |
 | Titular | Tzolakis | Hull City | GKP | £4.7m | 6.64 | — | 0% | 19.91 | Crystal Palace (fuera) | — |
-| Titular | Muharemović | Leeds | DEF | £5.1m | 6.51 | — | 3% | 17.92 | Coventry City (casa) | — |
+| Titular | Muharemović | Leeds | DEF | £5.2m | 6.51 | — | 3% | 17.92 | Coventry City (casa) | — |
 | Titular | Vuskovic | Brighton | DEF | £5.3m | 5.9 | 6.0 | 3% | 23.6 | Newcastle (casa) | — |
 | Titular | Evanilson | Bournemouth | FWD | £6.6m | 5.8 | 6.0 | 7% | 19.33 | Fulham (fuera) | — |
 | Titular | Justin | Leeds | DEF | £4.5m | 5.74 | 8.0 | 3% | 15.77 | Coventry City (casa) | — |
-| Titular | De Cuyper | Brighton | DEF | £5.5m | 5.71 | 8.0 | 6% | 22.83 | Newcastle (casa) | — |
+| Titular | De Cuyper | Brighton | DEF | £5.6m | 5.71 | 8.0 | 6% | 22.83 | Newcastle (casa) | — |
 | Titular | Tavernier | Bournemouth | MID | £6.8m | 5.66 | 8.0 | 9% | 18.85 | Fulham (fuera) | Tiros libres, Córners |
 | Titular | McBurnie | Hull City | FWD | £5.5m | 5.65 | 6.0 | 2% | 16.96 | Crystal Palace (fuera) | Penales |
 | Titular | Groß | Brighton | MID | £6.3m | 5.6 | 7.0 | 4% | 22.39 | Newcastle (casa) | Penales, Tiros libres, Córners |
@@ -50,25 +50,25 @@ Ejercicio teórico: el mejor equipo posible si se pudiera rearmar todo hoy desde
 
 | Jugador | Equipo | Pos | xP | Techo | P(haul) | Propiedad | Rival |
 |---|---|---|---|---|---|---|---|
-| Bogle | Leeds | DEF | 7.1 | 9.0 | 8% | 12.2% | Coventry City |
+| Bogle | Leeds | DEF | 7.1 | 9.0 | 8% | 12.3% | Coventry City |
 | Rogers | Chelsea | MID | 6.88 | 8.0 | 8% | 54.5% | Nott'm Forest |
 | Tzolakis | Hull City | GKP | 6.64 | — | 0% | 13.9% | Crystal Palace |
-| Muharemović | Leeds | DEF | 6.51 | — | 3% | 8.1% | Coventry City |
+| Muharemović | Leeds | DEF | 6.51 | — | 3% | 8.3% | Coventry City |
 | Vuskovic | Brighton | DEF | 5.9 | 6.0 | 3% | 11.9% | Newcastle |
-| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 27.9% | Fulham |
-| Justin | Leeds | DEF | 5.74 | 8.0 | 3% | 2.7% | Coventry City |
+| Evanilson | Bournemouth | FWD | 5.8 | 6.0 | 7% | 28.0% | Fulham |
+| Justin | Leeds | DEF | 5.74 | 8.0 | 3% | 2.8% | Coventry City |
 | De Cuyper | Brighton | DEF | 5.71 | 8.0 | 6% | 50.5% | Newcastle |
 
 ## Diferenciales (propiedad ≤ 10%)
 
 | Jugador | Equipo | Pos | Precio | Propiedad | xP | Techo | P(haul) | Rival |
 |---|---|---|---|---|---|---|---|---|
-| Muharemović | Leeds | DEF | £5.1m | 8.1% | 6.51 | — | 3% | Coventry City |
-| Justin | Leeds | DEF | £4.5m | 2.7% | 5.74 | 8.0 | 3% | Coventry City |
-| McBurnie | Hull City | FWD | £5.5m | 2.1% | 5.65 | 6.0 | 2% | Crystal Palace |
-| Trafford | Leeds | GKP | £5.1m | 8.5% | 4.9 | 6.0 | 0% | Coventry City |
+| Muharemović | Leeds | DEF | £5.2m | 8.3% | 6.51 | — | 3% | Coventry City |
+| Justin | Leeds | DEF | £4.5m | 2.8% | 5.74 | 8.0 | 3% | Coventry City |
+| McBurnie | Hull City | FWD | £5.5m | 2.2% | 5.65 | 6.0 | 2% | Crystal Palace |
+| Trafford | Leeds | GKP | £5.1m | 8.6% | 4.9 | 6.0 | 0% | Coventry City |
 | Ampadu | Leeds | MID | £5.3m | 0.7% | 4.55 | 5.0 | 1% | Coventry City |
-| Hill | Bournemouth | DEF | £5.7m | 4.9% | 4.43 | 6.0 | 1% | Fulham |
+| Hill | Bournemouth | DEF | £5.7m | 5.0% | 4.43 | 6.0 | 1% | Fulham |
 | Gomez | Brighton | MID | £5.1m | 4.6% | 4.42 | 7.0 | 4% | Newcastle |
 | Lewis-Potter | Brentford | MID | £5.5m | 2.0% | 4.34 | 7.0 | 3% | Man Utd |
 
