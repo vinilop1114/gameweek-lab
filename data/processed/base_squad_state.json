@@ -1,11 +1,10 @@
 {
-  "last_evaluated_gameweek": 11,
-  "banked_free_transfers": 1,
-  "last_transfer_gameweek": 11,
+  "last_evaluated_gameweek": 12,
+  "banked_free_transfers": 0,
+  "last_transfer_gameweek": 12,
   "last_transfers": [
-    "FREE HIT (set 1) JUGADO en GW11: +18.18 xP (umbral 18.0).",
-    "XI de una fecha: 72.4 xP contra 54.2 del tuyo. El plantel completo va abajo.",
-    "No cambia el plantel \u2014 se activa el chip en la app y nada m\u00e1s."
+    "Tarkowski \u2192 Vuskovic (+13.52 xP, transferencia libre, entra de titular)",
+    "Raya \u2192 Verbruggen (+7.08 xP, transferencia libre, entra de titular)"
   ],
   "chips_used": [
     "wildcard:1",

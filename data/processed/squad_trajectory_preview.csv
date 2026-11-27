@@ -2,8 +2,6 @@ position,GW12,GW13,GW14,GW15
 DEF,Gabriel,Gabriel,Gabriel,Gabriel
 MID,Tavernier,Tavernier,Tavernier,Tavernier
 DEF,Bogle,Bogle,Bogle,Bogle
-GKP,Verbruggen,Verbruggen,Verbruggen,Verbruggen
-DEF,Vuskovic,Vuskovic,Vuskovic,Vuskovic
 MID,Mbeumo,Mbeumo,Mbeumo,Mbeumo
 FWD,Evanilson,Evanilson,Evanilson,Evanilson
 MID,Rogers,Rogers,Rogers,Rogers
@@ -14,3 +12,5 @@ FWD,Thiago,McBurnie,McBurnie,McBurnie
 DEF,Richards,Richards,Richards,Justin
 GKP,Petrović,Petrović,Petrović,Petrović
 FWD,Barry,Barry,Barry,Barry
+DEF,Vuskovic,Vuskovic,Vuskovic,Vuskovic
+GKP,Verbruggen,Verbruggen,Verbruggen,Verbruggen
