@@ -1,6 +1,6 @@
 # The Gameweek Lab — Briefing GW12
 
-Generado automáticamente: 2026-11-28 01:02 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
+Generado automáticamente: 2026-11-28 11:18 UTC. Fuente única para redactar posts — ya viene filtrado y no hace falta leer los CSVs completos.
 
 ## Equipo Base
 
